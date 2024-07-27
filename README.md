@@ -1,4 +1,7 @@
 ## FooBar
 
 ## Contributors
-## Fred Zhang - CEO
+
+- Julia (Team Lead)
+- Fred Zhang - CEO
+
