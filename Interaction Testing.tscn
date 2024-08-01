@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6vq2lfyexw60"]
+
+[ext_resource type="Script" path="res://Interactable.cs" id="1_155d6"]
+[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://lyra.webp" id="2_2yet8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pshhj"]
+
+[sub_resource type="Animation" id="Animation_emxkx"]
+resource_name = "Button Prompt Appear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 1, 1, 1)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_t583d"]
+resource_name = "Button Prompt Disappear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.2, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_38pr3"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h3elx"]
+_data = {
+"Button Prompt Appear": SubResource("Animation_emxkx"),
+"Button Prompt Disappear": SubResource("Animation_t583d"),
+"RESET": SubResource("Animation_38pr3")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vfiop"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0633516)
+script = ExtResource("1_155d6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_pshhj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.002
+billboard = 1
+no_depth_test = true
+render_priority = -128
+texture = ExtResource("2_2yet8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
+libraries = {
+"": SubResource("AnimationLibrary_h3elx")
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0226001, 0, -0.999745, 0, 1, 0, 0.999745, 0, 0.0226001, -3.40883, 0, -0.0572824)
+projection = 1
+size = 3.0
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99344, 0)
+gravity_scale = 0.055
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("CapsuleShape3D_vfiop")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="RigidBody3D"]
+sides = 18
