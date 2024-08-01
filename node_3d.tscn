@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://4xerhukfwpqg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufmjg"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.519836, 0.00345309, 0.429871, 1)
+roughness = 0.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ufmjg")
+radial_segments = 36
+rings = 18
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.75495, 1.57495e-07, -0.655782, 0.483253, 0.675989, 0.556332, 0.443302, -0.736912, 0.510338, -2.8242, 0, 1.09457)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02304, -0.465102, 2.31503)
