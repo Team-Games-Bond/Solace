@@ -34,9 +34,11 @@ public partial class CameraController : Camera3D
 		Size = (float)Mathf.Lerp(Size, targetDistance, delta);
 	}
 
-	public void ZoomCamera(float distance) //TODO-----------------------------
+	public void ZoomCamera(float distance)
 	{
 		//Bound by max-min
+		distance = Math.Max(Math.Min(distance, MaxDistance), MinDistance);
+		targetDistance = distance;
 	}
 
 	public void ChangeCamera(Camera3D newCamera) //TODO-----------------------------
