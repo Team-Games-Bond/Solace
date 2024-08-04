@@ -29,7 +29,7 @@ public partial class CameraController : Camera3D
 		//Don't process if in puzzle mode
 		if(CharacterController.isPuzzleMode) return;
 
-		GD.Print(delta);
+		//GD.Print(delta);
 
 		Size = (float)Mathf.Lerp(Size, targetDistance, delta);
 	}

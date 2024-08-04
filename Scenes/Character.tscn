@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfkv6wtyhhta0"]
 
-[ext_resource type="Script" path="res://Scripts/CharacterControler.cs" id="1_g771o"]
+[ext_resource type="Script" path="res://Scripts/CharacterController.cs" id="1_g771o"]
 [ext_resource type="Script" path="res://Scripts/CameraController.cs" id="2_qsldj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_13pt1"]
@@ -10,13 +10,9 @@ height = 0.233764
 radius = 0.534782
 
 [node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("PlayerPivot")]
+collision_layer = 3
 script = ExtResource("1_g771o")
-Speed = null
-JumpVelocity = null
-RotationSpeed = null
 PlayerPivot = NodePath("PlayerPivot")
-isPuzzleMode = null
-grounded = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_13pt1")

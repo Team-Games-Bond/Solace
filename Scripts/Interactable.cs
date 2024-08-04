@@ -4,11 +4,6 @@ using System.Collections.Generic;
 [Tool]
 public partial class Interactable : Area3D
 {
-	/*
-	 * Interaction System
-	 * By Maddie
-	 */
-
 	[Export]
 	private string InteractButton = "Interact";
 	private AnimationPlayer animationPlayer;
@@ -19,8 +14,8 @@ public partial class Interactable : Area3D
 	{
 		if (!Engine.IsEditorHint()){
 			animationPlayer = GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
-			BodyEntered += enter;
-			BodyExited += exit;
+			BodyEntered += Enter;
+			BodyExited += Exit;
 		}
 	}
     public override string[] _GetConfigurationWarnings()
@@ -48,6 +43,8 @@ public partial class Interactable : Area3D
 			Interact();
 		}
     }
+
+	// Prompt player for and enable interaction  
 	private void Highlight(){
 		if(current!=null){
 			Unhighlight();
@@ -57,6 +54,7 @@ public partial class Interactable : Area3D
 		animationPlayer.Play("Button Prompt Appear");
 		inRange = true;
 	}
+	// Hide prompt and disable interaction
 	private void Unhighlight(){
 		GD.PrintRich("[b]Body has exited interactable[/b]");
 		animationPlayer.Play("Button Prompt Disappear");
