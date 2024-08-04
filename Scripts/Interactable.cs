@@ -4,6 +4,8 @@ using System.Collections.Generic;
 [Tool]
 public partial class Interactable : Area3D
 {
+	[Signal]
+	public delegate void InteractionEventHandler();
 	[Export]
 	private string InteractButton = "Interact";
 	private AnimationPlayer animationPlayer;
@@ -35,7 +37,7 @@ public partial class Interactable : Area3D
 		}
 	}
 	public void Interact(){
-		GD.PrintRich("[shake rate=20.0 level=5 connected=1][rainbow]Player Interacted[/rainbow][/shake]");
+		EmitSignal(SignalName.Interaction);
 	}
     public override void _Input(InputEvent @event)
     {
@@ -50,13 +52,11 @@ public partial class Interactable : Area3D
 			Unhighlight();
 		}
 		current = this;
-		GD.PrintRich("[b]Body has entered interactable[/b]");
 		animationPlayer.Play("Button Prompt Appear");
 		inRange = true;
 	}
 	// Hide prompt and disable interaction
 	private void Unhighlight(){
-		GD.PrintRich("[b]Body has exited interactable[/b]");
 		animationPlayer.Play("Button Prompt Disappear");
 		inRange = false;
 		current = null;
