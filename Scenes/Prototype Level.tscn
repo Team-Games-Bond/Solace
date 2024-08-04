@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cy65g16gt1t43"]
+
+[node name="PrototypeLevel" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(49.4496, 0, 0, 0, 0.209001, 0, 0, 0, 30.7546, -12.2079, 0, 0)
+use_collision = true
+
+[node name="StairsObject" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.61123, 0.257259, -0.17509)
+use_collision = true
+size = Vector3(10, 0.3, 10)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="StairsObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74727, 0.3, 0)
+use_collision = true
+size = Vector3(10, 0.3, 10)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.590445, 4.32084, 0)
+omni_range = 11.4654
