@@ -16,7 +16,6 @@ public partial class ExampleInteraction : AbstractInteraction
 	}
     public override void _Process(double delta)
     {
-        GD.Print("afjdsklfgjdaslk");
     }
 
     public override void Interact()
