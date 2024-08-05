@@ -21,6 +21,7 @@ public partial class CameraController : Camera3D
 		Size = StartDistance;
 		targetDistance = StartDistance;
 		currentCamera = this;
+		this.MakeCurrent();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
