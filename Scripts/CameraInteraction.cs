@@ -13,7 +13,9 @@ public partial class CameraInteraction : Camera3D
 		if (!Engine.IsEditorHint()){
 			// Makes the assumption that there is only one camera controller in a scene
 			controller = (CameraController)GetTree().GetFirstNodeInGroup("Character Controllers");
-			GetParent<Interactable>().Interaction += Interact;
+			Interactable interactable = GetParent<Interactable>();
+			interactable.InteractionBegin += Begin;
+			interactable.InteractionEnd += End;
 		}
 	}
 	public override string[] _GetConfigurationWarnings()
@@ -33,8 +35,12 @@ public partial class CameraInteraction : Camera3D
     {
     }
 
-    public void Interact()
+    public void Begin()
     {
 		controller.ChangeCamera(this);
     }
+	public void End()
+	{
+		controller.ChangeCamera();
+	}
 }
