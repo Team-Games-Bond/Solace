@@ -5,7 +5,9 @@ using System.Collections.Generic;
 public partial class Interactable : Area3D
 {
 	[Signal]
-	public delegate void InteractionEventHandler();
+	public delegate void InteractionBeginEventHandler();
+	[Signal]
+	public delegate void InteractionEndEventHandler();
 	[Export]
 	private string InteractButton = "Interact";
 	private AnimationPlayer animationPlayer;
@@ -37,7 +39,7 @@ public partial class Interactable : Area3D
 		}
 	}
 	public void Interact(){
-		EmitSignal(SignalName.Interaction);
+		EmitSignal(SignalName.InteractionBegin);
 	}
     public override void _Input(InputEvent @event)
     {
