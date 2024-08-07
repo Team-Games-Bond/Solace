@@ -6,4 +6,7 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>CapstoneProject</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="script_templates/**/*.cs" />
+  </ItemGroup>
 </Project>
