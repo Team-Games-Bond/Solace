@@ -1,11 +1,14 @@
+// meta-description: Template for node that recieves interaction events from it's parent
+
+using _BINDINGS_NAMESPACE_;
 using System;
 using System.Collections.Generic;
-using Godot;
 
-// Needs tool annotation for warnings to work properly
+
 [Tool]
-public partial class ExampleInteraction : Node
+public partial class _CLASS_ : _BASE_
 {
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -13,19 +16,19 @@ public partial class ExampleInteraction : Node
 		if (!Engine.IsEditorHint()){
 			// Call _Ready from the base class if you override it
 			// Also call _GetConfigurationWarnings if you override it
-			Interactable interactable = GetParent<Interactable>();
-			interactable.InteractionBegin += Begin;
-			interactable.InteractionEnd += End;
+			GetParent<Interactable>().InteractionBegin += Begin;
+			GetParent<Interactable>().InteractionEnd += End
 		}
 	}
     public override void _Process(double delta)
     {
     }
-
+	// Called when parent interactable is interacted with
     public void Begin()
     {
-		GD.PrintRich("[shake rate=20.0 level=5 connected=1][rainbow]Player Interacted[/rainbow][/shake]");
+		
     }
+	// Called when interaction ended
 	public void End()
     {
 		
