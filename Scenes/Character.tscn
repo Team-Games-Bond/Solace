@@ -25,12 +25,14 @@ transform = Transform3D(1, 0, 0, 0, 0.966364, 0, 0, 0, 1, 0, 0, 0)
 [node name="CSGBox3D" type="CSGBox3D" parent="PlayerPivot/Player Visuals"]
 transform = Transform3D(0.155873, 0, 0, 0, 0.173381, 0, 0, 0, 0.373001, 0, 0.940952, -0.512035)
 
+
 [node name="Player Camera" type="Camera3D" parent="." node_paths=PackedStringArray("CharacterController")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 10, 20)
 cull_mask = 524287
 v_offset = 1.3
 projection = 1
-size = 15.19
+current = true
+size = 6.857
 near = 0.004
 far = 100.0
 script = ExtResource("2_qsldj")
