@@ -14,7 +14,7 @@ public partial class CameraInteraction : Camera3D
 		if (!Engine.IsEditorHint()){
 			// Makes the assumption that there is only one camera controller in a scene
 			controller = (CameraController)GetTree().GetFirstNodeInGroup("Character Controller");
-			GD.Print((CameraController)GetTree().GetFirstNodeInGroup("Character Controller"));
+			//GD.Print((CameraController)GetTree().GetFirstNodeInGroup("Character Controller"));
 			
 			Interactable interactable = GetParent<Interactable>();
 			interactable.InteractionBegin += Begin;

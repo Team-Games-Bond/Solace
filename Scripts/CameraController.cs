@@ -42,6 +42,13 @@ public partial class CameraController : Camera3D
 		targetDistance = distance;
 	}
 
+	public void ZoomCameraRelative(float distance)
+	{
+		//Bound by max-min
+		distance = Math.Max(Math.Min(Size-distance, MaxDistance), MinDistance);
+		targetDistance = distance;
+	}
+
 	public void ChangeCamera(Camera3D newCamera)
 	{
 		//Changing to newCamera
