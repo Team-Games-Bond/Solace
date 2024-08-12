@@ -140,6 +140,7 @@ monitorable = false
 script = ExtResource("5_vf2pi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InWorldButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72811, -0.530044, 0)
 shape = SubResource("BoxShape3D_r38si")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="InWorldButton"]

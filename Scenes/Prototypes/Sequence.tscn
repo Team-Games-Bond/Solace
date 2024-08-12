@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://qftvg6w2x674"]
+
+[ext_resource type="PackedScene" uid="uid://djfj51840c1g6" path="res://Scenes/Modules/Sequence Button.tscn" id="1_2rylh"]
+[ext_resource type="Script" path="res://Scenes/Prototypes/MoveBoxUp.cs" id="1_fxg22"]
+[ext_resource type="Script" path="res://Scripts/Sequence.cs" id="1_lpo8o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v625b"]
+albedo_color = Color(0, 0.0705882, 0.458824, 1)
+
+[node name="Sequence" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(49.4496, 0, 0, 0, 0.209001, 0, 0, 0, 30.7546, -12.2079, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." node_paths=PackedStringArray("sequence")]
+transform = Transform3D(-0.0405329, 0.999178, 0, -0.999178, -0.0405329, 0, 0, 0, 1, -7.24942, 1.22911, 0)
+material = SubResource("StandardMaterial3D_v625b")
+script = ExtResource("1_fxg22")
+sequence = NodePath("../Sequence")
+
+[node name="Sequence" type="Node" parent="." node_paths=PackedStringArray("sequenceButtons")]
+script = ExtResource("1_lpo8o")
+sequenceButtons = [NodePath("SequenceButton"), NodePath("SequenceButton2"), NodePath("SequenceButton3"), NodePath("SequenceButton4")]
+reusable = true
+
+[node name="SequenceButton" parent="Sequence" instance=ExtResource("1_2rylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.35219, 0.775489, -2.3657)
+
+[node name="SequenceButton2" parent="Sequence" instance=ExtResource("1_2rylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.62279, 0.775489, 1.48836)
+
+[node name="SequenceButton3" parent="Sequence" instance=ExtResource("1_2rylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.85729, 0.775489, 2.21888)
+
+[node name="SequenceButton4" parent="Sequence" instance=ExtResource("1_2rylh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.38197, 0.77549, -0.843062)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.383554, 0, -0.923518, 0.296779, 0.946958, 0.123258, 0.874533, -0.321357, 0.36321, -4.52428, 1.6892, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.694545, -0.719449, 0, 0.719449, 0.694545, -7.14263, 0, 1.26586)

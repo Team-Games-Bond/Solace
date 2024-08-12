@@ -7,12 +7,15 @@ using System.Collections.Generic;
 public partial class CameraInteraction : Camera3D
 {
 	private CameraController controller;
+	private bool isVewing = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		if (!Engine.IsEditorHint()){
 			// Makes the assumption that there is only one camera controller in a scene
-			controller = (CameraController)GetTree().GetFirstNodeInGroup("Character Controllers");
+			controller = (CameraController)GetTree().GetFirstNodeInGroup("Character");
+			GD.Print(GetTree().GetFirstNodeInGroup("Character"));
+			
 			Interactable interactable = GetParent<Interactable>();
 			interactable.InteractionBegin += Begin;
 			interactable.InteractionEnd += End;
@@ -37,10 +40,13 @@ public partial class CameraInteraction : Camera3D
 
     public void Begin()
     {
-		controller.ChangeCamera(this);
+		if(!isVewing) controller.ChangeCamera(this);
+		else controller.ChangeCamera();
+
+		isVewing = !isVewing;
     }
 	public void End()
 	{
-		controller.ChangeCamera();
+		//Ending
 	}
 }
