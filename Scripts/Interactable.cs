@@ -20,6 +20,7 @@ public partial class Interactable : Area3D
 			animationPlayer = GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
 			BodyEntered += Enter;
 			BodyExited += Exit;
+			Unhighlight();
 		}
 	}
     public override string[] _GetConfigurationWarnings()

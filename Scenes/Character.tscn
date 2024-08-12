@@ -18,6 +18,7 @@ PlayerPivot = NodePath("PlayerPivot")
 shape = SubResource("CapsuleShape3D_13pt1")
 
 [node name="PlayerPivot" type="Marker3D" parent="."]
+transform = Transform3D(0.999848, 0, -0.0174524, 0, 1, 0, 0.0174524, 0, 0.999848, 0, 0, 0)
 
 [node name="Player Visuals" type="CSGCylinder3D" parent="PlayerPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.966364, 0, 0, 0, 1, 0, 0, 0)

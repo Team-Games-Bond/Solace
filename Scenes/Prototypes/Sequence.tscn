@@ -19,14 +19,14 @@ length = 0.2
 tracks/0/type = "scale_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/path = NodePath("CameraInteracting/Sprite3D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 1, 1, 1)
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/path = NodePath("CameraInteracting/Sprite3D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -42,14 +42,14 @@ length = 0.2
 tracks/0/type = "scale_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/path = NodePath("CameraInteracting/Sprite3D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.2, 1, 0, 0, 0)
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/path = NodePath("CameraInteracting/Sprite3D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -106,12 +106,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.38197, 0.77549, -0.843062)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.383554, 0, -0.923518, 0.296779, 0.946958, 0.123258, 0.874533, -0.321357, 0.36321, -4.52428, 1.6892, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="CameraInteracting" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8096, 0.568936, 0.207828)
 collision_mask = 2
 script = ExtResource("4_1ul43")
 
-[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="CameraInteracting"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -119,36 +119,31 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("5_j218n")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraInteracting"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraInteracting"]
 shape = SubResource("BoxShape3D_3e753")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="CameraInteracting"]
 layers = 524288
 material_override = SubResource("StandardMaterial3D_q5esb")
 size = Vector3(3, 1, 3)
 
-[node name="Node" type="Node" parent="Area3D"]
+[node name="Node" type="Node" parent="CameraInteracting"]
 script = ExtResource("6_vpjec")
 
-[node name="Camera3D" type="Camera3D" parent="Area3D"]
+[node name="Camera3D" type="Camera3D" parent="CameraInteracting"]
 transform = Transform3D(0.252069, 0.549508, -0.796557, 0, 0.823136, 0.567844, 0.967709, -0.143136, 0.207487, -1.82404, 4.39071, 2.07932)
 cull_mask = 524287
 projection = 1
 size = 7.0
 script = ExtResource("7_ojuqq")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Area3D"]
-
-[node name="Zoom on press" type="Node" parent="." node_paths=PackedStringArray("sequence")]
-script = ExtResource("8_g1sy1")
-zoomAmount = 2.0
-sequence = NodePath("../Sequence")
+[node name="CSGBox3D2" type="CSGBox3D" parent="CameraInteracting"]
 
 [node name="Set Zoom" type="Node3D" parent="." node_paths=PackedStringArray("zoomIn", "zoomReset", "zoomOut")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0153, 0, 0)
@@ -165,3 +160,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64805, 0.580401, -0.137115)
 
 [node name="SequenceButtonReset" parent="Set Zoom" instance=ExtResource("1_2rylh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96648, 0.582274, -2.93656)
+
+[node name="Zoom on press" type="Node" parent="." node_paths=PackedStringArray("sequence")]
+script = ExtResource("8_g1sy1")
+zoomAmount = 2.0
+sequence = NodePath("../Sequence")
