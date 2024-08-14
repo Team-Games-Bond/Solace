@@ -5,14 +5,11 @@ using System.Collections.Generic;
 public partial class Interactable : Area3D
 {
 	[Signal]
-	public delegate void InteractionBeginEventHandler();
+	public delegate void InteractionBeginEventHandler(CharacterController player);
 	[Signal]
 	public delegate void InteractionEndEventHandler();
 	[Export]
-	private string InteractButton = "Interact";
 	private AnimationPlayer animationPlayer;
-	private static Interactable current = null;
-	private bool inRange = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -38,39 +35,41 @@ public partial class Interactable : Area3D
 			UpdateConfigurationWarnings();
 		}
 	}
-	public void Interact(){
-		EmitSignal(SignalName.InteractionBegin);
-	}
-    public override void _Input(InputEvent @event)
-    {
-        if (@event.IsActionPressed(InteractButton)&inRange){
-			Interact();
+	public void Interact(CharacterController player){
+		if (canInteract(player)){
+			EmitSignal(SignalName.InteractionBegin, player);
 		}
-    }
+	}
 
 	// Prompt player for and enable interaction  
 	private void Highlight(){
-		if(current!=null){
-			Unhighlight();
-		}
-		current = this;
 		animationPlayer.Play("Button Prompt Appear");
-		inRange = true;
 	}
 	// Hide prompt and disable interaction
 	private void Unhighlight(){
 		animationPlayer.Play("Button Prompt Disappear");
-		inRange = false;
-		current = null;
 	}
-	
-    private void Enter(Node3D body)
+	public bool canInteract(CharacterController player){
+		return true;
+	}
+    public void Enter(Node3D body)
 	{
-		Highlight();
+		CharacterController player = (CharacterController)body;
+		if (canInteract(player)){
+			if (player.current!=null){
+				player.current.Unhighlight();
+			}
+			Highlight();
+			player.current = this;
+		}
 	}
 
-	private void Exit(Node3D body)
+	public void Exit(Node3D body)
 	{
-		Unhighlight();
+		CharacterController player = (CharacterController)body;
+		if (player.current == this){
+			Unhighlight();
+			player.current = null;
+		} 
 	}
 }

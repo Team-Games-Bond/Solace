@@ -15,7 +15,8 @@ public partial class CharacterController : CharacterBody3D
 	//Other variables
 	public bool wasOnFloorLastFrame = false; 
 	public bool isPuzzleMode = false;
-
+	public Interactable current;
+	
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
@@ -72,5 +73,11 @@ public partial class CharacterController : CharacterBody3D
 			//Floating point error prevention
 			//PlayerPivot.Transform = PlayerPivot.Transform.Orthonormalized();
 	}
-
+	public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("Interact") && current!=null){
+			GD.Print("A gay person has pressed a button");
+			current.Interact(this);
+		}
+    }
 }
