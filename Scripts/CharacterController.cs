@@ -15,8 +15,12 @@ public partial class CharacterController : CharacterBody3D
 	//Other variables
 	public bool wasOnFloorLastFrame = false; 
 	public bool isPuzzleMode = false;
-	public Interactable current;
-	
+	public Interactable Current;
+
+	[ExportGroup("Item Carrying")]
+	[Export] public Node3D ItemMount;
+	public Node3D Carrying;
+
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
@@ -75,9 +79,12 @@ public partial class CharacterController : CharacterBody3D
 	}
 	public override void _Input(InputEvent @event)
     {
-        if (@event.IsActionPressed("Interact") && current!=null){
-			GD.Print("A gay person has pressed a button");
-			current.Interact(this);
+        if (@event.IsActionPressed("Interact") && Current!=null){
+			Current.Interact(this);
 		}
     }
+
+	public bool HasItem(){
+		return Carrying != null;
+	}
 }
