@@ -9,10 +9,11 @@
 height = 0.233764
 radius = 0.534782
 
-[node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("PlayerPivot")]
+[node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("PlayerPivot", "ItemMount")]
 collision_layer = 3
 script = ExtResource("1_g771o")
 PlayerPivot = NodePath("PlayerPivot")
+ItemMount = NodePath("Node3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_13pt1")
@@ -24,7 +25,6 @@ transform = Transform3D(1, 0, 0, 0, 0.966364, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="PlayerPivot/Player Visuals"]
 transform = Transform3D(0.155873, 0, 0, 0, 0.173381, 0, 0, 0, 0.373001, 0, 0.940952, -0.512035)
-
 
 [node name="Player Camera" type="Camera3D" parent="." node_paths=PackedStringArray("CharacterController")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 10, 20)
@@ -43,3 +43,5 @@ CharacterController = NodePath("..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stair Detector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.868554, 0)
 shape = SubResource("CylinderShape3D_ukuk1")
+
+[node name="Node3D" type="Node3D" parent="."]
