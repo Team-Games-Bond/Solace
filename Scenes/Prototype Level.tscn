@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_ru67i"]
 [ext_resource type="Script" path="res://Scripts/ExampleInteraction.cs" id="3_4jovv"]
 [ext_resource type="Script" path="res://Scripts/CameraInteraction.cs" id="4_blu2e"]
-[ext_resource type="Script" path="res://Scripts/InWorldClickable.cs" id="5_vf2pi"]
+[ext_resource type="Script" path="res://Scripts/InWorldButtonAppearance.cs" id="5_qa0ks"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -67,17 +67,15 @@ shading_mode = 0
 diffuse_mode = 3
 albedo_color = Color(0, 1, 0.223529, 0.145098)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_r38si"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ne71"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xg7k"]
-shading_mode = 2
-specular_mode = 2
-albedo_color = Color(1, 0, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3v6b"]
+albedo_color = Color(1, 0.146521, 0.803664, 1)
 
 [node name="PrototypeLevel" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(49.4496, 0, 0, 0, 0.209001, 0, 0, 0, 30.7546, -12.2079, 0, 0)
+transform = Transform3D(49.4496, 0, 0, 0, 0.209001, 0, 0, 0, 30.7546, -12.1055, -0.106164, 0.152478)
 use_collision = true
 
 [node name="StairsObject" type="CSGBox3D" parent="."]
@@ -131,17 +129,15 @@ projection = 1
 size = 7.0
 script = ExtResource("4_blu2e")
 
-[node name="InWorldButton" type="Area3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.23032, 1.44394, -1.22146)
+[node name="3D Button" type="StaticBody3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.44427, 1.44394, -1.22146)
 collision_layer = 4
 collision_mask = 0
-monitoring = false
-monitorable = false
-script = ExtResource("5_vf2pi")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InWorldButton"]
-shape = SubResource("BoxShape3D_r38si")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3D Button"]
+shape = SubResource("BoxShape3D_2ne71")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="InWorldButton"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71589, -0.530479, 0)
-material = SubResource("StandardMaterial3D_7xg7k")
+[node name="CSGBox3D" type="CSGBox3D" parent="3D Button" node_paths=PackedStringArray("Button")]
+script = ExtResource("5_qa0ks")
+Button = NodePath("..")
+HoverMaterial = SubResource("StandardMaterial3D_h3v6b")
