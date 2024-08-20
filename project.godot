@@ -71,7 +71,3 @@ Interact={
 3d_render/layer_20="EditorHelpers"
 3d_physics/layer_1="Enviroment"
 3d_physics/layer_2="Player"
-
-[rendering]
-
-renderer/rendering_method="mobile"
