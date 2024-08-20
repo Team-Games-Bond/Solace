@@ -13,7 +13,6 @@ public partial class InWorldButtonAppearance : GeometryInstance3D
 	}
 	public void Highlight()
 	{
-		GD.Print("Button");
 		MaterialOverride = HoverMaterial;
 	}
 	public void Unhighlight()
