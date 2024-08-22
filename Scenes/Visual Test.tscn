@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://bjch18j6ma5fo"]
+
+[ext_resource type="Texture2D" uid="uid://dsb8t88pjudd2" path="res://Textures/volumetric_fog_quad_mesh_texture.webp" id="1_sxu5u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuuxn"]
+shading_mode = 0
+albedo_texture = ExtResource("1_sxu5u")
+billboard_mode = 1
+proximity_fade_enabled = true
+distance_fade_mode = 1
+distance_fade_max_distance = 0.4
+
+[sub_resource type="QuadMesh" id="QuadMesh_a18a0"]
+material = SubResource("StandardMaterial3D_xuuxn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7ub0"]
+albedo_color = Color(0.309799, 0.258182, 0.909681, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6vpml"]
+material = SubResource("StandardMaterial3D_l7ub0")
+size = Vector2(5, 5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rdwqk"]
+
+[sub_resource type="Sky" id="Sky_iwpvx"]
+sky_material = SubResource("ProceduralSkyMaterial_rdwqk")
+
+[sub_resource type="Environment" id="Environment_ik3xp"]
+background_mode = 2
+sky = SubResource("Sky_iwpvx")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qpvq2"]
+noise_type = 2
+metadata/_preview_in_3d_space_ = true
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_pehh1"]
+noise = SubResource("FastNoiseLite_qpvq2")
+
+[sub_resource type="FogMaterial" id="FogMaterial_ercui"]
+density = 4.9282
+emission = Color(0.973535, 0.973535, 0.973535, 1)
+density_texture = SubResource("NoiseTexture3D_pehh1")
+
+[node name="VisualTest" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.175071, -1)
+mesh = SubResource("QuadMesh_a18a0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_6vpml")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ik3xp")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.036588, 1)
+size = Vector3(2, 0.5, 2)
+material = SubResource("FogMaterial_ercui")
