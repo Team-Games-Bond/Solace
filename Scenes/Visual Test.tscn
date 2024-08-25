@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjch18j6ma5fo"]
+[gd_scene load_steps=15 format=3 uid="uid://bjch18j6ma5fo"]
 
 [ext_resource type="Texture2D" uid="uid://dsb8t88pjudd2" path="res://Textures/volumetric_fog_quad_mesh_texture.webp" id="1_sxu5u"]
+[ext_resource type="Shader" uid="uid://dte0gvf2ypmag" path="res://Shaders/Fog Shader.tres" id="2_mbiol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuuxn"]
 shading_mode = 0
@@ -43,6 +44,15 @@ density = 4.9282
 emission = Color(0.973535, 0.973535, 0.973535, 1)
 density_texture = SubResource("NoiseTexture3D_pehh1")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gr2jh"]
+render_priority = 0
+shader = ExtResource("2_mbiol")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_humg5"]
+material = SubResource("ShaderMaterial_gr2jh")
+subdivide_width = 5
+subdivide_depth = 5
+
 [node name="VisualTest" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -59,3 +69,7 @@ environment = SubResource("Environment_ik3xp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.036588, 1)
 size = Vector3(2, 0.5, 2)
 material = SubResource("FogMaterial_ercui")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12881, 0)
+mesh = SubResource("PlaneMesh_humg5")
