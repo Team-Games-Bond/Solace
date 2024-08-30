@@ -1,7 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjch18j6ma5fo"]
+[gd_scene load_steps=18 format=3 uid="uid://bjch18j6ma5fo"]
 
 [ext_resource type="Texture2D" uid="uid://dsb8t88pjudd2" path="res://Textures/volumetric_fog_quad_mesh_texture.webp" id="1_sxu5u"]
 [ext_resource type="Shader" path="res://Shaders/Fog Shader.gdshader" id="2_tw21x"]
+[ext_resource type="Script" path="res://Scripts/Fog.cs" id="3_f6npi"]
+[ext_resource type="Texture2D" uid="uid://c3ttg62fcbgr5" path="res://Textures/Initial.png" id="4_wyq5h"]
+[ext_resource type="Texture2D" uid="uid://duci602t0erb1" path="res://Textures/Overlay.png" id="5_fgqnb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuuxn"]
 shading_mode = 0
@@ -47,7 +50,6 @@ density_texture = SubResource("NoiseTexture3D_pehh1")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gr2jh"]
 render_priority = 0
 shader = ExtResource("2_tw21x")
-shader_parameter/DEPTH_FADE = 1.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_humg5"]
 material = SubResource("ShaderMaterial_gr2jh")
@@ -58,9 +60,11 @@ subdivide_depth = 32
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.175071, -1)
+visible = false
 mesh = SubResource("QuadMesh_a18a0")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("PlaneMesh_6vpml")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -72,6 +76,19 @@ visible = false
 size = Vector3(2, 0.5, 2)
 material = SubResource("FogMaterial_ercui")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." node_paths=PackedStringArray("TransitionTimer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03396, 0)
 mesh = SubResource("PlaneMesh_humg5")
+script = ExtResource("3_f6npi")
+PrimaryTexture = ExtResource("4_wyq5h")
+SecondaryTexture = ExtResource("5_fgqnb")
+TransitionTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="MeshInstance3D3"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.777761, 0.335789, -0.531351, 0, 0.845346, 0.53422, 0.628561, 0.415495, -0.657477, -1.93521, 1.26909, -2.1279)
+projection = 1
+size = 4.39
