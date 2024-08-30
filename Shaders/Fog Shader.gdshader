@@ -18,11 +18,13 @@ float displacement(vec2 uv){
 	return noiseOffset+textureOffset;
 }
 
+varying flat vec3 FLAT_NORMAL;
+
 void vertex() {
 	// Called for every vertex the material is visible on.
 	VERTEX = vec3(VERTEX.x, VERTEX.y+displacement(VERTEX.xz), VERTEX.z);
 	const vec2 e = vec2(0.01, 0);
-	NORMAL = normalize(vec3(displacement(VERTEX.xz-e)-displacement(VERTEX.xz+e), e.x*2.0, displacement(VERTEX.xz-e.yx)-displacement(VERTEX.xz+e.yx)));
+	FLAT_NORMAL = normalize(vec3(displacement(VERTEX.xz-e)-displacement(VERTEX.xz+e), e.x*2.0, displacement(VERTEX.xz-e.yx)-displacement(VERTEX.xz+e.yx)));
 }
 
 void fragment() {
@@ -30,6 +32,7 @@ void fragment() {
 	float depth = textureLod(DEPTH_TEXTURE, SCREEN_UV, 0.0).r;
 	vec4 upos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV*2.0 - 1.0, depth, 1.0);
 	vec3 pixelPosition = upos.xyz/upos.w;
+	NORMAL = FLAT_NORMAL;
 	ALPHA = clamp(DEPTH_FADE*(VERTEX.z-pixelPosition.z), 0.0,1.0);
 }
 
