@@ -64,7 +64,6 @@ visible = false
 mesh = SubResource("QuadMesh_a18a0")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("PlaneMesh_6vpml")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

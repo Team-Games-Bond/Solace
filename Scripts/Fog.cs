@@ -34,7 +34,6 @@ public partial class Fog : MeshInstance3D
 	{
 		if (!TransitionTimer.IsStopped())
 		{
-			GD.Print(1-(TransitionTimer.TimeLeft/TransitionTimer.WaitTime));
 			SetInstanceShaderParameter("SECONDARY_STRENGTH", 1-(TransitionTimer.TimeLeft/TransitionTimer.WaitTime));
 		}
 	}
@@ -53,7 +52,6 @@ public partial class Fog : MeshInstance3D
 		new Task(()=>{
 			var img = ImageTexture.CreateFromImage(Image.CreateFromData(map_width, map_height, false, Image.Format.R8, _primaryImage));
 			SetInstanceShaderParameter("HEIGHT_TEXTURE_STRENGTH", 0);
-			GD.Print("Done");
 		});
 	}
 	
@@ -72,14 +70,14 @@ public partial class Fog : MeshInstance3D
 		int length = target.Length;
 		int remaining = length % Vector<ushort>.Count;
 
-		await targetTask;		
-		await fromTask;
 		ushort[] maxValues = new ushort[Vector<ushort>.Count];
 		for (int j = 0; j<Vector<ushort>.Count; j++)
 		{
 			maxValues[j]=255;
 		}
 		Vector<ushort> maxVector = new Vector<ushort>(maxValues, 0); 
+		await targetTask;		
+		await fromTask;
 		for (int i = 0; i<length-remaining; i += Vector<ushort>.Count)
 		{
 			var targetVector = new Vector<ushort>(targetTask.Result, i);
