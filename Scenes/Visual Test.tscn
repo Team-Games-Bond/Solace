@@ -1,21 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bjch18j6ma5fo"]
+[gd_scene load_steps=11 format=3 uid="uid://bjch18j6ma5fo"]
 
-[ext_resource type="Texture2D" uid="uid://dsb8t88pjudd2" path="res://Textures/volumetric_fog_quad_mesh_texture.webp" id="1_sxu5u"]
 [ext_resource type="Shader" path="res://Shaders/Fog Shader.gdshader" id="2_tw21x"]
 [ext_resource type="Script" path="res://Scripts/Fog.cs" id="3_f6npi"]
-[ext_resource type="Texture2D" uid="uid://c3ttg62fcbgr5" path="res://Textures/Initial.png" id="4_wyq5h"]
-[ext_resource type="Texture2D" uid="uid://duci602t0erb1" path="res://Textures/Overlay.png" id="5_fgqnb"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuuxn"]
-shading_mode = 0
-albedo_texture = ExtResource("1_sxu5u")
-billboard_mode = 1
-proximity_fade_enabled = true
-distance_fade_mode = 1
-distance_fade_max_distance = 0.4
-
-[sub_resource type="QuadMesh" id="QuadMesh_a18a0"]
-material = SubResource("StandardMaterial3D_xuuxn")
+[ext_resource type="Shader" uid="uid://cevs8sgppigxu" path="res://Shaders/Water Shader.tres" id="3_oura3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7ub0"]
 albedo_color = Color(0.309799, 0.258182, 0.909681, 1)
@@ -24,70 +11,67 @@ albedo_color = Color(0.309799, 0.258182, 0.909681, 1)
 material = SubResource("StandardMaterial3D_l7ub0")
 size = Vector2(5, 5)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rdwqk"]
-
-[sub_resource type="Sky" id="Sky_iwpvx"]
-sky_material = SubResource("ProceduralSkyMaterial_rdwqk")
-
-[sub_resource type="Environment" id="Environment_ik3xp"]
-background_mode = 2
-sky = SubResource("Sky_iwpvx")
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_qpvq2"]
-noise_type = 2
-metadata/_preview_in_3d_space_ = true
-
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_pehh1"]
-noise = SubResource("FastNoiseLite_qpvq2")
-
-[sub_resource type="FogMaterial" id="FogMaterial_ercui"]
-density = 4.9282
-emission = Color(0.973535, 0.973535, 0.973535, 1)
-density_texture = SubResource("NoiseTexture3D_pehh1")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gr2jh"]
 render_priority = 0
 shader = ExtResource("2_tw21x")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_humg5"]
 material = SubResource("ShaderMaterial_gr2jh")
-subdivide_width = 32
-subdivide_depth = 32
+size = Vector2(1, 1)
+subdivide_width = 16
+subdivide_depth = 16
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ypdbk"]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edlya"]
+render_priority = 0
+shader = ExtResource("3_oura3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fb2kd"]
+material = SubResource("ShaderMaterial_edlya")
+size = Vector2(1, 1)
 
 [node name="VisualTest" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.175071, -1)
-visible = false
-mesh = SubResource("QuadMesh_a18a0")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_6vpml")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ik3xp")
-
-[node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.036588, 1)
-visible = false
-size = Vector3(2, 0.5, 2)
-material = SubResource("FogMaterial_ercui")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." node_paths=PackedStringArray("TransitionTimer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03396, 0)
-mesh = SubResource("PlaneMesh_humg5")
-script = ExtResource("3_f6npi")
-PrimaryTexture = ExtResource("4_wyq5h")
-SecondaryTexture = ExtResource("5_fgqnb")
-TransitionTimer = NodePath("Timer")
-
-[node name="Timer" type="Timer" parent="MeshInstance3D3"]
-wait_time = 10.0
-one_shot = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.777761, 0.335789, -0.531351, 0, 0.845346, 0.53422, 0.628561, 0.415495, -0.657477, -1.93521, 1.26909, -2.1279)
 projection = 1
 size = 4.39
+
+[node name="Fog Stuff" type="Node3D" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Fog Stuff"]
+mesh = SubResource("PlaneMesh_6vpml")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Fog Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1.03396, 2)
+mesh = SubResource("PlaneMesh_humg5")
+skeleton = NodePath("../..")
+script = ExtResource("3_f6npi")
+
+[node name="Timer" type="Timer" parent="Fog Stuff/MeshInstance3D3"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Water Stuff" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+mesh = SubResource("CylinderMesh_ypdbk")
+skeleton = NodePath("../../Fog Stuff")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Water Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+size = Vector3(1, 0.4, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Water Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -1.8)
+size = Vector3(1, 0.4, 1)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Water Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.9)
+mesh = SubResource("PlaneMesh_fb2kd")
