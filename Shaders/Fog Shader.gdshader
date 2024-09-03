@@ -9,7 +9,7 @@ instance uniform float HEIGHT_TEXTURE_STRENGTH: hint_range(0.0, 256.0) = 1.0;
 instance uniform float DEPTH_FADE: hint_range(0.0, 8.0)=1.0;
 instance uniform float MAX_TRANSPARENCY: hint_range(0.0, 1.0)=0.6;
 
-#include "res://addons/shaderV/rgba/noise/perlin3d.gdshaderinc" 
+#include "res://addons/shaderV/rgba/noise/perlin3d.gdshaderinc"
 
 float displacement(vec2 uv){
 	float noiseOffset = _perlin3dNoiseFunc(vec3(uv*3.0, TIME*0.3) )*0.15;
