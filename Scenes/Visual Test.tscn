@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bjch18j6ma5fo"]
+[gd_scene load_steps=22 format=4 uid="uid://bjch18j6ma5fo"]
 
 [ext_resource type="Texture2D" uid="uid://c3ttg62fcbgr5" path="res://Textures/Initial.png" id="3_02w14"]
 [ext_resource type="Shader" uid="uid://43sid0o4qrvv" path="res://Shaders/Waterfall.tres" id="3_66vxv"]
@@ -8,7 +8,7 @@
 [ext_resource type="Material" uid="uid://whwpat23q0xr" path="res://Materials/FogMaterial.tres" id="5_aoexq"]
 [ext_resource type="Shader" uid="uid://dx2xo44tuo1q8" path="res://Shaders/Water Ripple.tres" id="7_i5q4q"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_c1tem"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_tm5x7"]
 _surfaces = [{
 "aabb": AABB(-1.02941, 0, -1, 2.05882, 1e-05, 2),
 "format": 34359742465,
@@ -67,25 +67,23 @@ albedo_color = Color(0.309799, 0.258182, 0.909681, 1)
 material = SubResource("StandardMaterial3D_l7ub0")
 size = Vector2(5, 5)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d7len"]
-render_priority = 0
-shader = ExtResource("3_oura3")
-
-[sub_resource type="QuadMesh" id="QuadMesh_tps8r"]
-material = SubResource("ShaderMaterial_d7len")
-
-[sub_resource type="MeshTexture" id="MeshTexture_ejhnm"]
-mesh = SubResource("QuadMesh_tps8r")
-base_texture = ExtResource("3_02w14")
-image_size = Vector2(16, 16)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_75wyv"]
 render_priority = 0
 shader = ExtResource("7_i5q4q")
+shader_parameter/Scale = Vector2(0.2, 0.2)
+shader_parameter/Origin = Vector2(2.5, 2.5)
+shader_parameter/Radius = 0.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_n06sd"]
 material = SubResource("ShaderMaterial_75wyv")
 size = Vector2(3.9, 3.9)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qh6mk"]
+render_priority = 0
+shader = ExtResource("3_66vxv")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jwwku"]
+material = SubResource("ShaderMaterial_qh6mk")
 
 [node name="VisualTest" type="Node3D"]
 
@@ -98,7 +96,7 @@ size = 4.39
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Fog Stuff" node_paths=PackedStringArray("TransitionTimer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, -1.03396, 1.4)
-mesh = SubResource("ArrayMesh_c1tem")
+mesh = SubResource("ArrayMesh_tm5x7")
 skeleton = NodePath("../..")
 script = ExtResource("3_f6npi")
 PrimaryTexture = ExtResource("3_02w14")
@@ -114,7 +112,7 @@ one_shot = true
 [node name="Water Stuff" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Water Stuff"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32196, 0.5, 0.547862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30353, 0.5, -1.03978)
 mesh = SubResource("CylinderMesh_ypdbk")
 skeleton = NodePath("../../Fog Stuff")
 
@@ -141,32 +139,35 @@ mesh = SubResource("PlaneMesh_fb2kd")
 mesh = SubResource("PlaneMesh_6vpml")
 skeleton = NodePath("../..")
 
-[node name="Decal" type="Decal" parent="Water Stuff"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.37791)
-texture_albedo = SubResource("MeshTexture_ejhnm")
+[node name="Fountain" type="Node3D" parent="Water Stuff"]
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Water Stuff/Fountain"]
 transform = Transform3D(0.927184, -1.3893e-09, 0.374607, -0.374606, -7.1473e-09, 0.927184, -2.44493e-08, -0.436488, -2.75387e-08, 0, 3, 4.90061)
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D"]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Water Stuff/Fountain/CSGCylinder3D"]
 transform = Transform3D(0.721771, 1.82234e-12, 0, -6.56447e-13, 1.00184, 2.62579e-12, 0, 3.64469e-12, 0.721771, 0, 0, 0)
 operation = 2
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Water Stuff/Fountain"]
 transform = Transform3D(3.70874, 0, 1.49843, 0, 0.5, 0, -1.49843, 0, 3.70874, 0, 0.5, 3)
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D2"]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Water Stuff/Fountain/CSGCylinder3D2"]
 transform = Transform3D(0.871425, 1.82234e-12, 0, -7.92557e-13, 1.00184, 3.17023e-12, 0, 3.64469e-12, 0.871425, 0, 0, 0)
 operation = 2
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 3)
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Water Stuff/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 3)
 mesh = SubResource("PlaneMesh_n06sd")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGMesh3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Water Stuff/Fountain/CSGMesh3D"]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0)
 operation = 2
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGMesh3D/CSGBox3D"]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Water Stuff/Fountain/CSGMesh3D/CSGBox3D"]
 transform = Transform3D(0.807971, 0, 0.326442, 0, 0.500922, 0, -0.326442, 0, 0.807971, 0, 0, 0)
 operation = 2
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Water Stuff/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 3)
+mesh = SubResource("CylinderMesh_jwwku")
+skeleton = NodePath("../..")
