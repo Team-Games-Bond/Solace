@@ -13,7 +13,7 @@ public partial class CameraController : Camera3D
 
 	//Other Variables
 	private float targetDistance;
-	private Camera3D currentCamera;
+	private Camera3D currentCamera; //Not used currently, would be of use if we want to create an animation between cameras
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -21,6 +21,7 @@ public partial class CameraController : Camera3D
 		Size = StartDistance;
 		targetDistance = StartDistance;
 		currentCamera = this;
+		this.MakeCurrent();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,22 +35,24 @@ public partial class CameraController : Camera3D
 		Size = (float)Mathf.Lerp(Size, targetDistance, delta);
 	}
 
-	public void ZoomCamera(float distance) //TODO-----------------------------
+	public void ZoomCamera(float distance)
 	{
 		//Bound by max-min
+		distance = Math.Max(Math.Min(distance, MaxDistance), MinDistance);
+		targetDistance = distance;
 	}
 
-	public void ChangeCamera(Camera3D newCamera) //TODO-----------------------------
+	public void ChangeCamera(Camera3D newCamera)
 	{
-		//Do changing from currentCamera to newCamera
-
+		//Changing to newCamera
+		newCamera.MakeCurrent();
 		currentCamera = newCamera;
 	}
 
-	public void ChangeCamera() //TODO-----------------------------
+	public void ChangeCamera() 
 	{
-		//Do changing from currentCamera to this camera
-
+		//Do changing to this camera
+		this.MakeCurrent();
 		currentCamera = this;	
 	}
 
