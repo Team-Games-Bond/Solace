@@ -1,0 +1,91 @@
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://0s0s8ehnb2vg"]
+
+[sub_resource type="Gradient" id="Gradient_ryb81"]
+offsets = PackedFloat32Array(0, 0.735294, 1)
+colors = PackedColorArray(1, 0.541176, 0, 1, 0.771154, 0.51923, 0.823529, 1, 0.722115, 0.514527, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5t2cf"]
+gradient = SubResource("Gradient_ryb81")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_t7dlv"]
+texture = SubResource("GradientTexture1D_5t2cf")
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_f2pey"]
+expanded_output_ports = [0]
+input_name = "sky_coords"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_j064w"]
+output_port_for_preview = 0
+input_name = "at_cubemap_pass"
+
+[sub_resource type="VisualShaderNodeSwitch" id="VisualShaderNodeSwitch_ouryy"]
+default_input_values = [0, false, 1, Quaternion(1, 1, 1, 1), 2, Quaternion(0, 0, 0, 0)]
+op_type = 5
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ujq48"]
+texture = SubResource("GradientTexture1D_5t2cf")
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_pq6fr"]
+expanded_output_ports = [0]
+input_name = "screen_uv"
+
+[resource]
+code = "shader_type sky;
+uniform sampler2D tex_sky_3;
+uniform sampler2D tex_sky_8;
+
+
+
+void sky() {
+// Input:6
+	bool n_out6p0 = AT_CUBEMAP_PASS;
+
+
+// Input:4
+	vec2 n_out4p0 = SKY_COORDS;
+	float n_out4p2 = n_out4p0.g;
+
+
+// Texture2D:3
+	vec4 n_out3p0 = texture(tex_sky_3, vec2(n_out4p2));
+
+
+// Input:9
+	vec2 n_out9p0 = SCREEN_UV;
+	float n_out9p2 = n_out9p0.g;
+
+
+// Texture2D:8
+	vec4 n_out8p0 = texture(tex_sky_8, vec2(n_out9p2));
+
+
+	vec4 n_out7p0;
+// Switch:7
+	n_out7p0 = mix(n_out8p0, n_out3p0, float(n_out6p0));
+
+
+// Output:0
+	COLOR = vec3(n_out7p0.xyz);
+
+
+}
+"
+mode = 3
+flags/use_half_res_pass = false
+flags/use_quarter_res_pass = false
+flags/disable_fog = false
+flags/use_debanding = false
+nodes/sky/0/position = Vector2(460, 160)
+nodes/sky/3/node = SubResource("VisualShaderNodeTexture_t7dlv")
+nodes/sky/3/position = Vector2(0, 240)
+nodes/sky/4/node = SubResource("VisualShaderNodeInput_f2pey")
+nodes/sky/4/position = Vector2(-460, 260)
+nodes/sky/6/node = SubResource("VisualShaderNodeInput_j064w")
+nodes/sky/6/position = Vector2(-60, -20)
+nodes/sky/7/node = SubResource("VisualShaderNodeSwitch_ouryy")
+nodes/sky/7/position = Vector2(240, 140)
+nodes/sky/8/node = SubResource("VisualShaderNodeTexture_ujq48")
+nodes/sky/8/position = Vector2(0, 480)
+nodes/sky/9/node = SubResource("VisualShaderNodeInput_pq6fr")
+nodes/sky/9/position = Vector2(-360, 500)
+nodes/sky/connections = PackedInt32Array(4, 2, 3, 0, 6, 0, 7, 0, 3, 0, 7, 1, 7, 0, 0, 0, 9, 2, 8, 0, 8, 0, 7, 2)
