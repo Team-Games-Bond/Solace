@@ -1,21 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqld3c2yprika"]
+[gd_scene load_steps=9 format=3 uid="uid://bqld3c2yprika"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_xyye4"]
 [ext_resource type="Script" path="res://Scripts/Sequence.cs" id="2_8luhl"]
 [ext_resource type="Script" path="res://Scripts/Door.cs" id="2_yswuu"]
 [ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Button.tscn" id="3_k1skp"]
+[ext_resource type="PackedScene" uid="uid://checarg1ql6ao" path="res://Scenes/GameObjects/BasicPowerSocket.tscn" id="5_00sn4"]
+[ext_resource type="PackedScene" uid="uid://vwdqmlafqdqy" path="res://Scenes/GameObjects/BoxPickup.tscn" id="6_qpgmn"]
+[ext_resource type="PackedScene" uid="uid://cunwppijkniwm" path="res://Scenes/GameObjects/PowerBoxPickup.tscn" id="7_0jjce"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2gm3"]
 albedo_color = Color(0.99332, 0.315827, 0.0414077, 1)
 
 [node name="Tutorial" type="Node3D"]
 
-[node name="TutorialWorldManager" type="Node" parent="." node_paths=PackedStringArray("room1Door", "room2Door", "room3Door", "room1Sequence")]
+[node name="TutorialWorldManager" type="Node" parent="." node_paths=PackedStringArray("room1Door", "room2Door", "room3Door", "room1Sequence", "room2PowerSocket")]
 script = ExtResource("1_xyye4")
 room1Door = NodePath("../Room 1/Door/Door")
 room2Door = NodePath("../Room 2/Door/Doorway")
 room3Door = NodePath("../Room 3/Door/Door")
 room1Sequence = NodePath("../Room 1/Sequence")
+room2PowerSocket = NodePath("../Room 2/Puzzle/BasicSocket")
 
 [node name="Room 1" type="Node3D" parent="."]
 
@@ -103,6 +107,23 @@ use_collision = true
 size = Vector3(2.98718, 3.31543, 0.0956268)
 material = SubResource("StandardMaterial3D_w2gm3")
 script = ExtResource("2_yswuu")
+
+[node name="Puzzle" type="Node3D" parent="Room 2"]
+
+[node name="BasicSocket" parent="Room 2/Puzzle" instance=ExtResource("5_00sn4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0893695, 0.520511, 7.47915)
+
+[node name="BoxPickup" parent="Room 2/Puzzle" instance=ExtResource("6_qpgmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17821, 0.49195, 2.82479)
+
+[node name="BoxPickup2" parent="Room 2/Puzzle" instance=ExtResource("6_qpgmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2273, 0.448119, 7.24648)
+
+[node name="PowerBoxPickup" parent="Room 2/Puzzle" instance=ExtResource("7_0jjce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36333, 0.502074, 2.56999)
+
+[node name="BoxPickup3" parent="Room 2/Puzzle" instance=ExtResource("6_qpgmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91508, 0.46564, 12.7525)
 
 [node name="Room 3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32.8437)

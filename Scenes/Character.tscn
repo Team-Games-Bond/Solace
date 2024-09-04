@@ -9,16 +9,18 @@
 height = 0.233764
 radius = 0.534782
 
-[node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("PlayerPivot", "ItemMount")]
+[node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("PlayerPivot", "LadderDetector", "ItemMount")]
 collision_layer = 3
 script = ExtResource("1_g771o")
 PlayerPivot = NodePath("PlayerPivot")
+LadderDetector = NodePath("Stair Detector")
 ItemMount = NodePath("PlayerPivot/Player Visuals/ItemMount")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_13pt1")
 
 [node name="PlayerPivot" type="Marker3D" parent="."]
+transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848, 0, 0, 0)
 
 [node name="Player Visuals" type="CSGCylinder3D" parent="PlayerPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.966364, 0, 0, 0, 1, 0, 0, 0)
