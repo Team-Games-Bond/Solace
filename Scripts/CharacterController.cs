@@ -10,7 +10,7 @@ public partial class CharacterController : CharacterBody3D
 
 	[ExportGroup("Controller Setup")]
 	[Export] public Node3D PlayerPivot;
-	[Export] public Area3D LadderDetector;
+	[Export] public Area3D LadderDetector; //If you remove this the turning system breaks... somehow?????
 
 	//Other variables
 	public bool wasOnFloorLastFrame = false; 
