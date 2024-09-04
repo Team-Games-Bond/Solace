@@ -1,62 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cy65g16gt1t43"]
+[gd_scene load_steps=14 format=3 uid="uid://cy65g16gt1t43"]
 
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="1_oifwb"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_ru67i"]
 [ext_resource type="Script" path="res://Scripts/ExampleInteraction.cs" id="3_4jovv"]
 [ext_resource type="Script" path="res://Scripts/CameraInteraction.cs" id="4_blu2e"]
 [ext_resource type="Script" path="res://Scripts/InWorldClickable.cs" id="5_vf2pi"]
-
-[sub_resource type="Animation" id="Animation_jtjrm"]
-resource_name = "Button Prompt Appear"
-length = 0.2
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area3D/Sprite3D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 1, 1, 1)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area3D/Sprite3D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_ac51l"]
-resource_name = "Button Prompt Disappear"
-length = 0.2
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area3D/Sprite3D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.2, 1, 0, 0, 0)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area3D/Sprite3D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_clq28"]
-_data = {
-"Button Prompt Appear": SubResource("Animation_jtjrm"),
-"Button Prompt Disappear": SubResource("Animation_ac51l")
-}
+[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="6_c3ydo"]
+[ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="7_lwlsp"]
+[ext_resource type="Script" path="res://Scenes/ButtonPromptAnimator.cs" id="8_icwt4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3tkrj"]
 size = Vector3(3, 1, 3)
@@ -73,6 +24,9 @@ albedo_color = Color(0, 1, 0.223529, 0.145098)
 shading_mode = 2
 specular_mode = 2
 albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fs6f"]
+albedo_color = Color(0, 0.517647, 1, 1)
 
 [node name="PrototypeLevel" type="Node3D"]
 
@@ -101,17 +55,15 @@ script = ExtResource("1_oifwb")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+visible = false
+cast_shadow = 0
 pixel_size = 0.001
 billboard = 1
+double_sided = false
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("2_ru67i")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_clq28")
-}
+script = ExtResource("8_icwt4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_3tkrj")
@@ -126,6 +78,7 @@ script = ExtResource("3_4jovv")
 
 [node name="Camera3D" type="Camera3D" parent="Area3D"]
 transform = Transform3D(0.707107, 0.353553, -0.612372, 0, 0.866025, 0.5, 0.707107, -0.353553, 0.612372, -3.41527, 3.04008, 4.01948)
+visible = false
 cull_mask = 524287
 projection = 1
 size = 7.0
@@ -145,3 +98,43 @@ shape = SubResource("BoxShape3D_r38si")
 [node name="CSGBox3D" type="CSGBox3D" parent="InWorldButton"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71589, -0.530479, 0)
 material = SubResource("StandardMaterial3D_7xg7k")
+
+[node name="Area3D2" type="Area3D" parent="." node_paths=PackedStringArray("MountPoint", "Item")]
+script = ExtResource("6_c3ydo")
+MountPoint = NodePath("ItemCheck")
+Item = NodePath("ItemCheck/CarryableSphere")
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D2"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.90522, 0)
+cast_shadow = 0
+pixel_size = 0.001
+billboard = 1
+double_sided = false
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("2_ru67i")
+script = ExtResource("8_icwt4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("BoxShape3D_3tkrj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area3D2"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_7wxlv")
+size = Vector3(3, 1, 3)
+
+[node name="ItemCheck" type="Node3D" parent="Area3D2" node_paths=PackedStringArray("socket")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855022, 0)
+script = ExtResource("7_lwlsp")
+ItemKey = "Bee"
+socket = NodePath("..")
+
+[node name="CarryableSphere" type="CSGSphere3D" parent="Area3D2/ItemCheck"]
+material = SubResource("StandardMaterial3D_3fs6f")
+metadata/ItemKey = "Bee"
+
+[connection signal="PromptHide" from="Area3D" to="Area3D/Sprite3D" method="Disappear"]
+[connection signal="PromptShow" from="Area3D" to="Area3D/Sprite3D" method="Appear"]
+[connection signal="InteractionBegin" from="Area3D2" to="Area3D2/ItemCheck" method="Begin"]
+[connection signal="PromptHide" from="Area3D2" to="Area3D2/Sprite3D" method="Disappear"]
+[connection signal="PromptShow" from="Area3D2" to="Area3D2/Sprite3D" method="Appear"]
