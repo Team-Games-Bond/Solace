@@ -24,7 +24,7 @@ public partial class _CLASS_ : _BASE_
     {
     }
 	// Called when parent interactable is interacted with
-    public void Begin()
+    public void Begin(CharacterController player)
     {
 		
     }
