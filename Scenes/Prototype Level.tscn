@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cy65g16gt1t43"]
+[gd_scene load_steps=14 format=3 uid="uid://cy65g16gt1t43"]
 
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="1_oifwb"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_ru67i"]
@@ -72,6 +72,9 @@ albedo_color = Color(0, 1, 0.223529, 0.145098)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3v6b"]
 albedo_color = Color(1, 0.146521, 0.803664, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fs6f"]
+albedo_color = Color(0, 0.517647, 1, 1)
+
 [node name="PrototypeLevel" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -99,17 +102,15 @@ script = ExtResource("1_oifwb")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+visible = false
+cast_shadow = 0
 pixel_size = 0.001
 billboard = 1
+double_sided = false
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("2_ru67i")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_clq28")
-}
+script = ExtResource("8_icwt4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_3tkrj")
@@ -124,6 +125,7 @@ script = ExtResource("3_4jovv")
 
 [node name="Camera3D" type="Camera3D" parent="Area3D"]
 transform = Transform3D(0.707107, 0.353553, -0.612372, 0, 0.866025, 0.5, 0.707107, -0.353553, 0.612372, -3.41527, 3.04008, 4.01948)
+visible = false
 cull_mask = 524287
 projection = 1
 size = 7.0
