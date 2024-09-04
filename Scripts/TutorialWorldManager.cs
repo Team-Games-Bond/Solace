@@ -11,6 +11,7 @@ public partial class TutorialWorldManager : Node
 	[ExportGroup("Listeners")]
 	[Export] public Sequence room1Sequence;
 	[Export] public PlacementMonitor room2PowerSocket;
+	[Export] public Sequence room3Sequence;
 
 	//Other variables
 	bool room1Done = false;
@@ -23,6 +24,7 @@ public partial class TutorialWorldManager : Node
 		room1Sequence.Completed += Room1Completed;
 		room2PowerSocket.ItemPlaced += Room2SocketHandler;
 		room2PowerSocket.ItemRemoved += Room2SocketHandler;
+		room3Sequence.Completed += Room3Completed;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
