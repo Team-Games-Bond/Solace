@@ -12,9 +12,6 @@
 
 [node name="FloorPrompt" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-size = Vector3(6, 1, 6)
-
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1)
 texture_albedo = ExtResource("1_vrr2a")
@@ -46,6 +43,3 @@ script = ExtResource("2_mvhhc")
 Key = 65
 TexturePressed = ExtResource("9_jk088")
 TextureReleased = ExtResource("3_h7fur")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.943547, 0.331239, 0, -0.331239, 0.943547, 0, 1.75285, 3.28066)
