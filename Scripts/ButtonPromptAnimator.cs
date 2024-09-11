@@ -3,10 +3,16 @@ using System;
 
 public partial class ButtonPromptAnimator : Sprite3D
 {
+	[Export] bool AutoAdd = true;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		
+		if (AutoAdd)
+		{
+			var interactable = GetParent<Interactable>();
+			interactable.PromptShow += Appear;
+			interactable.PromptHide += Disappear;
+		}
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

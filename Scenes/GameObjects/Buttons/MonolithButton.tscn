@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3ck6p1xdvhnt"]
+[gd_scene load_steps=10 format=3 uid="uid://b3ck6p1xdvhnt"]
 
 [ext_resource type="Script" path="res://Scripts/Button.cs" id="1_dus0x"]
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="2_noerg"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="3_tgdle"]
+[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_mbyxh"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -80,6 +81,7 @@ billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("3_tgdle")
+script = ExtResource("4_mbyxh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
 root_node = NodePath("../..")
