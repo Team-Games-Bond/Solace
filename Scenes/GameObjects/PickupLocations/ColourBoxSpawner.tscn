@@ -69,11 +69,10 @@ albedo_color = Color(0, 1, 0.223529, 0.145098)
 script = ExtResource("1_gpa1b")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("MountPoint")]
 collision_mask = 2
 script = ExtResource("2_o8lfv")
 MountPoint = NodePath("ItemMount")
-Item = NodePath("")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
