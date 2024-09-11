@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cunwppijkniwm"]
+[gd_scene load_steps=9 format=3 uid="uid://hcb2t4qod38t"]
 
-[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="1_hwx5a"]
-[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_31wmf"]
+[ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="1_van7s"]
+[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="2_q8cwg"]
+[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="3_w2v2v"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -55,25 +56,23 @@ _data = {
 "Button Prompt Disappear": SubResource("Animation_ac51l")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rqwqr"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbdka"]
 size = Vector3(2.5, 1, 2.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q11rr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqce2"]
 transparency = 1
 shading_mode = 0
 diffuse_mode = 3
 albedo_color = Color(0, 1, 0.223529, 0.145098)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3takf"]
-albedo_color = Color(0, 0.686275, 1, 1)
+[node name="BasicSocket" type="Node3D" node_paths=PackedStringArray("socket")]
+script = ExtResource("1_van7s")
+socket = NodePath("Area3D")
 
-[node name="PowerBoxPickup" type="Node3D"]
-
-[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("MountPoint")]
 collision_mask = 2
-script = ExtResource("1_hwx5a")
+script = ExtResource("2_q8cwg")
 MountPoint = NodePath("ItemMount")
-Item = NodePath("ItemMount/PowerBox")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -81,7 +80,7 @@ pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("2_31wmf")
+texture = ExtResource("3_w2v2v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
 root_node = NodePath("../..")
@@ -90,16 +89,11 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("BoxShape3D_rqwqr")
+shape = SubResource("BoxShape3D_gbdka")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
 layers = 524288
-material_override = SubResource("StandardMaterial3D_q11rr")
+material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(2.5, 1, 2.5)
 
 [node name="ItemMount" type="Node3D" parent="Area3D"]
-
-[node name="PowerBox" type="CSGBox3D" parent="Area3D/ItemMount"]
-size = Vector3(0.86, 0.86, 0.86)
-material = SubResource("StandardMaterial3D_3takf")
-metadata/ItemKey = "PowerBox"
