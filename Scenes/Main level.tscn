@@ -124,7 +124,7 @@ operation = 2
 size = Vector3(2.04495, 3.13525, 2.15234)
 
 [node name="Maze" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.2114, 3.8147e-06, -5.81019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.7742, 3.8147e-06, -5.81019)
 
 [node name="Floor" type="CSGBox3D" parent="Maze"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3012, -10, 11.6841)

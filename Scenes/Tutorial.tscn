@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://br5h8ge02bxtd"]
+[gd_scene load_steps=27 format=3 uid="uid://br5h8ge02bxtd"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_xyye4"]
 [ext_resource type="Script" path="res://Scripts/Sequence.cs" id="2_8luhl"]
@@ -9,11 +9,81 @@
 [ext_resource type="PackedScene" uid="uid://checarg1ql6ao" path="res://Scenes/GameObjects/Sockets/BasicPowerSocket.tscn" id="5_00sn4"]
 [ext_resource type="PackedScene" uid="uid://vwdqmlafqdqy" path="res://Scenes/GameObjects/PickupLocations/BoxPickup.tscn" id="6_qpgmn"]
 [ext_resource type="PackedScene" uid="uid://cunwppijkniwm" path="res://Scenes/GameObjects/PickupLocations/PowerBoxPickup.tscn" id="7_0jjce"]
+[ext_resource type="Material" uid="uid://bhwyqypds6eyc" path="res://Materials/Grey.tres" id="7_dqnjp"]
 [ext_resource type="PackedScene" uid="uid://l24j71pyvwho" path="res://Scenes/GameObjects/Buttons/WallButton.tscn" id="8_oukdv"]
 [ext_resource type="PackedScene" uid="uid://cr1efcuqdirgs" path="res://Scenes/GameObjects/Sockets/WallSocket.tscn" id="9_c1kwo"]
+[ext_resource type="Material" uid="uid://b8aoddagdu0hl" path="res://Materials/ImagePuzzleMaterials/blue.tres" id="11_2sqbi"]
+[ext_resource type="Material" uid="uid://dagxh04aellbm" path="res://Materials/ImagePuzzleMaterials/green.tres" id="12_k6tl0"]
+[ext_resource type="Material" uid="uid://c405lqe1cf5" path="res://Materials/ImagePuzzleMaterials/red.tres" id="13_78nsa"]
+[ext_resource type="Material" uid="uid://cqfcpy0i7guyj" path="res://Materials/ImagePuzzleMaterials/unrecognised.tres" id="14_xq6da"]
+[ext_resource type="Material" uid="uid://u8rkn3x78ttp" path="res://Materials/ImagePuzzleMaterials/white.tres" id="15_jx8qk"]
+[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="18_ets47"]
+[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="19_cnyas"]
+[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="20_fvuke"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccuj1"]
 albedo_color = Color(0.992157, 0.317647, 0.0431373, 1)
+
+[sub_resource type="Animation" id="Animation_jtjrm"]
+resource_name = "Button Prompt Appear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 1, 1, 1)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ac51l"]
+resource_name = "Button Prompt Disappear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.2, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_clq28"]
+_data = {
+"Button Prompt Appear": SubResource("Animation_jtjrm"),
+"Button Prompt Disappear": SubResource("Animation_ac51l")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3clg"]
+size = Vector3(2.5, 1, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3e7l"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(0, 1, 0.223529, 0.145098)
 
 [node name="Tutorial" type="Node3D"]
 
@@ -69,13 +139,28 @@ script = ExtResource("2_yswuu")
 
 [node name="Sequence" type="Node3D" parent="Room 1" node_paths=PackedStringArray("sequenceButtons")]
 script = ExtResource("2_8luhl")
-sequenceButtons = []
+sequenceButtons = [NodePath("Button"), NodePath("Button2")]
 
 [node name="Button" parent="Room 1/Sequence" instance=ExtResource("3_k1skp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1237, 0.483125, 14)
 
 [node name="Button2" parent="Room 1/Sequence" instance=ExtResource("3_k1skp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79168, 0.483, 14)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Room 1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.11273, -0.424074, 11.9976)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Room 1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.85303, -0.424074, 11.8459)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Room 1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.85303, -0.424074, 12.1494)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
 
 [node name="Room 2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.4665)
@@ -149,6 +234,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80824, 1.98057, 6.10211)
 use_collision = true
 size = Vector3(0.341034, 4.43018, 13.2042)
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Back Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.288477, 0, -2.54314)
+material = ExtResource("11_2sqbi")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Room 3/Back Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.288477, 0, -0.858044)
+material = ExtResource("12_k6tl0")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Room 3/Back Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.288477, 0, 0.790138)
+material = ExtResource("13_78nsa")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Room 3/Back Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.288477, 0, 2.47504)
+material = ExtResource("14_xq6da")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Room 3/Back Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.288477, 0, 4.10017)
+material = ExtResource("15_jx8qk")
+
 [node name="CSGBox3D" type="CSGBox3D" parent="Room 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83151, 1.84753, 15.797)
 use_collision = true
@@ -185,7 +290,7 @@ script = ExtResource("2_yswuu")
 [node name="ButtonSequence" type="Node3D" parent="Room 3" node_paths=PackedStringArray("sequenceButtons")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.32598, 0, 15.5657)
 script = ExtResource("2_8luhl")
-sequenceButtons = []
+sequenceButtons = [NodePath("WallButton"), NodePath("WallButton3"), NodePath("WallButton5"), NodePath("WallButton4"), NodePath("WallButton2")]
 
 [node name="WallButton" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11246, 0, 0)
@@ -223,20 +328,352 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33423, 0, 0)
 [node name="Boxes" type="Node3D" parent="Room 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.476829, 0)
 
-[node name="BoxPickup" parent="Room 3/Boxes" instance=ExtResource("6_qpgmn")]
+[node name="BoxPickup" type="Node3D" parent="Room 3/Boxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96886, 0, 1.28527)
 
-[node name="BoxPickup2" parent="Room 3/Boxes" instance=ExtResource("6_qpgmn")]
+[node name="Area3D" type="Area3D" parent="Room 3/Boxes/BoxPickup" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("18_ets47")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/BoxItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Room 3/Boxes/BoxPickup/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("19_cnyas")
+script = ExtResource("20_fvuke")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room 3/Boxes/BoxPickup/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Room 3/Boxes/BoxPickup/Area3D"]
+
+[node name="BoxItem" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup/Area3D/ItemMount"]
+size = Vector3(0.86, 0.86, 0.86)
+material = ExtResource("15_jx8qk")
+metadata/ItemKey = "Box"
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.171253, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.140236, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="BoxPickup2" type="Node3D" parent="Room 3/Boxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.824853, 0, 3.09631)
 
-[node name="BoxPickup3" parent="Room 3/Boxes" instance=ExtResource("6_qpgmn")]
+[node name="Area3D" type="Area3D" parent="Room 3/Boxes/BoxPickup2" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("18_ets47")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/BoxItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Room 3/Boxes/BoxPickup2/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("19_cnyas")
+script = ExtResource("20_fvuke")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup2/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room 3/Boxes/BoxPickup2/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup2/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Room 3/Boxes/BoxPickup2/Area3D"]
+
+[node name="BoxItem" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup2/Area3D/ItemMount"]
+size = Vector3(0.86, 0.86, 0.86)
+material = ExtResource("13_78nsa")
+metadata/ItemKey = "Box"
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup2/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.317561, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup2/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.140236, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup2/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0190982, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup2/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.179449, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup2/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.337309, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="BoxPickup3" type="Node3D" parent="Room 3/Boxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.68101, 0, 8.9477)
 
-[node name="BoxPickup4" parent="Room 3/Boxes" instance=ExtResource("6_qpgmn")]
+[node name="Area3D" type="Area3D" parent="Room 3/Boxes/BoxPickup3" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("18_ets47")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/BoxItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Room 3/Boxes/BoxPickup3/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("19_cnyas")
+script = ExtResource("20_fvuke")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup3/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room 3/Boxes/BoxPickup3/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup3/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Room 3/Boxes/BoxPickup3/Area3D"]
+
+[node name="BoxItem" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup3/Area3D/ItemMount"]
+size = Vector3(0.86, 0.86, 0.86)
+material = ExtResource("11_2sqbi")
+metadata/ItemKey = "Box"
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup3/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.00735378, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="BoxPickup4" type="Node3D" parent="Room 3/Boxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37145, 4.76837e-07, 7.05783)
 
-[node name="BoxPickup5" parent="Room 3/Boxes" instance=ExtResource("6_qpgmn")]
+[node name="Area3D" type="Area3D" parent="Room 3/Boxes/BoxPickup4" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("18_ets47")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/BoxItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Room 3/Boxes/BoxPickup4/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("19_cnyas")
+script = ExtResource("20_fvuke")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup4/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room 3/Boxes/BoxPickup4/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup4/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Room 3/Boxes/BoxPickup4/Area3D"]
+
+[node name="BoxItem" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup4/Area3D/ItemMount"]
+size = Vector3(0.86, 0.86, 0.86)
+material = ExtResource("12_k6tl0")
+metadata/ItemKey = "Box"
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup4/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.247523, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup4/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00341582, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup4/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.219149, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="BoxPickup5" type="Node3D" parent="Room 3/Boxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.366692, 0, 10.818)
+
+[node name="Area3D" type="Area3D" parent="Room 3/Boxes/BoxPickup5" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("18_ets47")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/BoxItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Room 3/Boxes/BoxPickup5/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("19_cnyas")
+script = ExtResource("20_fvuke")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup5/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room 3/Boxes/BoxPickup5/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup5/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Room 3/Boxes/BoxPickup5/Area3D"]
+
+[node name="BoxItem" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup5/Area3D/ItemMount"]
+size = Vector3(0.86, 0.86, 0.86)
+material = ExtResource("14_xq6da")
+metadata/ItemKey = "Box"
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup5/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.290679, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup5/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0860558, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup5/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.108305, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup5/Area3D/ItemMount/BoxItem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.299765, 0, 0.0130272)
+size = Vector3(0.129333, 0.874084, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="ButtonSymbols" type="Node3D" parent="Room 3"]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.811476, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.447219, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.779411, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.65908, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.9146, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.15245, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.98521, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.16103, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.3264, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.50407, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.35024, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.51105, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.67223, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.82862, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.98302, 0.709939, 15.8706)
+size = Vector3(0.129333, 0.918091, 0.456543)
+material = ExtResource("7_dqnjp")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.604412, -0.733996, -0.309734, -0.735226, -0.663637, 0.137948, -0.306804, 0.144347, -0.940763, 0, 0, 0)
