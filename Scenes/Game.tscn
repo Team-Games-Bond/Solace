@@ -23,10 +23,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0282249, 1.23759, -0.53864
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -2, 0, 2)
 
 [node name="MainLevel" parent="." instance=ExtResource("3_g7ck6")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 115.508, -4.76837e-06, -63.825)
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 115.58, -3.8147e-06, -63.7278)
 
 [node name="Doors" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8148, 2.38419e-07, -34.6316)
@@ -96,3 +95,39 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="Node3D2" type="Node3D" parent="Doors"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 112.264, 2.70577, -96.4416)
+
+[node name="Area3D5" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 50.0319, -7.15255e-07, -90.9699)
+script = ExtResource("4_yipme")
+destination = NodePath("../Node3D5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Area3D5"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.35101, 0)
+shape = SubResource("BoxShape3D_dwslm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/Area3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_2oiyo")
+size = Vector3(3, 3, 2.5)
+
+[node name="Node3D4" type="Node3D" parent="Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.941, 1.238, -90.813)
+
+[node name="Area3D6" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 36.4358, -7.15256e-07, -105.489)
+script = ExtResource("4_yipme")
+destination = NodePath("../Node3D4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Area3D6"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.35101, 0)
+shape = SubResource("BoxShape3D_dwslm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/Area3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_2oiyo")
+size = Vector3(3, 3, 2.5)
+
+[node name="Node3D5" type="Node3D" parent="Doors"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36.0743, 1.238, -105.736)

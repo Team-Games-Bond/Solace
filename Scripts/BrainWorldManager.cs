@@ -6,10 +6,12 @@ public partial class BrainWorldManager : Node
 	[ExportGroup("Object References")]
 	[Export] public Door imagePuzzleFlag;
 	[Export] public Door simonSaysFlag;
+	[Export] public Door clutterRoomFlag;
 
 	[ExportGroup("Listeners")]
 	[Export] public ImagePuzzleManager imagePuzzle;
 	[Export] public SimonSaysManager simonSays;
+	[Export] public ClutterRoomManager clutterRoom;
 
 	//Other variables
 	bool imagePuzzleDone = false;
@@ -45,5 +47,12 @@ public partial class BrainWorldManager : Node
 		simonSaysDone = true;
 		
 		simonSays.setActive(false);
+	}
+
+	private void clutterRoomCompleted()
+	{
+		GD.Print("Clutter Room Completed");
+		clutterRoomFlag.Open();
+		clutterRoomDone = true;
 	}
 }

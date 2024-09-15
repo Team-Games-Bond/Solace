@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://un31ok75dwaf"]
+[gd_scene load_steps=32 format=3 uid="uid://un31ok75dwaf"]
 
 [ext_resource type="Script" path="res://Scripts/ImagePuzzleManager.cs" id="1_bvm8w"]
 [ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="1_lhik3"]
@@ -14,6 +14,12 @@
 [ext_resource type="Material" uid="uid://b8aoddagdu0hl" path="res://Materials/ImagePuzzleMaterials/blue.tres" id="6_73vr8"]
 [ext_resource type="Material" uid="uid://dagxh04aellbm" path="res://Materials/ImagePuzzleMaterials/green.tres" id="7_r6t2i"]
 [ext_resource type="Script" path="res://Scripts/SimonSaysManager.cs" id="13_j6mjl"]
+[ext_resource type="PackedScene" uid="uid://hcb2t4qod38t" path="res://Scenes/GameObjects/Sockets/BasicSocket.tscn" id="15_eahny"]
+[ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="15_msgn2"]
+[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="16_j4va3"]
+[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="17_8eqao"]
+[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="18_gfamk"]
+[ext_resource type="Script" path="res://Scripts/LockedItem.cs" id="19_k22ro"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6oa5"]
 albedo_color = Color(0, 0, 0.772549, 1)
@@ -27,12 +33,81 @@ albedo_color = Color(0.412152, 0.412152, 0.412152, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hho37"]
 albedo_color = Color(0.99332, 0.315827, 0.0414077, 1)
 
-[node name="MainLevel" type="Node3D" node_paths=PackedStringArray("imagePuzzleFlag", "simonSaysFlag", "imagePuzzle", "simonSays")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yp77u"]
+albedo_color = Color(1, 0.27451, 1, 1)
+
+[sub_resource type="Animation" id="Animation_jtjrm"]
+resource_name = "Button Prompt Appear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 1, 1, 1)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ac51l"]
+resource_name = "Button Prompt Disappear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.2, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_clq28"]
+_data = {
+"Button Prompt Appear": SubResource("Animation_jtjrm"),
+"Button Prompt Disappear": SubResource("Animation_ac51l")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3clg"]
+size = Vector3(2.5, 1, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3e7l"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(0, 1, 0.223529, 0.145098)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nk5vm"]
+albedo_color = Color(0.709804, 0.247059, 1, 1)
+
+[node name="MainLevel" type="Node3D" node_paths=PackedStringArray("imagePuzzleFlag", "simonSaysFlag", "clutterRoomFlag", "imagePuzzle", "simonSays", "clutterRoom")]
 script = ExtResource("1_quknv")
 imagePuzzleFlag = NodePath("Maze/Flag")
 simonSaysFlag = NodePath("Simon Says/Flag")
+clutterRoomFlag = NodePath("Clutter Room/Flag")
 imagePuzzle = NodePath("Maze/ImagePuzzle")
 simonSays = NodePath("Simon Says")
+clutterRoom = NodePath("Clutter Room")
 
 [node name="Main Terrain" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91608, 0, -30.2127)
@@ -767,8 +842,171 @@ size = Vector3(2.98718, 3.31543, 0.0956268)
 material = SubResource("StandardMaterial3D_hho37")
 script = ExtResource("4_s7alk")
 
-[node name="Clutter Room" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91608, 0, -30.2127)
+[node name="Clutter Room" type="Node3D" parent="." node_paths=PackedStringArray("Sockets")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 94.0371, -9.53674e-07, -24.9734)
+script = ExtResource("15_msgn2")
+Sockets = [NodePath("Room sockets/Locked Socket/BasicSocket"), NodePath("Room sockets/Locked Socket/BasicSocket2"), NodePath("Clutter Pile/TablePickup/Area3D/ItemMount/TableItem/BasicSocket")]
+LockKeys = Array[String](["Table", "Box", "Box"])
+
+[node name="Floor" type="CSGBox3D" parent="Clutter Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+material_override = ExtResource("2_e25pp")
+use_collision = true
+size = Vector3(20, 20, 20)
+material = SubResource("StandardMaterial3D_56gm1")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Clutter Room/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27901, 9.64143, -1.30362)
+size = Vector3(2.5, 1, 2.5)
+material = SubResource("StandardMaterial3D_yp77u")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Clutter Room/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72864, 9.64143, -1.30362)
+size = Vector3(2.5, 1, 2.5)
+material = SubResource("StandardMaterial3D_yp77u")
+
+[node name="Clutter Pile" type="Node3D" parent="Clutter Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.16916, 0.48198, -2.73062)
+
+[node name="TablePickup" type="Node3D" parent="Clutter Room/Clutter Pile"]
+
+[node name="Area3D" type="Area3D" parent="Clutter Room/Clutter Pile/TablePickup" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("16_j4va3")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/TableItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Clutter Room/Clutter Pile/TablePickup/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("17_8eqao")
+script = ExtResource("18_gfamk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clutter Room/Clutter Pile/TablePickup/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clutter Room/Clutter Pile/TablePickup/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Clutter Room/Clutter Pile/TablePickup/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Clutter Room/Clutter Pile/TablePickup/Area3D"]
+
+[node name="TableItem" type="CSGBox3D" parent="Clutter Room/Clutter Pile/TablePickup/Area3D/ItemMount" node_paths=PackedStringArray("Sockets", "Buttons")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0165272, 0, -0.0160351)
+size = Vector3(2.50351, 0.86, 2.06949)
+material = SubResource("StandardMaterial3D_nk5vm")
+script = ExtResource("19_k22ro")
+Sockets = [NodePath("BasicSocket")]
+ItemKeys = Array[String](["Box"])
+Buttons = []
+metadata/ItemKey = "Table"
+
+[node name="BasicSocket" parent="Clutter Room/Clutter Pile/TablePickup/Area3D/ItemMount/TableItem" instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456927, 1.02136, 0.126221)
+
+[node name="BoxPickup" type="Node3D" parent="Clutter Room/Clutter Pile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.17092)
+
+[node name="Area3D" type="Area3D" parent="Clutter Room/Clutter Pile/BoxPickup" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("16_j4va3")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/BoxItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("17_8eqao")
+script = ExtResource("18_gfamk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D"]
+
+[node name="BoxItem" type="CSGBox3D" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D/ItemMount"]
+size = Vector3(0.86, 0.86, 0.86)
+material = SubResource("StandardMaterial3D_nk5vm")
+metadata/ItemKey = "Box"
+
+[node name="BoxPickup2" type="Node3D" parent="Clutter Room/Clutter Pile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60772, 0, -3.17092)
+
+[node name="Area3D" type="Area3D" parent="Clutter Room/Clutter Pile/BoxPickup2" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("16_j4va3")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/BoxItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("17_8eqao")
+script = ExtResource("18_gfamk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D"]
+
+[node name="BoxItem" type="CSGBox3D" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D/ItemMount"]
+size = Vector3(0.86, 0.86, 0.86)
+material = SubResource("StandardMaterial3D_nk5vm")
+metadata/ItemKey = "Box"
+
+[node name="Room sockets" type="Node3D" parent="Clutter Room"]
+
+[node name="Locked Socket" type="Node3D" parent="Clutter Room/Room sockets"]
+
+[node name="BasicSocket" parent="Clutter Room/Room sockets/Locked Socket" instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62637, 0, -1.19555)
+
+[node name="BasicSocket2" parent="Clutter Room/Room sockets/Locked Socket" instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31873, 0, -1.26413)
+
+[node name="Flag" type="CSGBox3D" parent="Clutter Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87167, 1.22455, -6.17608)
+size = Vector3(2.98718, 3.31543, 0.0956268)
+material = SubResource("StandardMaterial3D_hho37")
+script = ExtResource("4_s7alk")
 
 [node name="Exit Dias" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91608, 0, -30.2127)

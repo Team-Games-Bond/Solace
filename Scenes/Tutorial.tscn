@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://br5h8ge02bxtd"]
+[gd_scene load_steps=27 format=3 uid="uid://br5h8ge02bxtd"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_xyye4"]
 [ext_resource type="Script" path="res://Scripts/Sequence.cs" id="2_8luhl"]
@@ -20,7 +20,6 @@
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="18_ets47"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="19_cnyas"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="20_fvuke"]
-[ext_resource type="PackedScene" uid="uid://c3ksxh42ku6b4" path="res://Scenes/FloorPrompt.tscn" id="21_7x25s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccuj1"]
 albedo_color = Color(0.992157, 0.317647, 0.0431373, 1)
@@ -600,6 +599,7 @@ size = Vector3(0.129333, 0.874084, 0.456543)
 material = ExtResource("7_dqnjp")
 
 [node name="ButtonSymbols" type="Node3D" parent="Room 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01326, 0.0165043, 9.14745)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.811476, 0.709939, 15.8706)
@@ -675,9 +675,6 @@ material = ExtResource("7_dqnjp")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.98302, 0.709939, 15.8706)
 size = Vector3(0.129333, 0.918091, 0.456543)
 material = ExtResource("7_dqnjp")
-
-[node name="FloorPrompt" parent="Room 3/ButtonSymbols" instance=ExtResource("21_7x25s")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.805638, -0.488067, -26.2822)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.604412, -0.733996, -0.309734, -0.735226, -0.663637, 0.137948, -0.306804, 0.144347, -0.940763, 0, 0, 0)

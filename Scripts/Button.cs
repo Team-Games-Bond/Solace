@@ -10,12 +10,12 @@ public partial class Button : Node3D
 	public delegate void ButtonPressEventHandler(Button button);
 	[ExportGroup("Internal Setup")]
 	[Export] Interactable interactable;
+	[Export] bool isActive = true;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		interactable.InteractionBegin += Begin;
-		interactable.InteractionEnd += End;
 	}
 	public override void _Process(double delta)
 	{
@@ -25,10 +25,10 @@ public partial class Button : Node3D
 	{
 		EmitSignal(SignalName.ButtonPress, this);
 	}
-	// Called when interaction ended
-	public void End()
+	
+	public void SetActive(bool active)
 	{
-		
+		isActive = active;
 	}
 }
 
