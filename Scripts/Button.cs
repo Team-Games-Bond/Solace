@@ -23,12 +23,13 @@ public partial class Button : Node3D
 	// Called when parent interactable is interacted with
 	public void Begin(CharacterController player)
 	{
-		EmitSignal(SignalName.ButtonPress, this);
+		if(isActive) EmitSignal(SignalName.ButtonPress, this);
 	}
 	
 	public void SetActive(bool active)
 	{
 		isActive = active;
+		interactable.SetActive(active);
 	}
 }
 

@@ -19,7 +19,13 @@ public partial class TeleportDoor : Area3D
 
 	private void Enter(Node3D body)
 	{
-		CharacterController player = (CharacterController)body;
+		CharacterController player = null;
+		try {player = (CharacterController)body; } 
+		catch (Exception e) 
+		{
+			GD.PushWarning(e);
+			return;
+		}
 
 		if(player.wasJustTeleported) return;
 		
