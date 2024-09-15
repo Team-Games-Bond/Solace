@@ -599,7 +599,7 @@ size = Vector3(0.129333, 0.874084, 0.456543)
 material = ExtResource("7_dqnjp")
 
 [node name="ButtonSymbols" type="Node3D" parent="Room 3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01326, 0.0165043, 9.14745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0237558, 0.0165043, 0.00541306)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Room 3/ButtonSymbols"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.811476, 0.709939, 15.8706)

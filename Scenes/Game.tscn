@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/TeleportDoor.cs" id="4_yipme"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwslm"]
-size = Vector3(3, 3, 1)
+size = Vector3(2.11691, 3, 1.57356)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oiyo"]
 transparency = 1
@@ -27,107 +27,107 @@ transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107
 
 [node name="Doors" type="Node3D" parent="."]
 
-[node name="Area3D" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+[node name="TutorialExit" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8148, 2.38419e-07, -34.6316)
 script = ExtResource("4_yipme")
-destination = NodePath("../Node3D")
+destination = NodePath("../TutorialEntrance2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/TutorialExit"]
 transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.35101, 0)
 shape = SubResource("BoxShape3D_dwslm")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Doors/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/TutorialExit"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 2.5)
 
-[node name="Area3D2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+[node name="MazeEntrance2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 112.718, 1.59077, -96.7895)
 script = ExtResource("4_yipme")
-destination = NodePath("../Node3D3")
+destination = NodePath("../MazeExit")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/MazeEntrance2"]
 transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.351, 0)
 shape = SubResource("BoxShape3D_dwslm")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Doors/Area3D2"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/MazeEntrance2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 1)
 
-[node name="Area3D3" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+[node name="MazeExit2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 116.87, 0.122579, -103.452)
 script = ExtResource("4_yipme")
-destination = NodePath("../Node3D2")
+destination = NodePath("../MazeEntrance")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Area3D3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/MazeExit2"]
 transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.351, 0)
 shape = SubResource("BoxShape3D_dwslm")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Doors/Area3D3"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/MazeExit2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 1)
 
-[node name="Area3D4" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+[node name="TutorialEntrance" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 88.9794, 4.05312e-06, -54.4899)
 script = ExtResource("4_yipme")
-destination = NodePath("../Node3D")
+destination = NodePath("../TutorialEntrance2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Area3D4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/TutorialEntrance"]
 transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.35101, 0)
 shape = SubResource("BoxShape3D_dwslm")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Doors/Area3D4"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/TutorialEntrance"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 2.5)
 
-[node name="Node3D" type="Node3D" parent="Doors"]
+[node name="TutorialEntrance2" type="Node3D" parent="Doors"]
 transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 88.8945, 1.238, -55.2757)
 
-[node name="Node3D3" type="Node3D" parent="Doors"]
+[node name="MazeExit" type="Node3D" parent="Doors"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 117.434, 1.238, -103.986)
 
-[node name="Node3D2" type="Node3D" parent="Doors"]
+[node name="MazeEntrance" type="Node3D" parent="Doors"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 112.264, 2.70577, -96.4416)
 
-[node name="Area3D5" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+[node name="ClutterRoomEntrance2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 50.0319, -7.15255e-07, -90.9699)
 script = ExtResource("4_yipme")
-destination = NodePath("../Node3D5")
+destination = NodePath("../ClutterRoomExit2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Area3D5"]
-transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.35101, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/ClutterRoomEntrance2"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, -0.252777, 1.35101, 0.477654)
 shape = SubResource("BoxShape3D_dwslm")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Doors/Area3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/ClutterRoomEntrance2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208374, 1.351, 0.37793)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_2oiyo")
-size = Vector3(3, 3, 2.5)
+size = Vector3(2.11938, 3, 1.74414)
 
-[node name="Node3D4" type="Node3D" parent="Doors"]
+[node name="ClutterRoomEntrance" type="Node3D" parent="Doors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.941, 1.238, -90.813)
 
-[node name="Area3D6" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 36.4358, -7.15256e-07, -105.489)
+[node name="ClutterRoomExit" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 37.472, -7.15256e-07, -106.473)
 script = ExtResource("4_yipme")
-destination = NodePath("../Node3D4")
+destination = NodePath("../ClutterRoomEntrance")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/Area3D6"]
-transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.35101, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/ClutterRoomExit"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, -0.00616455, 1.35101, -0.389191)
 shape = SubResource("BoxShape3D_dwslm")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Doors/Area3D6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/ClutterRoomExit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026001, 1.351, -0.359955)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_2oiyo")
-size = Vector3(3, 3, 2.5)
+size = Vector3(3.96704, 3, 2.03607)
 
-[node name="Node3D5" type="Node3D" parent="Doors"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36.0743, 1.238, -105.736)
+[node name="ClutterRoomExit2" type="Node3D" parent="Doors"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 37.1105, 1.238, -106.72)

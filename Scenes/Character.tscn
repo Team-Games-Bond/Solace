@@ -41,6 +41,7 @@ size = 6.857
 near = 0.004
 far = 100.0
 script = ExtResource("2_qsldj")
+StartDistance = 15.0
 CharacterController = NodePath("..")
 
 [node name="Stair Detector" type="Area3D" parent="."]

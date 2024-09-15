@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://un31ok75dwaf"]
+[gd_scene load_steps=38 format=3 uid="uid://un31ok75dwaf"]
 
 [ext_resource type="Script" path="res://Scripts/ImagePuzzleManager.cs" id="1_bvm8w"]
 [ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="1_lhik3"]
@@ -23,6 +23,9 @@
 [ext_resource type="Script" path="res://Scripts/ExitDiasManager.cs" id="21_7b46n"]
 [ext_resource type="PackedScene" uid="uid://l24j71pyvwho" path="res://Scenes/GameObjects/Buttons/WallButton.tscn" id="22_jga8s"]
 [ext_resource type="Script" path="res://Scripts/Sequence.cs" id="22_vohlp"]
+[ext_resource type="Script" path="res://Scripts/FogManager.cs" id="24_teicv"]
+[ext_resource type="PackedScene" uid="uid://checarg1ql6ao" path="res://Scenes/GameObjects/Sockets/BasicPowerSocket.tscn" id="25_lydc0"]
+[ext_resource type="PackedScene" uid="uid://cunwppijkniwm" path="res://Scenes/GameObjects/PickupLocations/PowerBoxPickup.tscn" id="26_7pnpm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6oa5"]
 albedo_color = Color(0, 0, 0.772549, 1)
@@ -103,14 +106,27 @@ albedo_color = Color(0, 1, 0.223529, 0.145098)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nk5vm"]
 albedo_color = Color(0.709804, 0.247059, 1, 1)
 
-[node name="MainLevel" type="Node3D" node_paths=PackedStringArray("imagePuzzleFlag", "simonSaysFlag", "clutterRoomFlag", "imagePuzzle", "simonSays", "clutterRoom")]
+[node name="MainLevel" type="Node3D" node_paths=PackedStringArray("imagePuzzleFlag", "simonSaysFlag", "clutterRoomFlag", "imagePuzzleCover", "simonSaysCover", "clutterRoomCover", "waterCover", "river", "FogManager", "powerSocketDias", "powerSocketMaze", "powerSocketMiddle", "powerSocketBridge", "powerSocketTree", "powerSocketWater", "imagePuzzle", "simonSays", "clutterRoom", "exitDias")]
 script = ExtResource("1_quknv")
 imagePuzzleFlag = NodePath("Maze/Flag")
 simonSaysFlag = NodePath("Simon Says/Flag")
 clutterRoomFlag = NodePath("Clutter Room/Flag")
+imagePuzzleCover = NodePath("Power boxes/PowerBoxCovers/Maze")
+simonSaysCover = NodePath("Power boxes/PowerBoxCovers/Simon")
+clutterRoomCover = NodePath("Power boxes/PowerBoxCovers/Clutter")
+waterCover = NodePath("Power boxes/PowerBoxCovers/Waterpower")
+river = NodePath("Main Terrain/Clue/River")
+FogManager = NodePath("Fog and neurons")
+powerSocketDias = NodePath("Fog and neurons/Power Sockets/BasicSocket")
+powerSocketMaze = NodePath("Fog and neurons/Power Sockets/BasicSocket2")
+powerSocketMiddle = NodePath("Fog and neurons/Power Sockets/BasicSocket3")
+powerSocketBridge = NodePath("Fog and neurons/Power Sockets/BasicSocket4")
+powerSocketTree = NodePath("Fog and neurons/Power Sockets/BasicSocket5")
+powerSocketWater = NodePath("Fog and neurons/Power Sockets/WaterSocket")
 imagePuzzle = NodePath("Maze/ImagePuzzle")
 simonSays = NodePath("Simon Says")
 clutterRoom = NodePath("Clutter Room")
+exitDias = NodePath("Exit Dias")
 
 [node name="Main Terrain" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91608, 0, -30.2127)
@@ -200,6 +216,29 @@ size = Vector3(2.04495, 3.13525, 2.15234)
 [node name="CSGBox3D2" type="CSGBox3D" parent="Main Terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9004, 1.2218, -1.06254)
 size = Vector3(3.72345, 3.4436, 2.33704)
+
+[node name="Clue" type="Node3D" parent="Main Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1506, -1.26648, -48.9907)
+
+[node name="River" type="CSGBox3D" parent="Main Terrain/Clue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0897088, 0.102764, 16.3412)
+size = Vector3(3.56799, 0.956543, 70.9487)
+material = ExtResource("6_73vr8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Main Terrain/Clue"]
+material = ExtResource("7_r6t2i")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Main Terrain/Clue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.44827)
+material = ExtResource("5_2pqoc")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Main Terrain/Clue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.99311)
+material = ExtResource("3_pk8v6")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Main Terrain/Clue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.71899)
+material = ExtResource("6_73vr8")
 
 [node name="Maze" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.7263, 3.8147e-06, 43.5616)
@@ -863,6 +902,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72864, 9.64143, -1.30362)
 size = Vector3(2.5, 1, 2.5)
 material = SubResource("StandardMaterial3D_yp77u")
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="Clutter Room/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98198, 10.4096, 9.722)
+size = Vector3(8, 1.32117, 0.537598)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Clutter Room/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0448, 10.4096, 9.722)
+size = Vector3(8, 1.32117, 0.537598)
+
 [node name="Clutter Pile" type="Node3D" parent="Clutter Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.16916, 0.48198, -2.73062)
 
@@ -1065,7 +1112,7 @@ script = ExtResource("22_vohlp")
 sequenceButtons = [NodePath("CrystalGreenPickup/Area3D/ItemMount/CrystalGreen/WallButton"), NodePath("CrystalRedPickup/Area3D/ItemMount/CrystalRed/WallButton"), NodePath("CrystalBlackPickup/Area3D/ItemMount/CrystalBlack/WallButton"), NodePath("CrystalBluePickup/Area3D/ItemMount/CrystalBlue/WallButton")]
 
 [node name="CrystalGreenPickup" type="Node3D" parent="Exit Dias/Crystal Pickups"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.87764)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5226, 1.90735e-06, -46.1154)
 
 [node name="Area3D" type="Area3D" parent="Exit Dias/Crystal Pickups/CrystalGreenPickup" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
@@ -1110,7 +1157,7 @@ metadata/ItemKey = "CrystalGreen"
 transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0.419616, 0.309191)
 
 [node name="CrystalRedPickup" type="Node3D" parent="Exit Dias/Crystal Pickups"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33394, 0, -1.90735e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8278, 1.90735e-06, -15.6496)
 
 [node name="Area3D" type="Area3D" parent="Exit Dias/Crystal Pickups/CrystalRedPickup" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
@@ -1155,7 +1202,7 @@ metadata/ItemKey = "CrystalRed"
 transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0.419616, 0.309191)
 
 [node name="CrystalBlackPickup" type="Node3D" parent="Exit Dias/Crystal Pickups"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.0144)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50356, -9.53674e-07, 13.1148)
 
 [node name="Area3D" type="Area3D" parent="Exit Dias/Crystal Pickups/CrystalBlackPickup" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
@@ -1200,7 +1247,7 @@ metadata/ItemKey = "CrystalBlack"
 transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0.419616, 0.309191)
 
 [node name="CrystalBluePickup" type="Node3D" parent="Exit Dias/Crystal Pickups"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.303, 0, 0.100517)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8166, 0, -45.1128)
 
 [node name="Area3D" type="Area3D" parent="Exit Dias/Crystal Pickups/CrystalBluePickup" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
@@ -1244,5 +1291,107 @@ metadata/ItemKey = "CrystalBlue"
 [node name="WallButton" parent="Exit Dias/Crystal Pickups/CrystalBluePickup/Area3D/ItemMount/CrystalBlue" instance=ExtResource("22_jga8s")]
 transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0.419616, 0.309191)
 
-[node name="Fog and neurons" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91608, 0, -30.2127)
+[node name="Fog and neurons" type="Node3D" parent="." node_paths=PackedStringArray("mazeFog1", "mazeFog2", "clutterAndSimonFog", "bridgeFog", "treeFog")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5439, 0.576016, -40.817)
+script = ExtResource("24_teicv")
+mazeFog1 = NodePath("Fog/Maze Fog1")
+mazeFog2 = NodePath("Fog/Maze Fog2")
+clutterAndSimonFog = NodePath("Fog/Clutter&Simon Fog")
+bridgeFog = NodePath("Fog/Bridge Fog")
+treeFog = NodePath("Fog/Tree Fog")
+
+[node name="Fog" type="Node3D" parent="Fog and neurons"]
+
+[node name="Maze Fog1" type="CSGBox3D" parent="Fog and neurons/Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.2807, 8.78862, -14.4567)
+use_collision = true
+size = Vector3(38.8114, 16.1865, 33.2985)
+
+[node name="Maze Fog2" type="CSGBox3D" parent="Fog and neurons/Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.5114, 8.78862, -36.7818)
+use_collision = true
+size = Vector3(32.7253, 16.1865, 11.648)
+
+[node name="Clutter&Simon Fog" type="CSGBox3D" parent="Fog and neurons/Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.9578, 8.78862, -56.6527)
+use_collision = true
+size = Vector3(73.0538, 16.1865, 28.1733)
+
+[node name="Maze Fog3" type="CSGBox3D" parent="Fog and neurons/Fog/Clutter&Simon Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6265, 0, 19.8709)
+use_collision = true
+size = Vector3(39.8721, 16.1865, 11.648)
+
+[node name="Bridge Fog" type="CSGBox3D" parent="Fog and neurons/Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3337, 8.78862, -63.9644)
+use_collision = true
+size = Vector3(17.7007, 16.1865, 13.3168)
+
+[node name="Tree Fog" type="CSGBox3D" parent="Fog and neurons/Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.037, 8.71913, -64.6729)
+use_collision = true
+size = Vector3(7.41632, 16.4477, 11.7873)
+
+[node name="Power Sockets" type="Node3D" parent="Fog and neurons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0129547, -0.163687, -0.0671883)
+
+[node name="BasicSocket" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2025, 0, -10.3785)
+
+[node name="BasicSocket2" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.3314, -1.90735e-06, -23.8786)
+
+[node name="BasicSocket3" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.4451, -1.90735e-06, -36.5359)
+
+[node name="BasicSocket4" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.0608, -1.90735e-06, -54.3904)
+
+[node name="BasicSocket5" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36908, -1.90735e-06, -48.9272)
+
+[node name="WaterSocket" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08792, -1.90735e-06, -37.9911)
+
+[node name="Power boxes" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5439, 0.35968, -40.817)
+
+[node name="PowerBoxPickup" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22985, 0, -11.9512)
+
+[node name="PowerBoxPickup2" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.1679, 0, -23.042)
+
+[node name="PowerBoxPickup3" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.3984, 0, -37.7815)
+
+[node name="PowerBoxPickup4" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0184, 0, -54.3121)
+
+[node name="PowerBoxPickup5" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3991, 0, -67.2027)
+
+[node name="PowerBoxPickup6" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0139, 0, -29.8024)
+
+[node name="PowerBoxCovers" type="Node3D" parent="Power boxes"]
+
+[node name="Maze" type="CSGBox3D" parent="Power boxes/PowerBoxCovers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.4673, 0.775424, -22.7945)
+use_collision = true
+size = Vector3(3.44012, 2.62488, 3.3983)
+
+[node name="Simon" type="CSGBox3D" parent="Power boxes/PowerBoxCovers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.4565, 0.775424, -67.0954)
+use_collision = true
+size = Vector3(3.44012, 2.62488, 3.3983)
+
+[node name="Clutter" type="CSGBox3D" parent="Power boxes/PowerBoxCovers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79124, 0.775424, -54.3282)
+use_collision = true
+size = Vector3(3.44012, 2.62488, 3.3983)
+
+[node name="Waterpower" type="CSGBox3D" parent="Power boxes/PowerBoxCovers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09238, 0.775424, -38.1781)
+use_collision = true
+size = Vector3(3.44012, 2.62488, 3.3983)
