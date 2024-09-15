@@ -4,6 +4,8 @@ using System.Collections.Generic;
 [Tool]
 public partial class Interactable : Area3D
 {
+	[Export] public bool isActive = true;
+
 	[Signal]
 	public delegate void InteractionBeginEventHandler(CharacterController player);
 	[Signal]
@@ -42,6 +44,8 @@ public partial class Interactable : Area3D
 	}
     public virtual void Enter(Node3D body)
 	{
+		if(!isActive) return;
+
 		CharacterController player = (CharacterController)body;
 		if (player.Current!=null){
 			player.Current.Unhighlight();
@@ -58,4 +62,9 @@ public partial class Interactable : Area3D
 			player.Current = null;
 		} 
 	}
+
+	public void SetActive(bool active)
+    {
+        isActive = active;
+    }
 }

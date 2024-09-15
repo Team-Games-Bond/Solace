@@ -13,7 +13,7 @@ public partial class LockedItem : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		if(ItemKeys.Count > 0)
+		if(ItemKeys != null)
 		{
 			for(int i = 0; i < Sockets.Count; i++)
 			{
@@ -21,14 +21,14 @@ public partial class LockedItem : Node3D
 			}
 		}
 
-		if(Sockets.Count > 0)
+		if(Sockets != null)
 		{
 			foreach (var socket in Sockets)
 			{
 				socket.setSocketActive(false);
 			}
 		}
-		if(Buttons.Count > 0)
+		if(Buttons != null)
 		{
 			foreach (var button in Buttons)
 			{
@@ -40,14 +40,14 @@ public partial class LockedItem : Node3D
 
 	public void Activate()
 	{
-		if(Sockets.Count > 0)
+		if(Sockets != null)
 		{
 			foreach (var socket in Sockets)
 			{
 				socket.setSocketActive(true);
 			}
 		}
-		if(Buttons.Count > 0)
+		if(Buttons != null)
 		{
 			foreach (var button in Buttons)
 			{
