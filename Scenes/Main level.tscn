@@ -35,6 +35,7 @@ imagePuzzle = NodePath("Maze/ImagePuzzle")
 simonSays = NodePath("Simon Says")
 
 [node name="Main Terrain" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91608, 0, -30.2127)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Main Terrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5502, -14.4245, -33.1333)
@@ -123,8 +124,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12281, -1.06763, 3.43752)
 operation = 2
 size = Vector3(2.04495, 3.13525, 2.15234)
 
+[node name="CSGBox3D2" type="CSGBox3D" parent="Main Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9004, 1.2218, -1.06254)
+size = Vector3(3.72345, 3.4436, 2.33704)
+
 [node name="Maze" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.7742, 3.8147e-06, -5.81019)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.7263, 3.8147e-06, 43.5616)
 
 [node name="Floor" type="CSGBox3D" parent="Maze"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3012, -10, 11.6841)
@@ -722,7 +727,7 @@ material = SubResource("StandardMaterial3D_hho37")
 script = ExtResource("4_s7alk")
 
 [node name="Simon Says" type="Node3D" parent="." node_paths=PackedStringArray("buttons", "indicators")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.612, 0.355991, -58.0796)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 66.9957, 0.355991, 13.3993)
 script = ExtResource("13_j6mjl")
 sequences = Array[Array]([[0, 1], [0, 1, 3]])
 brightMaterial = ExtResource("6_73vr8")
@@ -763,7 +768,10 @@ material = SubResource("StandardMaterial3D_hho37")
 script = ExtResource("4_s7alk")
 
 [node name="Clutter Room" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91608, 0, -30.2127)
 
 [node name="Exit Dias" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91608, 0, -30.2127)
 
 [node name="Fog and neurons" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91608, 0, -30.2127)
