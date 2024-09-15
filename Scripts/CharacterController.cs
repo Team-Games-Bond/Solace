@@ -10,10 +10,11 @@ public partial class CharacterController : CharacterBody3D
 
 	[ExportGroup("Controller Setup")]
 	[Export] public Node3D PlayerPivot;
-	[Export] public Area3D LadderDetector;
+	[Export] public Area3D LadderDetector; //If you remove this the turning system breaks... somehow?????
 
 	//Other variables
 	public bool wasOnFloorLastFrame = false; 
+	public bool wasJustTeleported = false;
 	public bool isPuzzleMode = false;
 	public Interactable Current;
 
@@ -86,5 +87,11 @@ public partial class CharacterController : CharacterBody3D
 
 	public bool HasItem(){
 		return Carrying != null;
+	}
+
+	public void Teleport(Vector3 pos)
+	{
+		this.Position = pos;
+		GD.Print(this.Position," vs target: ", pos);
 	}
 }
