@@ -12,7 +12,7 @@ public partial class PlacementMonitor : Node3D
 	[ExportGroup("Setup")]
 	[Export] SocketedInteraction socket;
 
-	[Signal] public delegate void ItemPlacedEventHandler(bool correctItem);
+	[Signal] public delegate void ItemPlacedEventHandler(bool correctItem, PlacementMonitor thisMonitor);
 	[Signal] public delegate void ItemPlacedRawEventHandler(Node3D item, PlacementMonitor thisMonitor);
 	[Signal] public delegate void ItemRemovedEventHandler();
 	[Signal] public delegate void ItemRemovedRawEventHandler(PlacementMonitor thisMonitor);
@@ -29,7 +29,7 @@ public partial class PlacementMonitor : Node3D
 			if(!SendRaw)
 			{
 				var itemType = socket.Item.GetMeta("ItemKey");
-				EmitSignal(SignalName.ItemPlaced, ItemKey=="" || itemType.AsString() == ItemKey);
+				EmitSignal(SignalName.ItemPlaced, ItemKey=="" || itemType.AsString() == ItemKey, this);
 			}
 			else
 			{
@@ -50,6 +50,12 @@ public partial class PlacementMonitor : Node3D
 		ItemKey = newItemKey;
 	}
 
+	public void SetLockedKey(string newItemKey) //Set to null to remove lock
+	{
+		setItemKey(newItemKey);
+		socket.SetLockedKey(newItemKey);
+	}
+
 	public void setSocketActive(bool active)
 	{
 		isActive = active;
@@ -58,7 +64,7 @@ public partial class PlacementMonitor : Node3D
 
 	public bool attachItem(Node3D item) //Returns false if item already attached
 	{
-		return socket.attachItem(item);
+		return socket.AttachItem(item);
 	}
 
 }

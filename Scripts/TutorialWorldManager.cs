@@ -51,7 +51,7 @@ public partial class TutorialWorldManager : Node
 		room3Done = true;
 	}
 
-	public void Room2SocketHandler(bool isCorrect) //Handle item added
+	public void Room2SocketHandler(bool isCorrect, PlacementMonitor monotor) //Handle item added
 	{
 		if(isCorrect)
 		{

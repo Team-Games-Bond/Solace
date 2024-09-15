@@ -33,7 +33,7 @@ public partial class ColourBoxSpawner : Node
             Material = spawnMaterial
         };
 		
-        return socket.attachItem(item);
+        return socket.AttachItem(item);
 
 		//TODO Make garbage disposal socket (using .QueueFree()) 
 		//Maybe just add metadata to the spawned item and give the socket the ability to dispose of spawned items
