@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3ck6p1xdvhnt"]
+[gd_scene load_steps=11 format=3 uid="uid://b3ck6p1xdvhnt"]
 
 [ext_resource type="Script" path="res://Scripts/Button.cs" id="1_dus0x"]
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="2_noerg"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="3_tgdle"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_mbyxh"]
+[ext_resource type="PackedScene" uid="uid://cbwmi2wku2e8r" path="res://Models/Tutorial/octagon rune holder.blend" id="5_viq53"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -100,11 +101,15 @@ size = Vector3(3, 1, 3)
 [node name="Visuals" type="Node3D" parent="."]
 
 [node name="Baseplate" type="CSGBox3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00720215, -0.386292, -0.0238342)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00906371, -0.379731, 0.0038223)
+visible = false
 use_collision = true
-size = Vector3(0.812744, 0.227417, 0.811584)
+size = Vector3(1.13165, 0.214294, 1.09828)
 
 [node name="Monolith" type="CSGBox3D" parent="Visuals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.116, 0)
 use_collision = true
 size = Vector3(0.573578, 1.99512, 0.573792)
+
+[node name="octagon rune holder" parent="Visuals" instance=ExtResource("5_viq53")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.00362074, -0.458856, 0)

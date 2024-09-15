@@ -14,6 +14,7 @@ public partial class CharacterController : CharacterBody3D
 
 	//Other variables
 	public bool wasOnFloorLastFrame = false; 
+	public bool wasJustTeleported = false;
 	public bool isPuzzleMode = false;
 	public Interactable Current;
 
@@ -86,5 +87,11 @@ public partial class CharacterController : CharacterBody3D
 
 	public bool HasItem(){
 		return Carrying != null;
+	}
+
+	public void Teleport(Vector3 pos)
+	{
+		this.Position = pos;
+		GD.Print(this.Position," vs target: ", pos);
 	}
 }
