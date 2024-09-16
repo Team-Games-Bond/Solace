@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://du5hj5gtfqms7"]
 
-[ext_resource type="PackedScene" uid="uid://br5h8ge02bxtd" path="res://Scenes/Tutorial.tscn" id="2_bvl3c"]
+[ext_resource type="PackedScene" uid="uid://dr8ylcdvqjspx" path="res://Scenes/Tutorial.tscn" id="2_bvl3c"]
 [ext_resource type="PackedScene" uid="uid://cfkv6wtyhhta0" path="res://Scenes/Character.tscn" id="2_imu7g"]
-[ext_resource type="PackedScene" uid="uid://un31ok75dwaf" path="res://Scenes/Main level.tscn" id="3_g7ck6"]
+[ext_resource type="PackedScene" path="res://Scenes/Main level.tscn" id="3_g7ck6"]
 [ext_resource type="Script" path="res://Scripts/TeleportDoor.cs" id="4_yipme"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwslm"]
