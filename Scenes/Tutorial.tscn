@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dr8ylcdvqjspx"]
+[gd_scene load_steps=28 format=3 uid="uid://0fxib6gps5en"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_xyye4"]
 [ext_resource type="Script" path="res://Scripts/Sequence.cs" id="2_8luhl"]
@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="18_ets47"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="19_cnyas"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="20_fvuke"]
-[ext_resource type="PackedScene" uid="uid://bi6r27idu00fs" path="res://Scenes/Tutorial Rooms.tscn" id="21_fbjqm"]
+[ext_resource type="PackedScene" uid="uid://cc653q6p6d72i" path="res://Scenes/Tutorial Rooms.tscn" id="21_fbjqm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccuj1"]
 albedo_color = Color(0.992157, 0.317647, 0.0431373, 1)
@@ -99,33 +99,6 @@ room3Sequence = NodePath("../Room 3/ButtonSequence")
 
 [node name="Room 1" type="Node3D" parent="."]
 
-[node name="Floor" type="CSGBox3D" parent="Room 1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.444305, -0.328857, 7.70766)
-visible = false
-use_collision = true
-size = Vector3(9.06671, 0.683105, 16.4153)
-
-[node name="Back Wall" type="CSGBox3D" parent="Room 1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80824, 1.98057, 7.74634)
-visible = false
-use_collision = true
-size = Vector3(0.341034, 4.43018, 16.4927)
-
-[node name="Right Wall" type="Node3D" parent="Room 1"]
-visible = false
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Room 1/Right Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72472, 1.84753, 15.797)
-use_collision = true
-size = Vector3(2.71248, 4.69507, 0.351074)
-material = ExtResource("2_w7stw")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Room 1/Right Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27676, 1.84753, 15.797)
-use_collision = true
-size = Vector3(3.36885, 4.69507, 0.351074)
-material = ExtResource("2_w7stw")
-
 [node name="Door" type="Node3D" parent="Room 1"]
 
 [node name="DoorFrame" type="CSGBox3D" parent="Room 1/Door"]
@@ -169,33 +142,6 @@ material = ExtResource("7_dqnjp")
 [node name="Room 2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.4665)
 
-[node name="Floor" type="CSGBox3D" parent="Room 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.444305, -0.328857, 7.70766)
-visible = false
-use_collision = true
-size = Vector3(9.06671, 0.683105, 16.4153)
-
-[node name="Back Wall" type="CSGBox3D" parent="Room 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80824, 1.98057, 7.74634)
-visible = false
-use_collision = true
-size = Vector3(0.341034, 4.43018, 16.4927)
-
-[node name="Right Wall" type="Node3D" parent="Room 2"]
-visible = false
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Room 2/Right Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72472, 1.84753, 15.797)
-use_collision = true
-size = Vector3(2.71248, 4.69507, 0.351074)
-material = ExtResource("2_w7stw")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Room 2/Right Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27676, 1.84753, 15.797)
-use_collision = true
-size = Vector3(3.36885, 4.69507, 0.351074)
-material = ExtResource("2_w7stw")
-
 [node name="Door" type="Node3D" parent="Room 2"]
 
 [node name="DoorFrame" type="CSGBox3D" parent="Room 2/Door"]
@@ -231,66 +177,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91508, 0.46564, 12.7525)
 [node name="Room 3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32.8437)
 
-[node name="Floor" type="CSGBox3D" parent="Room 3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.295854, -0.328857, 7.70766)
-visible = false
-use_collision = true
-size = Vector3(10.547, 0.683105, 16.4153)
-
-[node name="Back Wall" type="CSGBox3D" parent="Room 3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80824, 1.98057, 6.10211)
-visible = false
-use_collision = true
-size = Vector3(0.341034, 4.43018, 13.2042)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Back Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.288477, 0, -2.54314)
-material = ExtResource("11_2sqbi")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Room 3/Back Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.288477, 0, -0.858044)
-material = ExtResource("12_k6tl0")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Room 3/Back Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.288477, 0, 0.790138)
-material = ExtResource("13_78nsa")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Room 3/Back Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.288477, 0, 2.47504)
-material = ExtResource("14_xq6da")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Room 3/Back Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.288477, 0, 4.10017)
-material = ExtResource("15_jx8qk")
-
 [node name="CSGBox3D" type="CSGBox3D" parent="Room 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83151, 1.84753, 15.797)
 visible = false
 use_collision = true
 size = Vector3(7.45536, 4.69507, 0.351074)
 
-[node name="Corner Wall" type="Node3D" parent="Room 3"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.13628, 0.247953, 14.1443)
-visible = false
-
-[node name="Corner Wall1" type="CSGBox3D" parent="Room 3/Corner Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98275, 1.7171, 0)
-use_collision = true
-size = Vector3(1.02475, 4.4342, 0.338379)
-
-[node name="Corner Wall2" type="CSGBox3D" parent="Room 3/Corner Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9253, 1.7171, 3.8147e-06)
-use_collision = true
-size = Vector3(0.89291, 4.4342, 0.338379)
-
 [node name="Door" type="Node3D" parent="Room 3"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 2.99252, 0, 14.204)
-
-[node name="DoorFrame" type="CSGBox3D" parent="Room 3/Door"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.119, 3.693, 0)
-visible = false
-use_collision = true
-size = Vector3(2.98718, 1, 0.431519)
 
 [node name="Door" type="CSGBox3D" parent="Room 3/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44876, 1.7704, 0.47205)
