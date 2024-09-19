@@ -31,7 +31,103 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material.007": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/Unobstructing Wall.tres"
+}
+},
+"nodes": {
+"PATH:Cube": {
+"generate/physics": true
+},
+"PATH:Cube long": {
+"generate/physics": true
+},
+"PATH:Cube_022": {
+"generate/physics": true
+},
+"PATH:Cube_023": {
+"generate/physics": true
+},
+"PATH:Cube_024": {
+"generate/physics": true
+},
+"PATH:Cube_025": {
+"generate/physics": true
+},
+"PATH:Cube_026": {
+"generate/physics": true
+},
+"PATH:Cube_028": {
+"generate/physics": true
+},
+"PATH:Cube_029": {
+"generate/physics": true
+},
+"PATH:Cube_031": {
+"generate/physics": true
+},
+"PATH:Cube_035": {
+"generate/physics": true
+},
+"PATH:Cube_049": {
+"generate/physics": true
+},
+"PATH:Cube_050": {
+"generate/physics": true
+},
+"PATH:Cube_052": {
+"generate/physics": true
+},
+"PATH:Cube_055": {
+"generate/physics": true
+},
+"PATH:Cube_056": {
+"generate/physics": true
+},
+"PATH:Cube_058": {
+"generate/physics": true
+},
+"PATH:Cube_059": {
+"generate/physics": true
+},
+"PATH:Cube_060": {
+"generate/physics": true
+},
+"PATH:Cylinder_001": {
+"generate/physics": true
+},
+"PATH:Cylinder_002": {
+"generate/physics": true
+},
+"PATH:Cylinder_003": {
+"generate/physics": true
+},
+"PATH:Plane_001": {
+"generate/physics": true
+},
+"PATH:Plane_002": {
+"generate/physics": true
+},
+"PATH:Plane_004": {
+"generate/physics": true
+},
+"PATH:Plane_005": {
+"generate/physics": true
+},
+"PATH:Plane_007": {
+"generate/physics": true
+},
+"PATH:Plane_008": {
+"generate/physics": true
+},
+"PATH:Plane_009": {
+"generate/physics": true
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
