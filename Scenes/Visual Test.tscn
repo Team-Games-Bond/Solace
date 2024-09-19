@@ -8,7 +8,7 @@
 [ext_resource type="Material" uid="uid://whwpat23q0xr" path="res://Materials/FogMaterial.tres" id="5_aoexq"]
 [ext_resource type="Shader" uid="uid://dx2xo44tuo1q8" path="res://Shaders/Water Ripple.tres" id="7_i5q4q"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_tm5x7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_oexah"]
 _surfaces = [{
 "aabb": AABB(-1.02941, 0, -1, 2.05882, 1e-05, 2),
 "format": 34359742465,
@@ -96,7 +96,7 @@ size = 4.39
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Fog Stuff" node_paths=PackedStringArray("TransitionTimer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, -1.03396, 1.4)
-mesh = SubResource("ArrayMesh_tm5x7")
+mesh = SubResource("ArrayMesh_oexah")
 skeleton = NodePath("../..")
 script = ExtResource("3_f6npi")
 PrimaryTexture = ExtResource("3_02w14")
