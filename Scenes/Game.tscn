@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://du5hj5gtfqms7"]
 
-[ext_resource type="PackedScene" uid="uid://dr8ylcdvqjspx" path="res://Scenes/Tutorial.tscn" id="2_bvl3c"]
+[ext_resource type="PackedScene" uid="uid://0fxib6gps5en" path="res://Scenes/Tutorial.tscn" id="2_bvl3c"]
 [ext_resource type="PackedScene" uid="uid://cfkv6wtyhhta0" path="res://Scenes/Character.tscn" id="2_imu7g"]
-[ext_resource type="PackedScene" path="res://Scenes/Main level.tscn" id="3_g7ck6"]
+[ext_resource type="PackedScene" uid="uid://cwtgi4i8hod5g" path="res://Scenes/Main level.tscn" id="3_g7ck6"]
 [ext_resource type="Script" path="res://Scripts/TeleportDoor.cs" id="4_yipme"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwslm"]
@@ -29,6 +29,7 @@ transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107
 
 [node name="TutorialExit" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8148, 2.38419e-07, -34.6316)
+collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../TutorialEntrance2")
 
@@ -44,6 +45,7 @@ size = Vector3(3, 3, 2.5)
 
 [node name="MazeEntrance2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 112.718, 1.59077, -96.7895)
+collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../MazeExit")
 
@@ -59,6 +61,7 @@ size = Vector3(3, 3, 1)
 
 [node name="MazeExit2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 116.87, 0.122579, -103.452)
+collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../MazeEntrance")
 
@@ -74,6 +77,7 @@ size = Vector3(3, 3, 1)
 
 [node name="TutorialEntrance" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 88.9794, 4.05312e-06, -54.4899)
+collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../TutorialEntrance2")
 
@@ -98,6 +102,7 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="ClutterRoomEntrance2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 50.0319, -7.15255e-07, -90.9699)
+collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../ClutterRoomExit2")
 
@@ -116,6 +121,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.941, 1.238, -90.813)
 
 [node name="ClutterRoomExit" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 37.472, -7.15256e-07, -106.473)
+collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../ClutterRoomEntrance")
 
