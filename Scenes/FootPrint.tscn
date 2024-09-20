@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhk8adwdnw7t1"]
+
+[ext_resource type="Texture2D" uid="uid://b48js1gcyqh5" path="res://Textures/footprint.svg" id="1_8tjs7"]
+[ext_resource type="Script" path="res://Scenes/FootprintFade.cs" id="2_l46kf"]
+
+[node name="FootPrint" type="Node3D"]
+
+[node name="Decal" type="Decal" parent="."]
+size = Vector3(0.25, 0.25, 0.25)
+texture_albedo = ExtResource("1_8tjs7")
+albedo_mix = 0.78
+normal_fade = 0.335
+upper_fade = 0.05
+lower_fade = 0.05
+script = ExtResource("2_l46kf")
