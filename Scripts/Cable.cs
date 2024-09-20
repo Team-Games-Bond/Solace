@@ -36,6 +36,8 @@ public partial class Cable : GeometryInstance3D, IPowerable
 	} // ONLY FOR USE FROM EDITOR
 	private SortedList<float, NodePath> _recievers = new SortedList<float, NodePath>();
 	IEnumerator<KeyValuePair<float, NodePath>> _recieverStream = null;
+	[Signal]
+	public delegate void CableEndReachedEventHandler();
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -51,7 +53,10 @@ public partial class Cable : GeometryInstance3D, IPowerable
 		if (powerState == PowerState.Powering){
 			if (_recieverStream.Current.Key <= timer){
 				GetNode<IPowerable>(_recieverStream.Current.Value).Power();
-				if (!_recieverStream.MoveNext()) powerState = PowerState.Powered; 
+				if (!_recieverStream.MoveNext()) {
+					powerState = PowerState.Powered;
+					EmitSignal(SignalName.CableEndReached);
+				} 
 			}
 		}
 	}
