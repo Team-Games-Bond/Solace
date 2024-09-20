@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfkv6wtyhhta0"]
+[gd_scene load_steps=8 format=3 uid="uid://cfkv6wtyhhta0"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.cs" id="1_g771o"]
+[ext_resource type="Script" path="res://Scripts/Leg.cs" id="2_8pnbn"]
 [ext_resource type="Script" path="res://Scripts/CameraController.cs" id="2_qsldj"]
+[ext_resource type="Script" path="res://Scripts/Foot.cs" id="3_satqg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_13pt1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_l2bip"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ukuk1"]
 height = 0.233764
@@ -30,6 +34,62 @@ transform = Transform3D(0.155873, 0, 0, 0, 0.173381, 0, 0, 0, 0.373001, 0, 0.940
 
 [node name="ItemMount" type="Node3D" parent="PlayerPivot/Player Visuals"]
 transform = Transform3D(0.25, 0, 0, 0, 0.258702, 0, 0, 0, 0.25, 0, 0.190884, -0.733348)
+
+[node name="Leg1" type="RayCast3D" parent="PlayerPivot" node_paths=PackedStringArray("foot", "AdjacentLegs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524148, -0.1, -0.490927)
+script = ExtResource("2_8pnbn")
+foot = NodePath("Foot")
+AdjacentLegs = [NodePath("../Leg2"), NodePath("../Leg4")]
+CooldownLength = 0.15
+MovementThreshold = 0.4
+
+[node name="Foot" type="MeshInstance3D" parent="PlayerPivot/Leg1"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
+mesh = SubResource("SphereMesh_l2bip")
+script = ExtResource("3_satqg")
+StepSpeed = 10.0
+
+[node name="Leg2" type="RayCast3D" parent="PlayerPivot" node_paths=PackedStringArray("foot", "AdjacentLegs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.475699, -0.1, -0.508379)
+script = ExtResource("2_8pnbn")
+foot = NodePath("Foot")
+AdjacentLegs = [NodePath("../Leg1"), NodePath("../Leg3")]
+CooldownLength = 0.15
+MovementThreshold = 0.4
+
+[node name="Foot" type="MeshInstance3D" parent="PlayerPivot/Leg2"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
+mesh = SubResource("SphereMesh_l2bip")
+script = ExtResource("3_satqg")
+StepSpeed = 10.0
+
+[node name="Leg3" type="RayCast3D" parent="PlayerPivot" node_paths=PackedStringArray("foot", "AdjacentLegs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.493151, -0.1, 0.491468)
+script = ExtResource("2_8pnbn")
+foot = NodePath("Foot")
+AdjacentLegs = [NodePath("../Leg2"), NodePath("../Leg4")]
+CooldownLength = 0.15
+MovementThreshold = 0.4
+
+[node name="Foot" type="MeshInstance3D" parent="PlayerPivot/Leg3"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
+mesh = SubResource("SphereMesh_l2bip")
+script = ExtResource("3_satqg")
+StepSpeed = 10.0
+
+[node name="Leg4" type="RayCast3D" parent="PlayerPivot" node_paths=PackedStringArray("foot", "AdjacentLegs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.506696, -0.1, 0.50892)
+script = ExtResource("2_8pnbn")
+foot = NodePath("Foot")
+AdjacentLegs = [NodePath("../Leg1"), NodePath("../Leg3")]
+CooldownLength = 0.15
+MovementThreshold = 0.4
+
+[node name="Foot" type="MeshInstance3D" parent="PlayerPivot/Leg4"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
+mesh = SubResource("SphereMesh_l2bip")
+script = ExtResource("3_satqg")
+StepSpeed = 10.0
 
 [node name="Player Camera" type="Camera3D" parent="." node_paths=PackedStringArray("CharacterController")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 10, 20)
