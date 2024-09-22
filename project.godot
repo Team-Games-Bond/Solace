@@ -75,14 +75,3 @@ Interact={
 [rendering]
 
 renderer/rendering_method="mobile"
-
-[shader_globals]
-
-PRIMARY_DEPTH={
-"type": "sampler2D",
-"value": ""
-}
-SECONDARY_DEPTH={
-"type": "sampler2D",
-"value": "res://Textures/Overlay.png"
-}
