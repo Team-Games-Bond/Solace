@@ -36,6 +36,14 @@ _subresources={
 "Material.007": {
 "use_external/enabled": true,
 "use_external/path": "res://Materials/Unobstructing Wall.tres"
+},
+"Material.011": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/Opaque Wall.tres"
+},
+"Material.015": {
+"use_external/enabled": false,
+"use_external/path": "res://Materials/Unobstructing Wall.tres"
 }
 },
 "nodes": {
