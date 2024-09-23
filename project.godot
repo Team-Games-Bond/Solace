@@ -71,14 +71,3 @@ Interact={
 3d_render/layer_20="EditorHelpers"
 3d_physics/layer_1="Enviroment"
 3d_physics/layer_2="Player"
-
-[shader_globals]
-
-PRIMARY_DEPTH={
-"type": "sampler2D",
-"value": ""
-}
-SECONDARY_DEPTH={
-"type": "sampler2D",
-"value": "res://Textures/Overlay.png"
-}
