@@ -1,7 +1,6 @@
 using Godot;
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
@@ -12,8 +11,7 @@ using Vector3 = Godot.Vector3;
 public partial class Fog : MeshInstance3D
 {
 	[ExportCategory("Fog Offset")]
-	[Export] public Texture2D PrimaryTexture;
-	[Export] public Texture2D SecondaryTexture;
+	[Export] public Texture2D InitialTexture;
 	[Export] public Timer TransitionTimer;
 	public int map_width, map_height;
 
@@ -54,11 +52,10 @@ public partial class Fog : MeshInstance3D
 	{
 		if (!Engine.IsEditorHint())
 		{
-			var image = PrimaryTexture.GetImage();
+			var image = InitialTexture.GetImage();
 			map_width = image.GetWidth();
 			map_height = image.GetHeight();
-			_fogMaterial.SetShaderParameter("PRIMARY_DEPTH", PrimaryTexture);
-			//FogMat.SetShaderParameter("SECONDARY_DEPTH", SecondaryTexture);
+			_fogMaterial.SetShaderParameter("PRIMARY_DEPTH", InitialTexture);
 			image.Convert(Image.Format.R8);
 			_primaryImage = image.GetData();
 			TransitionTimer.Timeout+=endTransition;
@@ -73,6 +70,7 @@ public partial class Fog : MeshInstance3D
 			SetInstanceShaderParameter("SECONDARY_STRENGTH", 1-(TransitionTimer.TimeLeft/TransitionTimer.WaitTime));
 		}
 	}
+
 	public async void Recede(Texture2D image)
 	{
 		if(!TransitionTimer.IsStopped()){
@@ -82,6 +80,7 @@ public partial class Fog : MeshInstance3D
 		_fogMaterial.SetShaderParameter("SECONDARY_DEPTH", image);
 		_combineTask = combine(_primaryImage, image);
 	}
+
 	public async void endTransition(){
 		await _combineTask;
 		TransitionTimer.Stop();
@@ -130,15 +129,11 @@ public partial class Fog : MeshInstance3D
 		}
 		var elapsed = sw.ElapsedMilliseconds;
 	}
-	public override void _UnhandledInput(InputEvent @event)
-	{
-		if (@event is InputEventKey eventKey)
-			if (eventKey.Pressed && eventKey.Keycode == Key.M)
-				Recede(SecondaryTexture);
-	}
+
 	public void Refresh(){
 		if (Engine.IsEditorHint()) MeshGen();
 	}
+
 	public async void MeshGen(){
 		var verticesTask = new Task<Vector3[]>(()=>{
 			var vertices = new Vector3[(Subdivisions.X+2)*(Subdivisions.Y+2)];
