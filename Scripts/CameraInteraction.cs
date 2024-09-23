@@ -35,7 +35,7 @@ public partial class CameraInteraction : Camera3D
     {
     }
 
-    public void Begin()
+    public void Begin(CharacterController player)
     {
 		controller.ChangeCamera(this);
     }

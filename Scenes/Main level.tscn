@@ -1,0 +1,1397 @@
+[gd_scene load_steps=38 format=3 uid="uid://un31ok75dwaf"]
+
+[ext_resource type="Script" path="res://Scripts/ImagePuzzleManager.cs" id="1_bvm8w"]
+[ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="1_lhik3"]
+[ext_resource type="Script" path="res://Scripts/BrainWorldManager.cs" id="1_quknv"]
+[ext_resource type="PackedScene" uid="uid://dr86qgtsfdi6t" path="res://Scenes/GameObjects/Sockets/ColourSocket.tscn" id="1_utsag"]
+[ext_resource type="Material" uid="uid://bhwyqypds6eyc" path="res://Materials/Grey.tres" id="2_e25pp"]
+[ext_resource type="Material" uid="uid://cqfcpy0i7guyj" path="res://Materials/ImagePuzzleMaterials/unrecognised.tres" id="2_pe0ng"]
+[ext_resource type="PackedScene" uid="uid://yja2prigd27u" path="res://Scenes/GameObjects/PickupLocations/ColourBoxSpawner.tscn" id="3_4f5et"]
+[ext_resource type="Material" uid="uid://cyt0r2egut717" path="res://Materials/ImagePuzzleMaterials/black.tres" id="3_pk8v6"]
+[ext_resource type="Script" path="res://Scripts/Door.cs" id="4_s7alk"]
+[ext_resource type="Material" uid="uid://u8rkn3x78ttp" path="res://Materials/ImagePuzzleMaterials/white.tres" id="4_xfx0l"]
+[ext_resource type="Material" uid="uid://c405lqe1cf5" path="res://Materials/ImagePuzzleMaterials/red.tres" id="5_2pqoc"]
+[ext_resource type="Material" uid="uid://b8aoddagdu0hl" path="res://Materials/ImagePuzzleMaterials/blue.tres" id="6_73vr8"]
+[ext_resource type="Material" uid="uid://dagxh04aellbm" path="res://Materials/ImagePuzzleMaterials/green.tres" id="7_r6t2i"]
+[ext_resource type="Script" path="res://Scripts/SimonSaysManager.cs" id="13_j6mjl"]
+[ext_resource type="PackedScene" uid="uid://hcb2t4qod38t" path="res://Scenes/GameObjects/Sockets/BasicSocket.tscn" id="15_eahny"]
+[ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="15_msgn2"]
+[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="16_j4va3"]
+[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="17_8eqao"]
+[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="18_gfamk"]
+[ext_resource type="Script" path="res://Scripts/LockedItem.cs" id="19_k22ro"]
+[ext_resource type="Script" path="res://Scripts/ExitDiasManager.cs" id="21_7b46n"]
+[ext_resource type="PackedScene" uid="uid://l24j71pyvwho" path="res://Scenes/GameObjects/Buttons/WallButton.tscn" id="22_jga8s"]
+[ext_resource type="Script" path="res://Scripts/Sequence.cs" id="22_vohlp"]
+[ext_resource type="Script" path="res://Scripts/FogManager.cs" id="24_teicv"]
+[ext_resource type="PackedScene" uid="uid://checarg1ql6ao" path="res://Scenes/GameObjects/Sockets/BasicPowerSocket.tscn" id="25_lydc0"]
+[ext_resource type="PackedScene" uid="uid://cunwppijkniwm" path="res://Scenes/GameObjects/PickupLocations/PowerBoxPickup.tscn" id="26_7pnpm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6oa5"]
+albedo_color = Color(0, 0, 0.772549, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yh5tb"]
+albedo_color = Color(0.750733, 0.311527, 0.3205, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56gm1"]
+albedo_color = Color(0.412152, 0.412152, 0.412152, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hho37"]
+albedo_color = Color(0.99332, 0.315827, 0.0414077, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yp77u"]
+albedo_color = Color(1, 0.27451, 1, 1)
+
+[sub_resource type="Animation" id="Animation_jtjrm"]
+resource_name = "Button Prompt Appear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 1, 1, 1)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ac51l"]
+resource_name = "Button Prompt Disappear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.2, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_clq28"]
+_data = {
+"Button Prompt Appear": SubResource("Animation_jtjrm"),
+"Button Prompt Disappear": SubResource("Animation_ac51l")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3clg"]
+size = Vector3(2.5, 1, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3e7l"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(0, 1, 0.223529, 0.145098)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nk5vm"]
+albedo_color = Color(0.709804, 0.247059, 1, 1)
+
+[node name="MainLevel" type="Node3D" node_paths=PackedStringArray("imagePuzzleFlag", "simonSaysFlag", "clutterRoomFlag", "imagePuzzleCover", "simonSaysCover", "clutterRoomCover", "waterCover", "river", "FogManager", "powerSocketDias", "powerSocketMaze", "powerSocketMiddle", "powerSocketBridge", "powerSocketTree", "powerSocketWater", "imagePuzzle", "simonSays", "clutterRoom", "exitDias")]
+script = ExtResource("1_quknv")
+imagePuzzleFlag = NodePath("Maze/Flag")
+simonSaysFlag = NodePath("Simon Says/Flag")
+clutterRoomFlag = NodePath("Clutter Room/Flag")
+imagePuzzleCover = NodePath("Power boxes/PowerBoxCovers/Maze")
+simonSaysCover = NodePath("Power boxes/PowerBoxCovers/Simon")
+clutterRoomCover = NodePath("Power boxes/PowerBoxCovers/Clutter")
+waterCover = NodePath("Power boxes/PowerBoxCovers/Waterpower")
+river = NodePath("Main Terrain/Clue/River")
+FogManager = NodePath("Fog and neurons")
+powerSocketDias = NodePath("Fog and neurons/Power Sockets/BasicSocket")
+powerSocketMaze = NodePath("Fog and neurons/Power Sockets/BasicSocket2")
+powerSocketMiddle = NodePath("Fog and neurons/Power Sockets/BasicSocket3")
+powerSocketBridge = NodePath("Fog and neurons/Power Sockets/BasicSocket4")
+powerSocketTree = NodePath("Fog and neurons/Power Sockets/BasicSocket5")
+powerSocketWater = NodePath("Fog and neurons/Power Sockets/WaterSocket")
+imagePuzzle = NodePath("Maze/ImagePuzzle")
+simonSays = NodePath("Simon Says")
+clutterRoom = NodePath("Clutter Room")
+exitDias = NodePath("Exit Dias")
+
+[node name="Main Terrain" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91608, 0, -30.2127)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Main Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5502, -14.4245, -33.1333)
+use_collision = true
+size = Vector3(70, 28.694, 70)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Main Terrain/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.763718, 13.933, 0.203796)
+operation = 2
+use_collision = true
+size = Vector3(5, 1, 72)
+material = SubResource("StandardMaterial3D_u6oa5")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Main Terrain/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.3116, 13.933, 16.7185)
+operation = 2
+use_collision = true
+size = Vector3(5, 1, 34.9042)
+material = SubResource("StandardMaterial3D_u6oa5")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Main Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4507, -0.116336, -1.95028)
+use_collision = true
+size = Vector3(8.71295, 0.472656, 3.54736)
+material = SubResource("StandardMaterial3D_yh5tb")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Main Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2277, -0.12781, -59.4742)
+use_collision = true
+size = Vector3(8.71295, 0.495605, 3.54736)
+material = SubResource("StandardMaterial3D_yh5tb")
+
+[node name="Puzzle 1" type="Node3D" parent="Main Terrain"]
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Main Terrain/Puzzle 1"]
+transform = Transform3D(1, 0, 0, 0, 0.418628, 0.908158, 0, -0.908158, 0.418628, 34.5198, 0.0112801, -13.7126)
+use_collision = true
+size = Vector3(6.1167, 1.82275, 0.48877)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Main Terrain/Puzzle 1"]
+transform = Transform3D(1, 0, 0, 0, -0.398781, 0.917046, 0, -0.917046, -0.398781, 34.5198, 0.00277781, -19.1114)
+use_collision = true
+size = Vector3(6.1167, 1.82275, 0.48877)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Main Terrain/Puzzle 1"]
+transform = Transform3D(1, 0, 0, 0, -0.0151663, 0.999885, 0, -0.999885, -0.0151663, 34.5627, 0.407299, -16.464)
+use_collision = true
+size = Vector3(6.20258, 4.09741, 0.48877)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Main Terrain/Puzzle 1"]
+transform = Transform3D(0.990016, 0.00213773, -0.140937, 0.140953, -0.0150148, 0.989902, 0, -0.999885, -0.0151663, 40.2161, 0.764683, -16.464)
+use_collision = true
+size = Vector3(6.20258, 4.09741, 0.48877)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Main Terrain/Puzzle 1"]
+transform = Transform3D(1, 0, 0, 0, -0.0151663, 0.999885, 0, -0.999885, -0.0151663, 46.8605, 1.18457, -16.464)
+use_collision = true
+size = Vector3(7.33847, 4.09741, 0.48877)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Main Terrain/Puzzle 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.541, 3.66645, -16.386)
+use_collision = true
+size = Vector3(2.95847, 4.90558, 4.93201)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Main Terrain/Puzzle 1/CSGBox3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124023, -0.134861, -0.0400162)
+operation = 2
+use_collision = true
+size = Vector3(3.0459, 4.20747, 3.89262)
+
+[node name="House" type="Node3D" parent="Main Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11107, 0, -58.0452)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Main Terrain/House"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107729, 2.46894, -1.52478)
+use_collision = true
+size = Vector3(11.6074, 5.25897, 7.71692)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Main Terrain/House/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12281, -1.06763, 3.43752)
+operation = 2
+size = Vector3(2.04495, 3.13525, 2.15234)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Main Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9004, 1.2218, -1.06254)
+size = Vector3(3.72345, 3.4436, 2.33704)
+
+[node name="Clue" type="Node3D" parent="Main Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1506, -1.26648, -48.9907)
+
+[node name="River" type="CSGBox3D" parent="Main Terrain/Clue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0897088, 0.102764, 16.3412)
+size = Vector3(3.56799, 0.956543, 70.9487)
+material = ExtResource("6_73vr8")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Main Terrain/Clue"]
+material = ExtResource("7_r6t2i")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Main Terrain/Clue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.44827)
+material = ExtResource("5_2pqoc")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Main Terrain/Clue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.99311)
+material = ExtResource("3_pk8v6")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Main Terrain/Clue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.71899)
+material = ExtResource("6_73vr8")
+
+[node name="Maze" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.7263, 3.8147e-06, 43.5616)
+
+[node name="Floor" type="CSGBox3D" parent="Maze"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3012, -10, 11.6841)
+material_override = ExtResource("2_e25pp")
+use_collision = true
+size = Vector3(66.6025, 20, 53.3682)
+material = SubResource("StandardMaterial3D_56gm1")
+
+[node name="Door" type="CSGBox3D" parent="Maze"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.5964, 2.22778, -12.3854)
+use_collision = true
+size = Vector3(2.95847, 4.90558, 4.93201)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Maze/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.124023, -0.134861, -0.0400162)
+operation = 2
+use_collision = true
+size = Vector3(3.0459, 4.20747, 3.89262)
+
+[node name="MazeWall" type="CSGBox3D" parent="Maze"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6506, 1.80023, 24.5927)
+use_collision = true
+size = Vector3(0.413208, 4.60046, 27.5322)
+
+[node name="ImageClue" type="Node3D" parent="Maze"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5043, -0.4815, 21.1884)
+
+[node name="Row 1" type="Node3D" parent="Maze/ImageClue"]
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImageClue/Row 1"]
+material_override = ExtResource("3_pk8v6")
+size = Vector3(3, 1, 3)
+material = ExtResource("3_pk8v6")
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImageClue/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImageClue/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+material_override = ExtResource("3_pk8v6")
+size = Vector3(3, 1, 3)
+material = ExtResource("3_pk8v6")
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImageClue/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+material_override = ExtResource("3_pk8v6")
+size = Vector3(3, 1, 3)
+material = ExtResource("3_pk8v6")
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImageClue/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImageClue/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+material_override = ExtResource("5_2pqoc")
+size = Vector3(3, 1, 3)
+material = ExtResource("5_2pqoc")
+
+[node name="Row 2" type="Node3D" parent="Maze/ImageClue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImageClue/Row 2"]
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImageClue/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+material_override = ExtResource("6_73vr8")
+size = Vector3(3, 1, 3)
+material = ExtResource("6_73vr8")
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImageClue/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImageClue/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImageClue/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+material_override = ExtResource("7_r6t2i")
+size = Vector3(3, 1, 3)
+material = ExtResource("7_r6t2i")
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImageClue/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Row 3" type="Node3D" parent="Maze/ImageClue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImageClue/Row 3"]
+material_override = ExtResource("7_r6t2i")
+size = Vector3(3, 1, 3)
+material = ExtResource("7_r6t2i")
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImageClue/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImageClue/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+material_override = ExtResource("3_pk8v6")
+size = Vector3(3, 1, 3)
+material = ExtResource("3_pk8v6")
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImageClue/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+material_override = ExtResource("5_2pqoc")
+size = Vector3(3, 1, 3)
+material = ExtResource("5_2pqoc")
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImageClue/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImageClue/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+material_override = ExtResource("5_2pqoc")
+size = Vector3(3, 1, 3)
+material = ExtResource("5_2pqoc")
+
+[node name="Row 4" type="Node3D" parent="Maze/ImageClue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImageClue/Row 4"]
+material_override = ExtResource("7_r6t2i")
+size = Vector3(3, 1, 3)
+material = ExtResource("7_r6t2i")
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImageClue/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImageClue/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+material_override = ExtResource("7_r6t2i")
+size = Vector3(3, 1, 3)
+material = ExtResource("7_r6t2i")
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImageClue/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+material_override = ExtResource("6_73vr8")
+size = Vector3(3, 1, 3)
+material = ExtResource("6_73vr8")
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImageClue/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImageClue/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+material_override = ExtResource("5_2pqoc")
+size = Vector3(3, 1, 3)
+material = ExtResource("5_2pqoc")
+
+[node name="Row 5" type="Node3D" parent="Maze/ImageClue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImageClue/Row 5"]
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImageClue/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+material_override = ExtResource("5_2pqoc")
+size = Vector3(3, 1, 3)
+material = ExtResource("5_2pqoc")
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImageClue/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImageClue/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImageClue/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+material_override = ExtResource("3_pk8v6")
+size = Vector3(3, 1, 3)
+material = ExtResource("3_pk8v6")
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImageClue/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Row 6" type="Node3D" parent="Maze/ImageClue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImageClue/Row 6"]
+material_override = ExtResource("7_r6t2i")
+size = Vector3(3, 1, 3)
+material = ExtResource("7_r6t2i")
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImageClue/Row 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImageClue/Row 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+material_override = ExtResource("6_73vr8")
+size = Vector3(3, 1, 3)
+material = ExtResource("6_73vr8")
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImageClue/Row 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+material_override = ExtResource("6_73vr8")
+size = Vector3(3, 1, 3)
+material = ExtResource("6_73vr8")
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImageClue/Row 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+material_override = ExtResource("4_xfx0l")
+size = Vector3(3, 1, 3)
+material = ExtResource("4_xfx0l")
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImageClue/Row 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+material_override = ExtResource("6_73vr8")
+size = Vector3(3, 1, 3)
+material = ExtResource("6_73vr8")
+
+[node name="ImagePuzzle" type="Node3D" parent="Maze" node_paths=PackedStringArray("socketParent", "clueImageParent", "createdImageParent", "colourSpawnerParent")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0112, 0.454124, 20.6413)
+script = ExtResource("1_bvm8w")
+unrecognizedMaterial = ExtResource("2_pe0ng")
+possibleMaterials = Array[Material]([ExtResource("3_pk8v6"), ExtResource("6_73vr8"), ExtResource("7_r6t2i"), ExtResource("5_2pqoc"), ExtResource("4_xfx0l")])
+socketParent = NodePath("Sockets")
+clueImageParent = NodePath("../ImageClue")
+createdImageParent = NodePath("CreatedImage")
+colourSpawnerParent = NodePath("Colour Spawners")
+
+[node name="Colour Spawners" type="Node3D" parent="Maze/ImagePuzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.24024, 0, 0.183821)
+
+[node name="ColourBoxSpawner" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+
+[node name="ColourBoxSpawner2" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="ColourBoxSpawner3" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="ColourBoxSpawner4" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="ColourBoxSpawner5" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="ColourBoxSpawner6" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
+
+[node name="ColourBoxSpawner7" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 3)
+
+[node name="ColourBoxSpawner8" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 6)
+
+[node name="ColourBoxSpawner9" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 9)
+
+[node name="ColourBoxSpawner10" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 12)
+
+[node name="ColourBoxSpawner11" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, -3)
+
+[node name="ColourBoxSpawner12" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -3)
+
+[node name="ColourBoxSpawner13" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11, 0, -3)
+
+[node name="ColourBoxSpawner14" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14, 0, -3)
+
+[node name="ColourBoxSpawner15" parent="Maze/ImagePuzzle/Colour Spawners" instance=ExtResource("3_4f5et")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17, 0, -3)
+
+[node name="CreatedImage" type="Node3D" parent="Maze/ImagePuzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.932109, 0)
+
+[node name="Row 1" type="Node3D" parent="Maze/ImagePuzzle/CreatedImage"]
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 1"]
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Row 2" type="Node3D" parent="Maze/ImagePuzzle/CreatedImage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 2"]
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Row 3" type="Node3D" parent="Maze/ImagePuzzle/CreatedImage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 3"]
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Row 4" type="Node3D" parent="Maze/ImagePuzzle/CreatedImage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 4"]
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Row 5" type="Node3D" parent="Maze/ImagePuzzle/CreatedImage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 5"]
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Row 6" type="Node3D" parent="Maze/ImagePuzzle/CreatedImage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 6"]
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 4" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 5" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Pixel 6" type="CSGBox3D" parent="Maze/ImagePuzzle/CreatedImage/Row 6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+size = Vector3(3, 1, 3)
+
+[node name="Sockets" type="Node3D" parent="Maze/ImagePuzzle"]
+
+[node name="Row 1" type="Node3D" parent="Maze/ImagePuzzle/Sockets"]
+
+[node name="ColourSocket" parent="Maze/ImagePuzzle/Sockets/Row 1" instance=ExtResource("1_utsag")]
+
+[node name="ColourSocket2" parent="Maze/ImagePuzzle/Sockets/Row 1" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ColourSocket3" parent="Maze/ImagePuzzle/Sockets/Row 1" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="ColourSocket4" parent="Maze/ImagePuzzle/Sockets/Row 1" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="ColourSocket5" parent="Maze/ImagePuzzle/Sockets/Row 1" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="ColourSocket6" parent="Maze/ImagePuzzle/Sockets/Row 1" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="Row 2" type="Node3D" parent="Maze/ImagePuzzle/Sockets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="ColourSocket" parent="Maze/ImagePuzzle/Sockets/Row 2" instance=ExtResource("1_utsag")]
+
+[node name="ColourSocket2" parent="Maze/ImagePuzzle/Sockets/Row 2" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ColourSocket3" parent="Maze/ImagePuzzle/Sockets/Row 2" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="ColourSocket4" parent="Maze/ImagePuzzle/Sockets/Row 2" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="ColourSocket5" parent="Maze/ImagePuzzle/Sockets/Row 2" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="ColourSocket6" parent="Maze/ImagePuzzle/Sockets/Row 2" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="Row 3" type="Node3D" parent="Maze/ImagePuzzle/Sockets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="ColourSocket" parent="Maze/ImagePuzzle/Sockets/Row 3" instance=ExtResource("1_utsag")]
+
+[node name="ColourSocket2" parent="Maze/ImagePuzzle/Sockets/Row 3" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ColourSocket3" parent="Maze/ImagePuzzle/Sockets/Row 3" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="ColourSocket4" parent="Maze/ImagePuzzle/Sockets/Row 3" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="ColourSocket5" parent="Maze/ImagePuzzle/Sockets/Row 3" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="ColourSocket6" parent="Maze/ImagePuzzle/Sockets/Row 3" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="Row 4" type="Node3D" parent="Maze/ImagePuzzle/Sockets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="ColourSocket" parent="Maze/ImagePuzzle/Sockets/Row 4" instance=ExtResource("1_utsag")]
+
+[node name="ColourSocket2" parent="Maze/ImagePuzzle/Sockets/Row 4" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ColourSocket3" parent="Maze/ImagePuzzle/Sockets/Row 4" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="ColourSocket4" parent="Maze/ImagePuzzle/Sockets/Row 4" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="ColourSocket5" parent="Maze/ImagePuzzle/Sockets/Row 4" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="ColourSocket6" parent="Maze/ImagePuzzle/Sockets/Row 4" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="Row 5" type="Node3D" parent="Maze/ImagePuzzle/Sockets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="ColourSocket" parent="Maze/ImagePuzzle/Sockets/Row 5" instance=ExtResource("1_utsag")]
+
+[node name="ColourSocket2" parent="Maze/ImagePuzzle/Sockets/Row 5" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ColourSocket3" parent="Maze/ImagePuzzle/Sockets/Row 5" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="ColourSocket4" parent="Maze/ImagePuzzle/Sockets/Row 5" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="ColourSocket5" parent="Maze/ImagePuzzle/Sockets/Row 5" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="ColourSocket6" parent="Maze/ImagePuzzle/Sockets/Row 5" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="Row 6" type="Node3D" parent="Maze/ImagePuzzle/Sockets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[node name="ColourSocket" parent="Maze/ImagePuzzle/Sockets/Row 6" instance=ExtResource("1_utsag")]
+
+[node name="ColourSocket2" parent="Maze/ImagePuzzle/Sockets/Row 6" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="ColourSocket3" parent="Maze/ImagePuzzle/Sockets/Row 6" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="ColourSocket4" parent="Maze/ImagePuzzle/Sockets/Row 6" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="ColourSocket5" parent="Maze/ImagePuzzle/Sockets/Row 6" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="ColourSocket6" parent="Maze/ImagePuzzle/Sockets/Row 6" instance=ExtResource("1_utsag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="Flag" type="CSGBox3D" parent="Maze"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5219, 1.60834, 15.8216)
+size = Vector3(2.98718, 3.31543, 0.0956268)
+material = SubResource("StandardMaterial3D_hho37")
+script = ExtResource("4_s7alk")
+
+[node name="Simon Says" type="Node3D" parent="." node_paths=PackedStringArray("buttons", "indicators")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 66.9957, 0.355991, 13.3993)
+script = ExtResource("13_j6mjl")
+sequences = Array[Array]([[0, 1], [0, 1, 3]])
+brightMaterial = ExtResource("6_73vr8")
+dimMaterial = ExtResource("4_xfx0l")
+buttons = [NodePath("Button"), NodePath("Button2"), NodePath("Button3"), NodePath("Button4")]
+indicators = [NodePath("Indicators/CSGBox3D"), NodePath("Indicators/CSGBox3D2"), NodePath("Indicators/CSGBox3D3"), NodePath("Indicators/CSGBox3D4")]
+
+[node name="Indicators" type="Node3D" parent="Simon Says"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Simon Says/Indicators"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.31967, 2.21579, -2.74511)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Simon Says/Indicators"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20474, 2.21579, -3.03138)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Simon Says/Indicators"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93739, 2.21579, 2.65799)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Simon Says/Indicators"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50645, 2.21579, 2.65273)
+
+[node name="Button" parent="Simon Says" instance=ExtResource("1_lhik3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2118, 0, -2.62444)
+
+[node name="Button2" parent="Simon Says" instance=ExtResource("1_lhik3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10418, -9.53674e-07, -2.91258)
+
+[node name="Button3" parent="Simon Says" instance=ExtResource("1_lhik3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.90792, 0, 2.69702)
+
+[node name="Button4" parent="Simon Says" instance=ExtResource("1_lhik3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4862, 0, 2.74638)
+
+[node name="Flag" type="CSGBox3D" parent="Simon Says"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234116, 1.22455, -5.42583)
+size = Vector3(2.98718, 3.31543, 0.0956268)
+material = SubResource("StandardMaterial3D_hho37")
+script = ExtResource("4_s7alk")
+
+[node name="Clutter Room" type="Node3D" parent="." node_paths=PackedStringArray("Sockets")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 94.0371, -9.53674e-07, -24.9734)
+script = ExtResource("15_msgn2")
+Sockets = [NodePath("Room sockets/Locked Socket/BasicSocket"), NodePath("Room sockets/Locked Socket/BasicSocket2"), NodePath("Clutter Pile/TablePickup/Area3D/ItemMount/TableItem/BasicSocket")]
+LockKeys = Array[String](["Table", "Box", "Box"])
+
+[node name="Floor" type="CSGBox3D" parent="Clutter Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+material_override = ExtResource("2_e25pp")
+use_collision = true
+size = Vector3(20, 20, 20)
+material = SubResource("StandardMaterial3D_56gm1")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Clutter Room/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27901, 9.64143, -1.30362)
+size = Vector3(2.5, 1, 2.5)
+material = SubResource("StandardMaterial3D_yp77u")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Clutter Room/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72864, 9.64143, -1.30362)
+size = Vector3(2.5, 1, 2.5)
+material = SubResource("StandardMaterial3D_yp77u")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Clutter Room/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.98198, 10.4096, 9.722)
+size = Vector3(8, 1.32117, 0.537598)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Clutter Room/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0448, 10.4096, 9.722)
+size = Vector3(8, 1.32117, 0.537598)
+
+[node name="Clutter Pile" type="Node3D" parent="Clutter Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.16916, 0.48198, -2.73062)
+
+[node name="TablePickup" type="Node3D" parent="Clutter Room/Clutter Pile"]
+
+[node name="Area3D" type="Area3D" parent="Clutter Room/Clutter Pile/TablePickup" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("16_j4va3")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/TableItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Clutter Room/Clutter Pile/TablePickup/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("17_8eqao")
+script = ExtResource("18_gfamk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clutter Room/Clutter Pile/TablePickup/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clutter Room/Clutter Pile/TablePickup/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Clutter Room/Clutter Pile/TablePickup/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Clutter Room/Clutter Pile/TablePickup/Area3D"]
+
+[node name="TableItem" type="CSGBox3D" parent="Clutter Room/Clutter Pile/TablePickup/Area3D/ItemMount" node_paths=PackedStringArray("Sockets", "Buttons")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0165272, 0, -0.0160351)
+size = Vector3(2.50351, 0.86, 2.06949)
+material = SubResource("StandardMaterial3D_nk5vm")
+script = ExtResource("19_k22ro")
+Sockets = [NodePath("BasicSocket")]
+ItemKeys = Array[String](["Box"])
+Buttons = []
+metadata/ItemKey = "Table"
+
+[node name="BasicSocket" parent="Clutter Room/Clutter Pile/TablePickup/Area3D/ItemMount/TableItem" instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456927, 1.02136, 0.126221)
+
+[node name="BoxPickup" type="Node3D" parent="Clutter Room/Clutter Pile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.17092)
+
+[node name="Area3D" type="Area3D" parent="Clutter Room/Clutter Pile/BoxPickup" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("16_j4va3")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/BoxItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("17_8eqao")
+script = ExtResource("18_gfamk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D"]
+
+[node name="BoxItem" type="CSGBox3D" parent="Clutter Room/Clutter Pile/BoxPickup/Area3D/ItemMount"]
+size = Vector3(0.86, 0.86, 0.86)
+material = SubResource("StandardMaterial3D_nk5vm")
+metadata/ItemKey = "Box"
+
+[node name="BoxPickup2" type="Node3D" parent="Clutter Room/Clutter Pile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60772, 0, -3.17092)
+
+[node name="Area3D" type="Area3D" parent="Clutter Room/Clutter Pile/BoxPickup2" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("16_j4va3")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/BoxItem")
+
+[node name="Sprite3D" type="Sprite3D" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("17_8eqao")
+script = ExtResource("18_gfamk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D"]
+
+[node name="BoxItem" type="CSGBox3D" parent="Clutter Room/Clutter Pile/BoxPickup2/Area3D/ItemMount"]
+size = Vector3(0.86, 0.86, 0.86)
+material = SubResource("StandardMaterial3D_nk5vm")
+metadata/ItemKey = "Box"
+
+[node name="Room sockets" type="Node3D" parent="Clutter Room"]
+
+[node name="Locked Socket" type="Node3D" parent="Clutter Room/Room sockets"]
+
+[node name="BasicSocket" parent="Clutter Room/Room sockets/Locked Socket" instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62637, 0, -1.19555)
+
+[node name="BasicSocket2" parent="Clutter Room/Room sockets/Locked Socket" instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31873, 0, -1.26413)
+
+[node name="Flag" type="CSGBox3D" parent="Clutter Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87167, 1.22455, -6.17608)
+size = Vector3(2.98718, 3.31543, 0.0956268)
+material = SubResource("StandardMaterial3D_hho37")
+script = ExtResource("4_s7alk")
+
+[node name="Exit Dias" type="Node3D" parent="." node_paths=PackedStringArray("CrystalGreen", "CrystalRed", "CrystalBlack", "CrystalBlue", "ButtonSequence")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27.8118, 0, -24.8822)
+script = ExtResource("21_7b46n")
+CrystalGreen = NodePath("Sockets/CrystalGreenSocket")
+CrystalRed = NodePath("Sockets/CrystalRedSocket")
+CrystalBlack = NodePath("Sockets/CrystalBlackSocket3")
+CrystalBlue = NodePath("Sockets/CrystalBlueSocket4")
+ButtonSequence = NodePath("Crystal Pickups")
+
+[node name="Sockets" type="Node3D" parent="Exit Dias"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192237, 0)
+
+[node name="CrystalGreenSocket" parent="Exit Dias/Sockets" instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109203, 0, -5.82421)
+
+[node name="CrystalRedSocket" parent="Exit Dias/Sockets" instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.29743, 0, 0.145605)
+
+[node name="CrystalBlackSocket3" parent="Exit Dias/Sockets" instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0364017, 0, 6.91626)
+
+[node name="CrystalBlueSocket4" parent="Exit Dias/Sockets" instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96982, 0, 0.145605)
+
+[node name="Visuals" type="Node3D" parent="Exit Dias"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.02973, 1.90735e-06, -8.80312)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Exit Dias/Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.752, 9)
+use_collision = true
+radius = 8.70924
+material = ExtResource("2_e25pp")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Exit Dias/Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.09768, -0.166455, 3.01301)
+size = Vector3(2.5, 1, 2.5)
+material = ExtResource("7_r6t2i")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Exit Dias/Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2951, -0.166455, 8.96832)
+size = Vector3(2.5, 1, 2.5)
+material = ExtResource("5_2pqoc")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Exit Dias/Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.03411, -0.166455, 15.7026)
+size = Vector3(2.5, 1, 2.5)
+material = ExtResource("3_pk8v6")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Exit Dias/Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06428, -0.166455, 8.96833)
+size = Vector3(2.5, 1, 2.5)
+material = ExtResource("6_73vr8")
+
+[node name="Crystal Pickups" type="Node3D" parent="Exit Dias" node_paths=PackedStringArray("sequenceButtons")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.889485, 0)
+script = ExtResource("22_vohlp")
+sequenceButtons = [NodePath("CrystalGreenPickup/Area3D/ItemMount/CrystalGreen/WallButton"), NodePath("CrystalRedPickup/Area3D/ItemMount/CrystalRed/WallButton"), NodePath("CrystalBlackPickup/Area3D/ItemMount/CrystalBlack/WallButton"), NodePath("CrystalBluePickup/Area3D/ItemMount/CrystalBlue/WallButton")]
+
+[node name="CrystalGreenPickup" type="Node3D" parent="Exit Dias/Crystal Pickups"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5226, 1.90735e-06, -46.1154)
+
+[node name="Area3D" type="Area3D" parent="Exit Dias/Crystal Pickups/CrystalGreenPickup" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("16_j4va3")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/CrystalGreen")
+
+[node name="Sprite3D" type="Sprite3D" parent="Exit Dias/Crystal Pickups/CrystalGreenPickup/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("17_8eqao")
+script = ExtResource("18_gfamk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Exit Dias/Crystal Pickups/CrystalGreenPickup/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit Dias/Crystal Pickups/CrystalGreenPickup/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Exit Dias/Crystal Pickups/CrystalGreenPickup/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Exit Dias/Crystal Pickups/CrystalGreenPickup/Area3D"]
+
+[node name="CrystalGreen" type="CSGBox3D" parent="Exit Dias/Crystal Pickups/CrystalGreenPickup/Area3D/ItemMount" node_paths=PackedStringArray("Sockets", "Buttons")]
+size = Vector3(0.86, 0.86, 0.86)
+material = ExtResource("7_r6t2i")
+script = ExtResource("19_k22ro")
+Sockets = []
+Buttons = [NodePath("WallButton")]
+metadata/ItemKey = "CrystalGreen"
+
+[node name="WallButton" parent="Exit Dias/Crystal Pickups/CrystalGreenPickup/Area3D/ItemMount/CrystalGreen" instance=ExtResource("22_jga8s")]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0.419616, 0.309191)
+
+[node name="CrystalRedPickup" type="Node3D" parent="Exit Dias/Crystal Pickups"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8278, 1.90735e-06, -15.6496)
+
+[node name="Area3D" type="Area3D" parent="Exit Dias/Crystal Pickups/CrystalRedPickup" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("16_j4va3")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/CrystalRed")
+
+[node name="Sprite3D" type="Sprite3D" parent="Exit Dias/Crystal Pickups/CrystalRedPickup/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("17_8eqao")
+script = ExtResource("18_gfamk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Exit Dias/Crystal Pickups/CrystalRedPickup/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit Dias/Crystal Pickups/CrystalRedPickup/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Exit Dias/Crystal Pickups/CrystalRedPickup/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Exit Dias/Crystal Pickups/CrystalRedPickup/Area3D"]
+
+[node name="CrystalRed" type="CSGBox3D" parent="Exit Dias/Crystal Pickups/CrystalRedPickup/Area3D/ItemMount" node_paths=PackedStringArray("Sockets", "Buttons")]
+size = Vector3(0.86, 0.86, 0.86)
+material = ExtResource("5_2pqoc")
+script = ExtResource("19_k22ro")
+Sockets = []
+Buttons = [NodePath("WallButton")]
+metadata/ItemKey = "CrystalRed"
+
+[node name="WallButton" parent="Exit Dias/Crystal Pickups/CrystalRedPickup/Area3D/ItemMount/CrystalRed" instance=ExtResource("22_jga8s")]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0.419616, 0.309191)
+
+[node name="CrystalBlackPickup" type="Node3D" parent="Exit Dias/Crystal Pickups"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50356, -9.53674e-07, 13.1148)
+
+[node name="Area3D" type="Area3D" parent="Exit Dias/Crystal Pickups/CrystalBlackPickup" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("16_j4va3")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/CrystalBlack")
+
+[node name="Sprite3D" type="Sprite3D" parent="Exit Dias/Crystal Pickups/CrystalBlackPickup/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("17_8eqao")
+script = ExtResource("18_gfamk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Exit Dias/Crystal Pickups/CrystalBlackPickup/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit Dias/Crystal Pickups/CrystalBlackPickup/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Exit Dias/Crystal Pickups/CrystalBlackPickup/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Exit Dias/Crystal Pickups/CrystalBlackPickup/Area3D"]
+
+[node name="CrystalBlack" type="CSGBox3D" parent="Exit Dias/Crystal Pickups/CrystalBlackPickup/Area3D/ItemMount" node_paths=PackedStringArray("Sockets", "Buttons")]
+size = Vector3(0.86, 0.86, 0.86)
+material = ExtResource("3_pk8v6")
+script = ExtResource("19_k22ro")
+Sockets = []
+Buttons = [NodePath("WallButton")]
+metadata/ItemKey = "CrystalBlack"
+
+[node name="WallButton" parent="Exit Dias/Crystal Pickups/CrystalBlackPickup/Area3D/ItemMount/CrystalBlack" instance=ExtResource("22_jga8s")]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0.419616, 0.309191)
+
+[node name="CrystalBluePickup" type="Node3D" parent="Exit Dias/Crystal Pickups"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8166, 0, -45.1128)
+
+[node name="Area3D" type="Area3D" parent="Exit Dias/Crystal Pickups/CrystalBluePickup" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("16_j4va3")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/CrystalBlue")
+
+[node name="Sprite3D" type="Sprite3D" parent="Exit Dias/Crystal Pickups/CrystalBluePickup/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("17_8eqao")
+script = ExtResource("18_gfamk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Exit Dias/Crystal Pickups/CrystalBluePickup/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit Dias/Crystal Pickups/CrystalBluePickup/Area3D"]
+shape = SubResource("BoxShape3D_w3clg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Exit Dias/Crystal Pickups/CrystalBluePickup/Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q3e7l")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Exit Dias/Crystal Pickups/CrystalBluePickup/Area3D"]
+
+[node name="CrystalBlue" type="CSGBox3D" parent="Exit Dias/Crystal Pickups/CrystalBluePickup/Area3D/ItemMount" node_paths=PackedStringArray("Sockets", "Buttons")]
+size = Vector3(0.86, 0.86, 0.86)
+material = ExtResource("6_73vr8")
+script = ExtResource("19_k22ro")
+Sockets = []
+Buttons = [NodePath("WallButton")]
+metadata/ItemKey = "CrystalBlue"
+
+[node name="WallButton" parent="Exit Dias/Crystal Pickups/CrystalBluePickup/Area3D/ItemMount/CrystalBlue" instance=ExtResource("22_jga8s")]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 0, 0.419616, 0.309191)
+
+[node name="Fog and neurons" type="Node3D" parent="." node_paths=PackedStringArray("mazeFog1", "mazeFog2", "clutterAndSimonFog", "bridgeFog", "treeFog")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5439, 0.576016, -40.817)
+script = ExtResource("24_teicv")
+mazeFog1 = NodePath("Fog/Maze Fog1")
+mazeFog2 = NodePath("Fog/Maze Fog2")
+clutterAndSimonFog = NodePath("Fog/Clutter&Simon Fog")
+bridgeFog = NodePath("Fog/Bridge Fog")
+treeFog = NodePath("Fog/Tree Fog")
+
+[node name="Fog" type="Node3D" parent="Fog and neurons"]
+
+[node name="Maze Fog1" type="CSGBox3D" parent="Fog and neurons/Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.2807, 8.78862, -14.4567)
+use_collision = true
+size = Vector3(38.8114, 16.1865, 33.2985)
+
+[node name="Maze Fog2" type="CSGBox3D" parent="Fog and neurons/Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.5114, 8.78862, -36.7818)
+use_collision = true
+size = Vector3(32.7253, 16.1865, 11.648)
+
+[node name="Clutter&Simon Fog" type="CSGBox3D" parent="Fog and neurons/Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.9578, 8.78862, -56.6527)
+use_collision = true
+size = Vector3(73.0538, 16.1865, 28.1733)
+
+[node name="Maze Fog3" type="CSGBox3D" parent="Fog and neurons/Fog/Clutter&Simon Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6265, 0, 19.8709)
+use_collision = true
+size = Vector3(39.8721, 16.1865, 11.648)
+
+[node name="Bridge Fog" type="CSGBox3D" parent="Fog and neurons/Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3337, 8.78862, -63.9644)
+use_collision = true
+size = Vector3(17.7007, 16.1865, 13.3168)
+
+[node name="Tree Fog" type="CSGBox3D" parent="Fog and neurons/Fog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.037, 8.71913, -64.6729)
+use_collision = true
+size = Vector3(7.41632, 16.4477, 11.7873)
+
+[node name="Power Sockets" type="Node3D" parent="Fog and neurons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0129547, -0.163687, -0.0671883)
+
+[node name="BasicSocket" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2025, 0, -10.3785)
+
+[node name="BasicSocket2" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.3314, -1.90735e-06, -23.8786)
+
+[node name="BasicSocket3" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.4451, -1.90735e-06, -36.5359)
+
+[node name="BasicSocket4" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.0608, -1.90735e-06, -54.3904)
+
+[node name="BasicSocket5" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36908, -1.90735e-06, -48.9272)
+
+[node name="WaterSocket" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08792, -1.90735e-06, -37.9911)
+
+[node name="Power boxes" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5439, 0.35968, -40.817)
+
+[node name="PowerBoxPickup" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.22985, 0, -11.9512)
+
+[node name="PowerBoxPickup2" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.1679, 0, -23.042)
+
+[node name="PowerBoxPickup3" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.3984, 0, -37.7815)
+
+[node name="PowerBoxPickup4" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0184, 0, -54.3121)
+
+[node name="PowerBoxPickup5" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3991, 0, -67.2027)
+
+[node name="PowerBoxPickup6" parent="Power boxes" instance=ExtResource("26_7pnpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0139, 0, -29.8024)
+
+[node name="PowerBoxCovers" type="Node3D" parent="Power boxes"]
+
+[node name="Maze" type="CSGBox3D" parent="Power boxes/PowerBoxCovers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.4673, 0.775424, -22.7945)
+use_collision = true
+size = Vector3(3.44012, 2.62488, 3.3983)
+
+[node name="Simon" type="CSGBox3D" parent="Power boxes/PowerBoxCovers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.4565, 0.775424, -67.0954)
+use_collision = true
+size = Vector3(3.44012, 2.62488, 3.3983)
+
+[node name="Clutter" type="CSGBox3D" parent="Power boxes/PowerBoxCovers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79124, 0.775424, -54.3282)
+use_collision = true
+size = Vector3(3.44012, 2.62488, 3.3983)
+
+[node name="Waterpower" type="CSGBox3D" parent="Power boxes/PowerBoxCovers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09238, 0.775424, -38.1781)
+use_collision = true
+size = Vector3(3.44012, 2.62488, 3.3983)
