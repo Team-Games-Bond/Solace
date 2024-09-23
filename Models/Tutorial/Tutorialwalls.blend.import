@@ -126,13 +126,13 @@ _subresources={
 "generate/physics": true
 },
 "PATH:Plane_007": {
-"generate/physics": true
+"import/skip_import": true
 },
 "PATH:Plane_008": {
 "generate/physics": true
 },
 "PATH:Plane_009": {
-"generate/physics": true
+"import/skip_import": true
 }
 }
 }

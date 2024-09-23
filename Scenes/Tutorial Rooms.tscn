@@ -1,5 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc653q6p6d72i"]
+[gd_scene load_steps=4 format=3 uid="uid://cc653q6p6d72i"]
 
 [ext_resource type="PackedScene" uid="uid://vbbbs8etpndd" path="res://Models/Tutorial/Tutorialwalls.blend" id="1_8aros"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_ffhk6"]
+size = Vector3(2.2, 0.1, 5.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_38che"]
+size = Vector3(2.2, 0.1, 5.9)
+
 [node name="Tutorialwalls" instance=ExtResource("1_8aros")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="38"]
+mesh = SubResource("BoxMesh_ffhk6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.05, -0.05)
+shape = SubResource("BoxShape3D_38che")
