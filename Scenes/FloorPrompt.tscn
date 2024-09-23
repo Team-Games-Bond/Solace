@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3ksxh42ku6b4"]
+
+[ext_resource type="Texture2D" uid="uid://clajknrtv170h" path="res://Textures/Key-W-green.svg" id="1_5khdu"]
+[ext_resource type="Texture2D" uid="uid://p1t8ysjsv78f" path="res://Textures/Key-W.svg" id="1_vrr2a"]
+[ext_resource type="Script" path="res://Scripts/ButtonDecal.cs" id="2_mvhhc"]
+[ext_resource type="Texture2D" uid="uid://b0j2s18fyeush" path="res://Textures/Key-A.svg" id="3_h7fur"]
+[ext_resource type="Texture2D" uid="uid://bddvmntcbjwo8" path="res://Textures/Key-S.svg" id="4_ug4xf"]
+[ext_resource type="Texture2D" uid="uid://bekk7mdj6htca" path="res://Textures/Key-S-green.svg" id="5_fb1pq"]
+[ext_resource type="Texture2D" uid="uid://bqkh2rsontplk" path="res://Textures/Key-D.svg" id="6_v4lrs"]
+[ext_resource type="Texture2D" uid="uid://q22f528p54f3" path="res://Textures/Key-D-green.svg" id="7_wcbk7"]
+[ext_resource type="Texture2D" uid="uid://befaiidu0u58m" path="res://Textures/Key-A-green.svg" id="9_jk088"]
+
+[node name="FloorPrompt" type="Node3D"]
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1)
+texture_albedo = ExtResource("1_vrr2a")
+script = ExtResource("2_mvhhc")
+Key = 87
+TexturePressed = ExtResource("1_5khdu")
+TextureReleased = ExtResource("1_vrr2a")
+
+[node name="Decal2" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+texture_albedo = ExtResource("4_ug4xf")
+script = ExtResource("2_mvhhc")
+Key = 83
+TexturePressed = ExtResource("5_fb1pq")
+TextureReleased = ExtResource("4_ug4xf")
+
+[node name="Decal3" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 1)
+texture_albedo = ExtResource("6_v4lrs")
+script = ExtResource("2_mvhhc")
+Key = 68
+TexturePressed = ExtResource("7_wcbk7")
+TextureReleased = ExtResource("6_v4lrs")
+
+[node name="Decal4" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 1)
+texture_albedo = ExtResource("3_h7fur")
+script = ExtResource("2_mvhhc")
+Key = 65
+TexturePressed = ExtResource("9_jk088")
+TextureReleased = ExtResource("3_h7fur")

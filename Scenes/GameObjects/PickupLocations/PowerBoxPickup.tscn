@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://cunwppijkniwm"]
+
+[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="1_hwx5a"]
+[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_31wmf"]
+[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="3_dcima"]
+
+[sub_resource type="Animation" id="Animation_jtjrm"]
+resource_name = "Button Prompt Appear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 1, 1, 1)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ac51l"]
+resource_name = "Button Prompt Disappear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.2, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_clq28"]
+_data = {
+"Button Prompt Appear": SubResource("Animation_jtjrm"),
+"Button Prompt Disappear": SubResource("Animation_ac51l")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rqwqr"]
+size = Vector3(2.5, 1, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q11rr"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(0, 1, 0.223529, 0.145098)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3takf"]
+albedo_color = Color(0, 0.686275, 1, 1)
+
+[node name="PowerBoxPickup" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("1_hwx5a")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/PowerBox")
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("2_31wmf")
+script = ExtResource("3_dcima")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_rqwqr")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q11rr")
+size = Vector3(2.5, 1, 2.5)
+
+[node name="ItemMount" type="Node3D" parent="Area3D"]
+
+[node name="PowerBox" type="CSGBox3D" parent="Area3D/ItemMount"]
+size = Vector3(0.86, 0.86, 0.86)
+material = SubResource("StandardMaterial3D_3takf")
+metadata/ItemKey = "PowerBox"

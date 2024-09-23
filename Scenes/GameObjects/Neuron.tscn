@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bt4nhl6e47gcv"]
+
+[node name="Neuron" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+use_collision = true
+size = Vector3(0.2, 2, 0.2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+size = Vector3(0.4, 0.4, 0.4)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307834, 0)

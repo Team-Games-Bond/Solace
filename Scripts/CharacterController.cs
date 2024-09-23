@@ -10,11 +10,17 @@ public partial class CharacterController : CharacterBody3D
 
 	[ExportGroup("Controller Setup")]
 	[Export] public Node3D PlayerPivot;
-	[Export] public Area3D LadderDetector;
+	[Export] public Area3D LadderDetector; //If you remove this the turning system breaks... somehow?????
 
 	//Other variables
 	public bool wasOnFloorLastFrame = false; 
+	public bool wasJustTeleported = false;
 	public bool isPuzzleMode = false;
+	public Interactable Current;
+
+	[ExportGroup("Item Carrying")]
+	[Export] public Node3D ItemMount;
+	public Node3D Carrying;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
@@ -72,5 +78,20 @@ public partial class CharacterController : CharacterBody3D
 			//Floating point error prevention
 			//PlayerPivot.Transform = PlayerPivot.Transform.Orthonormalized();
 	}
+	public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("Interact") && Current!=null){
+			Current.Interact(this);
+		}
+    }
 
+	public bool HasItem(){
+		return Carrying != null;
+	}
+
+	public void Teleport(Vector3 pos)
+	{
+		this.Position = pos;
+		GD.Print(this.Position," vs target: ", pos);
+	}
 }

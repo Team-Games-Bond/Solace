@@ -3,7 +3,12 @@
 ## Contributors
 
 - Julia (Team Lead)
-- Fred Zhang - CEO
+- Sam Son Ho (Plebian)
+- Fred Zhang (CEO)
+- Selena Wu (Design)
+- Madeline Whitmore (Backend)
+- Melody Elwood (Backend)
+
 
 ## Getting Started
 ### What You'll Need 
