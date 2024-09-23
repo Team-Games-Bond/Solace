@@ -1,6 +1,6 @@
-[gd_resource type="VisualShader" load_steps=41 format=3 uid="uid://dx2xo44tuo1q8"]
+[gd_resource type="VisualShader" load_steps=41 format=3 uid="uid://d4mu3nhjubty3"]
 
-[ext_resource type="Texture2D" uid="uid://dba3ruhm21wqo" path="res://Textures/Water ripple noise.tres" id="1_pvlme"]
+[ext_resource type="Texture2D" uid="uid://cyb25imsxeeb3" path="res://Textures/Water ripple noise.tres" id="1_pvlme"]
 [ext_resource type="Script" path="res://addons/shaderV/tools/TimeScaled.gd" id="2_alwxk"]
 [ext_resource type="Script" path="res://addons/shaderV/tools/transformCoordinates/cartesianToPolar.gd" id="3_v7vw8"]
 [ext_resource type="Script" path="res://addons/shaderV/rgba/noise/simplex3d.gd" id="4_k3geq"]
