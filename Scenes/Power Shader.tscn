@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3jr34a4nmblb"]
+[gd_scene load_steps=4 format=3 uid="uid://d4iwtf4iecmqi"]
 
-[ext_resource type="Material" uid="uid://f6kh78fuaeud" path="res://Materials/CableDull.tres" id="1_igfa6"]
+[ext_resource type="Material" uid="uid://cto7gbknsgtoo" path="res://Materials/CableDull.tres" id="1_igfa6"]
 [ext_resource type="Script" path="res://Scripts/Cable.cs" id="2_juoo5"]
 [ext_resource type="PackedScene" uid="uid://d4d7jw7if4c6x" path="res://Models/Sample/cable.blend" id="3_n2ifb"]
 

@@ -82,3 +82,7 @@ SECONDARY_DEPTH={
 "type": "sampler2D",
 "value": "res://Textures/Overlay.png"
 }
+Bayer16={
+"type": "sampler2D",
+"value": "res://Textures/bayer16.png"
+}
