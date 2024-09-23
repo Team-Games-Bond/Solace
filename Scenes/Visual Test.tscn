@@ -1,13 +1,13 @@
-[gd_scene load_steps=26 format=4 uid="uid://bjch18j6ma5fo"]
+[gd_scene load_steps=28 format=4 uid="uid://bvgckrg7axegb"]
 
 [ext_resource type="Texture2D" uid="uid://c3ttg62fcbgr5" path="res://Textures/Initial.png" id="3_02w14"]
-[ext_resource type="Shader" uid="uid://dfd7heqqa5031" path="res://Shaders/Waterfall.tres" id="3_66vxv"]
+[ext_resource type="Shader" uid="uid://djnsegcc1uyaf" path="res://Shaders/Waterfall.tres" id="3_66vxv"]
 [ext_resource type="Script" path="res://Scripts/Fog.cs" id="3_f6npi"]
-[ext_resource type="Shader" uid="uid://cevs8sgppigxu" path="res://Shaders/Water Shader.tres" id="3_oura3"]
+[ext_resource type="Shader" uid="uid://dpnd1cne0pxuv" path="res://Shaders/Water Shader.tres" id="3_oura3"]
 [ext_resource type="Texture2D" uid="uid://duci602t0erb1" path="res://Textures/Overlay.png" id="4_l5ixh"]
-[ext_resource type="Material" uid="uid://whwpat23q0xr" path="res://Materials/FogMaterial.tres" id="5_aoexq"]
-[ext_resource type="Shader" uid="uid://d4mu3nhjubty3" path="res://Shaders/Water Ripple.tres" id="7_i5q4q"]
-[ext_resource type="Shader" uid="uid://0s0s8ehnb2vg" path="res://Shaders/Skybox.tres" id="8_gdr64"]
+[ext_resource type="Material" path="res://Materials/FogMaterial.tres" id="5_aoexq"]
+[ext_resource type="Shader" uid="uid://vxg1t0088dw7" path="res://Shaders/Water Ripple.tres" id="7_i5q4q"]
+[ext_resource type="Shader" uid="uid://b16xg3l1q7te3" path="res://Shaders/Skybox.tres" id="8_gdr64"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_w6b8u"]
 _surfaces = [{
@@ -86,8 +86,16 @@ shader = ExtResource("3_66vxv")
 [sub_resource type="CylinderMesh" id="CylinderMesh_jwwku"]
 material = SubResource("ShaderMaterial_qh6mk")
 
+[sub_resource type="Gradient" id="Gradient_54inr"]
+colors = PackedColorArray(0.920543, 0.533698, 1.92523e-07, 1, 0.590745, 0.00267819, 0.854924, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pg423"]
+gradient = SubResource("Gradient_54inr")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0i3ly"]
 shader = ExtResource("8_gdr64")
+shader_parameter/CubemapGradient = SubResource("GradientTexture1D_pg423")
+shader_parameter/ScreenGradient = SubResource("GradientTexture1D_pg423")
 
 [sub_resource type="Sky" id="Sky_4vyev"]
 sky_material = SubResource("ShaderMaterial_0i3ly")
