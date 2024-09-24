@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3ck6p1xdvhnt"]
+[gd_scene load_steps=12 format=3 uid="uid://b3ck6p1xdvhnt"]
 
 [ext_resource type="Script" path="res://Scripts/Button.cs" id="1_dus0x"]
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="2_noerg"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="3_tgdle"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_mbyxh"]
 [ext_resource type="PackedScene" uid="uid://cbwmi2wku2e8r" path="res://Models/Tutorial/octagon rune holder.blend" id="5_viq53"]
+[ext_resource type="PackedScene" uid="uid://brvdr6ktafe3m" path="res://Models/Tutorial/Rune rock 1.blend" id="6_7bsh5"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -106,10 +107,19 @@ visible = false
 use_collision = true
 size = Vector3(1.13165, 0.214294, 1.09828)
 
-[node name="Monolith" type="CSGBox3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.116, 0)
+[node name="Rune Rock Holder" type="Node3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+
+[node name="Rune rock 1" parent="Visuals/Rune Rock Holder" instance=ExtResource("6_7bsh5")]
+transform = Transform3D(-1.96701e-08, 0, 0.45, 0, 0.45, 0, -0.45, 0, -1.96701e-08, 0, 0, 0)
+
+[node name="Colider" type="CSGCylinder3D" parent="Visuals/Rune Rock Holder/Rune rock 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.80402, 0)
+visible = false
+layers = 524288
 use_collision = true
-size = Vector3(0.573578, 1.99512, 0.573792)
+radius = 0.939434
+height = 4.53563
 
 [node name="octagon rune holder" parent="Visuals" instance=ExtResource("5_viq53")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.00362074, -0.458856, 0)

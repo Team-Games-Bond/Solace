@@ -1,10 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://un31ok75dwaf"]
+[gd_scene load_steps=37 format=3 uid="uid://un31ok75dwaf"]
 
 [ext_resource type="Script" path="res://Scripts/ImagePuzzleManager.cs" id="1_bvm8w"]
 [ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="1_lhik3"]
 [ext_resource type="Script" path="res://Scripts/BrainWorldManager.cs" id="1_quknv"]
 [ext_resource type="PackedScene" uid="uid://dr86qgtsfdi6t" path="res://Scenes/GameObjects/Sockets/ColourSocket.tscn" id="1_utsag"]
-[ext_resource type="Material" uid="uid://bhwyqypds6eyc" path="res://Materials/Grey.tres" id="2_e25pp"]
 [ext_resource type="Material" uid="uid://cqfcpy0i7guyj" path="res://Materials/ImagePuzzleMaterials/unrecognised.tres" id="2_pe0ng"]
 [ext_resource type="PackedScene" uid="uid://yja2prigd27u" path="res://Scenes/GameObjects/PickupLocations/ColourBoxSpawner.tscn" id="3_4f5et"]
 [ext_resource type="Material" uid="uid://cyt0r2egut717" path="res://Materials/ImagePuzzleMaterials/black.tres" id="3_pk8v6"]
@@ -245,7 +244,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.726
 
 [node name="Floor" type="CSGBox3D" parent="Maze"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3012, -10, 11.6841)
-material_override = ExtResource("2_e25pp")
 use_collision = true
 size = Vector3(66.6025, 20, 53.3682)
 material = SubResource("StandardMaterial3D_56gm1")
@@ -887,7 +885,6 @@ LockKeys = Array[String](["Table", "Box", "Box"])
 
 [node name="Floor" type="CSGBox3D" parent="Clutter Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
-material_override = ExtResource("2_e25pp")
 use_collision = true
 size = Vector3(20, 20, 20)
 material = SubResource("StandardMaterial3D_56gm1")
@@ -1084,7 +1081,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.02973, 1.90735e-06, -8.803
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.752, 9)
 use_collision = true
 radius = 8.70924
-material = ExtResource("2_e25pp")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Exit Dias/Visuals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.09768, -0.166455, 3.01301)
