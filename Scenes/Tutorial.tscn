@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://3h4uy8nh0y5o"]
 
-[ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_xyye4"]
-[ext_resource type="Script" path="res://Scripts/Sequence.cs" id="2_8luhl"]
+[ext_resource type="Script" path="res://Scripts/Manager Scripts/TutorialWorldManager.cs" id="1_xyye4"]
+[ext_resource type="Script" path="res://Scripts/Manager Scripts/Sequence.cs" id="2_8luhl"]
 [ext_resource type="Script" path="res://Scripts/Door.cs" id="2_yswuu"]
 [ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="3_k1skp"]
 [ext_resource type="Material" uid="uid://ojjkfm66ff7k" path="res://Materials/Unobstructing Door.tres" id="3_mx2uo"]
@@ -15,10 +15,10 @@
 [ext_resource type="Material" uid="uid://c405lqe1cf5" path="res://Materials/ImagePuzzleMaterials/red.tres" id="13_78nsa"]
 [ext_resource type="Material" uid="uid://cqfcpy0i7guyj" path="res://Materials/ImagePuzzleMaterials/unrecognised.tres" id="14_xq6da"]
 [ext_resource type="Material" uid="uid://u8rkn3x78ttp" path="res://Materials/ImagePuzzleMaterials/white.tres" id="15_jx8qk"]
-[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="18_ets47"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/SocketedInteraction.cs" id="18_ets47"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="19_cnyas"]
-[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="20_fvuke"]
-[ext_resource type="PackedScene" path="res://Scenes/Tutorial Rooms.tscn" id="21_fbjqm"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/ButtonPromptAnimator.cs" id="20_fvuke"]
+[ext_resource type="PackedScene" uid="uid://cc653q6p6d72i" path="res://Scenes/Tutorial Rooms.tscn" id="21_fbjqm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdpma"]
 albedo_color = Color(0.685835, 0.685835, 0.685835, 1)

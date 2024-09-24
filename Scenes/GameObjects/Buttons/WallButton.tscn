@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://l24j71pyvwho"]
 
-[ext_resource type="Script" path="res://Scripts/Button.cs" id="1_c2jg6"]
-[ext_resource type="Script" path="res://Scripts/Interactable.cs" id="1_nckxi"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/Button.cs" id="1_c2jg6"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/Interactable.cs" id="1_nckxi"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_mhqyx"]
-[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_4gpjd"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/ButtonPromptAnimator.cs" id="4_4gpjd"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"

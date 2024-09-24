@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://cy65g16gt1t43"]
 
-[ext_resource type="Script" path="res://Scripts/Interactable.cs" id="1_oifwb"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/Interactable.cs" id="1_oifwb"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_ru67i"]
-[ext_resource type="Script" path="res://Scripts/ExampleInteraction.cs" id="3_4jovv"]
-[ext_resource type="Script" path="res://Scripts/CameraInteraction.cs" id="4_blu2e"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/ExampleInteraction.cs" id="3_4jovv"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/CameraInteraction.cs" id="4_blu2e"]
 [ext_resource type="Script" path="res://Scripts/InWorldButtonAppearance.cs" id="5_qa0ks"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]

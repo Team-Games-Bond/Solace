@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://hcb2t4qod38t"]
 
-[ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="1_van7s"]
-[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="2_q8cwg"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/PlacementMonitor.cs" id="1_van7s"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/SocketedInteraction.cs" id="2_q8cwg"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="3_w2v2v"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]

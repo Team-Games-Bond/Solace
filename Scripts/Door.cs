@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Door : Node3D
+public partial class Door : Node3D //TODO animation
 {
 	[Export] float moveDistance = 3;
 	public void Open()
