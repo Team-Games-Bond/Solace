@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://vi8r7yemmosv"]
+
+[ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="1_7he2i"]
+[ext_resource type="PackedScene" uid="uid://d185l5su44ek3" path="res://Models/Tutorial/Rune rock 2.blend" id="2_aut64"]
+
+[node name="Button" instance=ExtResource("1_7he2i")]
+
+[node name="Visuals_Node3D#Rune rock 2" parent="." index="1" instance=ExtResource("2_aut64")]
+transform = Transform3D(-1.96701e-08, 0, 0.45, 0, 0.45, 0, -0.45, 0, -1.96701e-08, 0, 0, 0)
+
+[node name="Rune rock 1" parent="Visuals/Rune Rock Holder" index="0"]
+visible = false

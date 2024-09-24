@@ -78,10 +78,10 @@ public partial class SimonSaysManager : Node
 
 		int pressedButtonIndex = getButtonIndex(pressedButton);
 
-		GD.Print("Pressed Button: ", pressedButtonIndex);
-		GD.Print("Sequence Number: ", currentSequence,",",currentNumberInSequence);
-		GD.Print("Desired Button: ", sequences[currentSequence][currentNumberInSequence]);
-		GD.Print("");
+		//GD.Print("Pressed Button: ", pressedButtonIndex);
+		//GD.Print("Sequence Number: ", currentSequence,",",currentNumberInSequence);
+		//GD.Print("Desired Button: ", sequences[currentSequence][currentNumberInSequence]);
+		//GD.Print("");
 
 		//Check if correct
 		if(pressedButtonIndex == sequences[currentSequence][currentNumberInSequence])
@@ -99,7 +99,7 @@ public partial class SimonSaysManager : Node
 		//Check if complete
 		if(currentSequence >= sequences.Count-1) puzzleCompleted();
 		else currentSequence += 1;
-		GD.Print("Sequence Completed");
+		//GD.Print("Sequence Completed");
 		startPatternDisplay();
 	}
 
@@ -112,7 +112,7 @@ public partial class SimonSaysManager : Node
 
 	private void endPatternDisplay()
 	{
-		GD.Print("End Sequence ", currentNumberInSequence);
+		//GD.Print("End Sequence ", currentNumberInSequence);
 		indicators[sequences[currentSequence][currentNumberInSequence]].Material = dimMaterial;
 		isFlashing = false;
 		currentNumberInSequence = 0;
