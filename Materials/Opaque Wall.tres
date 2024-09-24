@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dj6twpp5osrx8"]
+
+[ext_resource type="Shader" path="res://Shaders/WallOpaque.gdshader" id="1_ixuu4"]
+[ext_resource type="Texture2D" uid="uid://i01cb01uwl7n" path="res://Textures/Flesh Gradient.tres" id="2_bqt0b"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ixuu4")
+shader_parameter/WallGradient = ExtResource("2_bqt0b")

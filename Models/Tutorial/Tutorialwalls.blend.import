@@ -1,0 +1,155 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://vbbbs8etpndd"
+path="res://.godot/imported/Tutorialwalls.blend-4bc4451782398da7e21338f90cd66141.scn"
+
+[deps]
+
+source_file="res://Models/Tutorial/Tutorialwalls.blend"
+dest_files=["res://.godot/imported/Tutorialwalls.blend-4bc4451782398da7e21338f90cd66141.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Material.007": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/Unobstructing Wall.tres"
+},
+"Material.011": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/Opaque Wall.tres"
+},
+"Material.015": {
+"use_external/enabled": false,
+"use_external/path": "res://Materials/Unobstructing Wall.tres"
+}
+},
+"nodes": {
+"PATH:Cube": {
+"generate/physics": true
+},
+"PATH:Cube long": {
+"generate/physics": true
+},
+"PATH:Cube_022": {
+"generate/physics": true
+},
+"PATH:Cube_023": {
+"generate/physics": true
+},
+"PATH:Cube_024": {
+"generate/physics": true
+},
+"PATH:Cube_025": {
+"generate/physics": true
+},
+"PATH:Cube_026": {
+"generate/physics": true
+},
+"PATH:Cube_028": {
+"generate/physics": true
+},
+"PATH:Cube_029": {
+"generate/physics": true
+},
+"PATH:Cube_031": {
+"generate/physics": true
+},
+"PATH:Cube_035": {
+"generate/physics": true
+},
+"PATH:Cube_049": {
+"generate/physics": true
+},
+"PATH:Cube_050": {
+"generate/physics": true
+},
+"PATH:Cube_052": {
+"generate/physics": true
+},
+"PATH:Cube_055": {
+"generate/physics": true
+},
+"PATH:Cube_056": {
+"generate/physics": true
+},
+"PATH:Cube_058": {
+"generate/physics": true
+},
+"PATH:Cube_059": {
+"generate/physics": true
+},
+"PATH:Cube_060": {
+"generate/physics": true
+},
+"PATH:Cylinder_001": {
+"generate/physics": true
+},
+"PATH:Cylinder_002": {
+"generate/physics": true
+},
+"PATH:Cylinder_003": {
+"generate/physics": true
+},
+"PATH:Plane_001": {
+"generate/physics": true
+},
+"PATH:Plane_002": {
+"generate/physics": true
+},
+"PATH:Plane_004": {
+"generate/physics": true
+},
+"PATH:Plane_005": {
+"generate/physics": true
+},
+"PATH:Plane_007": {
+"import/skip_import": true
+},
+"PATH:Plane_008": {
+"generate/physics": true
+},
+"PATH:Plane_009": {
+"import/skip_import": true
+}
+}
+}
+blender/nodes/visible=0
+blender/nodes/active_collection_only=false
+blender/nodes/punctual_lights=true
+blender/nodes/cameras=true
+blender/nodes/custom_properties=true
+blender/nodes/modifiers=1
+blender/meshes/colors=false
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true
