@@ -10,7 +10,7 @@ public enum FogLocation
 	tree
 }
 
-public partial class FogManager : Node
+public partial class FogManager : Node //TODO: Make work with actual fog
 {
 	[Export] public Node3D mazeFog1;
 	[Export] public Node3D mazeFog2;

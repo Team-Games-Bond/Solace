@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://checarg1ql6ao"]
 
-[ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="1_4q32i"]
-[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="2_0jona"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/PlacementMonitor.cs" id="1_4q32i"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/SocketedInteraction.cs" id="2_0jona"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="3_45y7m"]
-[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_rgihe"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/ButtonPromptAnimator.cs" id="4_rgihe"]
 [ext_resource type="PackedScene" uid="uid://bb2milhr46ag" path="res://Models/Tutorial/powerbox.blend" id="4_tr5xd"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]

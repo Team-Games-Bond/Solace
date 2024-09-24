@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://clajknrtv170h" path="res://Textures/Key-W-green.svg" id="1_5khdu"]
 [ext_resource type="Texture2D" uid="uid://p1t8ysjsv78f" path="res://Textures/Key-W.svg" id="1_vrr2a"]
-[ext_resource type="Script" path="res://Scripts/ButtonDecal.cs" id="2_mvhhc"]
+[ext_resource type="Script" path="res://Scripts/Interaction Scripts/ButtonDecal.cs" id="2_mvhhc"]
 [ext_resource type="Texture2D" uid="uid://b0j2s18fyeush" path="res://Textures/Key-A.svg" id="3_h7fur"]
 [ext_resource type="Texture2D" uid="uid://bddvmntcbjwo8" path="res://Textures/Key-S.svg" id="4_ug4xf"]
 [ext_resource type="Texture2D" uid="uid://bekk7mdj6htca" path="res://Textures/Key-S-green.svg" id="5_fb1pq"]
