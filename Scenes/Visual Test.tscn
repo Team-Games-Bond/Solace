@@ -1,0 +1,198 @@
+[gd_scene load_steps=28 format=4 uid="uid://bvgckrg7axegb"]
+
+[ext_resource type="Texture2D" uid="uid://c3ttg62fcbgr5" path="res://Textures/Initial.png" id="3_02w14"]
+[ext_resource type="Shader" uid="uid://djnsegcc1uyaf" path="res://Shaders/Waterfall.tres" id="3_66vxv"]
+[ext_resource type="Script" path="res://Scripts/Fog.cs" id="3_f6npi"]
+[ext_resource type="Shader" uid="uid://dpnd1cne0pxuv" path="res://Shaders/Water Shader.tres" id="3_oura3"]
+[ext_resource type="Texture2D" uid="uid://duci602t0erb1" path="res://Textures/Overlay.png" id="4_l5ixh"]
+[ext_resource type="Material" path="res://Materials/FogMaterial.tres" id="5_aoexq"]
+[ext_resource type="Shader" uid="uid://vxg1t0088dw7" path="res://Shaders/Water Ripple.tres" id="7_i5q4q"]
+[ext_resource type="Shader" uid="uid://b16xg3l1q7te3" path="res://Shaders/Skybox.tres" id="8_gdr64"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_w6b8u"]
+_surfaces = [{
+"aabb": AABB(-0.5625, 0, -0.5, 1.125, 1e-05, 1),
+"format": 34359742465,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAUABQABAAYAAQACAAYABgACAAcAAgADAAcABwADAAgAAwAEAAgACAAEAAkABQALAAoABQAGAAsABgAMAAsABgAHAAwABwANAAwABwAIAA0ACAAOAA0ACAAJAA4ACgALAA8ADwALABAACwAMABAAEAAMABEADAANABEAEQANABIADQAOABIAEgAOABMADwAVABQADwAQABUAEAAWABUAEAARABYAEQAXABYAEQASABcAEgAYABcAEgATABgA"),
+"material": ExtResource("5_aoexq"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 25,
+"vertex_data": PackedByteArray("AAAQvwAAAAAAAAC/AACgvgAAAAAAAAC/AACAvQAAAAAAAAC/AABAPgAAAAAAAAC/AADgPgAAAAAAAAC/AADgvgAAAAAAAIC+AABAvgAAAAAAAIC+AACAPQAAAAAAAIC+AACgPgAAAAAAAIC+AAAQPwAAAAAAAIC+AAAQvwAAAAAAAAAAAACgvgAAAAAAAAAAAACAvQAAAAAAAAAAAABAPgAAAAAAAAAAAADgPgAAAAAAAAAAAADgvgAAAAAAAIA+AABAvgAAAAAAAIA+AACAPQAAAAAAAIA+AACgPgAAAAAAAIA+AAAQPwAAAAAAAIA+AAAQvwAAAAAAAAA/AACgvgAAAAAAAAA/AACAvQAAAAAAAAA/AABAPgAAAAAAAAA/AADgPgAAAAAAAAA/")
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s424d"]
+render_priority = 0
+shader = ExtResource("3_66vxv")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ypdbk"]
+material = SubResource("ShaderMaterial_s424d")
+top_radius = 0.25
+bottom_radius = 0.25
+height = 1.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x3o1i"]
+emission_shape_scale = Vector3(0.25, 0.1, 0.25)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, 1, 0)
+spread = 79.576
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwgeq"]
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_r2e3r"]
+material = SubResource("StandardMaterial3D_pwgeq")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edlya"]
+render_priority = 0
+shader = ExtResource("3_oura3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fb2kd"]
+material = SubResource("ShaderMaterial_edlya")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7ub0"]
+albedo_color = Color(0.309799, 0.258182, 0.909681, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6vpml"]
+material = SubResource("StandardMaterial3D_l7ub0")
+size = Vector2(5, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_75wyv"]
+render_priority = 0
+shader = ExtResource("7_i5q4q")
+shader_parameter/Scale = Vector2(0.2, 0.2)
+shader_parameter/Origin = Vector2(2.5, 2.5)
+shader_parameter/Radius = 0.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n06sd"]
+material = SubResource("ShaderMaterial_75wyv")
+size = Vector2(3.9, 3.9)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qh6mk"]
+render_priority = 0
+shader = ExtResource("3_66vxv")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jwwku"]
+material = SubResource("ShaderMaterial_qh6mk")
+
+[sub_resource type="Gradient" id="Gradient_54inr"]
+colors = PackedColorArray(0.920543, 0.533698, 1.92523e-07, 1, 0.590745, 0.00267819, 0.854924, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pg423"]
+gradient = SubResource("Gradient_54inr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0i3ly"]
+shader = ExtResource("8_gdr64")
+shader_parameter/CubemapGradient = SubResource("GradientTexture1D_pg423")
+shader_parameter/ScreenGradient = SubResource("GradientTexture1D_pg423")
+
+[sub_resource type="Sky" id="Sky_4vyev"]
+sky_material = SubResource("ShaderMaterial_0i3ly")
+
+[sub_resource type="Environment" id="Environment_l20er"]
+background_mode = 2
+sky = SubResource("Sky_4vyev")
+
+[node name="VisualTest" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.777761, 0.335789, -0.531351, 0, 0.845346, 0.53422, 0.628561, 0.415495, -0.657477, -1.93521, 1.26909, -2.1279)
+projection = 1
+size = 4.39
+
+[node name="Fog Stuff" type="Node3D" parent="."]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Fog Stuff" node_paths=PackedStringArray("TransitionTimer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, -1.03396, 1.4)
+mesh = SubResource("ArrayMesh_w6b8u")
+skeleton = NodePath("../..")
+script = ExtResource("3_f6npi")
+PrimaryTexture = ExtResource("3_02w14")
+SecondaryTexture = ExtResource("4_l5ixh")
+TransitionTimer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Fog Stuff/MeshInstance3D3"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Water Stuff" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30353, 0.5, -1.03978)
+mesh = SubResource("CylinderMesh_ypdbk")
+skeleton = NodePath("../../Fog Stuff")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Water Stuff/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_x3o1i")
+draw_pass_1 = SubResource("QuadMesh_r2e3r")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Water Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+size = Vector3(1, 0.4, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Water Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -1.8)
+size = Vector3(1, 0.4, 1)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Water Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.9)
+mesh = SubResource("PlaneMesh_fb2kd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Water Stuff"]
+mesh = SubResource("PlaneMesh_6vpml")
+skeleton = NodePath("../..")
+
+[node name="Fountain" type="Node3D" parent="Water Stuff"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Water Stuff/Fountain"]
+transform = Transform3D(0.927184, -1.3893e-09, 0.374607, -0.374606, -7.1473e-09, 0.927184, -2.44493e-08, -0.436488, -2.75387e-08, 0, 3, 4.90061)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Water Stuff/Fountain/CSGCylinder3D"]
+transform = Transform3D(0.721771, 1.82234e-12, 0, -6.56447e-13, 1.00184, 2.62579e-12, 0, 3.64469e-12, 0.721771, 0, 0, 0)
+operation = 2
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Water Stuff/Fountain"]
+transform = Transform3D(3.70874, 0, 1.49843, 0, 0.5, 0, -1.49843, 0, 3.70874, 0, 0.5, 3)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Water Stuff/Fountain/CSGCylinder3D2"]
+transform = Transform3D(0.871425, 1.82234e-12, 0, -7.92557e-13, 1.00184, 3.17023e-12, 0, 3.64469e-12, 0.871425, 0, 0, 0)
+operation = 2
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Water Stuff/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 3)
+mesh = SubResource("PlaneMesh_n06sd")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Water Stuff/Fountain/CSGMesh3D"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0)
+operation = 2
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Water Stuff/Fountain/CSGMesh3D/CSGBox3D"]
+transform = Transform3D(0.807971, 0, 0.326442, 0, 0.500922, 0, -0.326442, 0, 0.807971, 0, 0, 0)
+operation = 2
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Water Stuff/Fountain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 3)
+mesh = SubResource("CylinderMesh_jwwku")
+skeleton = NodePath("../..")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l20er")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.921484, -0.265147, 0.283838, -0.0490245, 0.804309, 0.592185, -0.38531, 0.531774, -0.754157, -2.71556, 2.48589, -3.93269)
+shadow_enabled = true
