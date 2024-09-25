@@ -5,7 +5,7 @@ uniform sampler2D PRIMARY_DEPTH: hint_default_white;
 uniform sampler2D SECONDARY_DEPTH: hint_default_white;
 uniform sampler2D DEPTH_TEXTURE: hint_depth_texture;
 instance uniform float SECONDARY_STRENGTH: hint_range(0.0, 1.0) = 0;
-instance uniform float HEIGHT_TEXTURE_STRENGTH: hint_range(0.0, 256.0) = 1.0;
+instance uniform float HEIGHT_TEXTURE_STRENGTH: hint_range(0.0, 256.0) = 5.0;
 instance uniform float DEPTH_FADE: hint_range(0.0, 8.0)=1.0;
 instance uniform float MAX_TRANSPARENCY: hint_range(0.0, 1.0)=0.6;
 
@@ -23,18 +23,18 @@ varying flat vec3 FLAT_NORMAL;
 
 void vertex() {
 	// Called for every vertex the material is visible on.
-	VERTEX = vec3(VERTEX.x, VERTEX.y+displacement(VERTEX.xz), VERTEX.z);
+	VERTEX = vec3(VERTEX.x, VERTEX.y+displacement(UV), VERTEX.z);
 	const vec2 e = vec2(0.01, 0);
-	FLAT_NORMAL = normalize(vec3(displacement(VERTEX.xz-e)-displacement(VERTEX.xz+e), e.x*2.0, displacement(VERTEX.xz-e.yx)-displacement(VERTEX.xz+e.yx)));
+	FLAT_NORMAL = normalize(vec3(displacement(UV-e)-displacement(UV+e), e.x*2.0, displacement(UV-e.yx)-displacement(UV+e.yx)));
 }
 
 void fragment() {
-	// Called for every pixel the material is visible on.
-	float depth = textureLod(DEPTH_TEXTURE, SCREEN_UV, 0.0).r;
-	vec4 upos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV*2.0 - 1.0, depth, 1.0);
-	vec3 pixelPosition = upos.xyz/upos.w;
-	NORMAL = FLAT_NORMAL;
-	ALPHA = clamp(DEPTH_FADE*(VERTEX.z-pixelPosition.z), 0.0, MAX_TRANSPARENCY);
+    // Called for every pixel the material is visible on.
+    float depth = textureLod(DEPTH_TEXTURE, SCREEN_UV, 0.0).r;
+    vec4 upos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV*2.0 - 1.0, depth, 1.0);
+    vec3 pixelPosition = upos.xyz/upos.w;
+    NORMAL = FLAT_NORMAL;
+    ALPHA = clamp(DEPTH_FADE*(VERTEX.z-pixelPosition.z), 0.0, MAX_TRANSPARENCY);
 }
 
 //void light() {

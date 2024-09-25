@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duci602t0erb1"
-path="res://.godot/imported/Overlay.png-6592fc236070ecbfb9dee35e50f3474c.ctex"
+uid="uid://m02ttiaq0wjm"
+path="res://.godot/imported/Maze1_Fog.png-e14604db8bdf3fde9a6c2441baa4de9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Overlay.png"
-dest_files=["res://.godot/imported/Overlay.png-6592fc236070ecbfb9dee35e50f3474c.ctex"]
+source_file="res://Textures/Fog/Maze1_Fog.png"
+dest_files=["res://.godot/imported/Maze1_Fog.png-e14604db8bdf3fde9a6c2441baa4de9b.ctex"]
 
 [params]
 
