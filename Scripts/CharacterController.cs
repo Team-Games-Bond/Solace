@@ -17,6 +17,7 @@ public partial class CharacterController : CharacterBody3D
 	public bool wasJustTeleported = false;
 	public bool isPuzzleMode = false;
 	public Interactable Current;
+	public Godot.Collections.Array<Interactable> CloseInteractables;
 
 	[ExportGroup("Item Carrying")]
 	[Export] public Node3D ItemMount;
@@ -24,6 +25,11 @@ public partial class CharacterController : CharacterBody3D
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
+
+	public override void _Ready()
+	{
+		CloseInteractables = new Godot.Collections.Array<Interactable>();
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -66,7 +72,30 @@ public partial class CharacterController : CharacterBody3D
 		wasOnFloorLastFrame = IsOnFloor();
 	}
 
-	void TurnCharacter(Vector2 inputDir)
+    public override void _Process(double delta)
+    {
+		if(CloseInteractables.Count <= 0) return; //Don't do this if there is nothing nearby
+
+		float cDist = 10000;
+		Interactable closest = null;
+        foreach (var interactable in CloseInteractables)
+		{
+			var dist = this.GlobalPosition.DistanceTo(interactable.GlobalPosition);
+			if(dist < cDist)
+			{
+				closest = interactable;
+				cDist = dist;
+			}
+		}
+		if (!(Current == closest))
+		{
+			if(Current != null) Current.Unhighlight();
+			Current = closest;
+			Current.Highlight();
+		}
+    }
+
+    void TurnCharacter(Vector2 inputDir)
 	{
 		//Turning character
 			var current = new Vector3(-PlayerPivot.Basis.Z.X,0,-PlayerPivot.Basis.Z.Z).Normalized();

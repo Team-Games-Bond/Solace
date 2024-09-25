@@ -47,11 +47,12 @@ public partial class Interactable : Area3D
 		if(!isActive) return;
 
 		CharacterController player = (CharacterController)body;
-		if (player.Current!=null){
+		/*if (player.Current!=null){
 			player.Current.Unhighlight();
 		}
 		Highlight();
-		player.Current = this;
+		player.Current = this;*/
+		player.CloseInteractables.Add(this);
 	}
 
 	public virtual void Exit(Node3D body)
@@ -60,7 +61,8 @@ public partial class Interactable : Area3D
 		if (player.Current == this){
 			Unhighlight();
 			player.Current = null;
-		} 
+		}
+		player.CloseInteractables.Remove(this);
 	}
 
 	public void SetActive(bool active)
