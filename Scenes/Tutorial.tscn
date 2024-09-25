@@ -175,9 +175,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91508, 0.46564, 12.7525)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32.8437)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Room 3"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 5.24822, 1.84753, 13.8145)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 5.05795, 2.10186, 14.0048)
 use_collision = true
-size = Vector3(7.45536, 4.69507, 0.351074)
+size = Vector3(4.09284, 4.1864, 0.351074)
 material = ExtResource("10_fh2lv")
 
 [node name="Door" type="Node3D" parent="Room 3"]
@@ -416,9 +416,6 @@ size = Vector3(2.5, 1, 2.5)
 
 [node name="cube4" parent="Room 3/Boxes/BoxPickup5/Area3D/ItemMount" instance=ExtResource("21_fbmo5")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.1, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.604412, -0.733996, -0.309734, -0.735226, -0.663637, 0.137948, -0.306804, 0.144347, -0.940763, 0, 0, 0)
 
 [node name="Tutorialwalls" parent="." instance=ExtResource("21_fbjqm")]
 transform = Transform3D(-5.5, 0, -8.30477e-07, 0, 5.5, 0, 8.30477e-07, 0, -5.5, 0.699287, -0.5822, 15.9195)

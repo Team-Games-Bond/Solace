@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duci602t0erb1"
-path="res://.godot/imported/Overlay.png-6592fc236070ecbfb9dee35e50f3474c.ctex"
+uid="uid://diqsqjengovl5"
+path="res://.godot/imported/Simon_Says_Fog.png-77c82eeff32a5a2e03cdda285729c240.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Overlay.png"
-dest_files=["res://.godot/imported/Overlay.png-6592fc236070ecbfb9dee35e50f3474c.ctex"]
+source_file="res://Textures/Fog/Simon_Says_Fog.png"
+dest_files=["res://.godot/imported/Simon_Says_Fog.png-77c82eeff32a5a2e03cdda285729c240.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duci602t0erb1"
-path="res://.godot/imported/Overlay.png-6592fc236070ecbfb9dee35e50f3474c.ctex"
+uid="uid://dcmpwvyqlb3yu"
+path="res://.godot/imported/Puzzle_Fog.png-6cf45e66c833481f107a7357edf63acb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Overlay.png"
-dest_files=["res://.godot/imported/Overlay.png-6592fc236070ecbfb9dee35e50f3474c.ctex"]
+source_file="res://Textures/Fog/Puzzle_Fog.png"
+dest_files=["res://.godot/imported/Puzzle_Fog.png-6cf45e66c833481f107a7357edf63acb.ctex"]
 
 [params]
 
