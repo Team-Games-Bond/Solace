@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3h4uy8nh0y5o" path="res://Scenes/Tutorial.tscn" id="2_bvl3c"]
 [ext_resource type="PackedScene" uid="uid://cfkv6wtyhhta0" path="res://Scenes/Character.tscn" id="2_imu7g"]
-[ext_resource type="PackedScene" path="res://Scenes/Main level.tscn" id="3_g7ck6"]
+[ext_resource type="PackedScene" uid="uid://cp6krxjthr6d8" path="res://Scenes/Main level.tscn" id="3_g7ck6"]
 [ext_resource type="Script" path="res://Scripts/TeleportDoor.cs" id="4_yipme"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwslm"]
