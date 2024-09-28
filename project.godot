@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Capstone Project"
-run/main_scene="res://Scenes/Visual Test.tscn"
+run/main_scene="res://Scenes/Game.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 boot_splash/image="res://Textures/Games Bond Splash.png"
 config/icon="res://Textures/icon.svg"
@@ -72,4 +72,6 @@ Interact={
 3d_physics/layer_1="Enviroment"
 3d_physics/layer_2="Player"
 
+[rendering]
 
+renderer/rendering_method="mobile"
