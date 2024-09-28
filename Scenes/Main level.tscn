@@ -152,13 +152,13 @@ size = Vector3(5, 1, 34.9042)
 material = SubResource("StandardMaterial3D_u6oa5")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Main Terrain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4507, -0.116336, -1.95028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4507, -0.496517, -1.95028)
 use_collision = true
 size = Vector3(8.71295, 0.472656, 3.54736)
 material = SubResource("StandardMaterial3D_yh5tb")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Main Terrain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2277, 3.16438, -59.4742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2277, 2.68075, -59.4742)
 use_collision = true
 size = Vector3(8.71295, 0.495605, 3.54736)
 material = SubResource("StandardMaterial3D_yh5tb")
@@ -1296,7 +1296,6 @@ transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08
 
 [node name="Fog and neurons" type="Node3D" parent="." node_paths=PackedStringArray("mazeFog1", "mazeFog2", "clutterAndSimonFog", "bridgeFog", "treeFog")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5439, 0.576016, -40.817)
-visible = false
 script = ExtResource("24_teicv")
 mazeFog1 = NodePath("Fog/Maze Fog1")
 mazeFog2 = NodePath("Fog/Maze Fog2")
