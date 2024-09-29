@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duci602t0erb1"
-path="res://.godot/imported/Overlay.png-6592fc236070ecbfb9dee35e50f3474c.ctex"
+uid="uid://dxq8dxbym658e"
+path="res://.godot/imported/Fog_Full Level.png-0e48846e1bb6425731bc9a8c88373e68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Overlay.png"
-dest_files=["res://.godot/imported/Overlay.png-6592fc236070ecbfb9dee35e50f3474c.ctex"]
+source_file="res://Textures/Fog/Fog_Full Level.png"
+dest_files=["res://.godot/imported/Fog_Full Level.png-0e48846e1bb6425731bc9a8c88373e68.ctex"]
 
 [params]
 

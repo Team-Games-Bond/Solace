@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3r5d5kuejvhs"]
+
+[ext_resource type="PackedScene" uid="uid://buex3ux2i5lhg" path="res://Models/Tutorial/cube-symbols/cube6.blend" id="1_2uyr3"]
+[ext_resource type="Material" uid="uid://c405lqe1cf5" path="res://Materials/ImagePuzzleMaterials/red.tres" id="2_vx14e"]
+
+[node name="cube6" instance=ExtResource("1_2uyr3")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_vx14e")
