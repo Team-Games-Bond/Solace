@@ -12,11 +12,9 @@ public enum FogLocation
 
 public partial class FogManager : Node
 {
-	[Export] public Node3D mazeFog1;
-	[Export] public Node3D mazeFog2;
-	[Export] public Node3D clutterAndSimonFog;
-	[Export] public Node3D bridgeFog;
-	[Export] public Node3D treeFog;
+	[Export] public Fog fog;
+
+	[Export] public Godot.Collections.Array<Texture2D> textures {get; set; }
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -28,24 +26,24 @@ public partial class FogManager : Node
 	{
 	}
 
-	public void RemoveFog(FogLocation fog)
+	public void RemoveFog(FogLocation fogloc)
 	{
-		switch (fog)
+		switch (fogloc)
 		{
 			case FogLocation.maze1:
-				mazeFog1.QueueFree();
+				fog.Recede(textures[0]);
 				return;
 			case FogLocation.maze2:
-				mazeFog2.QueueFree();
+				fog.Recede(textures[1]);
 				return;
 			case FogLocation.clutterAndSimon:
-				clutterAndSimonFog.QueueFree();
+				fog.Recede(textures[2]);
 				return;
 			case FogLocation.bridge:
-				bridgeFog.QueueFree();
+				fog.Recede(textures[3]);
 				return;
 			case FogLocation.tree:
-				treeFog.QueueFree();
+				fog.Recede(textures[4]);
 				return;
 			default:
 				GD.PushError("Unhandled Fog Location: " + fog.ToString());

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3h4uy8nh0y5o" path="res://Scenes/Tutorial.tscn" id="2_bvl3c"]
 [ext_resource type="PackedScene" uid="uid://cfkv6wtyhhta0" path="res://Scenes/Character.tscn" id="2_imu7g"]
-[ext_resource type="PackedScene" uid="uid://cp6krxjthr6d8" path="res://Scenes/Main level.tscn" id="3_g7ck6"]
+[ext_resource type="PackedScene" uid="uid://un31ok75dwaf" path="res://Scenes/Main level.tscn" id="3_g7ck6"]
 [ext_resource type="Script" path="res://Scripts/TeleportDoor.cs" id="4_yipme"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwslm"]
@@ -137,3 +137,6 @@ size = Vector3(3.96704, 3, 2.03607)
 
 [node name="ClutterRoomExit2" type="Node3D" parent="Doors"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 37.1105, 1.238, -106.72)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.550462, 0.702556, 0.451006, -0.292929, -0.668406, 0.683686, 0.781782, 0.244232, 0.573731, -4.5099, 0, 7.65757)
