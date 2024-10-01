@@ -7,10 +7,11 @@
 [ext_resource type="Shader" uid="uid://d4mu3nhjubty3" path="res://Shaders/Water Ripple.tres" id="7_i5q4q"]
 [ext_resource type="Shader" uid="uid://b16xg3l1q7te3" path="res://Shaders/Skybox.tres" id="8_gdr64"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_dhrh6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_7yiub"]
 _surfaces = [{
 "aabb": AABB(-0.5625, 0, -0.5, 1.125, 1e-05, 1),
-"format": 34359742465,
+"attribute_data": PackedByteArray("AACAPwAAgD+rqqo/AACAP1ZV1T8AAIA/AAAAQAAAgD9WVRVAAACAPwAAgD+rqqo/q6qqP6uqqj9WVdU/q6qqPwAAAECrqqo/VlUVQKuqqj8AAIA/VlXVP6uqqj9WVdU/VlXVP1ZV1T8AAABAVlXVP1ZVFUBWVdU/AACAPwAAAECrqqo/AAAAQFZV1T8AAABAAAAAQAAAAEBWVRVAAAAAQAAAgD9WVRVAq6qqP1ZVFUBWVdU/VlUVQAAAAEBWVRVAVlUVQFZVFUA="),
+"format": 34359742481,
 "index_count": 96,
 "index_data": PackedByteArray("AAABAAUABQABAAYAAQACAAYABgACAAcAAgADAAcABwADAAgAAwAEAAgACAAEAAkABQALAAoABQAGAAsABgAMAAsABgAHAAwABwANAAwABwAIAA0ACAAOAA0ACAAJAA4ACgALAA8ADwALABAACwAMABAAEAAMABEADAANABEAEQANABIADQAOABIAEgAOABMADwAVABQADwAQABUAEAAWABUAEAARABYAEQAXABYAEQASABcAEgAYABcAEgATABgA"),
 "material": ExtResource("5_aoexq"),
@@ -113,7 +114,7 @@ size = 4.39
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Fog Stuff" node_paths=PackedStringArray("TransitionTimer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33088, -0.523567, 1.4)
-mesh = SubResource("ArrayMesh_dhrh6")
+mesh = SubResource("ArrayMesh_7yiub")
 skeleton = NodePath("../..")
 script = ExtResource("3_f6npi")
 TransitionTimer = NodePath("Timer")
