@@ -18,10 +18,10 @@ public partial class PlacementMonitor : Node3D
 	[Signal] public delegate void ItemRemovedRawEventHandler(PlacementMonitor thisMonitor);
 
 	public override void _Ready()
-    {
-        socket.InteractionBegin += Begin;
+	{
+		socket.InteractionBegin += Begin;
 		setSocketActive(isActive);
-    }
+	}
 
 	public void Begin(CharacterController player)
 	{
@@ -68,4 +68,3 @@ public partial class PlacementMonitor : Node3D
 	}
 
 }
-
