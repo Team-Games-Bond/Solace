@@ -24,6 +24,7 @@ public partial class PuzzlePrompt : CanvasLayer
 	public void Begin(CharacterController player)
 	{
 		Visible = true;
+		GetTree().Paused = true;
 	}
 	// Called when interaction ended
 	public override string[] _GetConfigurationWarnings()
@@ -41,6 +42,7 @@ public partial class PuzzlePrompt : CanvasLayer
 	}
 	public void Quit(){
 		Visible = false;
+		GetTree().Paused = false;
 	}
     public override void _Input(InputEvent @event)
     {
