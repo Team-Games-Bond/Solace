@@ -1,15 +1,22 @@
-[gd_scene format=3 uid="uid://bt4nhl6e47gcv"]
+[gd_scene load_steps=2 format=3 uid="uid://bt4nhl6e47gcv"]
+
+[ext_resource type="PackedScene" uid="uid://cef3hlhu7ahkk" path="res://Models/Main level/Fred-branch/neuron.blend" id="1_nh6bj"]
 
 [node name="Neuron" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 use_collision = true
 size = Vector3(0.2, 2, 0.2)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
 size = Vector3(0.4, 0.4, 0.4)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="CSGBox3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307834, 0)
+
+[node name="neuron" parent="." instance=ExtResource("1_nh6bj")]
+transform = Transform3D(-0.126465, 0, -0.15494, 0, 0.2, 0, 0.15494, 0, -0.126465, 0.149237, 2.38419e-07, 0.161457)

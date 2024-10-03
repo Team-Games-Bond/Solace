@@ -72,13 +72,13 @@ public partial class CharacterController : CharacterBody3D
 		wasOnFloorLastFrame = IsOnFloor();
 	}
 
-    public override void _Process(double delta)
-    {
+	public override void _Process(double delta)
+	{
 		if(CloseInteractables.Count <= 0) return; //Don't do this if there is nothing nearby
 
 		float cDist = 10000;
 		Interactable closest = null;
-        foreach (var interactable in CloseInteractables)
+		foreach (var interactable in CloseInteractables)
 		{
 			var dist = this.GlobalPosition.DistanceTo(interactable.GlobalPosition);
 			if(dist < cDist)
@@ -93,9 +93,9 @@ public partial class CharacterController : CharacterBody3D
 			Current = closest;
 			Current.Highlight();
 		}
-    }
+	}
 
-    void TurnCharacter(Vector2 inputDir)
+	void TurnCharacter(Vector2 inputDir)
 	{
 		//Turning character
 			var current = new Vector3(-PlayerPivot.Basis.Z.X,0,-PlayerPivot.Basis.Z.Z).Normalized();
@@ -108,11 +108,11 @@ public partial class CharacterController : CharacterBody3D
 			//PlayerPivot.Transform = PlayerPivot.Transform.Orthonormalized();
 	}
 	public override void _Input(InputEvent @event)
-    {
-        if (@event.IsActionPressed("Interact") && Current!=null){
+	{
+		if (@event.IsActionPressed("Interact") && Current!=null){
 			Current.Interact(this);
 		}
-    }
+	}
 
 	public bool HasItem(){
 		return Carrying != null;
