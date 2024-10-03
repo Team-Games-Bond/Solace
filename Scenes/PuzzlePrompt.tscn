@@ -41,6 +41,7 @@ script = ExtResource("3_ddqpr")
 mesh = SubResource("BoxMesh_78n8p")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Area3D"]
+process_mode = 2
 visible = false
 script = ExtResource("4_rfv4l")
 
