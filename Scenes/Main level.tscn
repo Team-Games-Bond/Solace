@@ -1,6 +1,5 @@
 [gd_scene load_steps=51 format=4 uid="uid://un31ok75dwaf"]
 
-
 [ext_resource type="Script" path="res://Scripts/ImagePuzzleManager.cs" id="1_bvm8w"]
 [ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="1_lhik3"]
 [ext_resource type="Script" path="res://Scripts/BrainWorldManager.cs" id="1_quknv"]
@@ -39,7 +38,6 @@
 [ext_resource type="Texture2D" uid="uid://diqsqjengovl5" path="res://Textures/Fog/Simon_Says_Fog.png" id="33_07cxr"]
 [ext_resource type="Texture2D" uid="uid://b3twchc7ct1x0" path="res://Textures/Fog/Clutter_Room_Fog.png" id="34_n2ssc"]
 [ext_resource type="PackedScene" uid="uid://c3ksxh42ku6b4" path="res://Scenes/FloorPrompt.tscn" id="36_k4vn2"]
-
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6oa5"]
 albedo_color = Color(0, 0, 0.772549, 1)
@@ -123,7 +121,6 @@ albedo_color = Color(0, 1, 0.223529, 0.145098)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nk5vm"]
 albedo_color = Color(0.709804, 0.247059, 1, 1)
-
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qgd5d"]
 _surfaces = [{
@@ -278,12 +275,14 @@ size = Vector3(19.1792, 4.15061, 16.837)
 
 [node name="Bridge" type="CSGBox3D" parent="Main Coliders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4507, -0.496517, -1.95028)
+visible = false
 use_collision = true
 size = Vector3(8.71295, 0.472656, 3.54736)
 material = SubResource("StandardMaterial3D_yh5tb")
 
 [node name="Bridge2" type="CSGBox3D" parent="Main Coliders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.2277, 2.68075, -59.4742)
+visible = false
 use_collision = true
 size = Vector3(8.71295, 0.495605, 3.54736)
 material = SubResource("StandardMaterial3D_yh5tb")
@@ -1768,6 +1767,7 @@ textures = Array[Texture2D]([ExtResource("30_s06pr"), ExtResource("31_w2vkq"), E
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Fog and neurons/Fog" node_paths=PackedStringArray("TransitionTimer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0897, -2.87253, -34.0552)
+visible = false
 instance_shader_parameters/DEPTH_FADE = 1.0
 instance_shader_parameters/HEIGHT_TEXTURE_STRENGTH = 9.0
 instance_shader_parameters/MAX_TRANSPARENCY = 0.883
