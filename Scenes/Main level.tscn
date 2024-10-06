@@ -1,5 +1,6 @@
 [gd_scene load_steps=51 format=4 uid="uid://un31ok75dwaf"]
 
+
 [ext_resource type="Script" path="res://Scripts/ImagePuzzleManager.cs" id="1_bvm8w"]
 [ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="1_lhik3"]
 [ext_resource type="Script" path="res://Scripts/BrainWorldManager.cs" id="1_quknv"]
@@ -13,6 +14,7 @@
 [ext_resource type="Material" uid="uid://c405lqe1cf5" path="res://Materials/ImagePuzzleMaterials/red.tres" id="5_2pqoc"]
 [ext_resource type="Material" uid="uid://b8aoddagdu0hl" path="res://Materials/ImagePuzzleMaterials/blue.tres" id="6_73vr8"]
 [ext_resource type="Material" uid="uid://dagxh04aellbm" path="res://Materials/ImagePuzzleMaterials/green.tres" id="7_r6t2i"]
+[ext_resource type="PackedScene" uid="uid://bu4jphgc2a4e" path="res://Models/Main level/maze.blend" id="12_rldek"]
 [ext_resource type="Script" path="res://Scripts/SimonSaysManager.cs" id="13_j6mjl"]
 [ext_resource type="PackedScene" uid="uid://hcb2t4qod38t" path="res://Scenes/GameObjects/Sockets/BasicSocket.tscn" id="15_eahny"]
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="15_msgn2"]
@@ -23,7 +25,7 @@
 [ext_resource type="Script" path="res://Scripts/ExitDiasManager.cs" id="21_7b46n"]
 [ext_resource type="PackedScene" uid="uid://l24j71pyvwho" path="res://Scenes/GameObjects/Buttons/WallButton.tscn" id="22_jga8s"]
 [ext_resource type="Script" path="res://Scripts/Sequence.cs" id="22_vohlp"]
-[ext_resource type="Material" uid="uid://whwpat23q0xr" path="res://Materials/FogMaterial.tres" id="24_6vvwk"]
+[ext_resource type="Material" path="res://Materials/FogMaterial.tres" id="24_6vvwk"]
 [ext_resource type="Script" path="res://Scripts/FogManager.cs" id="24_teicv"]
 [ext_resource type="PackedScene" uid="uid://checarg1ql6ao" path="res://Scenes/GameObjects/Sockets/BasicPowerSocket.tscn" id="25_lydc0"]
 [ext_resource type="Script" path="res://Scripts/Fog.cs" id="25_w6xr4"]
@@ -37,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://diqsqjengovl5" path="res://Textures/Fog/Simon_Says_Fog.png" id="33_07cxr"]
 [ext_resource type="Texture2D" uid="uid://b3twchc7ct1x0" path="res://Textures/Fog/Clutter_Room_Fog.png" id="34_n2ssc"]
 [ext_resource type="PackedScene" uid="uid://c3ksxh42ku6b4" path="res://Scenes/FloorPrompt.tscn" id="36_k4vn2"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6oa5"]
 albedo_color = Color(0, 0, 0.772549, 1)
@@ -120,6 +123,7 @@ albedo_color = Color(0, 1, 0.223529, 0.145098)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nk5vm"]
 albedo_color = Color(0.709804, 0.247059, 1, 1)
+
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qgd5d"]
 _surfaces = [{
@@ -406,10 +410,10 @@ size = Vector3(4.13994, 1, 19.6638)
 [node name="Walls" type="Node3D" parent="Main Coliders"]
 
 [node name="Maze" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.0989, 3.8147e-06, 48.6292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.3059, -1.83657, 18.5699)
 
 [node name="Floor" type="CSGBox3D" parent="Maze"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3012, -10, 11.6841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.246, -10, 11.6841)
 use_collision = true
 size = Vector3(66.6025, 20, 53.3682)
 material = SubResource("StandardMaterial3D_56gm1")
@@ -426,12 +430,12 @@ use_collision = true
 size = Vector3(3.0459, 4.20747, 3.89262)
 
 [node name="MazeWall" type="CSGBox3D" parent="Maze"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6506, 1.80023, 24.5927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.148, 1.80023, 24.5927)
 use_collision = true
 size = Vector3(0.413208, 4.60046, 27.5322)
 
 [node name="ImageClue" type="Node3D" parent="Maze"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5043, -0.4815, 21.1884)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -15.2416, 1.94166, 7.70066)
 
 [node name="Row 1" type="Node3D" parent="Maze/ImageClue"]
 
@@ -661,7 +665,7 @@ size = Vector3(3, 1, 3)
 material = ExtResource("6_73vr8")
 
 [node name="ImagePuzzle" type="Node3D" parent="Maze" node_paths=PackedStringArray("socketParent", "clueImageParent", "createdImageParent", "colourSpawnerParent")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0112, 0.454124, 20.6413)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8468, 25.2288, 50.5622)
 script = ExtResource("1_bvm8w")
 unrecognizedMaterial = ExtResource("2_pe0ng")
 possibleMaterials = Array[Material]([ExtResource("3_pk8v6"), ExtResource("6_73vr8"), ExtResource("7_r6t2i"), ExtResource("5_2pqoc"), ExtResource("4_xfx0l")])
@@ -1001,6 +1005,305 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5219, 1.60834, 15.8216)
 size = Vector3(2.98718, 3.31543, 0.0956268)
 material = SubResource("StandardMaterial3D_hho37")
 script = ExtResource("4_s7alk")
+
+[node name="maze" parent="Maze" instance=ExtResource("12_rldek")]
+transform = Transform3D(-14, 0, -1.22392e-06, 0, 14, 0, 1.22392e-06, 0, -14, 14.7158, 4.604, 16.7044)
+
+[node name="Maze floor colliders" type="Node3D" parent="Maze"]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(1.80525, 0, 0, 0, 1, 0, 0, 0, 12.7856, 4.80424, 3.46082, 4.15573)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 10.9051, -13.8481, 6.16233, 23.2133)
+use_collision = true
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(4.9855, 0, 0, 0, 14.9123, 0, 0, 0, 5.38869, -13.5698, -5.52677, 9.3235)
+use_collision = true
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(24.2418, 0, 0, 0, 14.9123, 0, 0, 0, 23.8653, 31.7483, 17.218, 56.4516)
+use_collision = true
+size = Vector3(1, 1, 1.021)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 11.105, 2.72467, 8.89902, 21.8333)
+use_collision = true
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, 0, -11.105, 0, 1, 0, 2.00499, 0, -4.85413e-07, 8.95593, 8.89902, 17.211)
+use_collision = true
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, 0, -11.105, 0, 1, 0, 2.00499, 0, -4.85413e-07, -3.75309, 8.8763, 26.5934)
+use_collision = true
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, 0, -19.8923, 0, 1, 0, 2.00499, 0, -8.69521e-07, 12.7726, 21.4839, 48.5763)
+use_collision = true
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-2.00382, 0, 0.36201, 0, 1, 0, -0.0684693, 0, -10.5946, 18.9574, 21.6102, 52.79)
+use_collision = true
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 26.449, 9.55042, 21.2867)
+use_collision = true
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 24.4815, 18.8678, 38.1505)
+use_collision = true
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 12.0024, 16.5951, 41.8014)
+use_collision = true
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 4.85427, 3.77716, 10.2273)
+use_collision = true
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 7.2637, 0, -0.642787, 8.65654, -13.9189, 2.73676, 13.7243)
+use_collision = true
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 7.14014, 0, -0.642788, 8.50928, -8.44758, 10.9184, 30.2259)
+use_collision = true
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, -0.642788, 5.69358, 0, 0.766045, 4.77748, -2.00499, 2.80971e-08, -2.48874e-07, -11.9916, 6.67081, 26.4954)
+use_collision = true
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 4.5911, 0, -0.642787, 5.47146, 26.4412, 5.01205, 13.7548)
+use_collision = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 13.2057, 4.91049, 15.7138, 33.5429)
+use_collision = true
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 13.2057, 24.5055, 14.8763, 34.0134)
+use_collision = true
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 3.72776, 26.5102, 7.09779, 17.9523)
+use_collision = true
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 3.72776, 26.4358, 3.36605, 11.2706)
+use_collision = true
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 7.30762, 33.8777, 14.7415, 32.9064)
+use_collision = true
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 7.30762, 16.1126, 15.5762, 30.5107)
+use_collision = true
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, 0, 7.30762, 0, 1, 0, -2.00499, 0, -3.19426e-07, 9.21067, 15.5762, 39.265)
+use_collision = true
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-0.0242151, 0, 13.2047, 0, 1, 0, -2.00484, 0, -0.159491, 10.6538, 15.7138, 27.8042)
+use_collision = true
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-0.0242151, 0, 11.9045, 0, 1, 0, -2.00484, 0, -0.143786, 29.2573, 14.7695, 28.3398)
+use_collision = true
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, 0, 21.9787, 0, 1, 0, -2.00499, 0, -9.60718e-07, 16.4306, 3.41982, 8.64264)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 11.105, 13.0862, 8.89902, 21.8333)
+use_collision = true
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 0.642788, 8.50689, 0, -0.766044, 7.13813, 13.0862, 12.1005, 25.4142)
+use_collision = true
+size = Vector3(1, 1, 0.843628)
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, 0, 21.9787, 0, 1, 0, -2.00499, 0, -9.60718e-07, 16.4306, 3.41982, 8.69252)
+use_collision = true
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 11.105, 13.0363, 8.89902, 21.8333)
+use_collision = true
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 0.642788, 8.50689, 0, -0.766044, 7.13813, 13.0363, 12.1005, 25.4142)
+use_collision = true
+size = Vector3(1, 1, 0.843628)
+
+[node name="CSGBox3D34" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, -0.766044, 7.13813, 0, 0.642788, 8.50689, -2.00499, 3.34849e-08, -3.12017e-07, 17.3011, 8.5219, 17.2737)
+use_collision = true
+size = Vector3(1, 1, 0.843628)
+
+[node name="CSGBox3D35" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, -0.34202, 10.4352, 0, 0.939693, 3.79812, -2.00499, 1.49502e-08, -4.56139e-07, 15.153, 8.82324, 17.2737)
+use_collision = true
+size = Vector3(1, 1, 0.843628)
+
+[node name="CSGBox3D36" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, -0.0871557, 11.0627, 0, 0.996195, 0.96786, -2.00499, 3.8097e-09, -4.83566e-07, 13.765, 8.82768, 17.2737)
+use_collision = true
+size = Vector3(1, 1, 0.843628)
+
+[node name="CSGBox3D37" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, 0, 11.105, 0, 1, 0, -2.00499, 0, -4.85413e-07, -3.93682, 14.3312, 48.8174)
+use_collision = true
+size = Vector3(1, 1, 0.843628)
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, -0.34202, 10.4352, 0, 0.939693, 3.79812, -2.00499, 1.49502e-08, -4.56139e-07, 0.0818397, 15.3309, 48.8174)
+use_collision = true
+size = Vector3(1, 1, 0.843628)
+
+[node name="CSGBox3D39" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(-8.76407e-08, -0.766044, 7.13813, 0, 0.642788, 8.50689, -2.00499, 3.34849e-08, -3.12017e-07, 1.59579, 16.6655, 48.8174)
+use_collision = true
+size = Vector3(1, 1, 0.843628)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Maze/Maze floor colliders"]
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 22.033, -8.47495, 14.3099, 45.2968)
+use_collision = true
+
+[node name="Maze walls" type="Node3D" parent="Maze"]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.0707, 0, 5.68434e-14, 0, 12.1784, 18.5598, 5.7659, 1.23953)
+use_collision = true
+size = Vector3(1.50928, 0.831909, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 34.4494, 9.26104, 11.1047)
+use_collision = true
+size = Vector3(0.79895, 1.21075, 2.62012)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 41.7781, 16.7679, 28.327)
+use_collision = true
+size = Vector3(0.79895, 2.02444, 2.62012)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 50.7965, 17.5674, 50.8695)
+use_collision = true
+size = Vector3(0.79895, 2.02444, 2.95215)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 33.4703, 17.5674, 76.8003)
+use_collision = true
+size = Vector3(2.83258, 2.02444, 1.3418)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 3.72243, -6.45185, 64.0322)
+use_collision = true
+size = Vector3(1.64383, 4.62794, 2.38232)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 5.5608, 17.5674, 66.408)
+use_collision = true
+size = Vector3(1.64383, 2.02444, 1.3418)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -14.5975, 9.80567, 43.8802)
+use_collision = true
+size = Vector3(0.573013, 2.02444, 2.69434)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -19.8098, 3.4448, 28.6958)
+use_collision = true
+size = Vector3(0.573013, 1.33498, 2.69434)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -20.9284, -1.97195, 22.2845)
+use_collision = true
+size = Vector3(0.573013, 1.33498, 2.69434)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -13.8394, -5.72215, 2.91783)
+use_collision = true
+size = Vector3(0.573013, 0.807014, 0.599609)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -6.25034, -1.42605, 8.73878)
+use_collision = true
+size = Vector3(0.573013, 0.807014, 0.599609)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -5.57541, 5.29557, 18.7579)
+use_collision = true
+size = Vector3(0.855257, 0.807014, 1.11591)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -1.86738, 15.7557, 38.6912)
+use_collision = true
+size = Vector3(0.674656, 0.807014, 1.85372)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 1.7969, 19.3499, 43.8793)
+use_collision = true
+size = Vector3(1.06814, 0.807014, 0.588238)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 16.2815, 18.3518, 40.8571)
+use_collision = true
+size = Vector3(0.377046, 1.10712, 1.08456)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 10.4889, 18.3518, 33.4847)
+use_collision = true
+size = Vector3(0.539532, 1.10712, 0.776647)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 7.67321, 12.5177, 22.4661)
+use_collision = true
+size = Vector3(0.465078, 1.10712, 0.714618)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 19.6692, 12.5177, 21.5347)
+use_collision = true
+size = Vector3(0.654356, 1.10712, 0.944279)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 31.0855, 14.4761, 40.4562)
+use_collision = true
+size = Vector3(0.654356, 1.36325, 0.618004)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 28.9859, 14.4761, 33.7855)
+use_collision = true
+size = Vector3(0.40876, 1.36325, 0.746502)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 0.312866, 4.29374, 6.12613)
+use_collision = true
+size = Vector3(0.40876, 1.36325, 1.63595)
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 3.77134, 4.29374, -3.77902)
+use_collision = true
+size = Vector3(0.40876, 1.36325, 0.398051)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 20.1903, 18.2949, 35.9827)
+use_collision = true
+size = Vector3(0.355986, 1.10712, 1.44139)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Maze/Maze walls"]
+transform = Transform3D(12.9405, 0, 0, 0, 18.0707, 0, 4.31688e-14, 0, 6.98223, 15.6478, 5.7659, 12.5997)
+use_collision = true
+size = Vector3(1.50928, 0.831909, 1)
 
 [node name="Simon Says" type="Node3D" parent="." node_paths=PackedStringArray("buttons", "indicators")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 59.7558, 6.0723, 13.3993)
