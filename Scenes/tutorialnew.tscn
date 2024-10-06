@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdhcmsn0mjdc8"]
+
+[ext_resource type="PackedScene" uid="uid://lfpyaxl5q7pv" path="res://Models/Tutorial/tutorialnew.blend" id="1_0weof"]
+
+[node name="tutorialnew" instance=ExtResource("1_0weof")]

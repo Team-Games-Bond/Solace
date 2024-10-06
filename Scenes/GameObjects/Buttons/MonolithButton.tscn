@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Button.cs" id="1_dus0x"]
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="2_noerg"]
-[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="3_tgdle"]
+[ext_resource type="Texture2D" uid="uid://b427qq4lvvh0c" path="res://Textures/Press E/Interact.png" id="3_texna"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_mbyxh"]
 [ext_resource type="PackedScene" uid="uid://cbwmi2wku2e8r" path="res://Models/Tutorial/octagon rune holder.blend" id="5_viq53"]
 [ext_resource type="PackedScene" uid="uid://brvdr6ktafe3m" path="res://Models/Tutorial/Rune rock 1.blend" id="6_7bsh5"]
@@ -78,11 +78,12 @@ script = ExtResource("2_noerg")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-pixel_size = 0.001
+offset = Vector2(0, 700)
+pixel_size = 0.003
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("3_tgdle")
+texture = ExtResource("3_texna")
 script = ExtResource("4_mbyxh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]

@@ -32,4 +32,3 @@ public partial class Button : Node3D
 		interactable.SetActive(active);
 	}
 }
-
