@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="1_hwx5a"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_31wmf"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="3_dcima"]
-[ext_resource type="PackedScene" uid="uid://cr6h8soqqvftb" path="res://Models/Main level/Fred-branch/POWER CUBE!.blend" id="4_jxqhr"]
+[ext_resource type="PackedScene" uid="uid://b1plaaoadwhoi" path="res://Models/Main level/POWER CUBE!.blend" id="4_jxqhr"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"

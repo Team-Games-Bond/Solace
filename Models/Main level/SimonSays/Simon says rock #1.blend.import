@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ccacmb7q4lqti"
-path="res://.godot/imported/bridge.blend-aab456984b0d970f9c30212f00b6748c.scn"
+uid="uid://611nxaguj241"
+path="res://.godot/imported/Simon says rock #1.blend-96a5e41438dc8a1830e97fd66191e0bd.scn"
 
 [deps]
 
-source_file="res://Models/Main level/bridge.blend"
-dest_files=["res://.godot/imported/bridge.blend-aab456984b0d970f9c30212f00b6748c.scn"]
+source_file="res://Models/Main level/SimonSays/Simon says rock #1.blend"
+dest_files=["res://.godot/imported/Simon says rock #1.blend-96a5e41438dc8a1830e97fd66191e0bd.scn"]
 
 [params]
 
@@ -33,7 +33,10 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Cube_001": {
+"PATH:Icosphere_003": {
+"generate/physics": true
+},
+"PATH:Icosphere_007": {
 "generate/physics": true
 }
 }

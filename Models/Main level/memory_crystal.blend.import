@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ccacmb7q4lqti"
-path="res://.godot/imported/bridge.blend-aab456984b0d970f9c30212f00b6748c.scn"
+uid="uid://b7e77lni3vlin"
+path="res://.godot/imported/memory_crystal.blend-361e86e1d567bd451b309b5e40fb0b01.scn"
 
 [deps]
 
-source_file="res://Models/Main level/bridge.blend"
-dest_files=["res://.godot/imported/bridge.blend-aab456984b0d970f9c30212f00b6748c.scn"]
+source_file="res://Models/Main level/memory_crystal.blend"
+dest_files=["res://.godot/imported/memory_crystal.blend-361e86e1d567bd451b309b5e40fb0b01.scn"]
 
 [params]
 
@@ -33,8 +33,8 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Cube_001": {
-"generate/physics": true
+"PATH:Point": {
+"import/skip_import": true
 }
 }
 }
