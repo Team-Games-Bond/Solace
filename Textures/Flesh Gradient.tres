@@ -9,4 +9,4 @@ gradient = SubResource("Gradient_vidhw")
 width = 128
 height = 128
 fill_from = Vector2(0, 1)
-fill_to = Vector2(0, 0)
+fill_to = Vector2(1, 1)
