@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3ksxh42ku6b4"]
+[gd_scene load_steps=12 format=3 uid="uid://c3ksxh42ku6b4"]
 
 [ext_resource type="Texture2D" uid="uid://clajknrtv170h" path="res://Textures/Key-W-green.svg" id="1_5khdu"]
 [ext_resource type="Texture2D" uid="uid://p1t8ysjsv78f" path="res://Textures/Key-W.svg" id="1_vrr2a"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bqkh2rsontplk" path="res://Textures/Key-D.svg" id="6_v4lrs"]
 [ext_resource type="Texture2D" uid="uid://q22f528p54f3" path="res://Textures/Key-D-green.svg" id="7_wcbk7"]
 [ext_resource type="Texture2D" uid="uid://befaiidu0u58m" path="res://Textures/Key-A-green.svg" id="9_jk088"]
+[ext_resource type="Texture2D" uid="uid://dpb111xqv6umh" path="res://Textures/Key-E-green.svg" id="10_c46vv"]
+[ext_resource type="Texture2D" uid="uid://bhlgakkpvtex8" path="res://Textures/Key-E.svg" id="11_lwdjf"]
 
 [node name="FloorPrompt" type="Node3D"]
 
@@ -43,3 +45,11 @@ script = ExtResource("2_mvhhc")
 Key = 65
 TexturePressed = ExtResource("9_jk088")
 TextureReleased = ExtResource("3_h7fur")
+
+[node name="Decal5" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6445, 0.5, -1.52434)
+texture_albedo = ExtResource("1_vrr2a")
+script = ExtResource("2_mvhhc")
+Key = 69
+TexturePressed = ExtResource("10_c46vv")
+TextureReleased = ExtResource("11_lwdjf")

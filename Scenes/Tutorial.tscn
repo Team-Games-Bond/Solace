@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://3h4uy8nh0y5o"]
+[gd_scene load_steps=31 format=3 uid="uid://3h4uy8nh0y5o"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_xyye4"]
 [ext_resource type="Script" path="res://Scripts/Sequence.cs" id="2_8luhl"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="20_fvuke"]
 [ext_resource type="PackedScene" uid="uid://cc653q6p6d72i" path="res://Scenes/Tutorial Rooms.tscn" id="21_fbjqm"]
 [ext_resource type="PackedScene" uid="uid://bpsaexwtgl6pi" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/unrec4.tscn" id="21_fbmo5"]
+[ext_resource type="PackedScene" uid="uid://bdhcmsn0mjdc8" path="res://Scenes/tutorialnew.tscn" id="23_xo0lh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdpma"]
 albedo_color = Color(0.685835, 0.685835, 0.685835, 1)
@@ -107,6 +108,7 @@ room3Sequence = NodePath("../Room 3/ButtonSequence")
 [node name="Room 1" type="Node3D" parent="."]
 
 [node name="Door" type="Node3D" parent="Room 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.565433)
 
 [node name="DoorFrame" type="CSGBox3D" parent="Room 1/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11908, 3.69281, 15.762)
@@ -133,12 +135,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1237, 0.483125, 14)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58643, 0.483, 14)
 
 [node name="FloorPrompt" parent="Room 1" instance=ExtResource("7_cka7i")]
-transform = Transform3D(-0.424264, 0, -0.424264, 0, 0.6, 0, 0.424264, 0, -0.424264, 0.634538, -1.14301, 8.00544)
+transform = Transform3D(-0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, 0.634538, -0.491127, 8.00544)
 
 [node name="Room 2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.4665)
 
 [node name="Door" type="Node3D" parent="Room 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.129934)
 
 [node name="DoorFrame" type="CSGBox3D" parent="Room 2/Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11908, 3.69281, 15.762)
@@ -157,34 +160,34 @@ moveDistance = 3.4
 [node name="Puzzle" type="Node3D" parent="Room 2"]
 
 [node name="BasicSocket" parent="Room 2/Puzzle" instance=ExtResource("5_00sn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0893695, 0.520511, 7.47915)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0893695, 0.520511, 7.47915)
 
 [node name="BoxPickup" parent="Room 2/Puzzle" instance=ExtResource("6_qpgmn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17821, 0.49195, 2.82479)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.17821, 0.49195, 2.82479)
 
 [node name="BoxPickup2" parent="Room 2/Puzzle" instance=ExtResource("6_qpgmn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2273, 0.448119, 7.24648)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.2273, 0.448119, 7.24648)
 
 [node name="PowerBoxPickup" parent="Room 2/Puzzle" instance=ExtResource("7_0jjce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.10416, 0.502074, 13.1983)
 
 [node name="BoxPickup3" parent="Room 2/Puzzle" instance=ExtResource("6_qpgmn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91508, 0.46564, 12.7525)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.91508, 0.46564, 12.7525)
 
 [node name="Room 3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32.8437)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0244555, 32.8437)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Room 3"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 5.05795, 2.10186, 14.0048)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 5.31159, 2.10186, 18.0319)
 use_collision = true
 size = Vector3(4.09284, 4.1864, 0.351074)
 material = ExtResource("10_fh2lv")
 
 [node name="Door" type="Node3D" parent="Room 3"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 2.99252, 0, 14.204)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.28741, 0, 14.6245)
 
 [node name="Door" type="CSGBox3D" parent="Room 3/Door"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44876, 1.7704, 0.47205)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13064, 1.7704, 3.05145)
 use_collision = true
 size = Vector3(2.98718, 3.31543, 0.0956268)
 material = SubResource("StandardMaterial3D_ccuj1")
@@ -192,42 +195,42 @@ script = ExtResource("2_yswuu")
 moveDistance = 3.4
 
 [node name="ButtonSequence" type="Node3D" parent="Room 3" node_paths=PackedStringArray("sequenceButtons")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.447337, 0.470915, 14.8676)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0503086, 1.40289, 15.045)
 script = ExtResource("2_8luhl")
 sequenceButtons = [NodePath("WallButton"), NodePath("WallButton3"), NodePath("WallButton5"), NodePath("WallButton4"), NodePath("WallButton2")]
 
 [node name="WallButton" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27844, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27844, 0, -3.64782)
 
 [node name="WallButton2" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.735287, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.735287, 0, -3.64782)
 
 [node name="WallButton3" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.755405, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.755405, 0, -3.64782)
 
 [node name="WallButton4" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24101, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24101, 0, -3.64782)
 
 [node name="WallButton5" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
-transform = Transform3D(0.999997, 0, 0.00242601, 0, 1, 0, -0.00242601, 0, 0.999997, 3.67124, 0, 0)
+transform = Transform3D(0.999997, 0, 0.00242601, 0, 1, 0, -0.00242601, 0, 0.999997, 3.67124, 0, -3.64782)
 
 [node name="Sockets" type="Node3D" parent="Room 3"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.53298, 0.515113, 4.93585)
 
 [node name="WallSocket" parent="Room 3/Sockets" instance=ExtResource("9_c1kwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.46568, 0, 5.72205e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48392, 0, -0.436778)
 
 [node name="WallSocket2" parent="Room 3/Sockets" instance=ExtResource("9_c1kwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.718685, 0, 2.38419e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23092, 0, -0.436781)
 
 [node name="WallSocket3" parent="Room 3/Sockets" instance=ExtResource("9_c1kwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02702, 0, 1.43051e-06)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97662, 0, -0.436785)
 
 [node name="WallSocket4" parent="Room 3/Sockets" instance=ExtResource("9_c1kwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77869, 0, -9.53674e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.72829, 0, -0.436786)
 
 [node name="WallSocket5" parent="Room 3/Sockets" instance=ExtResource("9_c1kwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52276, 0, -9.53674e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.47236, 0, -0.436786)
 
 [node name="Boxes" type="Node3D" parent="Room 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.476829, 0)
@@ -257,9 +260,11 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room 3/Boxes/BoxPickup/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.65977)
 shape = SubResource("BoxShape3D_w3clg")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.64782)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_q3e7l")
 size = Vector3(2.5, 1, 2.5)
@@ -267,7 +272,7 @@ size = Vector3(2.5, 1, 2.5)
 [node name="ItemMount" type="Node3D" parent="Room 3/Boxes/BoxPickup/Area3D"]
 
 [node name="cube11" parent="Room 3/Boxes/BoxPickup/Area3D/ItemMount" instance=ExtResource("17_eq8de")]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 0)
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 3.64782)
 
 [node name="BoxPickup2" type="Node3D" parent="Room 3/Boxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.824853, 0, 3.09631)
@@ -294,9 +299,11 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room 3/Boxes/BoxPickup2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.65977)
 shape = SubResource("BoxShape3D_w3clg")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.64782)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_q3e7l")
 size = Vector3(2.5, 1, 2.5)
@@ -304,7 +311,7 @@ size = Vector3(2.5, 1, 2.5)
 [node name="ItemMount" type="Node3D" parent="Room 3/Boxes/BoxPickup2/Area3D"]
 
 [node name="cube7" parent="Room 3/Boxes/BoxPickup2/Area3D/ItemMount" instance=ExtResource("18_a3vp8")]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 0)
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 3.64782)
 
 [node name="BoxPickup3" type="Node3D" parent="Room 3/Boxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.68101, 0, 8.9477)
@@ -331,9 +338,11 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room 3/Boxes/BoxPickup3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.65977)
 shape = SubResource("BoxShape3D_w3clg")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.64782)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_q3e7l")
 size = Vector3(2.5, 1, 2.5)
@@ -341,7 +350,7 @@ size = Vector3(2.5, 1, 2.5)
 [node name="ItemMount" type="Node3D" parent="Room 3/Boxes/BoxPickup3/Area3D"]
 
 [node name="cube3" parent="Room 3/Boxes/BoxPickup3/Area3D/ItemMount" instance=ExtResource("19_qfsq7")]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.0998001, 0)
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.0998001, 3.64782)
 
 [node name="BoxPickup4" type="Node3D" parent="Room 3/Boxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37145, 4.76837e-07, 7.05783)
@@ -368,9 +377,11 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room 3/Boxes/BoxPickup4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.65977)
 shape = SubResource("BoxShape3D_w3clg")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.64782)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_q3e7l")
 size = Vector3(2.5, 1, 2.5)
@@ -378,7 +389,7 @@ size = Vector3(2.5, 1, 2.5)
 [node name="ItemMount" type="Node3D" parent="Room 3/Boxes/BoxPickup4/Area3D"]
 
 [node name="cube9" parent="Room 3/Boxes/BoxPickup4/Area3D/ItemMount" instance=ExtResource("19_2f84o")]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 0)
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 3.64782)
 
 [node name="BoxPickup5" type="Node3D" parent="Room 3/Boxes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.366692, 0, 10.818)
@@ -405,9 +416,11 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room 3/Boxes/BoxPickup5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.65977)
 shape = SubResource("BoxShape3D_w3clg")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Room 3/Boxes/BoxPickup5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.64782)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_q3e7l")
 size = Vector3(2.5, 1, 2.5)
@@ -415,7 +428,11 @@ size = Vector3(2.5, 1, 2.5)
 [node name="ItemMount" type="Node3D" parent="Room 3/Boxes/BoxPickup5/Area3D"]
 
 [node name="cube4" parent="Room 3/Boxes/BoxPickup5/Area3D/ItemMount" instance=ExtResource("21_fbmo5")]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.1, 0)
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.1, 3.64782)
 
 [node name="Tutorialwalls" parent="." instance=ExtResource("21_fbjqm")]
-transform = Transform3D(-5.5, 0, -8.30477e-07, 0, 5.5, 0, 8.30477e-07, 0, -5.5, 0.699287, -0.5822, 15.9195)
+transform = Transform3D(-5.5, 0, -8.30477e-07, 0, 5.5, 0, 8.30477e-07, 0, -5.5, 72.0371, -0.5822, 15.9195)
+visible = false
+
+[node name="tutorialnew" parent="." instance=ExtResource("23_xo0lh")]
+transform = Transform3D(-5.5, 0, 4.80825e-07, 0, 5.5, 0, -4.80825e-07, 0, -5.5, 1.12916, -0.562338, 16.2363)

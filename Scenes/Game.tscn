@@ -28,7 +28,7 @@ transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107
 [node name="Doors" type="Node3D" parent="."]
 
 [node name="TutorialExit" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8148, 2.38419e-07, -34.6316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1615, 2.38419e-07, -38.2085)
 collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../TutorialEntrance2")
