@@ -103,4 +103,5 @@ size = Vector3(1.2, 1, 2)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.186289, 0, 0.695991, 0)
+visible = false
 size = Vector3(0.8, 0.8, 1)

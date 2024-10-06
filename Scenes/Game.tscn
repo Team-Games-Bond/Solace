@@ -44,7 +44,7 @@ material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 2.5)
 
 [node name="MazeEntrance2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 113.909, 1.93025, -95.4321)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 121.455, 10.1918, -101.915)
 collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../MazeExit")
@@ -60,7 +60,7 @@ material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 1)
 
 [node name="MazeExit2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 120.445, 0.108272, -107.154)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 162.198, 2.23887, -130.474)
 collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../MazeEntrance")
@@ -95,10 +95,10 @@ size = Vector3(3, 3, 2.5)
 transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 110.716, -24.5263, -58.7729)
 
 [node name="MazeExit" type="Node3D" parent="Doors"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.009, 1.22369, -107.688)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 162.762, 3.35429, -131.008)
 
 [node name="MazeEntrance" type="Node3D" parent="Doors"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 113.455, 3.04525, -95.0842)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.001, 11.3068, -101.567)
 
 [node name="ClutterRoomEntrance2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 53.866, 3.05762, -95.1607)
