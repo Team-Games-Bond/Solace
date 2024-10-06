@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bh4ii067yc55n"
-path="res://.godot/imported/power box cube.blend-6f07dfed7a006b856a8b525e356d38b3.scn"
+uid="uid://bu4jphgc2a4e"
+path="res://.godot/imported/maze.blend-44ccbd636dd0ea6744300c909bd5b25f.scn"
 
 [deps]
 
-source_file="res://Textures/power box cube.blend"
-dest_files=["res://.godot/imported/power box cube.blend-6f07dfed7a006b856a8b525e356d38b3.scn"]
+source_file="res://Models/Main level/maze.blend"
+dest_files=["res://.godot/imported/maze.blend-44ccbd636dd0ea6744300c909bd5b25f.scn"]
 
 [params]
 
