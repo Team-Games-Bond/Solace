@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2tmu2hnuaow8"
-path="res://.godot/imported/solid cube blend.blend-6dc360d4e43391801d4b4e47d185c4d1.scn"
+uid="uid://cgta4s0err7k8"
+path="res://.godot/imported/can.blend-9f782c4d7ef566ef823e626afaa5721b.scn"
 
 [deps]
 
-source_file="res://Textures/solid cube blend.blend"
-dest_files=["res://.godot/imported/solid cube blend.blend-6dc360d4e43391801d4b4e47d185c4d1.scn"]
+source_file="res://Models/Tutorial/can.blend"
+dest_files=["res://.godot/imported/can.blend-9f782c4d7ef566ef823e626afaa5721b.scn"]
 
 [params]
 
