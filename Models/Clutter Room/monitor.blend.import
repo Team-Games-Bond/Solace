@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2tmu2hnuaow8"
-path="res://.godot/imported/solid cube blend.blend-6dc360d4e43391801d4b4e47d185c4d1.scn"
+uid="uid://bbulxw05fl62s"
+path="res://.godot/imported/monitor.blend-bd263b03fcf9c6a0aca93f83eeb7f7a0.scn"
 
 [deps]
 
-source_file="res://Textures/solid cube blend.blend"
-dest_files=["res://.godot/imported/solid cube blend.blend-6dc360d4e43391801d4b4e47d185c4d1.scn"]
+source_file="res://Models/Clutter Room/monitor.blend"
+dest_files=["res://.godot/imported/monitor.blend-bd263b03fcf9c6a0aca93f83eeb7f7a0.scn"]
 
 [params]
 
