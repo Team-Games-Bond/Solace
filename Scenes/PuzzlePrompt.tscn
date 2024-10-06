@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=3 uid="uid://ciaiv0o70kq6r"]
+
+[ext_resource type="Script" path="res://Scripts/Interactable.cs" id="1_c8ax2"]
+[ext_resource type="Texture2D" uid="uid://csn677i73r7oe" path="res://Textures/Lyra-vec.png" id="1_xvr2s"]
+[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_vj6bq"]
+[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="3_ddqpr"]
+[ext_resource type="Script" path="res://Scripts/PuzzlePrompt.cs" id="4_rfv4l"]
+[ext_resource type="Texture2D" uid="uid://b310cnysfq1dx" path="res://Textures/Exit.svg" id="7_2yy7x"]
+[ext_resource type="Texture2D" uid="uid://cr1jhvsav5m1a" path="res://Textures/Back.svg" id="8_b3c8m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tmmtt"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaixg"]
+transparency = 1
+albedo_color = Color(0, 1, 0.486275, 0.596078)
+
+[sub_resource type="BoxMesh" id="BoxMesh_78n8p"]
+material = SubResource("StandardMaterial3D_eaixg")
+size = Vector3(3, 3, 3)
+
+[node name="PuzzlePrompt" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+script = ExtResource("1_c8ax2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_tmmtt")
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("2_vj6bq")
+script = ExtResource("3_ddqpr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("BoxMesh_78n8p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area3D"]
+process_mode = 2
+visible = false
+script = ExtResource("4_rfv4l")
+
+[node name="ColorRect" type="ColorRect" parent="Area3D/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.099986, 0.099986, 0.099986, 0.356863)
+
+[node name="TextureRect" type="TextureRect" parent="Area3D/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1024.0
+offset_top = -1024.0
+offset_right = 1024.0
+offset_bottom = 1024.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(1024, 1024)
+texture = ExtResource("1_xvr2s")
+
+[node name="TextureButton" type="TextureButton" parent="Area3D/CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+texture_normal = ExtResource("7_2yy7x")
+texture_pressed = ExtResource("7_2yy7x")
+texture_hover = ExtResource("7_2yy7x")
+texture_disabled = ExtResource("7_2yy7x")
+texture_focused = ExtResource("7_2yy7x")
+
+[node name="TextureRect2" type="TextureRect" parent="Area3D/CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+texture = ExtResource("8_b3c8m")
+
+[connection signal="pressed" from="Area3D/CanvasLayer/TextureButton" to="Area3D/CanvasLayer" method="Quit"]
