@@ -5,10 +5,9 @@ uniform float MIN_DISTANCE = 18.0f;
 uniform float MAX_DISTANCE = 21.0f;
 group_uniforms;
 
-varying vec3 modelspace_vert;
 void vertex() {
 	// Called for every vertex the material is visible on.
-	modelspace_vert = VERTEX;
+	
 }
 
 void fragment() {
@@ -19,7 +18,7 @@ void fragment() {
 	if (fade < 0.001 || fade < fract(magic.z * fract(dot(FRAGCOORD.xy, magic.xy)))) {
 		discard;
 	}
-	ALBEDO = textureLod(WallGradient, modelspace_vert.xy, 1.0).rgb;
+	ALBEDO = textureLod(WallGradient, UV.xy, 1.0).rgb;
 }
 
 //void light() {
