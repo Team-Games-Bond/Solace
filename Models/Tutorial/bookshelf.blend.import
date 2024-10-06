@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d2tmu2hnuaow8"
-path="res://.godot/imported/solid cube blend.blend-6dc360d4e43391801d4b4e47d185c4d1.scn"
+uid="uid://ddh06lut0u3vn"
+path="res://.godot/imported/bookshelf.blend-b461acd2ca39a91320979b5ded953caf.scn"
 
 [deps]
 
-source_file="res://Textures/solid cube blend.blend"
-dest_files=["res://.godot/imported/solid cube blend.blend-6dc360d4e43391801d4b4e47d185c4d1.scn"]
+source_file="res://Models/Tutorial/bookshelf.blend"
+dest_files=["res://.godot/imported/bookshelf.blend-b461acd2ca39a91320979b5ded953caf.scn"]
 
 [params]
 
