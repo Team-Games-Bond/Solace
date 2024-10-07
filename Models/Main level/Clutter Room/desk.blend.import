@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d2v1bwhvibuni"
-path="res://.godot/imported/desk.blend-3f37fb9e3459e713b3fdac0777b2033a.scn"
+path="res://.godot/imported/desk.blend-ecde69893c718f74a1b4204fe4499d02.scn"
 
 [deps]
 
-source_file="res://Models/Clutter Room/desk.blend"
-dest_files=["res://.godot/imported/desk.blend-3f37fb9e3459e713b3fdac0777b2033a.scn"]
+source_file="res://Models/Main level/Clutter Room/desk.blend"
+dest_files=["res://.godot/imported/desk.blend-ecde69893c718f74a1b4204fe4499d02.scn"]
 
 [params]
 

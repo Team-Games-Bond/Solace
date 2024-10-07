@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c1sstqsxeecw1"
-path="res://.godot/imported/PC Case.blend-f19855ddc81a0954305366ce92303874.scn"
+path="res://.godot/imported/PC Case.blend-7953bf7ce51bd26255c2a2c07ca75105.scn"
 
 [deps]
 
-source_file="res://Models/Clutter Room/PC Case.blend"
-dest_files=["res://.godot/imported/PC Case.blend-f19855ddc81a0954305366ce92303874.scn"]
+source_file="res://Models/Main level/Clutter Room/PC Case.blend"
+dest_files=["res://.godot/imported/PC Case.blend-7953bf7ce51bd26255c2a2c07ca75105.scn"]
 
 [params]
 

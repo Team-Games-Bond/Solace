@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ddh06lut0u3vn"
-path="res://.godot/imported/bookshelf.blend-72bf834938fe00d0cbd4b2b0a25fcd4d.scn"
+path="res://.godot/imported/bookshelf.blend-2c4924a99159a7158517c34c5e4faf69.scn"
 
 [deps]
 
-source_file="res://Models/Clutter Room/bookshelf.blend"
-dest_files=["res://.godot/imported/bookshelf.blend-72bf834938fe00d0cbd4b2b0a25fcd4d.scn"]
+source_file="res://Models/Main level/Clutter Room/bookshelf.blend"
+dest_files=["res://.godot/imported/bookshelf.blend-2c4924a99159a7158517c34c5e4faf69.scn"]
 
 [params]
 
