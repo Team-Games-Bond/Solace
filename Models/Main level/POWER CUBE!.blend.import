@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ccacmb7q4lqti"
-path="res://.godot/imported/bridge.blend-aab456984b0d970f9c30212f00b6748c.scn"
+uid="uid://b1plaaoadwhoi"
+path="res://.godot/imported/POWER CUBE!.blend-410ff120329ebed7d3a00c9464ed4ece.scn"
 
 [deps]
 
-source_file="res://Models/Main level/bridge.blend"
-dest_files=["res://.godot/imported/bridge.blend-aab456984b0d970f9c30212f00b6748c.scn"]
+source_file="res://Models/Main level/POWER CUBE!.blend"
+dest_files=["res://.godot/imported/POWER CUBE!.blend-410ff120329ebed7d3a00c9464ed4ece.scn"]
 
 [params]
 
@@ -31,13 +31,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"nodes": {
-"PATH:Cube_001": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="1_hwx5a"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_31wmf"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="3_dcima"]
+[ext_resource type="PackedScene" uid="uid://b1plaaoadwhoi" path="res://Models/Main level/POWER CUBE!.blend" id="4_jxqhr"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -65,16 +66,13 @@ shading_mode = 0
 diffuse_mode = 3
 albedo_color = Color(0, 1, 0.223529, 0.145098)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3takf"]
-albedo_color = Color(0, 0.686275, 1, 1)
-
 [node name="PowerBoxPickup" type="Node3D"]
 
 [node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("1_hwx5a")
 MountPoint = NodePath("ItemMount")
-Item = NodePath("ItemMount/PowerBox")
+Item = NodePath("ItemMount/POWER CUBE!")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -101,8 +99,6 @@ size = Vector3(2.5, 1, 2.5)
 
 [node name="ItemMount" type="Node3D" parent="Area3D"]
 
-[node name="PowerBox" type="CSGBox3D" parent="Area3D/ItemMount"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00915527, 0.172418, 0)
-size = Vector3(1.2, 1.2, 1.2)
-material = SubResource("StandardMaterial3D_3takf")
+[node name="POWER CUBE!" parent="Area3D/ItemMount" instance=ExtResource("4_jxqhr")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.00848413, -0.436299, -0.0163138)
 metadata/ItemKey = "PowerBox"

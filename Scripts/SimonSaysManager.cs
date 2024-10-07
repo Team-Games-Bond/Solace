@@ -15,7 +15,7 @@ public partial class SimonSaysManager : Node
 	
 	[ExportGroup("References")]
 	[Export] public Godot.Collections.Array<Button> buttons { get; set; }
-	[Export] public Godot.Collections.Array<CsgBox3D> indicators { get; set; } //Change to particle effects or something?
+	[Export] public Godot.Collections.Array<MeshInstance3D> indicators { get; set; } //Change to particle effects or something?
 
 	[Signal] public delegate void SequenceCompletedEventHandler();
 	[Signal] public delegate void CompletedEventHandler();
@@ -34,7 +34,7 @@ public partial class SimonSaysManager : Node
 	{
 		foreach (var indicator in indicators)
 		{
-			indicator.Material = dimMaterial;
+			indicator.SetSurfaceOverrideMaterial(0, dimMaterial);
 		}
 
 		foreach (var button in buttons)
@@ -56,12 +56,12 @@ public partial class SimonSaysManager : Node
 			if(flashTimer >= flashLength)
 			{
 				flashTimer = 0;
-				indicators[sequences[currentSequence][currentNumberInSequence]].Material = dimMaterial;
+				indicators[sequences[currentSequence][currentNumberInSequence]].SetSurfaceOverrideMaterial(0, dimMaterial);
 
 				if(currentNumberInSequence >= sequences[currentSequence].Count-1) endPatternDisplay();
 				else currentNumberInSequence += 1;
 			}
-			else indicators[sequences[currentSequence][currentNumberInSequence]].Material = brightMaterial;
+			else indicators[sequences[currentSequence][currentNumberInSequence]].SetSurfaceOverrideMaterial(0, brightMaterial);
 		}
 
 		idleTimer += (float)delta;
@@ -113,7 +113,7 @@ public partial class SimonSaysManager : Node
 	private void endPatternDisplay()
 	{
 		//GD.Print("End Sequence ", currentNumberInSequence);
-		indicators[sequences[currentSequence][currentNumberInSequence]].Material = dimMaterial;
+		indicators[sequences[currentSequence][currentNumberInSequence]].SetSurfaceOverrideMaterial(0, dimMaterial);
 		isFlashing = false;
 		currentNumberInSequence = 0;
 	}
