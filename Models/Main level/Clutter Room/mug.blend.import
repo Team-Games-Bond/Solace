@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://lyu2x115w6vo"
-path="res://.godot/imported/mug.blend-57991fa75aae9bb07960817184e55dad.scn"
+path="res://.godot/imported/mug.blend-635ce01e5977a81c229b8d59c475e273.scn"
 
 [deps]
 
-source_file="res://Models/Clutter Room/mug.blend"
-dest_files=["res://.godot/imported/mug.blend-57991fa75aae9bb07960817184e55dad.scn"]
+source_file="res://Models/Main level/Clutter Room/mug.blend"
+dest_files=["res://.godot/imported/mug.blend-635ce01e5977a81c229b8d59c475e273.scn"]
 
 [params]
 

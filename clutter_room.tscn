@@ -1,0 +1,81 @@
+[gd_scene load_steps=16 format=3 uid="uid://bjm3avsnckc6f"]
+
+[ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
+[ext_resource type="PackedScene" uid="uid://byu6s2fgyikqn" path="res://Models/Main level/Clutter Room/bed.blend" id="2_tltt7"]
+[ext_resource type="PackedScene" uid="uid://d2v1bwhvibuni" path="res://Models/Main level/Clutter Room/desk.blend" id="3_ahs05"]
+[ext_resource type="PackedScene" uid="uid://ddh06lut0u3vn" path="res://Models/Main level/Clutter Room/bookshelf.blend" id="4_rbthr"]
+[ext_resource type="PackedScene" uid="uid://bbulxw05fl62s" path="res://Models/Main level/Clutter Room/monitor.blend" id="5_41mbg"]
+[ext_resource type="PackedScene" uid="uid://daup4tw0qws35" path="res://Models/Main level/Clutter Room/Keyboard.blend" id="6_p7m2v"]
+[ext_resource type="PackedScene" uid="uid://cb58biarx7057" path="res://Models/Main level/Clutter Room/mouse.blend" id="7_sxjma"]
+[ext_resource type="PackedScene" uid="uid://onn38v3lg6rn" path="res://Models/Main level/Clutter Room/PC case final.blend" id="8_440yg"]
+[ext_resource type="PackedScene" uid="uid://lyu2x115w6vo" path="res://Models/Main level/Clutter Room/mug.blend" id="9_odbiv"]
+[ext_resource type="PackedScene" uid="uid://de2fnhrx0jxmu" path="res://Models/Main level/Clutter Room/can final.blend" id="10_nlne2"]
+[ext_resource type="PackedScene" uid="uid://blx188hqqcn7y" path="res://Models/Main level/Clutter Room/mousepad.blend" id="11_n4j80"]
+[ext_resource type="PackedScene" uid="uid://dh3yhu1p3mirs" path="res://Models/Main level/Clutter Room/chair modifiers applied.blend" id="12_j0275"]
+[ext_resource type="PackedScene" uid="uid://k26q0am8pn6v" path="res://Models/Main level/Clutter Room/gameboy .blend" id="13_5u0q2"]
+[ext_resource type="PackedScene" uid="uid://cxii2nrel0mct" path="res://Models/Main level/Clutter Room/bedside table.blend" id="14_mmxt8"]
+[ext_resource type="PackedScene" uid="uid://b6uwbfwdhnun" path="res://Models/Main level/Clutter Room/lamp.blend" id="15_sjeq8"]
+
+[node name="Clutter room" type="Node3D"]
+
+[node name="room layout left" parent="." instance=ExtResource("1_w7dh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362072, -0.393026, 5.81119)
+visible = false
+
+[node name="room layout (MAIN)" parent="." instance=ExtResource("1_w7dh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
+
+[node name="Room Layout right" parent="." instance=ExtResource("1_w7dh4")]
+transform = Transform3D(0.994888, 0, 0, 0, 0.994888, 0, 0, 0, 0.994888, 6.33253, -4.76837e-07, -0.0925245)
+visible = false
+
+[node name="bed" parent="." instance=ExtResource("2_tltt7")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.818, 0.098688, -0.663)
+
+[node name="desk2" parent="." instance=ExtResource("3_ahs05")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.35487, 0.583416, 0.996301)
+
+[node name="bookshelf" parent="." instance=ExtResource("4_rbthr")]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.22074, 0.235515, -1.12187)
+
+[node name="monitor" parent="." instance=ExtResource("5_41mbg")]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -1.54271, 0.918977, 1.22437)
+
+[node name="Keyboard" parent="." instance=ExtResource("6_p7m2v")]
+transform = Transform3D(-4.80825e-09, 0, 0.11, 0, 0.11, 0, -0.11, 0, -4.80825e-09, -1.31286, 0.862068, 1.21713)
+
+[node name="mouse" parent="." instance=ExtResource("7_sxjma")]
+transform = Transform3D(-7.86805e-10, 0, 0.018, 0, 0.018, 0, -0.018, 0, -7.86805e-10, -1.30261, 0.858081, 0.97547)
+
+[node name="PC case final" parent="." instance=ExtResource("8_440yg")]
+transform = Transform3D(-3.93403e-09, 0, 0.09, 0, 0.09, 0, -0.09, 0, -3.93403e-09, -1.38025, 0.94165, 0.606592)
+
+[node name="mug2" parent="." instance=ExtResource("9_odbiv")]
+transform = Transform3D(0.0272799, 0, -0.0292541, 0, 0.04, 0, 0.0292541, 0, 0.0272799, 1.67926, 0.696702, -1.5399)
+
+[node name="mug" parent="." instance=ExtResource("9_odbiv")]
+transform = Transform3D(0.0331615, 0, 0.0223677, 0, 0.04, 0, -0.0223677, 0, 0.0331615, -1.51739, 0.844211, 1.51467)
+
+[node name="can final2" parent="." instance=ExtResource("10_nlne2")]
+transform = Transform3D(0.595581, 0, -1.04135e-07, 0, 0.595581, 0, 1.04135e-07, 0, 0.595581, -1.4018, 0.971278, 0.829776)
+
+[node name="can final" parent="." instance=ExtResource("10_nlne2")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -1.49624, 0.954815, 0.861917)
+
+[node name="mousepad" parent="." instance=ExtResource("11_n4j80")]
+transform = Transform3D(-8.52372e-09, 0, 0.195, 0, 0.195, 0, -0.195, 0, -8.52372e-09, -1.34564, 0.848911, 1.18629)
+
+[node name="chair modifiers applied" parent="." instance=ExtResource("12_j0275")]
+transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, -1.18115, 0.735903, 1.23066)
+
+[node name="gameboy " parent="." instance=ExtResource("13_5u0q2")]
+transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -1.35299, 0.864796, 0.38419)
+
+[node name="bedside table3" parent="." instance=ExtResource("14_mmxt8")]
+transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.809, 0.596, -1.741)
+
+[node name="bedside table2" parent="." instance=ExtResource("14_mmxt8")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.264665, 0.595579, -1.74079)
+
+[node name="lamp" parent="." instance=ExtResource("15_sjeq8")]
+transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, 1.81448, 0.685868, -1.71102)

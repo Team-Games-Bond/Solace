@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://byu6s2fgyikqn"
-path="res://.godot/imported/bed.blend-387d0cd5d3d2fd05980453ced5090bda.scn"
+path="res://.godot/imported/bed.blend-d0ed7d4b84b58f6e01df5919aa7fc329.scn"
 
 [deps]
 
-source_file="res://Models/Clutter Room/bed.blend"
-dest_files=["res://.godot/imported/bed.blend-387d0cd5d3d2fd05980453ced5090bda.scn"]
+source_file="res://Models/Main level/Clutter Room/bed.blend"
+dest_files=["res://.godot/imported/bed.blend-d0ed7d4b84b58f6e01df5919aa7fc329.scn"]
 
 [params]
 
