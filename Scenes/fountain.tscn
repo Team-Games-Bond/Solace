@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://pscqmxvgbgkq"]
+
+[ext_resource type="PackedScene" uid="uid://dyp8tc5xamiys" path="res://Models/Tutorial/water fountain bottom.blend" id="1_mc0q3"]
+[ext_resource type="PackedScene" uid="uid://ckq3awt365vfp" path="res://Models/Tutorial/octagon waterfall.blend" id="2_ske2b"]
+[ext_resource type="PackedScene" uid="uid://bifso6dbwnwfe" path="res://Models/Tutorial/octagon waterfall pipe.blend" id="3_vl5mu"]
+[ext_resource type="PackedScene" uid="uid://dw21q1ytq24m8" path="res://Models/Tutorial/WaterPlane.blend" id="4_dcrfo"]
+[ext_resource type="PackedScene" uid="uid://c51q0qsbwkdpk" path="res://Models/Tutorial/fountainbacking.blend" id="5_rb22a"]
+
+[node name="Fountain" type="Node3D"]
+
+[node name="water fountain bottom" parent="." instance=ExtResource("1_mc0q3")]
+transform = Transform3D(-1.2, 0, -1.81195e-07, 0, 1.2, 0, 1.81195e-07, 0, -1.2, -0.239713, 0.336836, 0.0263968)
+
+[node name="octagon waterfall" parent="." instance=ExtResource("2_ske2b")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -0.0351439, 1.21225, 0.0161341)
+
+[node name="octagon waterfall pipe" parent="." instance=ExtResource("3_vl5mu")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 0.0930044, 0.759135, 0.0185006)
+
+[node name="WaterPlane" parent="." instance=ExtResource("4_dcrfo")]
+transform = Transform3D(-1.2, 0, -1.81195e-07, 0, 1.2, 0, 1.81195e-07, 0, -1.2, -0.234723, 0.277827, 0.00453746)
+
+[node name="fountainbacking" parent="." instance=ExtResource("5_rb22a")]
+transform = Transform3D(-2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.5, -0.272907, 1.42413, 0.0149859)

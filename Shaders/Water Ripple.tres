@@ -79,7 +79,7 @@ default_value = Vector2(0.2, 0.2)
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_anw7u"]
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_xs12a"]
-size = Vector2(3104, 852.08)
+size = Vector2(3104, 893.08)
 title = "Water Edge"
 attached_nodes = PackedInt32Array(40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54)
 
@@ -363,6 +363,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-490.982, -115.496)
 nodes/fragment/0/position = Vector2(3300, 140)
 nodes/fragment/2/node = SubResource("VisualShaderNodeCustom_0axtd")
 nodes/fragment/2/position = Vector2(-540, 100)

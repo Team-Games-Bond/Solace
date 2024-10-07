@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bifso6dbwnwfe"
-path="res://.godot/imported/octagon waterfall pipe.blend-c9b02967949f409f17be856f293ecea5.scn"
+uid="uid://c3kglhq31uq1u"
+path="res://.godot/imported/CubeStation.blend-d7ed849ad7075320de6e252887b42bdf.scn"
 
 [deps]
 
-source_file="res://Models/Tutorial/octagon waterfall pipe.blend"
-dest_files=["res://.godot/imported/octagon waterfall pipe.blend-c9b02967949f409f17be856f293ecea5.scn"]
+source_file="res://Models/Tutorial/CubeStation.blend"
+dest_files=["res://.godot/imported/CubeStation.blend-d7ed849ad7075320de6e252887b42bdf.scn"]
 
 [params]
 
@@ -31,14 +31,7 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"watefall": {
-"use_external/enabled": true,
-"use_external/path": "res://Materials/WaterFlow.tres"
-}
-}
-}
+_subresources={}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

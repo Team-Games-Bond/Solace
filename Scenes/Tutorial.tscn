@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://3h4uy8nh0y5o"]
+[gd_scene load_steps=33 format=3 uid="uid://3h4uy8nh0y5o"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_xyye4"]
+[ext_resource type="PackedScene" uid="uid://pscqmxvgbgkq" path="res://Scenes/fountain.tscn" id="2_3q2yx"]
 [ext_resource type="Script" path="res://Scripts/Sequence.cs" id="2_8luhl"]
 [ext_resource type="Script" path="res://Scripts/Door.cs" id="2_yswuu"]
 [ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="3_k1skp"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://l24j71pyvwho" path="res://Scenes/GameObjects/Buttons/WallButton.tscn" id="8_oukdv"]
 [ext_resource type="PackedScene" uid="uid://cr1efcuqdirgs" path="res://Scenes/GameObjects/Sockets/WallSocket.tscn" id="9_c1kwo"]
 [ext_resource type="Material" uid="uid://dj6twpp5osrx8" path="res://Materials/Opaque Wall.tres" id="10_fh2lv"]
+[ext_resource type="Texture2D" uid="uid://b427qq4lvvh0c" path="res://Textures/Press E/Interact.png" id="15_fj2xt"]
 [ext_resource type="PackedScene" uid="uid://dm4t42ol1auxo" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/White10.tscn" id="17_eq8de"]
 [ext_resource type="PackedScene" uid="uid://c3r5d5kuejvhs" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/Red6.tscn" id="18_a3vp8"]
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="18_ets47"]
@@ -107,6 +109,12 @@ room3Sequence = NodePath("../Room 3/ButtonSequence")
 
 [node name="Room 1" type="Node3D" parent="."]
 
+[node name="Fountain" parent="Room 1" instance=ExtResource("2_3q2yx")]
+transform = Transform3D(-1.7, 0, -2.56693e-07, 0, 1.7, 0, 2.56693e-07, 0, -1.7, 6.17835, 0.0957173, 9.90503)
+
+[node name="Fountain2" parent="Room 1" instance=ExtResource("2_3q2yx")]
+transform = Transform3D(-1.7, 0, -2.56693e-07, 0, 1.7, 0, 2.56693e-07, 0, -1.7, 6.17835, 0.0957173, 25.332)
+
 [node name="Door" type="Node3D" parent="Room 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.565433)
 
@@ -169,7 +177,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.178
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.2273, 0.448119, 7.24648)
 
 [node name="PowerBoxPickup" parent="Room 2/Puzzle" instance=ExtResource("7_0jjce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.10416, 0.502074, 13.1983)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.10416, 0.502074, 13.1983)
 
 [node name="BoxPickup3" parent="Room 2/Puzzle" instance=ExtResource("6_qpgmn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.91508, 0.46564, 12.7525)
@@ -246,11 +254,11 @@ Item = NodePath("ItemMount/cube11")
 
 [node name="Sprite3D" type="Sprite3D" parent="Room 3/Boxes/BoxPickup/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-pixel_size = 0.001
+pixel_size = 0.003
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("19_cnyas")
+texture = ExtResource("15_fj2xt")
 script = ExtResource("20_fvuke")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup/Area3D"]

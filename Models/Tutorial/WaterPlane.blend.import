@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bifso6dbwnwfe"
-path="res://.godot/imported/octagon waterfall pipe.blend-c9b02967949f409f17be856f293ecea5.scn"
+uid="uid://dw21q1ytq24m8"
+path="res://.godot/imported/WaterPlane.blend-18a690ff0efdcbeff56bcc53c0274e0e.scn"
 
 [deps]
 
-source_file="res://Models/Tutorial/octagon waterfall pipe.blend"
-dest_files=["res://.godot/imported/octagon waterfall pipe.blend-c9b02967949f409f17be856f293ecea5.scn"]
+source_file="res://Models/Tutorial/WaterPlane.blend"
+dest_files=["res://.godot/imported/WaterPlane.blend-18a690ff0efdcbeff56bcc53c0274e0e.scn"]
 
 [params]
 
@@ -33,9 +33,9 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"watefall": {
+"WaterPlaceholder": {
 "use_external/enabled": true,
-"use_external/path": "res://Materials/WaterFlow.tres"
+"use_external/path": "res://Materials/WaterRipple.tres"
 }
 }
 }
