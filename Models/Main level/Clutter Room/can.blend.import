@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cgta4s0err7k8"
-path="res://.godot/imported/can.blend-9f782c4d7ef566ef823e626afaa5721b.scn"
+path="res://.godot/imported/can.blend-2d4fd57596f0ae4d200e161d443f13aa.scn"
 
 [deps]
 
-source_file="res://Models/Tutorial/can.blend"
-dest_files=["res://.godot/imported/can.blend-9f782c4d7ef566ef823e626afaa5721b.scn"]
+source_file="res://Models/Clutter Room/can.blend"
+dest_files=["res://.godot/imported/can.blend-2d4fd57596f0ae4d200e161d443f13aa.scn"]
 
 [params]
 
