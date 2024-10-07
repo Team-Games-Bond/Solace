@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://3h4uy8nh0y5o"]
+[gd_scene load_steps=34 format=3 uid="uid://3h4uy8nh0y5o"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_xyye4"]
 [ext_resource type="PackedScene" uid="uid://pscqmxvgbgkq" path="res://Scenes/fountain.tscn" id="2_3q2yx"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://vwdqmlafqdqy" path="res://Scenes/GameObjects/PickupLocations/BoxPickup.tscn" id="6_qpgmn"]
 [ext_resource type="PackedScene" uid="uid://cunwppijkniwm" path="res://Scenes/GameObjects/PickupLocations/PowerBoxPickup.tscn" id="7_0jjce"]
 [ext_resource type="PackedScene" uid="uid://c3ksxh42ku6b4" path="res://Scenes/FloorPrompt.tscn" id="7_cka7i"]
+[ext_resource type="PackedScene" uid="uid://cbwmi2wku2e8r" path="res://Models/Tutorial/octagon rune holder.blend" id="7_cyw71"]
 [ext_resource type="PackedScene" uid="uid://l24j71pyvwho" path="res://Scenes/GameObjects/Buttons/WallButton.tscn" id="8_oukdv"]
 [ext_resource type="PackedScene" uid="uid://cr1efcuqdirgs" path="res://Scenes/GameObjects/Sockets/WallSocket.tscn" id="9_c1kwo"]
 [ext_resource type="Material" uid="uid://dj6twpp5osrx8" path="res://Materials/Opaque Wall.tres" id="10_fh2lv"]
@@ -139,8 +140,14 @@ sequenceButtons = [NodePath("Button"), NodePath("Button2")]
 [node name="Button" parent="Room 1/Sequence" instance=ExtResource("3_k1skp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1237, 0.483125, 14)
 
+[node name="octagon rune holder" parent="Room 1/Sequence" instance=ExtResource("7_cyw71")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 3.13349, -0.00693333, 13.9877)
+
 [node name="Button2" parent="Room 1/Sequence" instance=ExtResource("6_18ks2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58643, 0.483, 14)
+
+[node name="octagon rune holder2" parent="Room 1/Sequence" instance=ExtResource("7_cyw71")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.44076, -0.00693333, 13.9877)
 
 [node name="FloorPrompt" parent="Room 1" instance=ExtResource("7_cka7i")]
 transform = Transform3D(-0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, 0.634538, -0.491127, 8.00544)

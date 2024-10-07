@@ -24,6 +24,8 @@ public partial class Button : Node3D
 	public void Begin(CharacterController player)
 	{
 		if(isActive) EmitSignal(SignalName.ButtonPress, this);
+		TranslateObjectLocal(Vector3.Down * 0.1f); 
+		GetTree().CreateTimer(0.2f).Timeout += () => TranslateObjectLocal(Vector3.Up * 0.1f);
 	}
 	
 	public void SetActive(bool active)
