@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://vwdqmlafqdqy"]
+[gd_scene load_steps=11 format=3 uid="uid://vwdqmlafqdqy"]
 
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="1_xlpxs"]
 [ext_resource type="Texture2D" uid="uid://b427qq4lvvh0c" path="res://Textures/Press E/Interact.png" id="2_xlktt"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="3_64xf2"]
 [ext_resource type="PackedScene" uid="uid://ju43hbanmqtm" path="res://Models/Tutorial/cube-symbols/cube1.blend" id="4_2xj54"]
+[ext_resource type="PackedScene" uid="uid://ctjne1cpd4ylv" path="res://Models/Tutorial/CubeStation1.blend" id="5_t82dg"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -103,3 +104,6 @@ size = Vector3(2.5, 1, 2.5)
 [node name="cube1" parent="Area3D/ItemMount" instance=ExtResource("4_2xj54")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.429844, 0)
 metadata/ItemKey = "Box"
+
+[node name="CubeStation1" parent="." instance=ExtResource("5_t82dg")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.0158814, -0.41473, -0.0160992)
