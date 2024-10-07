@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b6uwbfwdhnun"
-path="res://.godot/imported/lamp.blend-b87fc248999d2901273a5875ca4396e9.scn"
+uid="uid://cye7333c2e7da"
+path="res://.godot/imported/Tutorialwalls.blend-4bc4451782398da7e21338f90cd66141.scn"
 
 [deps]
 
-source_file="res://Models/Tutorial/lamp.blend"
-dest_files=["res://.godot/imported/lamp.blend-b87fc248999d2901273a5875ca4396e9.scn"]
+source_file="res://Models/Tutorial/Tutorialwalls.blend"
+dest_files=["res://.godot/imported/Tutorialwalls.blend-4bc4451782398da7e21338f90cd66141.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ddh06lut0u3vn"
-path="res://.godot/imported/bookshelf.blend-b461acd2ca39a91320979b5ded953caf.scn"
+uid="uid://cm3vklomqgrgs"
+path="res://.godot/imported/room layout.blend-fec43227b7c1403e47e7e0e76d522c64.scn"
 
 [deps]
 
-source_file="res://Models/Tutorial/bookshelf.blend"
-dest_files=["res://.godot/imported/bookshelf.blend-b461acd2ca39a91320979b5ded953caf.scn"]
+source_file="res://Models/Clutter Room/room layout.blend"
+dest_files=["res://.godot/imported/room layout.blend-fec43227b7c1403e47e7e0e76d522c64.scn"]
 
 [params]
 

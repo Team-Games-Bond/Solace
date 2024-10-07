@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bkdv5cho4x2wi"
-path="res://.godot/imported/plushie.blend-8636839e60c03e9fc8307fe47eb0528f.scn"
+uid="uid://dlh57ufxvj8rt"
+path="res://.godot/imported/powerbox.blend-0a2d3552ca21ff5f1d097a70dcbc0c57.scn"
 
 [deps]
 
-source_file="res://Models/Tutorial/plushie.blend"
-dest_files=["res://.godot/imported/plushie.blend-8636839e60c03e9fc8307fe47eb0528f.scn"]
+source_file="res://Models/Tutorial/powerbox.blend"
+dest_files=["res://.godot/imported/powerbox.blend-0a2d3552ca21ff5f1d097a70dcbc0c57.scn"]
 
 [params]
 

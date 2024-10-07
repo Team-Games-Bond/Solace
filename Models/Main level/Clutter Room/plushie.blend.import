@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://lyu2x115w6vo"
-path="res://.godot/imported/mug.blend-1cd6bed71b316be91b424139891ed976.scn"
+uid="uid://bkdv5cho4x2wi"
+path="res://.godot/imported/plushie.blend-7040b399025bab50db0cef39b83c0b4d.scn"
 
 [deps]
 
-source_file="res://Models/Tutorial/mug.blend"
-dest_files=["res://.godot/imported/mug.blend-1cd6bed71b316be91b424139891ed976.scn"]
+source_file="res://Models/Clutter Room/plushie.blend"
+dest_files=["res://.godot/imported/plushie.blend-7040b399025bab50db0cef39b83c0b4d.scn"]
 
 [params]
 
