@@ -4,73 +4,69 @@ using System.Collections.Generic;
 [Tool]
 public partial class Interactable : Area3D
 {
+	[Export] public bool isActive = true;
+
 	[Signal]
-	public delegate void InteractionBeginEventHandler();
+	public delegate void InteractionBeginEventHandler(CharacterController player);
 	[Signal]
 	public delegate void InteractionEndEventHandler();
-	[Export]
-	private string InteractButton = "Interact";
-	private AnimationPlayer animationPlayer;
-	private static Interactable current = null;
-	private bool inRange = false;
+	[Signal]
+	public delegate void PromptShowEventHandler();
+	[Signal]
+	public delegate void PromptHideEventHandler();
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		if (!Engine.IsEditorHint()){
-			animationPlayer = GetNodeOrNull<AnimationPlayer>("AnimationPlayer");
-			BodyEntered += Enter;
-			BodyExited += Exit;
-		}
+		BodyEntered += Enter;
+		BodyExited += Exit;
 	}
-    public override string[] _GetConfigurationWarnings()
-    {
-		List<string> warnings = new List<string>();
-		if (GetNodeOrNull<AnimationPlayer>("AnimationPlayer") == null){
-			warnings.Add("This node has no AnimationPlayer, it is required for Interactable to work");
-		}
-        return warnings.ToArray();
-    }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
 	{
-		if (Engine.IsEditorHint()){
+		if (Engine.IsEditorHint())
+		{
 			UpdateConfigurationWarnings();
 		}
 	}
-	public void Interact(){
-		EmitSignal(SignalName.InteractionBegin);
+
+	public virtual void Interact(CharacterController player){
+		EmitSignal(SignalName.InteractionBegin, player);
 	}
-    public override void _Input(InputEvent @event)
-    {
-        if (@event.IsActionPressed(InteractButton)&inRange){
-			Interact();
-		}
-    }
 
 	// Prompt player for and enable interaction  
-	private void Highlight(){
-		if(current!=null){
-			Unhighlight();
-		}
-		current = this;
-		animationPlayer.Play("Button Prompt Appear");
-		inRange = true;
+	public void Highlight(){
+		EmitSignal(SignalName.PromptShow);
 	}
 	// Hide prompt and disable interaction
-	private void Unhighlight(){
-		animationPlayer.Play("Button Prompt Disappear");
-		inRange = false;
-		current = null;
+	public void Unhighlight(){
+		EmitSignal(SignalName.PromptHide);
 	}
-	
-    private void Enter(Node3D body)
+    public virtual void Enter(Node3D body)
 	{
+		if(!isActive) return;
+
+		CharacterController player = (CharacterController)body;
+		/*if (player.Current!=null){
+			player.Current.Unhighlight();
+		}
 		Highlight();
+		player.Current = this;*/
+		player.CloseInteractables.Add(this);
 	}
 
-	private void Exit(Node3D body)
+	public virtual void Exit(Node3D body)
 	{
-		Unhighlight();
+		CharacterController player = (CharacterController)body;
+		if (player.Current == this){
+			Unhighlight();
+			player.Current = null;
+		}
+		player.CloseInteractables.Remove(this);
 	}
+
+	public void SetActive(bool active)
+    {
+        isActive = active;
+    }
 }

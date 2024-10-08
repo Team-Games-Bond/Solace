@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d36c4o2r8jdro"]
+
+[ext_resource type="PackedScene" uid="uid://dawn88mwpvmnt" path="res://Scenes/FloorPrompt.tscn" id="1_dlg45"]
+
+[node name="FloorPromptDemo" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(6, 1, 6)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.943547, 0.331239, 0, -0.331239, 0.943547, 0, 1.75285, 3.28066)
+
+[node name="FloorPrompt" parent="." instance=ExtResource("1_dlg45")]

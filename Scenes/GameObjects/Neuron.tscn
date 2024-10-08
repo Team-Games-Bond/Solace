@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt4nhl6e47gcv"]
+
+[ext_resource type="PackedScene" uid="uid://dya6jm4o0tqnn" path="res://Models/Main level/neuron.blend" id="1_nh6bj"]
+
+[node name="Neuron" type="Node3D"]
+
+[node name="neuron" parent="." instance=ExtResource("1_nh6bj")]
+transform = Transform3D(-0.126465, 0, -0.15494, 0, 0.2, 0, 0.15494, 0, -0.126465, 0.149237, 2.38419e-07, 0.161457)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="neuron"]
+transform = Transform3D(-3.16164, 0, 3.87352, 0, 5, 0, -3.87352, 0, -3.16164, -0.337918, 11.5392, -1.24103)
