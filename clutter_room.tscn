@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=18 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
 [ext_resource type="PackedScene" uid="uid://byu6s2fgyikqn" path="res://Models/Main level/Clutter Room/bed.blend" id="2_tltt7"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://k26q0am8pn6v" path="res://Models/Main level/Clutter Room/gameboy .blend" id="13_5u0q2"]
 [ext_resource type="PackedScene" uid="uid://cxii2nrel0mct" path="res://Models/Main level/Clutter Room/bedside table.blend" id="14_mmxt8"]
 [ext_resource type="PackedScene" uid="uid://b6uwbfwdhnun" path="res://Models/Main level/Clutter Room/lamp.blend" id="15_sjeq8"]
+[ext_resource type="PackedScene" uid="uid://cl46y58q6ss7e" path="res://Models/Main level/Clutter Room/headset.blend" id="16_ludrc"]
+[ext_resource type="PackedScene" uid="uid://bvlobnvaju5bt" path="res://Models/Main level/Clutter Room/fern.blend" id="17_tyj78"]
 
 [node name="Clutter room" type="Node3D"]
 
@@ -69,7 +71,7 @@ transform = Transform3D(-8.52372e-09, 0, 0.195, 0, 0.195, 0, -0.195, 0, -8.52372
 transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, -1.18115, 0.735903, 1.23066)
 
 [node name="gameboy " parent="." instance=ExtResource("13_5u0q2")]
-transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -1.35299, 0.864796, 0.38419)
+transform = Transform3D(0.0319836, 0, 0.0947473, 0, 0.1, 0, -0.0947473, 0, 0.0319836, -1.35299, 0.864796, 0.38419)
 
 [node name="bedside table3" parent="." instance=ExtResource("14_mmxt8")]
 transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.809, 0.596, -1.741)
@@ -79,3 +81,9 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.264665, 0.595579, -1.
 
 [node name="lamp" parent="." instance=ExtResource("15_sjeq8")]
 transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, 1.81448, 0.685868, -1.71102)
+
+[node name="headset" parent="." instance=ExtResource("16_ludrc")]
+transform = Transform3D(-3.49691e-09, -0.08, -3.49691e-09, 0, -3.49691e-09, 0.08, -0.08, 3.49691e-09, 1.52855e-16, -1.41485, 0.888665, 1.49203)
+
+[node name="fern" parent="." instance=ExtResource("17_tyj78")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82704, 0, 3.5495)
