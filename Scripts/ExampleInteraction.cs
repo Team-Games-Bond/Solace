@@ -22,7 +22,7 @@ public partial class ExampleInteraction : Node
     {
     }
 
-    public void Begin()
+    public void Begin(CharacterController player)
     {
 		GD.PrintRich("[shake rate=20.0 level=5 connected=1][rainbow]Player Interacted[/rainbow][/shake]");
     }

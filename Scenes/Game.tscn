@@ -1,12 +1,180 @@
-[gd_scene load_steps=3 format=3 uid="uid://du5hj5gtfqms7"]
+[gd_scene load_steps=7 format=3 uid="uid://du5hj5gtfqms7"]
 
-[ext_resource type="PackedScene" uid="uid://cy65g16gt1t43" path="res://Scenes/Prototype Level.tscn" id="1_lgios"]
+[ext_resource type="PackedScene" uid="uid://3h4uy8nh0y5o" path="res://Scenes/Tutorial.tscn" id="2_bvl3c"]
 [ext_resource type="PackedScene" uid="uid://cfkv6wtyhhta0" path="res://Scenes/Character.tscn" id="2_imu7g"]
+[ext_resource type="PackedScene" uid="uid://un31ok75dwaf" path="res://Scenes/Main level.tscn" id="3_g7ck6"]
+[ext_resource type="Script" path="res://Scripts/TeleportDoor.cs" id="4_yipme"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dwslm"]
+size = Vector3(2.90178, 3, 2.47565)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oiyo"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(0, 1, 0.223529, 0.145098)
 
 [node name="Game" type="Node3D"]
 
-[node name="PrototypeLevel" parent="." instance=ExtResource("1_lgios")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, -0.346)
-
 [node name="Character" parent="." instance=ExtResource("2_imu7g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0282249, 1.23759, -0.538649)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.1008, -43.1401, -28.4493)
+
+[node name="Tutorial" parent="." instance=ExtResource("2_bvl3c")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -2, 0, 2)
+
+[node name="MainLevel" parent="." instance=ExtResource("3_g7ck6")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 115.58, -3.8147e-06, -63.7278)
+
+[node name="Doors" type="Node3D" parent="."]
+
+[node name="TutorialExit" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.8419, 2.38419e-07, -35.0882)
+collision_mask = 2
+script = ExtResource("4_yipme")
+destination = NodePath("../TutorialEntrance2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/TutorialExit"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.35101, 0)
+shape = SubResource("BoxShape3D_dwslm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/TutorialExit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_2oiyo")
+size = Vector3(3, 3, 2.5)
+
+[node name="MazeEntrance2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 121.455, 10.1918, -101.915)
+collision_mask = 2
+script = ExtResource("4_yipme")
+destination = NodePath("../MazeExit")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/MazeEntrance2"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.351, 0)
+shape = SubResource("BoxShape3D_dwslm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/MazeEntrance2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_2oiyo")
+size = Vector3(3, 3, 1)
+
+[node name="MazeExit2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 162.198, 2.23887, -130.474)
+collision_mask = 2
+script = ExtResource("4_yipme")
+destination = NodePath("../MazeEntrance")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/MazeExit2"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.351, 0)
+shape = SubResource("BoxShape3D_dwslm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/MazeExit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_2oiyo")
+size = Vector3(3, 3, 1)
+
+[node name="TutorialEntrance" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 110.441, -25.7643, -58.9072)
+collision_mask = 2
+script = ExtResource("4_yipme")
+destination = NodePath("../TutorialEntrance2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/TutorialEntrance"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0.224655, 1.35101, -2.65631)
+shape = SubResource("BoxShape3D_dwslm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/TutorialEntrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_2oiyo")
+size = Vector3(3, 3, 2.5)
+
+[node name="TutorialEntrance2" type="Node3D" parent="Doors"]
+transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 110.716, -24.5263, -58.7729)
+
+[node name="MazeExit" type="Node3D" parent="Doors"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 162.762, 3.35429, -131.008)
+
+[node name="MazeEntrance" type="Node3D" parent="Doors"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.001, 11.3068, -101.567)
+
+[node name="ClutterRoomEntrance2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 53.866, 3.05762, -95.1607)
+collision_mask = 2
+script = ExtResource("4_yipme")
+destination = NodePath("../ClutterRoomExit2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/ClutterRoomEntrance2"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, -0.252777, 1.35101, 0.477654)
+shape = SubResource("BoxShape3D_dwslm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/ClutterRoomEntrance2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208374, 1.351, 0.37793)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_2oiyo")
+size = Vector3(2.11938, 3, 1.74414)
+
+[node name="ClutterRoomEntrance" type="Node3D" parent="Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.7751, 4.29562, -95.0038)
+
+[node name="ClutterRoomExit" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 41.3195, 2.38122, -102.643)
+collision_mask = 2
+script = ExtResource("4_yipme")
+destination = NodePath("../ClutterRoomEntrance")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/ClutterRoomExit"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, -0.00616455, 1.35101, -0.389191)
+shape = SubResource("BoxShape3D_dwslm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/ClutterRoomExit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026001, 1.351, -0.359955)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_2oiyo")
+size = Vector3(3.96704, 3, 2.03607)
+
+[node name="ClutterRoomExit2" type="Node3D" parent="Doors"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 40.958, 3.61922, -102.89)
+
+[node name="TutorialRoomEntrance" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, -0.744973, -0.00582266, 1.0784)
+collision_mask = 2
+script = ExtResource("4_yipme")
+destination = NodePath("../TutorialEntrance2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/TutorialRoomEntrance"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0.0236455, 1.35101, 0.0174357)
+shape = SubResource("BoxShape3D_dwslm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/TutorialRoomEntrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_2oiyo")
+size = Vector3(3, 3, 2.5)
+
+[node name="TutorialRoomEntrance2" type="Node3D" parent="Doors"]
+transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, -0.879292, 1.23217, 1.35325)
+
+[node name="TutorialRoomEntrance3" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
+transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, 49.5537, -33.1333, -61.5108)
+collision_mask = 2
+script = ExtResource("4_yipme")
+destination = NodePath("../TutorialRoomEntrance2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/TutorialRoomEntrance3"]
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0.0236455, 1.35101, 0.0174357)
+shape = SubResource("BoxShape3D_dwslm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Doors/TutorialRoomEntrance3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.351, 0)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_2oiyo")
+size = Vector3(3, 3, 2.5)
+
+[node name="TutorialRoomEntrance4" type="Node3D" parent="Doors"]
+transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, 49.4193, -31.8953, -61.236)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.550462, 0.702556, 0.451006, -0.292929, -0.668406, 0.683686, 0.781782, 0.244232, 0.573731, -4.5099, 0, 7.65757)

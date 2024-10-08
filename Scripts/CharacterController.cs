@@ -10,14 +10,26 @@ public partial class CharacterController : CharacterBody3D
 
 	[ExportGroup("Controller Setup")]
 	[Export] public Node3D PlayerPivot;
-	[Export] public Area3D LadderDetector;
+	[Export] public Area3D LadderDetector; //If you remove this the turning system breaks... somehow?????
 
 	//Other variables
 	public bool wasOnFloorLastFrame = false; 
+	public bool wasJustTeleported = false;
 	public bool isPuzzleMode = false;
+	public Interactable Current;
+	public Godot.Collections.Array<Interactable> CloseInteractables;
+
+	[ExportGroup("Item Carrying")]
+	[Export] public Node3D ItemMount;
+	public Node3D Carrying;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
+
+	public override void _Ready()
+	{
+		CloseInteractables = new Godot.Collections.Array<Interactable>();
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -60,7 +72,30 @@ public partial class CharacterController : CharacterBody3D
 		wasOnFloorLastFrame = IsOnFloor();
 	}
 
-	void TurnCharacter(Vector2 inputDir)
+    public override void _Process(double delta)
+    {
+		if(CloseInteractables.Count <= 0) return; //Don't do this if there is nothing nearby
+
+		float cDist = 10000;
+		Interactable closest = null;
+        foreach (var interactable in CloseInteractables)
+		{
+			var dist = this.GlobalPosition.DistanceTo(interactable.GlobalPosition);
+			if(dist < cDist)
+			{
+				closest = interactable;
+				cDist = dist;
+			}
+		}
+		if (!(Current == closest))
+		{
+			if(Current != null) Current.Unhighlight();
+			Current = closest;
+			Current.Highlight();
+		}
+    }
+
+    void TurnCharacter(Vector2 inputDir)
 	{
 		//Turning character
 			var current = new Vector3(-PlayerPivot.Basis.Z.X,0,-PlayerPivot.Basis.Z.Z).Normalized();
@@ -72,5 +107,20 @@ public partial class CharacterController : CharacterBody3D
 			//Floating point error prevention
 			//PlayerPivot.Transform = PlayerPivot.Transform.Orthonormalized();
 	}
+	public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("Interact") && Current!=null){
+			Current.Interact(this);
+		}
+    }
 
+	public bool HasItem(){
+		return Carrying != null;
+	}
+
+	public void Teleport(Vector3 pos)
+	{
+		this.Position = pos;
+		GD.Print(this.Position," vs target: ", pos);
+	}
 }

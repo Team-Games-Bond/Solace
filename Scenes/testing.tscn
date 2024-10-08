@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtusr4whb4r0y"]
+
+[ext_resource type="PackedScene" uid="uid://un31ok75dwaf" path="res://Scenes/Main level.tscn" id="1_kc67s"]
+
+[node name="Testing" type="Node3D"]
+
+[node name="MainLevel" parent="." instance=ExtResource("1_kc67s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.787, 0, -13.0962)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.794927, -0.376402, 0.475829, 0.322964, 0.926456, 0.193321, -0.513601, 0, 0.858029, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 22.2079, 25.2903, -27.9135)
+h_offset = 10.98
+v_offset = 2.92
+fov = 119.673
+size = 76.14
