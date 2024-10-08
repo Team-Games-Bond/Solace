@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://3h4uy8nh0y5o"]
+[gd_scene load_steps=39 format=3 uid="uid://3h4uy8nh0y5o"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_xyye4"]
 [ext_resource type="PackedScene" uid="uid://pscqmxvgbgkq" path="res://Scenes/fountain.tscn" id="2_3q2yx"]
@@ -16,11 +16,16 @@
 [ext_resource type="PackedScene" uid="uid://cr1efcuqdirgs" path="res://Scenes/GameObjects/Sockets/WallSocket.tscn" id="9_c1kwo"]
 [ext_resource type="Material" uid="uid://dj6twpp5osrx8" path="res://Materials/Opaque Wall.tres" id="10_fh2lv"]
 [ext_resource type="Texture2D" uid="uid://b427qq4lvvh0c" path="res://Textures/Press E/Interact.png" id="15_fj2xt"]
+[ext_resource type="PackedScene" uid="uid://cdx8wqh530is1" path="res://Models/Tutorial/WallButton1.blend" id="15_xwuwm"]
+[ext_resource type="PackedScene" uid="uid://dxso2r7sow8m5" path="res://Models/Tutorial/WallButton2.blend" id="16_ay10y"]
 [ext_resource type="PackedScene" uid="uid://dm4t42ol1auxo" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/White10.tscn" id="17_eq8de"]
+[ext_resource type="PackedScene" uid="uid://cotlrw8kuepus" path="res://Models/Tutorial/WallButton3.blend" id="17_tfb6m"]
 [ext_resource type="PackedScene" uid="uid://c3r5d5kuejvhs" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/Red6.tscn" id="18_a3vp8"]
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="18_ets47"]
+[ext_resource type="PackedScene" uid="uid://rkuon5gykrt7" path="res://Models/Tutorial/WallButton4.blend" id="18_tgo6f"]
 [ext_resource type="PackedScene" uid="uid://ck0iwfsfbmsof" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/green9.tscn" id="19_2f84o"]
 [ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="19_cnyas"]
+[ext_resource type="PackedScene" uid="uid://dbp5h1f4rtsti" path="res://Models/Tutorial/WallButton5.blend" id="19_k730c"]
 [ext_resource type="PackedScene" uid="uid://h846kbjh7oaa" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/Blue3.tscn" id="19_qfsq7"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="20_fvuke"]
 [ext_resource type="PackedScene" uid="uid://cc653q6p6d72i" path="res://Scenes/Tutorial Rooms.tscn" id="21_fbjqm"]
@@ -215,19 +220,39 @@ script = ExtResource("2_8luhl")
 sequenceButtons = [NodePath("WallButton"), NodePath("WallButton3"), NodePath("WallButton5"), NodePath("WallButton4"), NodePath("WallButton2")]
 
 [node name="WallButton" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27844, 0, -3.64782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29593, 0.0513203, -3.64782)
+verticalBounce = false
+
+[node name="WallButton1" parent="Room 3/ButtonSequence/WallButton" instance=ExtResource("15_xwuwm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.00789595, -0.507253, 0.104134)
 
 [node name="WallButton2" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.735287, 0, -3.64782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.752779, 0.0513203, -3.64782)
+verticalBounce = false
+
+[node name="WallButton2" parent="Room 3/ButtonSequence/WallButton2" instance=ExtResource("16_ay10y")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.19209e-07, -0.536953, 0.10957)
 
 [node name="WallButton3" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.755405, 0, -3.64782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.737913, 0.0513203, -3.64782)
+verticalBounce = false
+
+[node name="WallButton3" parent="Room 3/ButtonSequence/WallButton3" instance=ExtResource("17_tfb6m")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.96046e-08, -0.536984, 0.102768)
 
 [node name="WallButton4" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24101, 0, -3.64782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22352, 0.0513203, -3.64782)
+verticalBounce = false
+
+[node name="WallButton4" parent="Room 3/ButtonSequence/WallButton4" instance=ExtResource("18_tgo6f")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.515005, 0.135845)
 
 [node name="WallButton5" parent="Room 3/ButtonSequence" instance=ExtResource("8_oukdv")]
-transform = Transform3D(0.999997, 0, 0.00242601, 0, 1, 0, -0.00242601, 0, 0.999997, 3.67124, 0, -3.64782)
+transform = Transform3D(0.999997, 0, 0.00242601, 0, 1, 0, -0.00242601, 0, 0.999997, 3.65375, 0.0513203, -3.64782)
+verticalBounce = false
+
+[node name="WallButton5" parent="Room 3/ButtonSequence/WallButton5" instance=ExtResource("19_k730c")]
+transform = Transform3D(1.5, 0, 9.31323e-10, 0, 1.5, 0, -9.31323e-10, 0, 1.5, -0.0118089, -0.527435, 0.116562)
 
 [node name="Sockets" type="Node3D" parent="Room 3"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.53298, 0.515113, 4.93585)
