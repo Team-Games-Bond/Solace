@@ -4,7 +4,8 @@ using System;
 public partial class CharacterController : CharacterBody3D
 {
 	[ExportGroup("Controller Settings")]
-	[Export] public float Speed = 5.0f;
+	[Export] public float Speed = 8.0f;
+	[Export] public float Drag = 3.0f;
 	[Export] public float JumpVelocity = 4.5f;
 	[Export] public float RotationSpeed = 0.1f;
 
@@ -18,13 +19,14 @@ public partial class CharacterController : CharacterBody3D
 	public bool isPuzzleMode = false;
 	public Interactable Current;
 	public Godot.Collections.Array<Interactable> CloseInteractables;
+	Vector3 walkVelocity;
 
 	[ExportGroup("Item Carrying")]
 	[Export] public Node3D ItemMount;
 	public Node3D Carrying;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
-	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
+	public Vector3 gravity {get=>GetGravity();}//= ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
 	public override void _Ready()
 	{
@@ -40,8 +42,7 @@ public partial class CharacterController : CharacterBody3D
 		Vector3 velocity = Velocity;
 
 		// Add the gravity.
-		if (!IsOnFloor())
-			velocity.Y -= gravity * (float)delta;
+		velocity += gravity * (float)delta;
 
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
@@ -56,17 +57,16 @@ public partial class CharacterController : CharacterBody3D
 			TurnCharacter(inputDir);
 
 			//Move character
-			velocity.X = direction.X * Speed;
-			velocity.Z = direction.Z * Speed;
+			velocity.X += direction.X * Speed * (float)delta;
+			velocity.Z += direction.Z * Speed * (float)delta;
 
 		}
-		else
+		/*else
 		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);
-		}
-
-		Velocity = velocity;
+		}*/
+		Velocity = velocity*(1-(float)delta*Drag);
 		MoveAndSlide();
 
 		wasOnFloorLastFrame = IsOnFloor();
