@@ -14,7 +14,8 @@ public partial class FogManager : Node
 {
 	[Export] public Fog fog;
 
-	[Export] public Godot.Collections.Array<Texture2D> textures {get; set; }
+	[Export] public Godot.Collections.Array<Texture2D> textures {get; set; }[Signal]
+	public delegate void FogRemovedEventHandler(FogLocation fogLocation);
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -28,6 +29,7 @@ public partial class FogManager : Node
 
 	public void RemoveFog(FogLocation fogloc)
 	{
+		EmitSignal(SignalName.FogRemoved, (int)fogloc);
 		switch (fogloc)
 		{
 			case FogLocation.maze1:
