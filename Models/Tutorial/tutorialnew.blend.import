@@ -1,0 +1,193 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bywpl634670tt"
+path="res://.godot/imported/tutorialnew.blend-c3ef4cf279638c9b3b9fd989bad4240d.scn"
+
+[deps]
+
+source_file="res://Models/Tutorial/tutorialnew.blend"
+dest_files=["res://.godot/imported/tutorialnew.blend-c3ef4cf279638c9b3b9fd989bad4240d.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Fading brick ": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/DoorSymbolFading.tres"
+},
+"Fading wall ": {
+"use_external/enabled": true,
+"use_external/path": "res://Materials/DoorFading.tres"
+}
+},
+"nodes": {
+"PATH:Cube long": {
+"generate/physics": true
+},
+"PATH:Cube_001": {
+"generate/physics": true
+},
+"PATH:Cube_002": {
+"generate/physics": true
+},
+"PATH:Cube_003": {
+"generate/physics": true
+},
+"PATH:Cube_004": {
+"generate/physics": true
+},
+"PATH:Cube_005": {
+"generate/physics": true
+},
+"PATH:Cube_006": {
+"generate/physics": true
+},
+"PATH:Cube_007": {
+"generate/physics": true
+},
+"PATH:Cube_009": {
+"generate/physics": true
+},
+"PATH:Cube_010": {
+"generate/physics": true
+},
+"PATH:Cube_011": {
+"generate/physics": true
+},
+"PATH:Cube_012": {
+"generate/physics": true
+},
+"PATH:Cube_013": {
+"generate/physics": true
+},
+"PATH:Cube_014": {
+"generate/physics": true
+},
+"PATH:Cube_015": {
+"generate/physics": true
+},
+"PATH:Cube_016": {
+"generate/physics": true
+},
+"PATH:Cube_017": {
+"generate/physics": true
+},
+"PATH:Cube_018": {
+"generate/physics": true
+},
+"PATH:Cube_019": {
+"generate/physics": true
+},
+"PATH:Cube_028": {
+"generate/physics": true
+},
+"PATH:Cube_029": {
+"generate/physics": true
+},
+"PATH:Cube_030": {
+"generate/physics": true
+},
+"PATH:Cube_031": {
+"generate/physics": true
+},
+"PATH:Cube_032": {
+"generate/physics": true
+},
+"PATH:Cube_034": {
+"generate/physics": true
+},
+"PATH:Cube_038": {
+"generate/physics": true
+},
+"PATH:Cube_040": {
+"generate/physics": true
+},
+"PATH:Cube_042": {
+"generate/physics": true
+},
+"PATH:Cube_044": {
+"generate/physics": true
+},
+"PATH:Cube_046": {
+"generate/physics": true
+},
+"PATH:Cube_052": {
+"generate/physics": true
+},
+"PATH:Cube_056": {
+"generate/physics": true
+},
+"PATH:Cube_058": {
+"generate/physics": true
+},
+"PATH:Cube_060": {
+"generate/physics": true
+},
+"PATH:Cylinder": {
+"generate/physics": true
+},
+"PATH:Cylinder_001": {
+"generate/physics": true
+},
+"PATH:Cylinder_002": {
+"generate/physics": true
+},
+"PATH:Plane": {
+"generate/physics": true
+},
+"PATH:Plane_001": {
+"generate/physics": true
+},
+"PATH:Plane_002": {
+"generate/physics": true
+},
+"PATH:Plane_003": {
+"generate/physics": true
+},
+"PATH:Plane_007": {
+"generate/physics": true
+},
+"PATH:Plane_009": {
+"generate/physics": true
+}
+}
+}
+blender/nodes/visible=0
+blender/nodes/active_collection_only=false
+blender/nodes/punctual_lights=true
+blender/nodes/cameras=true
+blender/nodes/custom_properties=true
+blender/nodes/modifiers=1
+blender/meshes/colors=false
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true
