@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqlr2py2p5ay1"]
+
+[ext_resource type="PackedScene" uid="uid://5emhfv7l1g4n" path="res://Models/Main level/plaza EMPTY.blend" id="1_2b06v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g7dyl"]
+albedo_color = Color(0.677534, 0.3558, 0.251975, 1)
+metallic = 1.0
+metallic_specular = 0.7
+roughness = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlnfc"]
+albedo_color = Color(0.515581, 0.272332, 0.208622, 1)
+metallic = 1.0
+roughness = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0eac6"]
+albedo_color = Color(0.723665, 0.394718, 0.232476, 1)
+metallic = 1.0
+roughness = 0.2
+
+[node name="plaza EMPTY" instance=ExtResource("1_2b06v")]
+
+[node name="BASE" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_g7dyl")
+
+[node name="MOLDS" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wlnfc")
+surface_material_override/1 = SubResource("StandardMaterial3D_0eac6")
