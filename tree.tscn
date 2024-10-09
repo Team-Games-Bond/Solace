@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1ciju2mbrr6"]
+
+[ext_resource type="PackedScene" uid="uid://cy5qji2efr88f" path="res://Models/Main level/tree.blend" id="1_wlew0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwxgy"]
+albedo_color = Color(1, 0.439216, 0.443137, 1)
+roughness = 0.3
+emission_enabled = true
+emission = Color(0.239216, 0.054902, 0.0901961, 1)
+
+[node name="tree" instance=ExtResource("1_wlew0")]
+
+[node name="Icosphere" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_iwxgy")
