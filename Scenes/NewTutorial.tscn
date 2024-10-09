@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://cr1efcuqdirgs" path="res://Scenes/GameObjects/Sockets/WallSocket.tscn" id="12_hueu5"]
 [ext_resource type="PackedScene" uid="uid://bwqgaeg3pmewp" path="res://Models/Tutorial/WallButton2.blend" id="13_1pnxe"]
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="13_4m2t4"]
-[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="14_1xtsp"]
 [ext_resource type="PackedScene" uid="uid://cpcvduih84fkq" path="res://Models/Tutorial/WallButton3.blend" id="14_htcu2"]
 [ext_resource type="PackedScene" uid="uid://56aidjtgw1ew" path="res://Models/Tutorial/WallButton4.blend" id="15_fhdw3"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="15_hw34x"]
@@ -25,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://c3r5d5kuejvhs" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/Red6.tscn" id="17_oku7v"]
 [ext_resource type="PackedScene" uid="uid://h846kbjh7oaa" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/Blue3.tscn" id="18_hsf1w"]
 [ext_resource type="PackedScene" uid="uid://ck0iwfsfbmsof" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/green9.tscn" id="19_sq85m"]
+[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="20_57khf"]
 [ext_resource type="PackedScene" uid="uid://bpsaexwtgl6pi" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/unrec4.tscn" id="20_fihni"]
 [ext_resource type="PackedScene" uid="uid://bywpl634670tt" path="res://Models/Tutorial/tutorialnew.blend" id="27_qmush"]
 [ext_resource type="PackedScene" uid="uid://pscqmxvgbgkq" path="res://Scenes/fountain.tscn" id="28_8winh"]
@@ -131,7 +131,7 @@ moveDistance = 3.4
 
 [node name="Sequence" type="Node3D" parent="Room 1" node_paths=PackedStringArray("sequenceButtons")]
 script = ExtResource("4_3rkcb")
-sequenceButtons = []
+sequenceButtons = [NodePath("Button"), NodePath("Button2")]
 
 [node name="Button" parent="Room 1/Sequence" instance=ExtResource("5_1ik35")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1237, 0.483125, 14)
@@ -205,7 +205,7 @@ moveDistance = 3.4
 [node name="ButtonSequence" type="Node3D" parent="Room 3" node_paths=PackedStringArray("sequenceButtons")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.447337, 0.470915, 14.8676)
 script = ExtResource("4_3rkcb")
-sequenceButtons = []
+sequenceButtons = [NodePath("WallButton"), NodePath("WallButton3"), NodePath("WallButton5"), NodePath("WallButton4"), NodePath("WallButton2")]
 
 [node name="WallButton" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72301, 0.969002, -3.88971)
@@ -261,10 +261,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.728, 0, -0.437)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.472, 0, -0.437)
 
 [node name="Boxes" type="Node3D" parent="Room 3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.476829, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0664, 0.476829, 3.29677)
 
 [node name="BoxPickup" type="Node3D" parent="Room 3/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96886, 0, 1.28527)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.96886, 0, 1.28527)
 
 [node name="Area3D" type="Area3D" parent="Room 3/Boxes/BoxPickup" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
@@ -278,7 +278,7 @@ pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("14_1xtsp")
+texture = ExtResource("20_57khf")
 script = ExtResource("15_hw34x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup/Area3D"]
@@ -301,7 +301,7 @@ size = Vector3(2.5, 1, 2.5)
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 0)
 
 [node name="BoxPickup2" type="Node3D" parent="Room 3/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.824853, 0, 3.09631)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.824853, 0, 3.09631)
 
 [node name="Area3D" type="Area3D" parent="Room 3/Boxes/BoxPickup2" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
@@ -315,7 +315,7 @@ pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("14_1xtsp")
+texture = ExtResource("20_57khf")
 script = ExtResource("15_hw34x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup2/Area3D"]
@@ -338,7 +338,7 @@ size = Vector3(2.5, 1, 2.5)
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 0)
 
 [node name="BoxPickup3" type="Node3D" parent="Room 3/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.68101, 0, 8.9477)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.68101, 0, 8.9477)
 
 [node name="Area3D" type="Area3D" parent="Room 3/Boxes/BoxPickup3" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
@@ -352,7 +352,7 @@ pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("14_1xtsp")
+texture = ExtResource("20_57khf")
 script = ExtResource("15_hw34x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup3/Area3D"]
@@ -375,7 +375,7 @@ size = Vector3(2.5, 1, 2.5)
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.0998001, 0)
 
 [node name="BoxPickup4" type="Node3D" parent="Room 3/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37145, 4.76837e-07, 7.05783)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.37145, 4.76837e-07, 7.05783)
 
 [node name="Area3D" type="Area3D" parent="Room 3/Boxes/BoxPickup4" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
@@ -389,7 +389,7 @@ pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("14_1xtsp")
+texture = ExtResource("20_57khf")
 script = ExtResource("15_hw34x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup4/Area3D"]
@@ -412,7 +412,7 @@ size = Vector3(2.5, 1, 2.5)
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 0)
 
 [node name="BoxPickup5" type="Node3D" parent="Room 3/Boxes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.366692, 0, 10.818)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.366692, 0, 10.818)
 
 [node name="Area3D" type="Area3D" parent="Room 3/Boxes/BoxPickup5" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
@@ -426,7 +426,7 @@ pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("14_1xtsp")
+texture = ExtResource("20_57khf")
 script = ExtResource("15_hw34x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Room 3/Boxes/BoxPickup5/Area3D"]
