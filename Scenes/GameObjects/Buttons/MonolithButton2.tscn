@@ -5,6 +5,9 @@
 
 [node name="Button" instance=ExtResource("1_7he2i")]
 
+[node name="Sprite3D" parent="Area3D" index="0"]
+pixel_size = 0.003
+
 [node name="Visuals_Node3D#Rune rock 2" parent="." index="1" instance=ExtResource("2_aut64")]
 transform = Transform3D(-1.96701e-08, 0, 0.45, 0, 0.45, 0, -0.45, 0, -1.96701e-08, 0, 0, 0)
 

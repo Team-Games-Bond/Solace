@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cunwppijkniwm"]
+[gd_scene load_steps=11 format=3 uid="uid://cunwppijkniwm"]
 
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="1_hwx5a"]
-[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_31wmf"]
+[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="2_n12kx"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="3_dcima"]
 [ext_resource type="PackedScene" uid="uid://b1plaaoadwhoi" path="res://Models/Main level/POWER CUBE!.blend" id="4_jxqhr"]
+[ext_resource type="PackedScene" uid="uid://bjcjcnuxwnkgf" path="res://Models/Tutorial/CubeStation1.blend" id="5_7wmly"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -76,11 +77,12 @@ Item = NodePath("ItemMount/POWER CUBE!")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-pixel_size = 0.001
+offset = Vector2(0, 370)
+pixel_size = 0.003
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("2_31wmf")
+texture = ExtResource("2_n12kx")
 script = ExtResource("3_dcima")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
@@ -102,3 +104,6 @@ size = Vector3(2.5, 1, 2.5)
 [node name="POWER CUBE!" parent="Area3D/ItemMount" instance=ExtResource("4_jxqhr")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.00848413, -0.436299, -0.0163138)
 metadata/ItemKey = "PowerBox"
+
+[node name="CubeStation1" parent="Area3D" instance=ExtResource("5_7wmly")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.019, -0.483, -0.023)

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="1_4q32i"]
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="2_0jona"]
-[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="3_45y7m"]
+[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="3_0hm0j"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_rgihe"]
-[ext_resource type="PackedScene" uid="uid://bb2milhr46ag" path="res://Models/Tutorial/powerbox.blend" id="4_tr5xd"]
+[ext_resource type="PackedScene" uid="uid://4ju2to7qj2bc" path="res://Models/Tutorial/powerboxSOCKET.blend" id="5_rqp4w"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -79,11 +79,12 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-pixel_size = 0.001
+offset = Vector2(0, 370)
+pixel_size = 0.003
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("3_45y7m")
+texture = ExtResource("3_0hm0j")
 script = ExtResource("4_rgihe")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
@@ -102,5 +103,5 @@ size = Vector3(3, 1, 3)
 
 [node name="ItemMount" type="Node3D" parent="Area3D"]
 
-[node name="powerbox" parent="." instance=ExtResource("4_tr5xd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.498214, 0)
+[node name="powerboxSOCKET" parent="." instance=ExtResource("5_rqp4w")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.017, -0.508, -0.005)
