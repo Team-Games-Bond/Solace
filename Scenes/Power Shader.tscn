@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4iwtf4iecmqi"]
+
+[ext_resource type="Material" uid="uid://cto7gbknsgtoo" path="res://Materials/CableDull.tres" id="1_igfa6"]
+[ext_resource type="Script" path="res://Scripts/Cable.cs" id="2_juoo5"]
+[ext_resource type="PackedScene" uid="uid://d4d7jw7if4c6x" path="res://Models/Sample/cable.blend" id="3_n2ifb"]
+
+[node name="PowerTest" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+visible = false
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91333, 0, 0)
+material = ExtResource("1_igfa6")
+script = ExtResource("2_juoo5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.183013, 0.683013, 0, 0.965926, 0.258819, -0.707107, -0.183013, 0.683013, 3.18481, 1.8786, 3.9126)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04974, 0)
+billboard = 1
+no_depth_test = true
+text = "The wave of power flows down the UV map."
+
+[node name="cable" parent="." instance=ExtResource("3_n2ifb")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Cube" parent="cable" index="0"]
+script = ExtResource("2_juoo5")
+start = true
+Recievers = {
+3.1: NodePath("../../cable3/Cube"),
+6.0: NodePath("../../cable2/Cube")
+}
+
+[node name="cable2" parent="." instance=ExtResource("3_n2ifb")]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -4, 0, -3.5)
+
+[node name="Cube" parent="cable2" index="0"]
+script = ExtResource("2_juoo5")
+
+[node name="cable3" parent="." instance=ExtResource("3_n2ifb")]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -4, 0, 0)
+
+[node name="Cube" parent="cable3" index="0"]
+script = ExtResource("2_juoo5")
+
+[editable path="cable"]
+[editable path="cable2"]
+[editable path="cable3"]
