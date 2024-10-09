@@ -85,8 +85,8 @@ quick_exit={
 
 [rendering]
 
+renderer/rendering_method="mobile"
 Bayer16={
 "type": "sampler2D",
 "value": "res://Textures/bayer16.png"
 }
-renderer/rendering_method="mobile"
