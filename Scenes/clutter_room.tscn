@@ -1,15 +1,19 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=33 format=3 uid="uid://bjm3avsnckc6f"]
 
+[ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
 [ext_resource type="PackedScene" uid="uid://byu6s2fgyikqn" path="res://Models/Main level/Clutter Room/bed.blend" id="2_tltt7"]
+[ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="2_wtvm2"]
 [ext_resource type="PackedScene" uid="uid://d2v1bwhvibuni" path="res://Models/Main level/Clutter Room/desk.blend" id="3_ahs05"]
+[ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="3_dfft7"]
+[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="4_gpnr4"]
 [ext_resource type="PackedScene" uid="uid://ddh06lut0u3vn" path="res://Models/Main level/Clutter Room/bookshelf.blend" id="4_rbthr"]
 [ext_resource type="PackedScene" uid="uid://bbulxw05fl62s" path="res://Models/Main level/Clutter Room/monitor.blend" id="5_41mbg"]
 [ext_resource type="PackedScene" uid="uid://daup4tw0qws35" path="res://Models/Main level/Clutter Room/Keyboard.blend" id="6_p7m2v"]
 [ext_resource type="PackedScene" uid="uid://cb58biarx7057" path="res://Models/Main level/Clutter Room/mouse.blend" id="7_sxjma"]
 [ext_resource type="PackedScene" uid="uid://onn38v3lg6rn" path="res://Models/Main level/Clutter Room/PC case final.blend" id="8_440yg"]
 [ext_resource type="PackedScene" uid="uid://lyu2x115w6vo" path="res://Models/Main level/Clutter Room/mug.blend" id="9_odbiv"]
-[ext_resource type="PackedScene" uid="uid://de2fnhrx0jxmu" path="res://Models/Main level/Clutter Room/can final.blend" id="10_nlne2"]
+[ext_resource type="Script" path="res://Scripts/LockedItem.cs" id="11_5afxo"]
 [ext_resource type="PackedScene" uid="uid://blx188hqqcn7y" path="res://Models/Main level/Clutter Room/mousepad.blend" id="11_n4j80"]
 [ext_resource type="PackedScene" uid="uid://dh3yhu1p3mirs" path="res://Models/Main level/Clutter Room/chair modifiers applied.blend" id="12_j0275"]
 [ext_resource type="PackedScene" uid="uid://k26q0am8pn6v" path="res://Models/Main level/Clutter Room/gameboy .blend" id="13_5u0q2"]
@@ -24,125 +28,921 @@
 [ext_resource type="PackedScene" uid="uid://b7g4l6oryhqcf" path="res://Models/Main level/Clutter Room/hallway.blend" id="22_ul6rj"]
 [ext_resource type="PackedScene" uid="uid://dglc2ocqmot6s" path="res://Models/Main level/Clutter Room/room layout2.blend" id="23_q7nbs"]
 
-[node name="Clutter room" type="Node3D"]
+[sub_resource type="Animation" id="Animation_jtjrm"]
+resource_name = "Button Prompt Appear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.2, 1, 1, 1, 1)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ac51l"]
+resource_name = "Button Prompt Disappear"
+length = 0.2
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/Sprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 1, 1, 1, 0.2, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area3D/Sprite3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_clq28"]
+_data = {
+"Button Prompt Appear": SubResource("Animation_jtjrm"),
+"Button Prompt Disappear": SubResource("Animation_ac51l")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbdka"]
+size = Vector3(1.43111, 0.627411, 1.55408)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqce2"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(0, 1, 0.223529, 0.145098)
+
+[node name="Clutter room" type="Node3D" node_paths=PackedStringArray("Sockets")]
+script = ExtResource("1_0j78k")
+Sockets = [NodePath("Sockets/MonitorSocket"), NodePath("Sockets/KeyboardSocket"), NodePath("Sockets/PCSocket"), NodePath("Sockets/ChairSocket"), NodePath("Sockets/GameboySocket"), NodePath("Sockets/LampSocket"), NodePath("Sockets/BinSocket"), NodePath("Sockets/PlushieSocket"), NodePath("Sockets/StandSocket"), NodePath("Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket")]
+LockKeys = Array[String](["monitor", "keyboard", "pc", "chair", "gameboy", "lamp", "bin", "plushie", "stand", "headset"])
+
+[node name="Stuff" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
+
+[node name="Pickup" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-0.0278344, 0, 0.999613, 0, 1, 0, -0.999613, 0, -0.0278344, 3.29458, 0.258734, -0.25606)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/monitor")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.32837, 0.647461, 1.38904)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup/Area3D"]
+
+[node name="monitor" parent="Stuff/Pickup/Area3D/ItemMount" instance=ExtResource("5_41mbg")]
+transform = Transform3D(0.15, 0, 4.65661e-09, 0, 0.15, 0, -4.65661e-09, 0, 0.15, 0, 0, 0)
+metadata/ItemKey = "monitor"
+
+[node name="Pickup2" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.88564, 0.176573, -0.284586)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup2" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/Keyboard")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup2/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup2/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.32837, 0.647461, 1.38904)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup2/Area3D"]
+
+[node name="Keyboard" parent="Stuff/Pickup2/Area3D/ItemMount" instance=ExtResource("6_p7m2v")]
+transform = Transform3D(0.11, 0, -6.21725e-15, 0, 0.11, 0, 6.21725e-15, 0, 0.11, 0, 0, 0)
+metadata/ItemKey = "keyboard"
+
+[node name="Pickup3" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.67865, 0.228563, 0.482499)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup3" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/PC case final")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup3/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup3/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.32837, 0.647461, 1.38904)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup3/Area3D"]
+
+[node name="PC case final" parent="Stuff/Pickup3/Area3D/ItemMount" instance=ExtResource("8_440yg")]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
+metadata/ItemKey = "pc"
+
+[node name="Pickup4" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 2.37815, 0.623741, -0.329757)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup4" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/chair modifiers applied")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup4/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup4/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.32837, 0.647461, 1.38904)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup4/Area3D"]
+
+[node name="chair modifiers applied" parent="Stuff/Pickup4/Area3D/ItemMount" instance=ExtResource("12_j0275")]
+transform = Transform3D(0.2, 0, 6.39488e-14, 0, 0.2, 0, -6.39488e-14, 0, 0.2, 0, 0, 0)
+metadata/ItemKey = "chair"
+
+[node name="Pickup5" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(0.319836, 0, 0.947473, 0, 1, 0, -0.947473, 0, 0.319836, 3.54252, 0.198786, 0.229423)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup5" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/gameboy ")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup5/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup5/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.32837, 0.647461, 1.38904)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup5/Area3D"]
+
+[node name="gameboy " parent="Stuff/Pickup5/Area3D/ItemMount" instance=ExtResource("13_5u0q2")]
+transform = Transform3D(0.1, 0, -3.72529e-09, 0, 0.1, 0, 3.72529e-09, 0, 0.1, 0, 0, 0)
+metadata/ItemKey = "gameboy"
+
+[node name="Pickup6" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.66197, 0.174189, -0.253991)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup6" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/lamp")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup6/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup6/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup6/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup6/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.32837, 0.647461, 1.38904)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup6/Area3D"]
+
+[node name="lamp" parent="Stuff/Pickup6/Area3D/ItemMount" instance=ExtResource("15_sjeq8")]
+transform = Transform3D(0.07, 0, -2.88658e-15, 0, 0.07, 0, 2.88658e-15, 0, 0.07, 0, 0, 0)
+metadata/ItemKey = "lamp"
+
+[node name="Pickup7" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.03692, 0.446091, 0.213359)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup7" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/headset")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup7/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup7/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup7/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup7/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.32837, 0.647461, 1.38904)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup7/Area3D"]
+
+[node name="headset" parent="Stuff/Pickup7/Area3D/ItemMount" instance=ExtResource("16_ludrc")]
+transform = Transform3D(0.08, 0, -1.77636e-15, 0, 0.08, 0, 1.77636e-15, 0, 0.08, 0, 0, 0)
+metadata/ItemKey = "headset"
+
+[node name="Pickup8" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32797, 0.407043, 0.361421)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup8" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/bin")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup8/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup8/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup8/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup8/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.32837, 0.647461, 1.38904)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup8/Area3D"]
+
+[node name="bin" parent="Stuff/Pickup8/Area3D/ItemMount" instance=ExtResource("18_ytpgd")]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0, 0)
+metadata/ItemKey = "bin"
+
+[node name="Pickup9" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(1, 0, 1.38778e-14, 0, 1, 0, -1.38778e-14, 0, 1, 2.69616, 0.171159, 0.159797)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup9" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/plushie smooth")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup9/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup9/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup9/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup9/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.32837, 0.647461, 1.38904)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup9/Area3D"]
+
+[node name="plushie smooth" parent="Stuff/Pickup9/Area3D/ItemMount" instance=ExtResource("21_v5qrm")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+metadata/ItemKey = "plushie"
+
+[node name="Pickup10" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.12133, 0.205046, 0.362865)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup10" node_paths=PackedStringArray("MountPoint", "Item")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+Item = NodePath("ItemMount/stand")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup10/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup10/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup10/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup10/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.32837, 0.647461, 1.38904)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup10/Area3D"]
+
+[node name="stand" parent="Stuff/Pickup10/Area3D/ItemMount" node_paths=PackedStringArray("Sockets", "Buttons") instance=ExtResource("20_0t6tp")]
+transform = Transform3D(0.1, 0, 8.88178e-16, 0, 0.1, 0, -8.88178e-16, 0, 0.1, 0, 0, 0)
+script = ExtResource("11_5afxo")
+Sockets = [NodePath("HeadsetSocket")]
+ItemKeys = Array[String](["headset"])
+Buttons = []
+metadata/ItemKey = "stand"
+
+[node name="HeadsetSocket" type="Node3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand" node_paths=PackedStringArray("socket")]
+transform = Transform3D(10, 0, -5.68434e-14, 0, 10, 0, 5.68434e-14, 0, 10, 0.0401001, 3.07584, 0.320101)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket" node_paths=PackedStringArray("MountPoint")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0333722, -0.0771179, 0.0924047)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017888, -0.159454, 0.142713)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(0.892941, 0.855042, 1.10649)
+
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+
+[node name="Sockets" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
+
+[node name="MonitorSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.65932, 0.750435, 1.3915)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Sockets/MonitorSocket" node_paths=PackedStringArray("MountPoint")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sockets/MonitorSocket/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/MonitorSocket/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/MonitorSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.498317, 0, 0.393541)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sockets/MonitorSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.495986, 0, 0.377885)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.83072, 1, 1.37967)
+
+[node name="ItemMount" type="Node3D" parent="Sockets/MonitorSocket/Area3D"]
+
+[node name="KeyboardSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.42947, 0.693526, 1.38426)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Sockets/KeyboardSocket" node_paths=PackedStringArray("MountPoint")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sockets/KeyboardSocket/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/KeyboardSocket/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/KeyboardSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241514, 0, 0.276941)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sockets/KeyboardSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287048, -0.0454102, 0.249765)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.28179, 0.90918, 1.12343)
+
+[node name="ItemMount" type="Node3D" parent="Sockets/KeyboardSocket/Area3D"]
+
+[node name="PCSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.49686, 0.773108, 0.773721)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Sockets/PCSocket" node_paths=PackedStringArray("MountPoint")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sockets/PCSocket/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/PCSocket/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/PCSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109296, 0, 0.289991)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sockets/PCSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00063169, -0.0454102, 0.249765)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.79462, 0.90918, 1.12343)
+
+[node name="ItemMount" type="Node3D" parent="Sockets/PCSocket/Area3D"]
+
+[node name="ChairSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1.29776, 0.567361, 1.39779)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Sockets/ChairSocket" node_paths=PackedStringArray("MountPoint")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sockets/ChairSocket/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/ChairSocket/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/ChairSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.152523, 0, 0.290582)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sockets/ChairSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.232255, -0.0454102, 0.22257)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.30488, 0.90918, 1.06904)
+
+[node name="ItemMount" type="Node3D" parent="Sockets/ChairSocket/Area3D"]
+
+[node name="GameboySocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
+transform = Transform3D(0.319836, 0, 0.947473, 0, 1, 0, -0.947473, 0, 0.319836, 0.0863704, 0.551112, -1.54418)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Sockets/GameboySocket" node_paths=PackedStringArray("MountPoint")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sockets/GameboySocket/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/GameboySocket/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/GameboySocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.195417, 0.0687866, 0.0902731)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sockets/GameboySocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175855, 0.0422363, 0.0792806)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.50418, 1.08447, 1.66001)
+
+[node name="ItemMount" type="Node3D" parent="Sockets/GameboySocket/Area3D"]
+
+[node name="LampSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.69787, 0.517326, -1.54389)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Sockets/LampSocket" node_paths=PackedStringArray("MountPoint")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sockets/LampSocket/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/LampSocket/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/LampSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192628, -0.0771179, 0.144156)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sockets/LampSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034546, -0.0454102, 0.142713)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.23435, 0.90918, 1.10649)
+
+[node name="ItemMount" type="Node3D" parent="Sockets/LampSocket/Area3D"]
+
+[node name="BinSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425426, 0.290463, -1.51294)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Sockets/BinSocket" node_paths=PackedStringArray("MountPoint")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sockets/BinSocket/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/BinSocket/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/BinSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0185307, -0.0771179, 0.163261)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sockets/BinSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034546, -0.0454102, 0.142713)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.23435, 0.90918, 1.10649)
+
+[node name="ItemMount" type="Node3D" parent="Sockets/BinSocket/Area3D"]
+
+[node name="PlushieSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.971181, 0.431816, -1.0292)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Sockets/PlushieSocket" node_paths=PackedStringArray("MountPoint")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sockets/PlushieSocket/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/PlushieSocket/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/PlushieSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035962, -0.0771179, 0.107398)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sockets/PlushieSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0380899, -0.0454102, 0.039386)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(1.65014, 0.90918, 1.99745)
+
+[node name="ItemMount" type="Node3D" parent="Sockets/PlushieSocket/Area3D"]
+
+[node name="StandSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.44271, 0.683854, 0.523211)
+script = ExtResource("2_wtvm2")
+socket = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="Sockets/StandSocket" node_paths=PackedStringArray("MountPoint")]
+collision_mask = 2
+script = ExtResource("3_dfft7")
+MountPoint = NodePath("ItemMount")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sockets/StandSocket/Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+pixel_size = 0.001
+billboard = 1
+no_depth_test = true
+render_priority = 10
+texture = ExtResource("4_gpnr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/StandSocket/Area3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_clq28")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/StandSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0553344, -0.0771179, -0.0548264)
+shape = SubResource("BoxShape3D_gbdka")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sockets/StandSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0513337, -0.0454102, 0.142713)
+layers = 524288
+material_override = SubResource("StandardMaterial3D_hqce2")
+size = Vector3(0.948846, 0.90918, 1.10649)
+
+[node name="ItemMount" type="Node3D" parent="Sockets/StandSocket/Area3D"]
+
+[node name="room COMPLETED  (MAIN)" parent="." instance=ExtResource("1_w7dh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
+visible = false
+
+[node name="monitor" parent="room COMPLETED  (MAIN)" instance=ExtResource("5_41mbg")]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -1.65932, 0.750435, 1.3915)
+
+[node name="Keyboard" parent="room COMPLETED  (MAIN)" instance=ExtResource("6_p7m2v")]
+transform = Transform3D(-4.80825e-09, 0, 0.11, 0, 0.11, 0, -0.11, 0, -4.80825e-09, -1.42947, 0.693526, 1.38426)
+
+[node name="PC case final" parent="room COMPLETED  (MAIN)" instance=ExtResource("8_440yg")]
+transform = Transform3D(-3.93403e-09, 0, 0.09, 0, 0.09, 0, -0.09, 0, -3.93403e-09, -1.49686, 0.773108, 0.773721)
+
+[node name="chair modifiers applied" parent="room COMPLETED  (MAIN)" instance=ExtResource("12_j0275")]
+transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, -1.29776, 0.567361, 1.39779)
+
+[node name="gameboy " parent="room COMPLETED  (MAIN)" instance=ExtResource("13_5u0q2")]
+transform = Transform3D(0.0319836, 0, 0.0947473, 0, 0.1, 0, -0.0947473, 0, 0.0319836, 0.0863704, 0.551112, -1.54418)
+
+[node name="lamp" parent="room COMPLETED  (MAIN)" instance=ExtResource("15_sjeq8")]
+transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, 1.69787, 0.517326, -1.54389)
+
+[node name="headset" parent="room COMPLETED  (MAIN)" instance=ExtResource("16_ludrc")]
+transform = Transform3D(-3.49691e-09, 0, 0.08, 0, 0.08, 0, -0.08, 0, -3.49691e-09, -1.4107, 0.991438, 0.519201)
+
+[node name="bin" parent="room COMPLETED  (MAIN)" instance=ExtResource("18_ytpgd")]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -0.425426, 0.290463, -1.51294)
+
+[node name="plushie smooth" parent="room COMPLETED  (MAIN)" instance=ExtResource("21_v5qrm")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.971181, 0.431816, -1.0292)
+
+[node name="headphone stand" parent="room COMPLETED  (MAIN)" instance=ExtResource("20_0t6tp")]
+transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -1.44271, 0.683854, 0.523211)
 
 [node name="Bedroom" parent="." instance=ExtResource("1_w7dh4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
 
 [node name="desk2" parent="Bedroom" instance=ExtResource("3_ahs05")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.40012, 0.583416, 1.16343)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.47148, 0.414874, 1.16343)
+
+[node name="mug" parent="Bedroom/desk2" instance=ExtResource("9_odbiv")]
+transform = Transform3D(0.0473736, 0, 0.0319539, 0, 0.0571429, 0, -0.0319539, 0, 0.0473736, -0.232171, 0.372564, 0.740529)
+
+[node name="mouse" parent="Bedroom/desk2" instance=ExtResource("7_sxjma")]
+transform = Transform3D(-1.12401e-09, 0, 0.0257143, 0, 0.0257143, 0, -0.0257143, 0, -1.12401e-09, 0.0746572, 0.392379, -0.029757)
+
+[node name="mousepad" parent="Bedroom/desk2" instance=ExtResource("11_n4j80")]
+transform = Transform3D(-1.21767e-08, 0, 0.278571, 0, 0.278571, 0, -0.278571, 0, -1.21767e-08, 0.0131857, 0.379279, 0.271414)
 
 [node name="bookshelf" parent="Bedroom" instance=ExtResource("4_rbthr")]
-transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.26599, 0.235515, -0.954741)
-
-[node name="mouse" parent="Bedroom" instance=ExtResource("7_sxjma")]
-transform = Transform3D(-7.86805e-10, 0, 0.018, 0, 0.018, 0, -0.018, 0, -7.86805e-10, -1.34786, 0.858081, 1.1426)
-
-[node name="mug" parent="Bedroom" instance=ExtResource("9_odbiv")]
-transform = Transform3D(0.0331615, 0, 0.0223677, 0, 0.04, 0, -0.0223677, 0, 0.0331615, -1.56264, 0.844211, 1.6818)
-
-[node name="can final2" parent="Bedroom" instance=ExtResource("10_nlne2")]
-transform = Transform3D(0.595581, 0, -1.04135e-07, 0, 0.595581, 0, 1.04135e-07, 0, 0.595581, -1.44705, 0.971278, 0.996905)
-
-[node name="can final" parent="Bedroom" instance=ExtResource("10_nlne2")]
-transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -1.54149, 0.954815, 1.02905)
-
-[node name="mousepad" parent="Bedroom" instance=ExtResource("11_n4j80")]
-transform = Transform3D(-8.52372e-09, 0, 0.195, 0, 0.195, 0, -0.195, 0, -8.52372e-09, -1.39089, 0.848911, 1.35342)
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.33735, 0.0669729, -0.954741)
 
 [node name="bedside table3" parent="Bedroom" instance=ExtResource("14_mmxt8")]
-transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.76375, 0.596, -1.57387)
+transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.69239, 0.427458, -1.57387)
 
 [node name="bedside table2" parent="Bedroom" instance=ExtResource("14_mmxt8")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.219417, 0.595579, -1.57366)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.148058, 0.427037, -1.57366)
 
 [node name="paper ball2" parent="Bedroom" instance=ExtResource("19_yehl4")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.269693, 0.304435, -1.22233)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.341052, 0.135893, -1.22233)
 
 [node name="paper ball" parent="Bedroom" instance=ExtResource("19_yehl4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606749, 0.316867, -1.34301)
-
-[node name="headphone stand" parent="Bedroom" instance=ExtResource("20_0t6tp")]
-transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -1.37135, 0.852396, 0.523211)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.678108, 0.148325, -1.34301)
 
 [node name="bed" parent="Bedroom" instance=ExtResource("2_tltt7")]
-transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.77275, 0.098688, -0.495871)
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.70139, -0.0698541, -0.495871)
 
-[node name="room COMPLETED  (MAIN)" parent="Bedroom" instance=ExtResource("1_w7dh4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.17474, 0, -0.167129)
-visible = false
-
-[node name="desk2" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("3_ahs05")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.40012, 0.583416, 1.16343)
-
-[node name="bookshelf" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("4_rbthr")]
-transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.26599, 0.235515, -0.954741)
-
-[node name="monitor" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("5_41mbg")]
-transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -1.58796, 0.918977, 1.3915)
-
-[node name="Keyboard" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("6_p7m2v")]
-transform = Transform3D(-4.80825e-09, 0, 0.11, 0, 0.11, 0, -0.11, 0, -4.80825e-09, -1.35811, 0.862068, 1.38426)
-
-[node name="mouse" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("7_sxjma")]
-transform = Transform3D(-7.86805e-10, 0, 0.018, 0, 0.018, 0, -0.018, 0, -7.86805e-10, -1.34786, 0.858081, 1.1426)
-
-[node name="PC case final" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("8_440yg")]
-transform = Transform3D(-3.93403e-09, 0, 0.09, 0, 0.09, 0, -0.09, 0, -3.93403e-09, -1.4255, 0.94165, 0.773721)
-
-[node name="mug2" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("9_odbiv")]
-transform = Transform3D(0.0272799, 0, -0.0292541, 0, 0.04, 0, 0.0292541, 0, 0.0272799, 1.63401, 0.696702, -1.37277)
-
-[node name="mug" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("9_odbiv")]
-transform = Transform3D(0.0331615, 0, 0.0223677, 0, 0.04, 0, -0.0223677, 0, 0.0331615, -1.56264, 0.844211, 1.6818)
-
-[node name="can final2" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("10_nlne2")]
-transform = Transform3D(0.595581, 0, -1.04135e-07, 0, 0.595581, 0, 1.04135e-07, 0, 0.595581, -1.44705, 0.971278, 0.996905)
-
-[node name="can final" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("10_nlne2")]
-transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -1.54149, 0.954815, 1.02905)
-
-[node name="mousepad" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("11_n4j80")]
-transform = Transform3D(-8.52372e-09, 0, 0.195, 0, 0.195, 0, -0.195, 0, -8.52372e-09, -1.39089, 0.848911, 1.35342)
-
-[node name="chair modifiers applied" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("12_j0275")]
-transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, -1.2264, 0.735903, 1.39779)
-
-[node name="gameboy " parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("13_5u0q2")]
-transform = Transform3D(0.0319836, 0, 0.0947473, 0, 0.1, 0, -0.0947473, 0, 0.0319836, 0.157729, 0.719654, -1.54418)
-
-[node name="bedside table3" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("14_mmxt8")]
-transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.76375, 0.596, -1.57387)
-
-[node name="bedside table2" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("14_mmxt8")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.219417, 0.595579, -1.57366)
-
-[node name="lamp" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("15_sjeq8")]
-transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, 1.76923, 0.685868, -1.54389)
-
-[node name="headset" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("16_ludrc")]
-transform = Transform3D(-3.49691e-09, 0, 0.08, 0, 0.08, 0, -0.08, 0, -3.49691e-09, -1.33934, 1.15998, 0.519201)
-
-[node name="fern" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("17_tyj78")]
-transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.4575, 0.23474, 1.56881)
-
-[node name="bin" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("18_ytpgd")]
-transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -0.354067, 0.459005, -1.51294)
-
-[node name="paper ball2" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("19_yehl4")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.269693, 0.304435, -1.22233)
-
-[node name="paper ball" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("19_yehl4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606749, 0.316867, -1.34301)
-
-[node name="headphone stand" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("20_0t6tp")]
-transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -1.37135, 0.852396, 0.523211)
-
-[node name="plushie smooth" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("21_v5qrm")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 1.04254, 0.600358, -1.0292)
-
-[node name="bed" parent="Bedroom/room COMPLETED  (MAIN)" instance=ExtResource("2_tltt7")]
-transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.77275, 0.098688, -0.495871)
+[node name="fern" parent="Bedroom" instance=ExtResource("17_tyj78")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.69095, 0.0949388, 1.66576)
 
 [node name="hallway" parent="." instance=ExtResource("22_ul6rj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.498, 0.690683, -0.451818)
@@ -150,35 +950,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.498, 0.690683, -0.451818)
 [node name="Stuff Room" parent="." instance=ExtResource("23_q7nbs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91692, 0, 0)
 
-[node name="monitor" parent="Stuff Room" instance=ExtResource("5_41mbg")]
-transform = Transform3D(-0.149942, 0, -0.00417518, 0, 0.15, 0, 0.00417518, 0, -0.149942, 1.18923, 0.918977, 0.320409)
-
-[node name="Keyboard" parent="Stuff Room" instance=ExtResource("6_p7m2v")]
-transform = Transform3D(-0.11, 0, -9.6165e-09, 0, 0.11, 0, 9.6165e-09, 0, -0.11, 0.576647, 0.862068, 1.83849)
-
-[node name="PC case final" parent="Stuff Room" instance=ExtResource("8_440yg")]
-transform = Transform3D(-0.09, 0, -7.86805e-09, 0, 0.09, 0, 7.86805e-09, 0, -0.09, 0.606592, 0.94165, 0.983507)
-
-[node name="mug2" parent="Stuff Room" instance=ExtResource("9_odbiv")]
-transform = Transform3D(0.0292541, 0, 0.0272799, 0, 0.04, 0, -0.0272799, 0, 0.0292541, -1.5399, 0.696702, 1.12043)
-
-[node name="chair modifiers applied" parent="Stuff Room" instance=ExtResource("12_j0275")]
-transform = Transform3D(3.89415e-08, 0, -0.2, 0, 0.2, 0, 0.2, 0, 3.89415e-08, 1.23066, 0.735903, -0.505563)
-
-[node name="gameboy " parent="Stuff Room" instance=ExtResource("13_5u0q2")]
-transform = Transform3D(-0.0947473, 0, 0.0319836, 0, 0.1, 0, -0.0319836, 0, -0.0947473, 0.966347, 0.719654, 0.864809)
-
-[node name="lamp" parent="Stuff Room" instance=ExtResource("15_sjeq8")]
-transform = Transform3D(0.07, 0, -2.88658e-15, 0, 0.07, 0, 2.88658e-15, 0, 0.07, -1.26472, 0.685868, 0.0554276)
-
-[node name="headset" parent="Stuff Room" instance=ExtResource("16_ludrc")]
-transform = Transform3D(-0.08, 0, -6.99382e-09, 0, 0.08, 0, 6.99382e-09, 0, -0.08, 1.53282, 1.15998, 0.793096)
-
-[node name="fern" parent="Stuff Room" instance=ExtResource("17_tyj78")]
-transform = Transform3D(-5.24537e-09, 0, 0.12, 0, 0.12, 0, -0.12, 0, -5.24537e-09, 1.40168, 0.23474, 1.03661)
-
-[node name="bin" parent="Stuff Room" instance=ExtResource("18_ytpgd")]
-transform = Transform3D(-7.86805e-09, 0, 0.18, 0, 0.18, 0, -0.18, 0, -7.86805e-09, 0.070337, 0.459005, -0.167203)
-
-[node name="plushie smooth" parent="Stuff Room" instance=ExtResource("21_v5qrm")]
-transform = Transform3D(-8.74228e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.74228e-10, -0.459936, 0.600358, 0.953197)
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79346, -0.200256, -0.0989685)
+visible = false
+use_collision = true
+size = Vector3(13.4131, 0.599487, 4.01215)
