@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://der6tedb2mesv"]
+
+[ext_resource type="Shader" uid="uid://bpmucxhmd0kst" path="res://Shaders/Cable Flow.tres" id="1_uwgbh"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_uwgbh")
+shader_parameter/PulseWidth = 0.1
+shader_parameter/PulseGradient = 0.05
