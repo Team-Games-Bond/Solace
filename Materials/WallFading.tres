@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dm7sirviump5a"]
+
+[ext_resource type="Shader" path="res://Shaders/WallTranslucent.gdshader" id="1_wj3hy"]
+[ext_resource type="Texture2D" uid="uid://i01cb01uwl7n" path="res://Textures/Flesh Gradient.tres" id="2_ht2fi"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wj3hy")
+shader_parameter/MIN_DISTANCE = 18.0
+shader_parameter/MAX_DISTANCE = 21.0
+shader_parameter/WallGradient = ExtResource("2_ht2fi")

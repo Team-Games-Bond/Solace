@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://vwdqmlafqdqy"]
+[gd_scene load_steps=11 format=3 uid="uid://vwdqmlafqdqy"]
 
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="1_xlpxs"]
-[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="2_61g68"]
+[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="2_2r3oj"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="3_64xf2"]
 [ext_resource type="PackedScene" uid="uid://ju43hbanmqtm" path="res://Models/Tutorial/cube-symbols/cube1.blend" id="4_2xj54"]
+[ext_resource type="PackedScene" uid="uid://bjcjcnuxwnkgf" path="res://Models/Tutorial/CubeStation1.blend" id="5_271gi"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -76,11 +77,12 @@ Item = NodePath("ItemMount/cube1")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-pixel_size = 0.001
+offset = Vector2(0, 370)
+pixel_size = 0.003
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("2_61g68")
+texture = ExtResource("2_2r3oj")
 script = ExtResource("3_64xf2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
@@ -102,3 +104,6 @@ size = Vector3(2.5, 1, 2.5)
 [node name="cube1" parent="Area3D/ItemMount" instance=ExtResource("4_2xj54")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.429844, 0)
 metadata/ItemKey = "Box"
+
+[node name="CubeStation1" parent="Area3D" instance=ExtResource("5_271gi")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.016, -0.415, -0.016)
