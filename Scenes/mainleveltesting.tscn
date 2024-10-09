@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bop7vvf4pwsk6"]
+
+[ext_resource type="PackedScene" uid="uid://un31ok75dwaf" path="res://Scenes/Main level.tscn" id="1_ufp8k"]
+[ext_resource type="PackedScene" uid="uid://cfkv6wtyhhta0" path="res://Scenes/Character.tscn" id="2_8lg4i"]
+
+[node name="Mainleveltesting" type="Node3D"]
+
+[node name="MainLevel" parent="." instance=ExtResource("1_ufp8k")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -51.3511, 0, -2.98518)
+
+[node name="Character" parent="." instance=ExtResource("2_8lg4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.7297, 2.25768, 11.0123)
