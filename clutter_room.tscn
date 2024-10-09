@@ -26,83 +26,157 @@
 
 [node name="room layout left" parent="." instance=ExtResource("1_w7dh4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362072, -0.393026, 5.81119)
+
+[node name="room  (MAIN uncompleted)" parent="." instance=ExtResource("1_w7dh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
+
+[node name="desk2" parent="room  (MAIN uncompleted)" instance=ExtResource("3_ahs05")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.40012, 0.583416, 1.16343)
+
+[node name="bookshelf" parent="room  (MAIN uncompleted)" instance=ExtResource("4_rbthr")]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.26599, 0.235515, -0.954741)
+
+[node name="monitor" parent="room  (MAIN uncompleted)" instance=ExtResource("5_41mbg")]
+transform = Transform3D(-0.00417517, 0, 0.149942, 0, 0.15, 0, -0.149942, 0, -0.00417517, -1.58796, 0.918977, 5.2697)
+
+[node name="Keyboard" parent="room  (MAIN uncompleted)" instance=ExtResource("6_p7m2v")]
+transform = Transform3D(-4.80825e-09, 0, 0.11, 0, 0.11, 0, -0.11, 0, -4.80825e-09, -1.35811, 0.862068, 4.65712)
+
+[node name="mouse" parent="room  (MAIN uncompleted)" instance=ExtResource("7_sxjma")]
+transform = Transform3D(-7.86805e-10, 0, 0.018, 0, 0.018, 0, -0.018, 0, -7.86805e-10, -1.34786, 0.858081, 1.1426)
+
+[node name="PC case final" parent="room  (MAIN uncompleted)" instance=ExtResource("8_440yg")]
+transform = Transform3D(-3.93403e-09, 0, 0.09, 0, 0.09, 0, -0.09, 0, -3.93403e-09, 5.30414, 0.94165, 0.773721)
+
+[node name="mug2" parent="room  (MAIN uncompleted)" instance=ExtResource("9_odbiv")]
+transform = Transform3D(0.0272799, 0, -0.0292541, 0, 0.04, 0, 0.0292541, 0, 0.0272799, 5.16722, 0.696702, -1.37277)
+
+[node name="mug" parent="room  (MAIN uncompleted)" instance=ExtResource("9_odbiv")]
+transform = Transform3D(0.0331615, 0, 0.0223677, 0, 0.04, 0, -0.0223677, 0, 0.0331615, -1.56264, 0.844211, 1.6818)
+
+[node name="can final2" parent="room  (MAIN uncompleted)" instance=ExtResource("10_nlne2")]
+transform = Transform3D(0.595581, 0, -1.04135e-07, 0, 0.595581, 0, 1.04135e-07, 0, 0.595581, -1.44705, 0.971278, 0.996905)
+
+[node name="can final" parent="room  (MAIN uncompleted)" instance=ExtResource("10_nlne2")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -1.54149, 0.954815, 1.02905)
+
+[node name="mousepad" parent="room  (MAIN uncompleted)" instance=ExtResource("11_n4j80")]
+transform = Transform3D(-8.52372e-09, 0, 0.195, 0, 0.195, 0, -0.195, 0, -8.52372e-09, -1.39089, 0.848911, 1.35342)
+
+[node name="chair modifiers applied" parent="room  (MAIN uncompleted)" instance=ExtResource("12_j0275")]
+transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, 6.79321, 0.735903, 1.39779)
+
+[node name="gameboy " parent="room  (MAIN uncompleted)" instance=ExtResource("13_5u0q2")]
+transform = Transform3D(0.0319836, 0, 0.0947473, 0, 0.1, 0, -0.0947473, 0, 0.0319836, 0.157729, 0.719654, 5.04682)
+
+[node name="bedside table3" parent="room  (MAIN uncompleted)" instance=ExtResource("14_mmxt8")]
+transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.76375, 0.596, -1.57387)
+
+[node name="bedside table2" parent="room  (MAIN uncompleted)" instance=ExtResource("14_mmxt8")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.219417, 0.595579, -1.57366)
+
+[node name="lamp" parent="room  (MAIN uncompleted)" instance=ExtResource("15_sjeq8")]
+transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, 6.23222, 0.685868, -1.09759)
+
+[node name="headset" parent="room  (MAIN uncompleted)" instance=ExtResource("16_ludrc")]
+transform = Transform3D(-3.49691e-09, 0, 0.08, 0, 0.08, 0, -0.08, 0, -3.49691e-09, 0.229443, 1.15998, 5.61329)
+
+[node name="fern" parent="room  (MAIN uncompleted)" instance=ExtResource("17_tyj78")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 5.25104, 0.23474, 1.56881)
+
+[node name="bin" parent="room  (MAIN uncompleted)" instance=ExtResource("18_ytpgd")]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 6.45485, 0.459005, 0.237466)
+
+[node name="paper ball2" parent="room  (MAIN uncompleted)" instance=ExtResource("19_yehl4")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.269693, 0.304435, -1.22233)
+
+[node name="paper ball" parent="room  (MAIN uncompleted)" instance=ExtResource("19_yehl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606749, 0.316867, -1.34301)
+
+[node name="headphone stand" parent="room  (MAIN uncompleted)" instance=ExtResource("20_0t6tp")]
+transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -1.37135, 0.852396, 0.523211)
+
+[node name="plushie smooth" parent="room  (MAIN uncompleted)" instance=ExtResource("21_v5qrm")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 5.33445, 0.600358, -0.292807)
+
+[node name="bed" parent="room  (MAIN uncompleted)" instance=ExtResource("2_tltt7")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.77275, 0.098688, -0.495871)
+
+[node name="room COMPLETED  (MAIN)" parent="room  (MAIN uncompleted)" instance=ExtResource("1_w7dh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.17474, 0, -0.167129)
 visible = false
 
-[node name="room layout (MAIN)" parent="." instance=ExtResource("1_w7dh4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
+[node name="desk2" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("3_ahs05")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.40012, 0.583416, 1.16343)
+
+[node name="bookshelf" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("4_rbthr")]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.26599, 0.235515, -0.954741)
+
+[node name="monitor" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("5_41mbg")]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -1.58796, 0.918977, 1.3915)
+
+[node name="Keyboard" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("6_p7m2v")]
+transform = Transform3D(-4.80825e-09, 0, 0.11, 0, 0.11, 0, -0.11, 0, -4.80825e-09, -1.35811, 0.862068, 1.38426)
+
+[node name="mouse" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("7_sxjma")]
+transform = Transform3D(-7.86805e-10, 0, 0.018, 0, 0.018, 0, -0.018, 0, -7.86805e-10, -1.34786, 0.858081, 1.1426)
+
+[node name="PC case final" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("8_440yg")]
+transform = Transform3D(-3.93403e-09, 0, 0.09, 0, 0.09, 0, -0.09, 0, -3.93403e-09, -1.4255, 0.94165, 0.773721)
+
+[node name="mug2" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("9_odbiv")]
+transform = Transform3D(0.0272799, 0, -0.0292541, 0, 0.04, 0, 0.0292541, 0, 0.0272799, 1.63401, 0.696702, -1.37277)
+
+[node name="mug" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("9_odbiv")]
+transform = Transform3D(0.0331615, 0, 0.0223677, 0, 0.04, 0, -0.0223677, 0, 0.0331615, -1.56264, 0.844211, 1.6818)
+
+[node name="can final2" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("10_nlne2")]
+transform = Transform3D(0.595581, 0, -1.04135e-07, 0, 0.595581, 0, 1.04135e-07, 0, 0.595581, -1.44705, 0.971278, 0.996905)
+
+[node name="can final" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("10_nlne2")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -1.54149, 0.954815, 1.02905)
+
+[node name="mousepad" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("11_n4j80")]
+transform = Transform3D(-8.52372e-09, 0, 0.195, 0, 0.195, 0, -0.195, 0, -8.52372e-09, -1.39089, 0.848911, 1.35342)
+
+[node name="chair modifiers applied" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("12_j0275")]
+transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, -1.2264, 0.735903, 1.39779)
+
+[node name="gameboy " parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("13_5u0q2")]
+transform = Transform3D(0.0319836, 0, 0.0947473, 0, 0.1, 0, -0.0947473, 0, 0.0319836, 0.157729, 0.719654, -1.54418)
+
+[node name="bedside table3" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("14_mmxt8")]
+transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.76375, 0.596, -1.57387)
+
+[node name="bedside table2" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("14_mmxt8")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.219417, 0.595579, -1.57366)
+
+[node name="lamp" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("15_sjeq8")]
+transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, 1.76923, 0.685868, -1.54389)
+
+[node name="headset" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("16_ludrc")]
+transform = Transform3D(-3.49691e-09, 0, 0.08, 0, 0.08, 0, -0.08, 0, -3.49691e-09, -1.33934, 1.15998, 0.519201)
+
+[node name="fern" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("17_tyj78")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.4575, 0.23474, 1.56881)
+
+[node name="bin" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("18_ytpgd")]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -0.354067, 0.459005, -1.51294)
+
+[node name="paper ball2" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("19_yehl4")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.269693, 0.304435, -1.22233)
+
+[node name="paper ball" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("19_yehl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606749, 0.316867, -1.34301)
+
+[node name="headphone stand" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("20_0t6tp")]
+transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -1.37135, 0.852396, 0.523211)
+
+[node name="plushie smooth" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("21_v5qrm")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 1.04254, 0.600358, -1.0292)
+
+[node name="bed" parent="room  (MAIN uncompleted)/room COMPLETED  (MAIN)" instance=ExtResource("2_tltt7")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.77275, 0.098688, -0.495871)
 
 [node name="Room Layout right" parent="." instance=ExtResource("1_w7dh4")]
 transform = Transform3D(0.994888, 0, 0, 0, 0.994888, 0, 0, 0, 0.994888, 6.33253, -4.76837e-07, -0.0925245)
-visible = false
-
-[node name="bed" parent="." instance=ExtResource("2_tltt7")]
-transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.818, 0.098688, -0.663)
-
-[node name="desk2" parent="." instance=ExtResource("3_ahs05")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.35487, 0.583416, 0.996301)
-
-[node name="bookshelf" parent="." instance=ExtResource("4_rbthr")]
-transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.22074, 0.235515, -1.12187)
-
-[node name="monitor" parent="." instance=ExtResource("5_41mbg")]
-transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, -1.54271, 0.918977, 1.22437)
-
-[node name="Keyboard" parent="." instance=ExtResource("6_p7m2v")]
-transform = Transform3D(-4.80825e-09, 0, 0.11, 0, 0.11, 0, -0.11, 0, -4.80825e-09, -1.31286, 0.862068, 1.21713)
-
-[node name="mouse" parent="." instance=ExtResource("7_sxjma")]
-transform = Transform3D(-7.86805e-10, 0, 0.018, 0, 0.018, 0, -0.018, 0, -7.86805e-10, -1.30261, 0.858081, 0.97547)
-
-[node name="PC case final" parent="." instance=ExtResource("8_440yg")]
-transform = Transform3D(-3.93403e-09, 0, 0.09, 0, 0.09, 0, -0.09, 0, -3.93403e-09, -1.38025, 0.94165, 0.606592)
-
-[node name="mug2" parent="." instance=ExtResource("9_odbiv")]
-transform = Transform3D(0.0272799, 0, -0.0292541, 0, 0.04, 0, 0.0292541, 0, 0.0272799, 1.67926, 0.696702, -1.5399)
-
-[node name="mug" parent="." instance=ExtResource("9_odbiv")]
-transform = Transform3D(0.0331615, 0, 0.0223677, 0, 0.04, 0, -0.0223677, 0, 0.0331615, -1.51739, 0.844211, 1.51467)
-
-[node name="can final2" parent="." instance=ExtResource("10_nlne2")]
-transform = Transform3D(0.595581, 0, -1.04135e-07, 0, 0.595581, 0, 1.04135e-07, 0, 0.595581, -1.4018, 0.971278, 0.829776)
-
-[node name="can final" parent="." instance=ExtResource("10_nlne2")]
-transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -1.49624, 0.954815, 0.861917)
-
-[node name="mousepad" parent="." instance=ExtResource("11_n4j80")]
-transform = Transform3D(-8.52372e-09, 0, 0.195, 0, 0.195, 0, -0.195, 0, -8.52372e-09, -1.34564, 0.848911, 1.18629)
-
-[node name="chair modifiers applied" parent="." instance=ExtResource("12_j0275")]
-transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, -1.18115, 0.735903, 1.23066)
-
-[node name="gameboy " parent="." instance=ExtResource("13_5u0q2")]
-transform = Transform3D(0.0319836, 0, 0.0947473, 0, 0.1, 0, -0.0947473, 0, 0.0319836, 0.202977, 0.719654, -1.71131)
-
-[node name="bedside table3" parent="." instance=ExtResource("14_mmxt8")]
-transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.809, 0.596, -1.741)
-
-[node name="bedside table2" parent="." instance=ExtResource("14_mmxt8")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.264665, 0.595579, -1.74079)
-
-[node name="lamp" parent="." instance=ExtResource("15_sjeq8")]
-transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, 1.81448, 0.685868, -1.71102)
-
-[node name="headset" parent="." instance=ExtResource("16_ludrc")]
-transform = Transform3D(-3.49691e-09, 0, 0.08, 0, 0.08, 0, -0.08, 0, -3.49691e-09, -1.29409, 1.15998, 0.352072)
-
-[node name="fern" parent="." instance=ExtResource("17_tyj78")]
-transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.22152, 0.23474, 1.2877)
-
-[node name="bin" parent="." instance=ExtResource("18_ytpgd")]
-transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -0.308819, 0.459005, -1.68007)
-
-[node name="paper ball2" parent="." instance=ExtResource("19_yehl4")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.224445, 0.304435, -1.38946)
-
-[node name="paper ball" parent="." instance=ExtResource("19_yehl4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.561501, 0.316867, -1.51014)
-
-[node name="headphone stand" parent="." instance=ExtResource("20_0t6tp")]
-transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -1.3261, 0.852396, 0.356082)
-
-[node name="plushie smooth" parent="." instance=ExtResource("21_v5qrm")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 1.08779, 0.600358, -1.19633)
