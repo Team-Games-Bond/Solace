@@ -18,9 +18,9 @@ public partial class ButtonDecal : Decal
 	{
 	}
 
-    public override void _Input(InputEvent @event)
-    {
-        if ((@event as InputEventKey).Keycode == Key){
+	public override void _Input(InputEvent @event)
+	{
+		if ((@event as InputEventKey).Keycode == Key){
 			if(@event.IsPressed()){
 				TextureAlbedo = TexturePressed;
 			}
@@ -29,5 +29,5 @@ public partial class ButtonDecal : Decal
 				TextureAlbedo = TextureReleased;
 			}
 		}
-    }
+	}
 }
