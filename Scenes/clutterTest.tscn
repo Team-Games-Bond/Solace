@@ -9,4 +9,4 @@
 transform = Transform3D(2.26577, 0, 1.05655, 0, 2.5, 0, -1.05655, 0, 2.26577, -2.37136, -1.19209e-07, 0.293248)
 
 [node name="Character" parent="." instance=ExtResource("2_bmiy2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.93356, 1)

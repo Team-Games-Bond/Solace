@@ -137,6 +137,11 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 transform = Transform3D(0.15, 0, 4.65661e-09, 0, 0.15, 0, -4.65661e-09, 0, 0.15, 0, 0, 0)
 metadata/ItemKey = "monitor"
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup/Area3D/ItemMount/monitor"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
+visible = false
+size = Vector3(4.46185, 10.5196, 1)
+
 [node name="Pickup2" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.88564, 0.176573, -0.284586)
 script = ExtResource("2_wtvm2")
@@ -177,6 +182,11 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="Keyboard" parent="Stuff/Pickup2/Area3D/ItemMount" instance=ExtResource("6_p7m2v")]
 transform = Transform3D(0.11, 0, -6.21725e-15, 0, 0.11, 0, 6.21725e-15, 0, 0.11, 0, 0, 0)
 metadata/ItemKey = "keyboard"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup2/Area3D/ItemMount/Keyboard"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
+visible = false
+size = Vector3(4.46185, 10.5196, 1)
 
 [node name="Pickup3" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.67865, 0.228563, 0.482499)
@@ -219,6 +229,11 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
 metadata/ItemKey = "pc"
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup3/Area3D/ItemMount/PC case final"]
+transform = Transform3D(1, 0, -7.45174e-09, 0, 1, 0, 7.45174e-09, 0, 1, 0.0457895, 6.80812, -1.3081)
+visible = false
+size = Vector3(3.22796, 14.6162, 3.61621)
+
 [node name="Pickup4" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 2.37815, 0.623741, -0.329757)
 script = ExtResource("2_wtvm2")
@@ -259,6 +274,11 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="chair modifiers applied" parent="Stuff/Pickup4/Area3D/ItemMount" instance=ExtResource("12_j0275")]
 transform = Transform3D(0.2, 0, 6.39488e-14, 0, 0.2, 0, -6.39488e-14, 0, 0.2, 0, 0, 0)
 metadata/ItemKey = "chair"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup4/Area3D/ItemMount/chair modifiers applied"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -0.0935688, 2.87846, -0.0856326)
+visible = false
+size = Vector3(2.35642, 14.2823, 2.50427)
 
 [node name="Pickup5" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
 transform = Transform3D(0.319836, 0, 0.947473, 0, 1, 0, -0.947473, 0, 0.319836, 3.54252, 0.198786, 0.229423)
@@ -301,6 +321,11 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 transform = Transform3D(0.1, 0, -3.72529e-09, 0, 0.1, 0, 3.72529e-09, 0, 0.1, 0, 0, 0)
 metadata/ItemKey = "gameboy"
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5/Area3D/ItemMount/gameboy "]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.0373192, 7.54793, 0.322269)
+visible = false
+size = Vector3(1.61229, 16.0959, 1.64453)
+
 [node name="Pickup6" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.66197, 0.174189, -0.253991)
 script = ExtResource("2_wtvm2")
@@ -342,8 +367,13 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 transform = Transform3D(0.07, 0, -2.88658e-15, 0, 0.07, 0, 2.88658e-15, 0, 0.07, 0, 0, 0)
 metadata/ItemKey = "lamp"
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup6/Area3D/ItemMount/lamp"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.857893, 6.82366, -0.153091)
+visible = false
+size = Vector3(5.11083, 16.0341, 2.66943)
+
 [node name="Pickup7" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.03692, 0.446091, 0.213359)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.03692, 0.332727, 0.02153)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -382,6 +412,11 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="headset" parent="Stuff/Pickup7/Area3D/ItemMount" instance=ExtResource("16_ludrc")]
 transform = Transform3D(0.08, 0, -1.77636e-15, 0, 0.08, 0, 1.77636e-15, 0, 0.08, 0, 0, 0)
 metadata/ItemKey = "headset"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup7/Area3D/ItemMount/headset"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.284388, 3.62418, 0)
+visible = false
+size = Vector3(6.20604, 18.1243, 1)
 
 [node name="Pickup8" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32797, 0.407043, 0.361421)
@@ -424,6 +459,11 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0, 0)
 metadata/ItemKey = "bin"
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup8/Area3D/ItemMount/bin"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -0.0283775, 4.04961, -0.0172424)
+visible = false
+size = Vector3(2.13836, 11.94, 2.13824)
+
 [node name="Pickup9" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
 transform = Transform3D(1, 0, 1.38778e-14, 0, 1, 0, -1.38778e-14, 0, 1, 2.69616, 0.171159, 0.159797)
 script = ExtResource("2_wtvm2")
@@ -464,6 +504,11 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="plushie smooth" parent="Stuff/Pickup9/Area3D/ItemMount" instance=ExtResource("21_v5qrm")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
 metadata/ItemKey = "plushie"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup9/Area3D/ItemMount/plushie smooth"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.42543, 27.9839, 1.25256)
+visible = false
+size = Vector3(12.7323, 56.9677, 7.28882)
 
 [node name="Pickup10" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.12133, 0.205046, 0.362865)
@@ -545,6 +590,11 @@ material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(0.892941, 0.855042, 1.10649)
 
 [node name="ItemMount" type="Node3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
+visible = false
+size = Vector3(4.46185, 10.5196, 1)
 
 [node name="Sockets" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
@@ -922,14 +972,38 @@ transform = Transform3D(-1.12401e-09, 0, 0.0257143, 0, 0.0257143, 0, -0.0257143,
 [node name="mousepad" parent="Bedroom/desk2" instance=ExtResource("11_n4j80")]
 transform = Transform3D(-1.21767e-08, 0, 0.278571, 0, 0.278571, 0, -0.278571, 0, -1.21767e-08, 0.0131857, 0.379279, 0.271414)
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/desk2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120422, -0.0571289, -0.101555)
+visible = false
+use_collision = true
+size = Vector3(0.796021, 0.885742, 2.06255)
+
 [node name="bookshelf" parent="Bedroom" instance=ExtResource("4_rbthr")]
 transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.33735, 0.0669729, -0.954741)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bookshelf"]
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0.855437, 3.76855, 1.35138)
+visible = false
+use_collision = true
+size = Vector3(8.68097, 8.53711, 1.92297)
 
 [node name="bedside table3" parent="Bedroom" instance=ExtResource("14_mmxt8")]
 transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.69239, 0.427458, -1.57387)
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bedside table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015503, -0.823486, 0.228516)
+visible = false
+use_collision = true
+size = Vector3(2.29761, 2.64697, 2.33984)
+
 [node name="bedside table2" parent="Bedroom" instance=ExtResource("14_mmxt8")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.148058, 0.427037, -1.57366)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bedside table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015503, -0.823486, 0.228516)
+visible = false
+use_collision = true
+size = Vector3(2.29761, 2.64697, 2.33984)
 
 [node name="paper ball2" parent="Bedroom" instance=ExtResource("19_yehl4")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.341052, 0.135893, -1.22233)
@@ -937,17 +1011,43 @@ transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.341052, 0.135893, -1
 [node name="paper ball" parent="Bedroom" instance=ExtResource("19_yehl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.678108, 0.148325, -1.34301)
 
-[node name="bed" parent="Bedroom" instance=ExtResource("2_tltt7")]
-transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.70139, -0.0698541, -0.495871)
-
 [node name="fern" parent="Bedroom" instance=ExtResource("17_tyj78")]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.69095, 0.0949388, 1.66576)
+
+[node name="bed2" parent="Bedroom" instance=ExtResource("2_tltt7")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.70139, -0.0698541, -0.495871)
 
 [node name="hallway" parent="." instance=ExtResource("22_ul6rj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.498, 0.690683, -0.451818)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79346, -0.200256, -0.0989685)
+[node name="Coliders" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0559082, 1.38135, 1.87087)
 visible = false
 use_collision = true
-size = Vector3(13.4131, 0.599487, 4.01215)
+size = Vector3(4.15088, 3.7627, 0.0726318)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.97693, 1.38135, -0.151771)
+visible = false
+use_collision = true
+size = Vector3(4.15088, 3.7627, 0.0726318)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68422, 1.38135, 0.544095)
+visible = false
+use_collision = true
+size = Vector3(5.19055, 3.7627, 0.0726318)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.08947, 1.38135, 1.26693)
+visible = false
+use_collision = true
+size = Vector3(1.51807, 3.7627, 0.0967407)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 0.978, -0.0108941, -1.14899)
+visible = false
+use_collision = true
+size = Vector3(2.21179, 1.16846, 1.46771)
