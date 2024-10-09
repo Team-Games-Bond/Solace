@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cc653q6p6d72i"]
 
-[ext_resource type="PackedScene" uid="uid://vbbbs8etpndd" path="res://Models/Tutorial/Tutorialwalls.blend" id="1_8aros"]
+[ext_resource type="PackedScene" uid="uid://cye7333c2e7da" path="res://Models/Tutorial/Tutorialwalls.blend" id="1_8aros"]
 
 [node name="Tutorialwalls" instance=ExtResource("1_8aros")]
 
@@ -42,3 +42,30 @@ transform = Transform3D(0.207507, 0, 0, 0, 0, -0.207507, 0, 0.207507, 0, -0.2893
 
 [node name="Curve_012" parent="." index="38"]
 transform = Transform3D(0.207507, 0, 0, 0, 0, -0.207507, 0, 0.207507, 0, 0.79409, 0.227567, -5.737)
+
+[node name="Tutorial colliders" type="Node3D" parent="." index="40"]
+visible = false
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Tutorial colliders" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02626, 0.360773, -1.57123)
+size = Vector3(0.432999, 1.75684, 8.84082)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Tutorial colliders" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53845, 0.360772, -1.48412)
+size = Vector3(0.432999, 1.75684, 8.84082)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Tutorial colliders" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.393527, 0.360772, 3.25888)
+size = Vector3(2.72285, 1.75684, 0.738037)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Tutorial colliders" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.393527, 0.360772, -6.17312)
+size = Vector3(2.72285, 1.75684, 0.738037)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Tutorial colliders" index="4"]
+transform = Transform3D(0.791959, 0, -0.610574, 0, 1, 0, 0.610574, 0, 0.791959, 1.46149, 0.360772, -5.93257)
+size = Vector3(2.72285, 1.75684, 0.738037)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Tutorial colliders" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.170178, -0.406124, -1.50521)
+size = Vector3(2.1358, 1, 8.84082)
