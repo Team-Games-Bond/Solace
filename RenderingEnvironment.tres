@@ -1,0 +1,24 @@
+[gd_resource type="Environment" load_steps=7 format=3 uid="uid://cxm0dp40vn0qe"]
+
+[ext_resource type="Shader" uid="uid://rfmgh15fiphd" path="res://Shaders/Skybox.tres" id="1_s53kd"]
+
+[sub_resource type="Gradient" id="Gradient_kiuwv"]
+colors = PackedColorArray(9.2411e-06, 0.656646, 0.896555, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e6641"]
+gradient = SubResource("Gradient_kiuwv")
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tbsf1"]
+gradient = SubResource("Gradient_kiuwv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8l03d"]
+shader = ExtResource("1_s53kd")
+shader_parameter/CubemapGradient = SubResource("GradientTexture1D_e6641")
+shader_parameter/ScreenGradient = SubResource("GradientTexture1D_tbsf1")
+
+[sub_resource type="Sky" id="Sky_arcyn"]
+sky_material = SubResource("ShaderMaterial_8l03d")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_arcyn")
