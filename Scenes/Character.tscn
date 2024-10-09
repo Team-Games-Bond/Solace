@@ -210,6 +210,7 @@ radius = 0.534782
 [node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("PlayerPivot", "LadderDetector", "ItemMount")]
 collision_layer = 3
 script = ExtResource("1_g771o")
+Speed = 20.0
 PlayerPivot = NodePath("PlayerPivot")
 LadderDetector = NodePath("Stair Detector")
 ItemMount = NodePath("PlayerPivot/sprite little flame/ItemMount")
