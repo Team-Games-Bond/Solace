@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=32 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://ck4epmivcyeo3" path="res://Models/Main level/Clutter Room/headphone stand.blend" id="20_0t6tp"]
 [ext_resource type="PackedScene" uid="uid://c1fut2iw4ktry" path="res://Models/Main level/Clutter Room/plushie smooth.blend" id="21_v5qrm"]
 [ext_resource type="PackedScene" uid="uid://b7g4l6oryhqcf" path="res://Models/Main level/Clutter Room/hallway.blend" id="22_ul6rj"]
-[ext_resource type="PackedScene" uid="uid://dglc2ocqmot6s" path="res://Models/Main level/Clutter Room/room layout2.blend" id="23_q7nbs"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -946,9 +945,6 @@ transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.69095, 0.0949388, 
 
 [node name="hallway" parent="." instance=ExtResource("22_ul6rj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.498, 0.690683, -0.451818)
-
-[node name="Stuff Room" parent="." instance=ExtResource("23_q7nbs")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.91692, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79346, -0.200256, -0.0989685)
