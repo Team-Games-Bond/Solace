@@ -64,7 +64,20 @@ public partial class PlacementMonitor : Node3D
 
 	public bool attachItem(Node3D item) //Returns false if item already attached
 	{
-		return socket.AttachItem(item);
+		var successful = socket.AttachItem(item);
+		if(successful) 
+		{
+			if(!SendRaw)
+			{
+				var itemType = socket.Item.GetMeta("ItemKey");
+				EmitSignal(SignalName.ItemPlaced, ItemKey=="" || itemType.AsString() == ItemKey, this);
+			}
+			else
+			{
+				EmitSignal(SignalName.ItemPlacedRaw, socket.Item, this);
+			}
+		}
+		return successful;
 	}
 
 }
