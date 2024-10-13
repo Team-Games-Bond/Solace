@@ -12,6 +12,7 @@ public partial class CharacterController : CharacterBody3D
 	[ExportGroup("Controller Setup")]
 	[Export] public Node3D PlayerPivot;
 	[Export] public Area3D LadderDetector; //If you remove this the turning system breaks... somehow?????
+	private AudioStreamPlayer sfx_push;
 
 	//Other variables
 	public bool wasOnFloorLastFrame = false; 
@@ -31,6 +32,7 @@ public partial class CharacterController : CharacterBody3D
 	public override void _Ready()
 	{
 		CloseInteractables = new Godot.Collections.Array<Interactable>();
+		sfx_push = GetNode<AudioStreamPlayer>("push");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -111,6 +113,7 @@ public partial class CharacterController : CharacterBody3D
 	{
 		if (@event.IsActionPressed("Interact") && Current!=null){
 			Current.Interact(this);
+			sfx_push.Play();
 		}
 	}
 
