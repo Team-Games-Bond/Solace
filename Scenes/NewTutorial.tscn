@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dtthixalssxpr"]
+[gd_scene load_steps=37 format=3 uid="uid://dtthixalssxpr"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_kdi47"]
 [ext_resource type="Material" uid="uid://ojjkfm66ff7k" path="res://Materials/Unobstructing Door.tres" id="2_31byn"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bpsaexwtgl6pi" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/unrec4.tscn" id="20_fihni"]
 [ext_resource type="PackedScene" uid="uid://bywpl634670tt" path="res://Models/Tutorial/tutorialnew.blend" id="27_qmush"]
 [ext_resource type="PackedScene" uid="uid://pscqmxvgbgkq" path="res://Scenes/fountain.tscn" id="28_8winh"]
+[ext_resource type="AudioStream" uid="uid://b2dnn3qtihkwe" path="res://Music/749876__fania_katz__little-melody.wav" id="29_ypoka"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdpma"]
 albedo_color = Color(0.685835, 0.685835, 0.685835, 1)
@@ -456,3 +457,7 @@ transform = Transform3D(-1.7, 0, -2.56693e-07, 0, 1.7, 0, 2.56693e-07, 0, -1.7, 
 
 [node name="Fountain2" parent="." instance=ExtResource("28_8winh")]
 transform = Transform3D(-1.7, 0, -2.56693e-07, 0, 1.7, 0, 2.56693e-07, 0, -1.7, 6.178, 0.096, 25.332)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_ypoka")
+autoplay = true
