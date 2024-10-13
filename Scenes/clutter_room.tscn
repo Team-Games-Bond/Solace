@@ -419,7 +419,7 @@ visible = false
 size = Vector3(6.20604, 18.1243, 1)
 
 [node name="Pickup8" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32797, 0.407043, 0.361421)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62505, 0.407043, 0.361421)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -600,7 +600,7 @@ size = Vector3(4.46185, 10.5196, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
 
 [node name="MonitorSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.65932, 0.750435, 1.3915)
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -1.57581, 0.750435, -1.57244)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -636,7 +636,7 @@ size = Vector3(1.83072, 1, 1.37967)
 [node name="ItemMount" type="Node3D" parent="Sockets/MonitorSocket/Area3D"]
 
 [node name="KeyboardSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.42947, 0.693526, 1.38426)
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -1.56857, 0.693526, -1.34259)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -672,7 +672,7 @@ size = Vector3(1.28179, 0.90918, 1.12343)
 [node name="ItemMount" type="Node3D" parent="Sockets/KeyboardSocket/Area3D"]
 
 [node name="PCSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.49686, 0.773108, 0.773721)
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -0.958033, 0.773108, -1.40998)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -708,7 +708,7 @@ size = Vector3(1.79462, 0.90918, 1.12343)
 [node name="ItemMount" type="Node3D" parent="Sockets/PCSocket/Area3D"]
 
 [node name="ChairSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1.29776, 0.567361, 1.39779)
+transform = Transform3D(-1.07285e-07, 0, 1, 0, 1, 0, -1, 0, -1.07285e-07, -1.5821, 0.567361, -1.21088)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -816,7 +816,7 @@ size = Vector3(1.23435, 0.90918, 1.10649)
 [node name="ItemMount" type="Node3D" parent="Sockets/LampSocket/Area3D"]
 
 [node name="BinSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425426, 0.290463, -1.51294)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27736, 0.290463, 1.35386)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -844,7 +844,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0185307, -0.0771179, 0.163
 shape = SubResource("BoxShape3D_gbdka")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Sockets/BinSocket/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034546, -0.0454102, 0.142713)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.23435, 0.90918, 1.10649)
@@ -888,7 +887,7 @@ size = Vector3(1.65014, 0.90918, 1.99745)
 [node name="ItemMount" type="Node3D" parent="Sockets/PlushieSocket/Area3D"]
 
 [node name="StandSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.44271, 0.683854, 0.523211)
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -0.707523, 0.683854, -1.35583)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -923,6 +922,68 @@ size = Vector3(0.948846, 0.90918, 1.10649)
 
 [node name="ItemMount" type="Node3D" parent="Sockets/StandSocket/Area3D"]
 
+[node name="Bedroom" parent="." instance=ExtResource("1_w7dh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
+
+[node name="desk2" parent="Bedroom" instance=ExtResource("3_ahs05")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -1.34774, 0.414874, -1.3846)
+
+[node name="mug" parent="Bedroom/desk2" instance=ExtResource("9_odbiv")]
+transform = Transform3D(0.0473736, 0, 0.0319539, 0, 0.0571429, 0, -0.0319539, 0, 0.0473736, -0.232171, 0.372564, 0.740529)
+
+[node name="mouse" parent="Bedroom/desk2" instance=ExtResource("7_sxjma")]
+transform = Transform3D(-1.12401e-09, 0, 0.0257143, 0, 0.0257143, 0, -0.0257143, 0, -1.12401e-09, 0.0746572, 0.392379, -0.029757)
+
+[node name="mousepad" parent="Bedroom/desk2" instance=ExtResource("11_n4j80")]
+transform = Transform3D(-1.21767e-08, 0, 0.278571, 0, 0.278571, 0, -0.278571, 0, -1.21767e-08, 0.0131857, 0.379279, 0.271414)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/desk2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120422, -0.0571289, -0.101555)
+visible = false
+use_collision = true
+size = Vector3(0.796021, 0.885742, 2.06255)
+
+[node name="bookshelf" parent="Bedroom" instance=ExtResource("4_rbthr")]
+transform = Transform3D(-5.68248e-09, 0, 0.13, 0, 0.13, 0, -0.13, 0, -5.68248e-09, 1.74448, 0.0374549, 1.57097)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bookshelf"]
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0.855437, 3.76855, 1.35138)
+visible = false
+size = Vector3(8.68097, 8.53711, 1.92297)
+
+[node name="bedside table3" parent="Bedroom" instance=ExtResource("14_mmxt8")]
+transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.69239, 0.427458, -1.57387)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bedside table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015503, -0.823486, 0.228516)
+visible = false
+use_collision = true
+size = Vector3(2.29761, 2.64697, 2.33984)
+
+[node name="bedside table2" parent="Bedroom" instance=ExtResource("14_mmxt8")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.148058, 0.427037, -1.57366)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bedside table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015503, -0.823486, 0.228516)
+visible = false
+use_collision = true
+size = Vector3(2.29761, 2.64697, 2.33984)
+
+[node name="paper ball2" parent="Bedroom" instance=ExtResource("19_yehl4")]
+transform = Transform3D(0.925247, 0, -0.594911, 0, 1.1, 0, 0.594911, 0, 0.925247, -1.28297, 0.135893, 1.70218)
+
+[node name="paper ball" parent="Bedroom" instance=ExtResource("19_yehl4")]
+transform = Transform3D(0.841133, 0, -0.540828, 0, 1, 0, 0.540828, 0, 0.841133, -1.50122, 0.148325, 1.41838)
+
+[node name="fern" parent="Bedroom" instance=ExtResource("17_tyj78")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.969488, 0.107831, 1.73336)
+
+[node name="bed2" parent="Bedroom" instance=ExtResource("2_tltt7")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.70139, -0.0698541, -0.495871)
+
+[node name="hallway" parent="." instance=ExtResource("22_ul6rj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.498, 0.690683, -0.451818)
+
 [node name="room COMPLETED  (MAIN)" parent="." instance=ExtResource("1_w7dh4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
 visible = false
@@ -956,69 +1017,6 @@ transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.971181, 0.431816, 
 
 [node name="headphone stand" parent="room COMPLETED  (MAIN)" instance=ExtResource("20_0t6tp")]
 transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, -1.44271, 0.683854, 0.523211)
-
-[node name="Bedroom" parent="." instance=ExtResource("1_w7dh4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
-
-[node name="desk2" parent="Bedroom" instance=ExtResource("3_ahs05")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.47148, 0.414874, 1.16343)
-
-[node name="mug" parent="Bedroom/desk2" instance=ExtResource("9_odbiv")]
-transform = Transform3D(0.0473736, 0, 0.0319539, 0, 0.0571429, 0, -0.0319539, 0, 0.0473736, -0.232171, 0.372564, 0.740529)
-
-[node name="mouse" parent="Bedroom/desk2" instance=ExtResource("7_sxjma")]
-transform = Transform3D(-1.12401e-09, 0, 0.0257143, 0, 0.0257143, 0, -0.0257143, 0, -1.12401e-09, 0.0746572, 0.392379, -0.029757)
-
-[node name="mousepad" parent="Bedroom/desk2" instance=ExtResource("11_n4j80")]
-transform = Transform3D(-1.21767e-08, 0, 0.278571, 0, 0.278571, 0, -0.278571, 0, -1.21767e-08, 0.0131857, 0.379279, 0.271414)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/desk2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120422, -0.0571289, -0.101555)
-visible = false
-use_collision = true
-size = Vector3(0.796021, 0.885742, 2.06255)
-
-[node name="bookshelf" parent="Bedroom" instance=ExtResource("4_rbthr")]
-transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -1.33735, 0.0669729, -0.954741)
-visible = false
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bookshelf"]
-transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0.855437, 3.76855, 1.35138)
-visible = false
-size = Vector3(8.68097, 8.53711, 1.92297)
-
-[node name="bedside table3" parent="Bedroom" instance=ExtResource("14_mmxt8")]
-transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.69239, 0.427458, -1.57387)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bedside table3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015503, -0.823486, 0.228516)
-visible = false
-use_collision = true
-size = Vector3(2.29761, 2.64697, 2.33984)
-
-[node name="bedside table2" parent="Bedroom" instance=ExtResource("14_mmxt8")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.148058, 0.427037, -1.57366)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bedside table2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015503, -0.823486, 0.228516)
-visible = false
-use_collision = true
-size = Vector3(2.29761, 2.64697, 2.33984)
-
-[node name="paper ball2" parent="Bedroom" instance=ExtResource("19_yehl4")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -0.341052, 0.135893, -1.22233)
-
-[node name="paper ball" parent="Bedroom" instance=ExtResource("19_yehl4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.678108, 0.148325, -1.34301)
-
-[node name="fern" parent="Bedroom" instance=ExtResource("17_tyj78")]
-transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 1.69095, 0.0949388, 1.66576)
-
-[node name="bed2" parent="Bedroom" instance=ExtResource("2_tltt7")]
-transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.70139, -0.0698541, -0.495871)
-
-[node name="hallway" parent="." instance=ExtResource("22_ul6rj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.498, 0.690683, -0.451818)
 
 [node name="Coliders" type="Node3D" parent="."]
 
