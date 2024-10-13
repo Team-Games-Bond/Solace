@@ -20,7 +20,7 @@ albedo_color = Color(0, 1, 0.223529, 0.145098)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.1008, -43.1401, -28.4493)
 
 [node name="MainLevel" parent="." instance=ExtResource("3_g7ck6")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 115.58, -3.8147e-06, -63.7278)
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 114.561, 1.14441e-05, -64.1363)
 
 [node name="Doors" type="Node3D" parent="."]
 
