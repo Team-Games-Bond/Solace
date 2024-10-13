@@ -92,24 +92,24 @@ albedo_color = Color(0, 1, 0.223529, 0.145098)
 
 [node name="Clutter room" type="Node3D" node_paths=PackedStringArray("Sockets")]
 script = ExtResource("1_0j78k")
-Sockets = [NodePath("Sockets/MonitorSocket"), NodePath("Sockets/KeyboardSocket"), NodePath("Sockets/PCSocket"), NodePath("Sockets/ChairSocket"), NodePath("Sockets/GameboySocket"), NodePath("Sockets/LampSocket"), NodePath("Sockets/BinSocket"), NodePath("Sockets/PlushieSocket"), NodePath("Sockets/StandSocket"), NodePath("Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket")]
+Sockets = [NodePath("Sockets/MonitorSocket"), NodePath("Sockets/KeyboardSocket"), NodePath("Sockets/PCSocket"), NodePath("Sockets/ChairSocket"), NodePath("Sockets/GameboySocket"), NodePath("Sockets/LampSocket"), NodePath("Sockets/BinSocket"), NodePath("Sockets/PlushieSocket"), NodePath("Sockets/StandSocket"), NodePath("Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket")]
 LockKeys = Array[String](["monitor", "keyboard", "pc", "chair", "gameboy", "lamp", "bin", "plushie", "stand", "headset"])
 
 [node name="Stuff" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
 
-[node name="Pickup" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-0.0278344, 0, 0.999613, 0, 1, 0, -0.999613, 0, -0.0278344, 3.29458, 0.258734, -0.25606)
+[node name="Pickup (monitor)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-0.0278344, 0, 0.999613, 0, 1, 0, -0.999613, 0, -0.0278344, 6.29458, 0.258734, -0.25606)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup (monitor)" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/monitor")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup (monitor)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -117,45 +117,45 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup (monitor)/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup (monitor)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup (monitor)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.32837, 0.647461, 1.38904)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup (monitor)/Area3D"]
 
-[node name="monitor" parent="Stuff/Pickup/Area3D/ItemMount" instance=ExtResource("5_41mbg")]
+[node name="monitor" parent="Stuff/Pickup (monitor)/Area3D/ItemMount" instance=ExtResource("5_41mbg")]
 transform = Transform3D(0.15, 0, 4.65661e-09, 0, 0.15, 0, -4.65661e-09, 0, 0.15, 0, 0, 0)
 metadata/ItemKey = "monitor"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup/Area3D/ItemMount/monitor"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup (monitor)/Area3D/ItemMount/monitor"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
 visible = false
 size = Vector3(4.46185, 10.5196, 1)
 
-[node name="Pickup2" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.88564, 0.176573, -0.284586)
+[node name="Pickup2 (keyboard)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.82237, 0.403173, -0.317844)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup2" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup2 (keyboard)" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/Keyboard")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup2/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup2 (keyboard)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -163,45 +163,45 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup2/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup2 (keyboard)/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup2/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup2 (keyboard)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup2/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup2 (keyboard)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.32837, 0.647461, 1.38904)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup2/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup2 (keyboard)/Area3D"]
 
-[node name="Keyboard" parent="Stuff/Pickup2/Area3D/ItemMount" instance=ExtResource("6_p7m2v")]
+[node name="Keyboard" parent="Stuff/Pickup2 (keyboard)/Area3D/ItemMount" instance=ExtResource("6_p7m2v")]
 transform = Transform3D(0.11, 0, -6.21725e-15, 0, 0.11, 0, 6.21725e-15, 0, 0.11, 0, 0, 0)
 metadata/ItemKey = "keyboard"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup2/Area3D/ItemMount/Keyboard"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup2 (keyboard)/Area3D/ItemMount/Keyboard"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
 visible = false
 size = Vector3(4.46185, 10.5196, 1)
 
-[node name="Pickup3" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.67865, 0.228563, 0.482499)
+[node name="Pickup3 (pc)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.84422, 0.228563, 0.482499)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup3" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup3 (pc)" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/PC case final")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup3/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup3 (pc)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -209,45 +209,45 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup3/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup3 (pc)/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup3/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup3 (pc)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup3/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup3 (pc)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.32837, 0.647461, 1.38904)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup3/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup3 (pc)/Area3D"]
 
-[node name="PC case final" parent="Stuff/Pickup3/Area3D/ItemMount" instance=ExtResource("8_440yg")]
+[node name="PC case final" parent="Stuff/Pickup3 (pc)/Area3D/ItemMount" instance=ExtResource("8_440yg")]
 transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
 metadata/ItemKey = "pc"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup3/Area3D/ItemMount/PC case final"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup3 (pc)/Area3D/ItemMount/PC case final"]
 transform = Transform3D(1, 0, -7.45174e-09, 0, 1, 0, 7.45174e-09, 0, 1, 0.0457895, 6.80812, -1.3081)
 visible = false
 size = Vector3(3.22796, 14.6162, 3.61621)
 
-[node name="Pickup4" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+[node name="Pickup4 (chair)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 2.37815, 0.623741, -0.329757)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup4" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup4 (chair)" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/chair modifiers applied")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup4/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup4 (chair)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -255,45 +255,45 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup4/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup4 (chair)/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup4/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup4 (chair)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup4/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup4 (chair)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.32837, 0.647461, 1.38904)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup4/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup4 (chair)/Area3D"]
 
-[node name="chair modifiers applied" parent="Stuff/Pickup4/Area3D/ItemMount" instance=ExtResource("12_j0275")]
+[node name="chair modifiers applied" parent="Stuff/Pickup4 (chair)/Area3D/ItemMount" instance=ExtResource("12_j0275")]
 transform = Transform3D(0.2, 0, 6.39488e-14, 0, 0.2, 0, -6.39488e-14, 0, 0.2, 0, 0, 0)
 metadata/ItemKey = "chair"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup4/Area3D/ItemMount/chair modifiers applied"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup4 (chair)/Area3D/ItemMount/chair modifiers applied"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -0.0935688, 2.87846, -0.0856326)
 visible = false
 size = Vector3(2.35642, 14.2823, 2.50427)
 
-[node name="Pickup5" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(0.319836, 0, 0.947473, 0, 1, 0, -0.947473, 0, 0.319836, 3.54252, 0.198786, 0.229423)
+[node name="Pickup5 (gameboy)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(0.319836, 0, 0.947473, 0, 1, 0, -0.947473, 0, 0.319836, 4.6518, 0.40313, -0.387225)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup5" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup5 (gameboy)" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/gameboy ")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup5/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -301,45 +301,45 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup5/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup5/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.32837, 0.647461, 1.38904)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup5/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 
-[node name="gameboy " parent="Stuff/Pickup5/Area3D/ItemMount" instance=ExtResource("13_5u0q2")]
+[node name="gameboy " parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount" instance=ExtResource("13_5u0q2")]
 transform = Transform3D(0.1, 0, -3.72529e-09, 0, 0.1, 0, 3.72529e-09, 0, 0.1, 0, 0, 0)
 metadata/ItemKey = "gameboy"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5/Area3D/ItemMount/gameboy "]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount/gameboy "]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.0373192, 7.54793, 0.322269)
 visible = false
 size = Vector3(1.61229, 16.0959, 1.64453)
 
-[node name="Pickup6" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.66197, 0.174189, -0.253991)
+[node name="Pickup6 (lamp)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.19714, 0.174189, -0.253991)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup6" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup6 (lamp)" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/lamp")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup6/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup6 (lamp)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -347,45 +347,45 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup6/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup6 (lamp)/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup6/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup6 (lamp)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup6/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup6 (lamp)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.32837, 0.647461, 1.38904)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup6/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup6 (lamp)/Area3D"]
 
-[node name="lamp" parent="Stuff/Pickup6/Area3D/ItemMount" instance=ExtResource("15_sjeq8")]
+[node name="lamp" parent="Stuff/Pickup6 (lamp)/Area3D/ItemMount" instance=ExtResource("15_sjeq8")]
 transform = Transform3D(0.07, 0, -2.88658e-15, 0, 0.07, 0, 2.88658e-15, 0, 0.07, 0, 0, 0)
 metadata/ItemKey = "lamp"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup6/Area3D/ItemMount/lamp"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup6 (lamp)/Area3D/ItemMount/lamp"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.857893, 6.82366, -0.153091)
 visible = false
 size = Vector3(5.11083, 16.0341, 2.66943)
 
-[node name="Pickup7" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.03692, 0.332727, 0.02153)
+[node name="Pickup7 (headset)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.2199, 0.332727, 0.02153)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup7" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup7 (headset)" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/headset")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup7/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup7 (headset)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -393,45 +393,45 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup7/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup7 (headset)/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup7/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup7 (headset)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup7/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup7 (headset)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.32837, 0.647461, 1.38904)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup7/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup7 (headset)/Area3D"]
 
-[node name="headset" parent="Stuff/Pickup7/Area3D/ItemMount" instance=ExtResource("16_ludrc")]
+[node name="headset" parent="Stuff/Pickup7 (headset)/Area3D/ItemMount" instance=ExtResource("16_ludrc")]
 transform = Transform3D(0.08, 0, -1.77636e-15, 0, 0.08, 0, 1.77636e-15, 0, 0.08, 0, 0, 0)
 metadata/ItemKey = "headset"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup7/Area3D/ItemMount/headset"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup7 (headset)/Area3D/ItemMount/headset"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.284388, 3.62418, 0)
 visible = false
 size = Vector3(6.20604, 18.1243, 1)
 
-[node name="Pickup8" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+[node name="Pickup8 (bin)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62505, 0.407043, 0.361421)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup8" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup8 (bin)" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/bin")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup8/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup8 (bin)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -439,45 +439,44 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup8/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup8 (bin)/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup8/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup8 (bin)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup8/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup8 (bin)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.32837, 0.647461, 1.38904)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup8/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup8 (bin)/Area3D"]
 
-[node name="bin" parent="Stuff/Pickup8/Area3D/ItemMount" instance=ExtResource("18_ytpgd")]
+[node name="bin" parent="Stuff/Pickup8 (bin)/Area3D/ItemMount" instance=ExtResource("18_ytpgd")]
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0, 0)
-metadata/ItemKey = "bin"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup8/Area3D/ItemMount/bin"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup8 (bin)/Area3D/ItemMount/bin"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -0.0283775, 4.04961, -0.0172424)
 visible = false
 size = Vector3(2.13836, 11.94, 2.13824)
 
-[node name="Pickup9" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(1, 0, 1.38778e-14, 0, 1, 0, -1.38778e-14, 0, 1, 2.69616, 0.171159, 0.159797)
+[node name="Pickup9 (plushie)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(1, 0, 1.38778e-14, 0, 1, 0, -1.38778e-14, 0, 1, 5.61467, 0.519026, -0.0595912)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup9" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup9 (plushie)" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/plushie smooth")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup9/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup9 (plushie)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -485,45 +484,45 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup9/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup9 (plushie)/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup9/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup9 (plushie)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup9/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup9 (plushie)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.32837, 0.647461, 1.38904)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup9/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup9 (plushie)/Area3D"]
 
-[node name="plushie smooth" parent="Stuff/Pickup9/Area3D/ItemMount" instance=ExtResource("21_v5qrm")]
+[node name="plushie smooth" parent="Stuff/Pickup9 (plushie)/Area3D/ItemMount" instance=ExtResource("21_v5qrm")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
 metadata/ItemKey = "plushie"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup9/Area3D/ItemMount/plushie smooth"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup9 (plushie)/Area3D/ItemMount/plushie smooth"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.42543, 27.9839, 1.25256)
 visible = false
 size = Vector3(12.7323, 56.9677, 7.28882)
 
-[node name="Pickup10" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.12133, 0.205046, 0.362865)
+[node name="Pickup10 (stand)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.55443, 0.205046, 0.362865)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup10" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup10 (stand)" node_paths=PackedStringArray("MountPoint", "Item")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/stand")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup10/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup10 (stand)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -531,25 +530,25 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup10/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup10 (stand)/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup10/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup10 (stand)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179761, 0.17573, -0.0250457)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup10/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup10 (stand)/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182983, 0.17627, -0.0254516)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.32837, 0.647461, 1.38904)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup10/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup10 (stand)/Area3D"]
 
-[node name="stand" parent="Stuff/Pickup10/Area3D/ItemMount" node_paths=PackedStringArray("Sockets", "Buttons") instance=ExtResource("20_0t6tp")]
+[node name="stand" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount" node_paths=PackedStringArray("Sockets", "Buttons") instance=ExtResource("20_0t6tp")]
 transform = Transform3D(0.1, 0, 8.88178e-16, 0, 0.1, 0, -8.88178e-16, 0, 0.1, 0, 0, 0)
 script = ExtResource("11_5afxo")
 Sockets = [NodePath("HeadsetSocket")]
@@ -557,17 +556,17 @@ ItemKeys = Array[String](["headset"])
 Buttons = []
 metadata/ItemKey = "stand"
 
-[node name="HeadsetSocket" type="Node3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand" node_paths=PackedStringArray("socket")]
+[node name="HeadsetSocket" type="Node3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand" node_paths=PackedStringArray("socket")]
 transform = Transform3D(10, 0, -5.68434e-14, 0, 10, 0, 5.68434e-14, 0, 10, 0.0401001, 3.07584, 0.320101)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket" node_paths=PackedStringArray("MountPoint")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket" node_paths=PackedStringArray("MountPoint")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 
-[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
 billboard = 1
@@ -575,25 +574,25 @@ no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
 root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_clq28")
 }
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0333722, -0.0771179, 0.0924047)
 shape = SubResource("BoxShape3D_gbdka")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017888, -0.159454, 0.142713)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(0.892941, 0.855042, 1.10649)
 
-[node name="ItemMount" type="Node3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
+[node name="ItemMount" type="Node3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup10/Area3D/ItemMount/stand"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
 visible = false
 size = Vector3(4.46185, 10.5196, 1)
@@ -821,7 +820,7 @@ size = Vector3(1.23435, 0.90918, 1.10649)
 [node name="ItemMount" type="Node3D" parent="Sockets/LampSocket/Area3D"]
 
 [node name="BinSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27736, 0.290463, 1.35386)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19387, 0.468626, 1.35386)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -1101,3 +1100,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71606, 0.550726, -0.247427)
 
 [node name="doorframe" parent="." instance=ExtResource("28_tthre")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94748, 1.08356, -0.167)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.463202, 0.292237, -0.836685, -0.886223, -0.145125, 0.439939, 0.00714296, 0.945271, 0.32621, -4.5099, 0, 7.65757)

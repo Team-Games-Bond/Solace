@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkepqtfmyxnxx"]
+[gd_scene load_steps=3 format=3 uid="uid://dkepqtfmyxnxx"]
 
 [ext_resource type="PackedScene" uid="uid://bjm3avsnckc6f" path="res://Scenes/clutter_room.tscn" id="1_drdt3"]
 [ext_resource type="PackedScene" uid="uid://cfkv6wtyhhta0" path="res://Scenes/Character.tscn" id="2_bmiy2"]
-[ext_resource type="PackedScene" uid="uid://dbkphwuw6orlp" path="res://Models/Main level/Clutter Room/room layout second room.blend" id="3_vis5c"]
 
 [node name="ClutterTest" type="Node3D"]
 
@@ -11,6 +10,3 @@ transform = Transform3D(2.26577, 0, 1.05655, 0, 2.5, 0, -1.05655, 0, 2.26577, -2
 
 [node name="Character" parent="." instance=ExtResource("2_bmiy2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.93356, 1)
-
-[node name="room layout second room" parent="." instance=ExtResource("3_vis5c")]
-transform = Transform3D(2.26577, 0, 1.05655, 0, 2.5, 0, -1.05655, 0, 2.26577, 17.1421, 1.46585, -9.11785)
