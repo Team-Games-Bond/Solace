@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=33 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://k26q0am8pn6v" path="res://Models/Main level/Clutter Room/gameboy .blend" id="13_5u0q2"]
 [ext_resource type="PackedScene" uid="uid://cxii2nrel0mct" path="res://Models/Main level/Clutter Room/bedside table.blend" id="14_mmxt8"]
 [ext_resource type="PackedScene" uid="uid://b6uwbfwdhnun" path="res://Models/Main level/Clutter Room/lamp.blend" id="15_sjeq8"]
+[ext_resource type="PackedScene" uid="uid://de2fnhrx0jxmu" path="res://Models/Main level/Clutter Room/can final.blend" id="16_2437d"]
 [ext_resource type="PackedScene" uid="uid://cl46y58q6ss7e" path="res://Models/Main level/Clutter Room/headset.blend" id="16_ludrc"]
 [ext_resource type="PackedScene" uid="uid://bvlobnvaju5bt" path="res://Models/Main level/Clutter Room/fern.blend" id="17_tyj78"]
 [ext_resource type="PackedScene" uid="uid://dnm6wcryjotpr" path="res://Models/Main level/Clutter Room/bin.blend" id="18_ytpgd"]
@@ -779,6 +780,9 @@ size = Vector3(1.50418, 1.08447, 1.66001)
 
 [node name="ItemMount" type="Node3D" parent="Sockets/GameboySocket/Area3D"]
 
+[node name="can final" parent="Sockets/GameboySocket/Area3D" instance=ExtResource("16_2437d")]
+transform = Transform3D(0.319836, 0, -0.947473, 0, 1, 0, 0.947473, 0, 0.319836, -3.53016, -0.334857, -0.636457)
+
 [node name="LampSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.69787, 0.517326, -1.54389)
 script = ExtResource("2_wtvm2")
@@ -1061,3 +1065,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0467224, -0.0560303, 2.2884
 visible = false
 use_collision = true
 size = Vector3(1.31305, 0.107178, 1)
+
+[node name="can final" parent="." instance=ExtResource("16_2437d")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.157653, 0.636308, -1.80342)
