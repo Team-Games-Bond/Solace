@@ -77,7 +77,8 @@ script = ExtResource("1_nckxi")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-pixel_size = 0.001
+offset = Vector2(0, 370)
+pixel_size = 0.003
 billboard = 1
 no_depth_test = true
 render_priority = 10

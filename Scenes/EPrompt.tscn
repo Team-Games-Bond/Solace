@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv6ttxwx5gja7"]
+
+[ext_resource type="Script" path="res://Scripts/ButtonDecal.cs" id="2_c4553"]
+[ext_resource type="Texture2D" uid="uid://domvr06oj2dsr" path="res://Textures/Key-E-green.svg" id="3_1ggy6"]
+[ext_resource type="Texture2D" uid="uid://bddvmntcbjwo8" path="res://Textures/Key-S.svg" id="4_umh0a"]
+[ext_resource type="Texture2D" uid="uid://bxsh7y7qhuhyr" path="res://Textures/Key-E.svg" id="4_x1ako"]
+
+[node name="FloorPrompt" type="Node3D"]
+
+[node name="Decal2" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+texture_albedo = ExtResource("4_umh0a")
+script = ExtResource("2_c4553")
+Key = 69
+TexturePressed = ExtResource("3_1ggy6")
+TextureReleased = ExtResource("4_x1ako")
