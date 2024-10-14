@@ -86,6 +86,7 @@ quick_exit={
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_environment="res://OutsideEnvironment.tres"
 Bayer16={
 "type": "sampler2D",
 "value": "res://Textures/bayer16.png"
