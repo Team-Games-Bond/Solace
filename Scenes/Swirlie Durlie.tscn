@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp7u8s3vwtj4l"]
+
+[ext_resource type="Shader" path="res://Shaders/Swirlie.gdshader" id="1_fehhm"]
+[ext_resource type="Texture2D" uid="uid://sqghp41uhrjb" path="res://Textures/SwirlieNoise.tres" id="2_lm3tr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jg25q"]
+render_priority = 0
+shader = ExtResource("1_fehhm")
+shader_parameter/shear = 1.971
+shader_parameter/threshold = 0.483
+shader_parameter/grow = 0.1
+shader_parameter/time_offset = Vector2(0.355, 0.7)
+shader_parameter/noise = ExtResource("2_lm3tr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nspig"]
+next_pass = SubResource("ShaderMaterial_jg25q")
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.556863, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6p3ov"]
+material = SubResource("StandardMaterial3D_nspig")
+
+[node name="SwirlieDurlie" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_6p3ov")
