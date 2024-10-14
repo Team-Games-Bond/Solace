@@ -14,10 +14,10 @@ public partial class ColourBoxSpawner : Node
 	private Material spawnMaterial;
 
 	public override void _Ready()
-    {
-        socket.InteractionBegin += Begin;
+	{
+		socket.InteractionBegin += Begin;
 		setSocketActive(isActive);
-    }
+	}
 
 	public void Begin(CharacterController player)
 	{
@@ -27,13 +27,13 @@ public partial class ColourBoxSpawner : Node
 
 	public bool spawnItem() //Returns false if item already exists in socket
 	{
-        //TODO use model instead of box
-        var item = new CsgBox3D
-        {
-            Material = spawnMaterial
-        };
+		//TODO use model instead of box
+		var item = new CsgBox3D
+		{
+			Material = spawnMaterial
+		};
 		
-        return socket.AttachItem(item);
+		return socket.AttachItem(item);
 
 		//TODO Make garbage disposal socket (using .QueueFree()) 
 		//Maybe just add metadata to the spawned item and give the socket the ability to dispose of spawned items

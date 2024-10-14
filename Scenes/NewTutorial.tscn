@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dtthixalssxpr"]
+[gd_scene load_steps=37 format=3 uid="uid://dtthixalssxpr"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_kdi47"]
 [ext_resource type="Material" uid="uid://ojjkfm66ff7k" path="res://Materials/Unobstructing Door.tres" id="2_31byn"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bpsaexwtgl6pi" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/unrec4.tscn" id="20_fihni"]
 [ext_resource type="PackedScene" uid="uid://bywpl634670tt" path="res://Models/Tutorial/tutorialnew.blend" id="27_qmush"]
 [ext_resource type="PackedScene" uid="uid://pscqmxvgbgkq" path="res://Scenes/fountain.tscn" id="28_8winh"]
+[ext_resource type="AudioStream" uid="uid://b2dnn3qtihkwe" path="res://Music/749876__fania_katz__little-melody.wav" id="29_ypoka"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdpma"]
 albedo_color = Color(0.685835, 0.685835, 0.685835, 1)
@@ -209,35 +210,30 @@ sequenceButtons = [NodePath("WallButton"), NodePath("WallButton3"), NodePath("Wa
 
 [node name="WallButton" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72301, 0.969002, -3.88971)
-verticalBounce = false
 
 [node name="WallButton1" parent="Room 3/ButtonSequence/WallButton" instance=ExtResource("12_7uwsh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.00272393, -0.505888, 0.161667)
 
 [node name="WallButton2" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17986, 0.969002, -3.88971)
-verticalBounce = false
 
 [node name="WallButton2" parent="Room 3/ButtonSequence/WallButton2" instance=ExtResource("13_1pnxe")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0482475, -0.505888, 0.161667)
 
 [node name="WallButton3" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.310832, 0.969002, -3.88971)
-verticalBounce = false
 
 [node name="WallButton3" parent="Room 3/ButtonSequence/WallButton3" instance=ExtResource("14_htcu2")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.035262, -0.505888, 0.161667)
 
 [node name="WallButton4" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79643, 0.969002, -3.88971)
-verticalBounce = false
 
 [node name="WallButton4" parent="Room 3/ButtonSequence/WallButton4" instance=ExtResource("15_fhdw3")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.030483, -0.505888, 0.161667)
 
 [node name="WallButton5" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(0.999997, 0, 0.00242601, 0, 1, 0, -0.00242601, 0, 0.999997, 3.22643, 0.969002, -3.88971)
-verticalBounce = false
 
 [node name="WallButton5" parent="Room 3/ButtonSequence/WallButton5" instance=ExtResource("16_sxh5q")]
 transform = Transform3D(1.5, 0, 1.86265e-09, 0, 1.5, 0, -1.86265e-09, 0, 1.5, -0.00311613, -0.505888, 0.161682)
@@ -453,6 +449,9 @@ transform = Transform3D(-5.5, 0, -4.80825e-07, 0, 5.5, 0, 4.80825e-07, 0, -5.5, 
 
 [node name="Fountain" parent="." instance=ExtResource("28_8winh")]
 transform = Transform3D(-1.7, 0, -2.56693e-07, 0, 1.7, 0, 2.56693e-07, 0, -1.7, 6.178, 0.096, 9.905)
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_ypoka")
 
 [node name="Fountain2" parent="." instance=ExtResource("28_8winh")]
 transform = Transform3D(-1.7, 0, -2.56693e-07, 0, 1.7, 0, 2.56693e-07, 0, -1.7, 6.178, 0.096, 25.332)
