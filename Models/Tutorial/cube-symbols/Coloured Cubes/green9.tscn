@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck0iwfsfbmsof"]
+[gd_scene load_steps=4 format=3 uid="uid://ck0iwfsfbmsof"]
 
 [ext_resource type="PackedScene" uid="uid://djclfsjh2ltms" path="res://Models/Tutorial/cube-symbols/cube9.blend" id="1_k48ag"]
+[ext_resource type="Material" uid="uid://bb4jrxmbt0s7k" path="res://Materials/GlowMat.tres" id="2_4r26b"]
 [ext_resource type="Material" uid="uid://dagxh04aellbm" path="res://Materials/ImagePuzzleMaterials/green.tres" id="2_e0muf"]
 
 [node name="cube9" instance=ExtResource("1_k48ag")]
 
 [node name="Curve_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_4r26b")
 surface_material_override/1 = ExtResource("2_e0muf")

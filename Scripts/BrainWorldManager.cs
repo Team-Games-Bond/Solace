@@ -5,14 +5,8 @@ public partial class BrainWorldManager : Node
 {
 	[ExportGroup("Object References")]
 	[ExportSubgroup("Flags")]
-	[Export] public Door imagePuzzleFlag;
-	[Export] public Door simonSaysFlag;
-	[Export] public Door clutterRoomFlag;
 	[Export] public Node3D imagePuzzleCover;
 	[Export] public Node3D simonSaysCover;
-	[Export] public Node3D clutterRoomCover;
-	[Export] public Node3D waterCover;
-	[Export] public Node3D river;
 
 	[ExportSubgroup("Fog & Neuron References")]
 	[Export] public FogManager FogManager;
@@ -63,7 +57,7 @@ public partial class BrainWorldManager : Node
 		else if(socket == powerSocketMiddle) FogManager.RemoveFog(FogLocation.clutterAndSimon);
 		else if(socket == powerSocketBridge) FogManager.RemoveFog(FogLocation.bridge);
 		else if(socket == powerSocketTree) FogManager.RemoveFog(FogLocation.tree);
-		else if(socket == powerSocketWater) river.QueueFree(); 
+		//else if(socket == powerSocketWater) river.QueueFree(); 
 		else GD.PushError("Unhandled Power Socket: " + socket.Name);
 	}
 
@@ -71,7 +65,7 @@ public partial class BrainWorldManager : Node
 	private void imagePuzzleCompleted()
 	{
 		GD.Print("Image Puzzle Completed");
-		imagePuzzleFlag.Open();
+		//imagePuzzleFlag.Open();
 		imagePuzzleCover.QueueFree();
 		imagePuzzleDone = true;
 
@@ -81,7 +75,7 @@ public partial class BrainWorldManager : Node
 	private void simonSaysCompleted()
 	{
 		GD.Print("Simon Says Completed");
-		simonSaysFlag.Open();
+		//simonSaysFlag.Open();
 		simonSaysCover.QueueFree();
 		simonSaysDone = true;
 		
@@ -91,8 +85,8 @@ public partial class BrainWorldManager : Node
 	private void clutterRoomCompleted()
 	{
 		GD.Print("Clutter Room Completed");
-		clutterRoomFlag.Open();
-		clutterRoomCover.QueueFree();
+		//clutterRoomFlag.Open();
+		//clutterRoomCover.QueueFree();
 		clutterRoomDone = true;
 	}
 
@@ -105,6 +99,6 @@ public partial class BrainWorldManager : Node
 	private void crystalsPlaced()
 	{
 		GD.Print("All Crystals Placed");
-		waterCover.QueueFree();
+		//waterCover.QueueFree();
 	}
 }
