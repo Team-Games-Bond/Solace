@@ -27,7 +27,7 @@ public partial class ImagePuzzleManager : Node
 	private Godot.Collections.Array<Godot.Collections.Array<PlacementMonitor>> socketArray;
 	private Godot.Collections.Array<Godot.Collections.Array<CsgBox3D>> clueImageArray;
 	private Godot.Collections.Array<Godot.Collections.Array<CsgBox3D>> createdImageArray;
-	private Godot.Collections.Array<ColourBoxSpawner> colourBoxSpawners;
+	private Godot.Collections.Array<PlacementMonitor> colourBoxSpawners;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -89,17 +89,30 @@ public partial class ImagePuzzleManager : Node
 		
 		//Setup material resources 
 		var mappedSpawners = colourSpawnerParent.GetChildren()
-		.Where(child => child is ColourBoxSpawner)
-        .Cast<ColourBoxSpawner>();
+		.Where(child => child is PlacementMonitor)
+        .Cast<PlacementMonitor>();
 
-		colourBoxSpawners = new Godot.Collections.Array<ColourBoxSpawner>();
+		colourBoxSpawners = new Godot.Collections.Array<PlacementMonitor>();
 		foreach (var spawner in mappedSpawners) colourBoxSpawners.Add(spawner);
 
 		for(int i = 0; i < colourBoxSpawners.Count; i++)
 		{
-			colourBoxSpawners[i].setMaterial(possibleMaterials[i%possibleMaterials.Count]);
-			colourBoxSpawners[i].spawnItem();
+			var mat = possibleMaterials[i%possibleMaterials.Count];
+			//colourBoxSpawners[i].spawnItem();
+			var item = new CsgBox3D
+        	{
+            	Material = mat
+        	};
+			colourBoxSpawners[i].attachItem(item);
 		}
+
+		for(int i = 0; i <= 20; i += 11)
+		{
+			var matInFrame = possibleMaterials[i%possibleMaterials.Count];
+			Node3D itemInFrame = new CsgBox3D {Material = matInFrame};
+			socketArray[i%socketArray.Count][i%socketArray[i%socketArray.Count].Count].attachItem(itemInFrame);
+		}
+		
 		/*
 		GD.Print("Sockets:");
 		GD.Print(socketArray);
