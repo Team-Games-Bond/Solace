@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://hcb2t4qod38t"]
+[gd_scene load_steps=12 format=3 uid="uid://hcb2t4qod38t"]
 
 [ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="1_van7s"]
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="2_q8cwg"]
-[ext_resource type="Texture2D" uid="uid://bbxp1atppwt1g" path="res://Textures/lyra.webp" id="3_w2v2v"]
+[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="3_qfmfw"]
 [ext_resource type="AudioStream" uid="uid://dm7cugia1b20e" path="res://Music/pickup.wav" id="4_7glqs"]
+[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_kojfa"]
+[ext_resource type="PackedScene" uid="uid://bjcjcnuxwnkgf" path="res://Models/Tutorial/CubeStation1.blend" id="5_spjdf"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -77,11 +79,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-pixel_size = 0.001
+offset = Vector2(0, 370)
+pixel_size = 0.003
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("3_w2v2v")
+texture = ExtResource("3_qfmfw")
+script = ExtResource("4_kojfa")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
 root_node = NodePath("../..")
@@ -101,5 +105,8 @@ material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(2.5, 1, 2.5)
 
 [node name="ItemMount" type="Node3D" parent="Area3D"]
+
+[node name="CubeStation1" parent="." instance=ExtResource("5_spjdf")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.016, -0.415, -0.016)
 
 [connection signal="InteractionBegin" from="Area3D" to="Area3D/Pickup" method="play"]

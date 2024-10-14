@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m02ttiaq0wjm"
-path="res://.godot/imported/Maze1_Fog.png-e14604db8bdf3fde9a6c2441baa4de9b.ctex"
+uid="uid://dmqb0r0rviawd"
+path="res://.godot/imported/fred6.png-cd4322d207d289d950dcb600cb134d9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Fog/Maze1_Fog.png"
-dest_files=["res://.godot/imported/Maze1_Fog.png-e14604db8bdf3fde9a6c2441baa4de9b.ctex"]
+source_file="res://Textures/Fog/OldFog'/fred6.png"
+dest_files=["res://.godot/imported/fred6.png-cd4322d207d289d950dcb600cb134d9d.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

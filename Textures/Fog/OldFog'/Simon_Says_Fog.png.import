@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://diqsqjengovl5"
-path="res://.godot/imported/Simon_Says_Fog.png-77c82eeff32a5a2e03cdda285729c240.ctex"
+path="res://.godot/imported/Simon_Says_Fog.png-964f00d683c3c36eaba95a1273b52bb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Fog/Simon_Says_Fog.png"
-dest_files=["res://.godot/imported/Simon_Says_Fog.png-77c82eeff32a5a2e03cdda285729c240.ctex"]
+source_file="res://Textures/Fog/OldFog'/Simon_Says_Fog.png"
+dest_files=["res://.godot/imported/Simon_Says_Fog.png-964f00d683c3c36eaba95a1273b52bb6.ctex"]
 
 [params]
 
