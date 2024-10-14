@@ -37,6 +37,31 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://Materials/Water.tres"
 }
+},
+"meshes": {
+"brainmodel_Cube_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": ""
+}
+},
+"nodes": {
+"PATH:Cube_002": {
+"generate/physics": true
+},
+"PATH:Cube_004": {
+"import/skip_import": true
+},
+"PATH:Cube_111": {
+"generate/physics": true
+},
+"PATH:Cube_113": {
+"generate/physics": true
+}
 }
 }
 blender/nodes/visible=0
