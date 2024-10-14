@@ -137,7 +137,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="monitor" parent="Stuff/Pickup (monitor)/Area3D/ItemMount" instance=ExtResource("5_41mbg")]
 transform = Transform3D(0.15, 0, 4.65661e-09, 0, 0.15, 0, -4.65661e-09, 0, 0.15, 0, 0, 0)
-metadata/ItemKey = "monitor"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup (monitor)/Area3D/ItemMount/monitor"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
@@ -275,7 +274,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="chair modifiers applied" parent="Stuff/Pickup4 (chair)/Area3D/ItemMount" instance=ExtResource("12_j0275")]
 transform = Transform3D(0.2, 0, 6.39488e-14, 0, 0.2, 0, -6.39488e-14, 0, 0.2, 0, 0, 0)
-metadata/ItemKey = "chair"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup4 (chair)/Area3D/ItemMount/chair modifiers applied"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -0.0935688, 2.87846, -0.0856326)
@@ -321,7 +319,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="gameboy " parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount" instance=ExtResource("13_5u0q2")]
 transform = Transform3D(0.1, 0, -3.72529e-09, 0, 0.1, 0, 3.72529e-09, 0, 0.1, 0, 0, 0)
-metadata/ItemKey = "gameboy"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount/gameboy "]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.0373192, 7.54793, 0.322269)
@@ -367,7 +364,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="lamp" parent="Stuff/Pickup6 (lamp)/Area3D/ItemMount" instance=ExtResource("15_sjeq8")]
 transform = Transform3D(0.07, 0, -2.88658e-15, 0, 0.07, 0, 2.88658e-15, 0, 0.07, 0, 0, 0)
-metadata/ItemKey = "lamp"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup6 (lamp)/Area3D/ItemMount/lamp"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.857893, 6.82366, -0.153091)
@@ -413,7 +409,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="headset" parent="Stuff/Pickup7 (headset)/Area3D/ItemMount" instance=ExtResource("16_ludrc")]
 transform = Transform3D(0.08, 0, -1.77636e-15, 0, 0.08, 0, 1.77636e-15, 0, 0.08, 0, 0, 0)
-metadata/ItemKey = "headset"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup7 (headset)/Area3D/ItemMount/headset"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.284388, 3.62418, 0)
@@ -554,7 +549,6 @@ script = ExtResource("11_5afxo")
 Sockets = [NodePath("HeadsetSocket")]
 ItemKeys = Array[String](["headset"])
 Buttons = []
-metadata/ItemKey = "stand"
 
 [node name="HeadsetSocket" type="Node3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand" node_paths=PackedStringArray("socket")]
 transform = Transform3D(10, 0, -5.68434e-14, 0, 10, 0, 5.68434e-14, 0, 10, 0.0401001, 3.07584, 0.320101)
