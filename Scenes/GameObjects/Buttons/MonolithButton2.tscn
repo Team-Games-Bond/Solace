@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="1_7he2i"]
 [ext_resource type="PackedScene" uid="uid://d185l5su44ek3" path="res://Models/Tutorial/Rune rock 2.blend" id="2_aut64"]
-[ext_resource type="AudioStream" uid="uid://dgx0pmiwlclv5" path="res://Music/665181__el_boss__item-or-material-pickup-pop-3-of-3.wav" id="2_gm261"]
+[ext_resource type="AudioStream" uid="uid://dgx0pmiwlclv5" path="res://Music/press.wav" id="2_gm261"]
 
 [node name="Button" instance=ExtResource("1_7he2i")]
 

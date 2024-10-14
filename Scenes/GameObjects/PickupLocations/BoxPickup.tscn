@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://vwdqmlafqdqy"]
+[gd_scene load_steps=12 format=3 uid="uid://vwdqmlafqdqy"]
 
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="1_xlpxs"]
 [ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="2_2r3oj"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="3_64xf2"]
 [ext_resource type="PackedScene" uid="uid://ju43hbanmqtm" path="res://Models/Tutorial/cube-symbols/cube1.blend" id="4_2xj54"]
+[ext_resource type="AudioStream" uid="uid://dm7cugia1b20e" path="res://Music/pickup.wav" id="4_m532n"]
 [ext_resource type="PackedScene" uid="uid://bjcjcnuxwnkgf" path="res://Models/Tutorial/CubeStation1.blend" id="5_271gi"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
@@ -94,6 +95,9 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_w3clg")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Area3D"]
+stream = ExtResource("4_m532n")
+
 [node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
 layers = 524288
 material_override = SubResource("StandardMaterial3D_q3e7l")
@@ -107,3 +111,5 @@ metadata/ItemKey = "Box"
 
 [node name="CubeStation1" parent="Area3D" instance=ExtResource("5_271gi")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.016, -0.415, -0.016)
+
+[connection signal="InteractionBegin" from="Area3D" to="Area3D/Pickup" method="play"]
