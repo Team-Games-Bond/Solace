@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=35 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="3_dfft7"]
 [ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="4_482h2"]
 [ext_resource type="PackedScene" uid="uid://ddh06lut0u3vn" path="res://Models/Main level/Clutter Room/bookshelf.blend" id="4_rbthr"]
+[ext_resource type="AudioStream" uid="uid://dm7cugia1b20e" path="res://Music/pickup.wav" id="4_x6mgo"]
 [ext_resource type="PackedScene" uid="uid://bbulxw05fl62s" path="res://Models/Main level/Clutter Room/monitor.blend" id="5_41mbg"]
 [ext_resource type="PackedScene" uid="uid://daup4tw0qws35" path="res://Models/Main level/Clutter Room/Keyboard.blend" id="6_p7m2v"]
 [ext_resource type="PackedScene" uid="uid://cb58biarx7057" path="res://Models/Main level/Clutter Room/mouse.blend" id="7_sxjma"]
@@ -109,6 +110,9 @@ script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/monitor")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup (monitor)/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup (monitor)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -153,6 +157,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/Keyboard")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup2 (keyboard)/Area3D"]
+stream = ExtResource("4_x6mgo")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup2 (keyboard)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -200,6 +207,9 @@ script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/PC case final")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup3 (pc)/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup3 (pc)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -246,6 +256,9 @@ script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/chair modifiers applied")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup4 (chair)/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup4 (chair)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -290,6 +303,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/gameboy ")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup5 (gameboy)/Area3D"]
+stream = ExtResource("4_x6mgo")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -336,6 +352,9 @@ script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/lamp")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup6 (lamp)/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup6 (lamp)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -380,6 +399,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/headset")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup7 (headset)/Area3D"]
+stream = ExtResource("4_x6mgo")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup7 (headset)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -426,6 +448,9 @@ script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/bin")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup8 (bin)/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup8 (bin)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -470,6 +495,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/plushie smooth")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup9 (plushie)/Area3D"]
+stream = ExtResource("4_x6mgo")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup9 (plushie)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -516,6 +544,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 Item = NodePath("ItemMount/stand")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup10 (stand)/Area3D"]
+stream = ExtResource("4_x6mgo")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup10 (stand)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -604,6 +635,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Sockets/MonitorSocket/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/MonitorSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -639,6 +673,9 @@ socket = NodePath("Area3D")
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="Sockets/KeyboardSocket/Area3D"]
+stream = ExtResource("4_x6mgo")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/KeyboardSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -676,6 +713,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Sockets/PCSocket/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/PCSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -712,6 +752,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Sockets/ChairSocket/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/ChairSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -747,6 +790,9 @@ socket = NodePath("Area3D")
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="Sockets/GameboySocket/Area3D"]
+stream = ExtResource("4_x6mgo")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/GameboySocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -787,6 +833,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Sockets/LampSocket/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/LampSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -823,6 +872,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Sockets/BinSocket/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/BinSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -858,6 +910,9 @@ collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Sockets/PlushieSocket/Area3D"]
+stream = ExtResource("4_x6mgo")
+
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/PlushieSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 pixel_size = 0.001
@@ -890,9 +945,13 @@ script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
 [node name="Area3D" type="Area3D" parent="Sockets/StandSocket" node_paths=PackedStringArray("MountPoint")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00126523, -0.00290012, 0.00392795)
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
+
+[node name="Pickup" type="AudioStreamPlayer" parent="Sockets/StandSocket/Area3D"]
+stream = ExtResource("4_x6mgo")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/StandSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -1097,3 +1156,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94748, 1.08356, -0.167)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.463202, 0.292237, -0.836685, -0.886223, -0.145125, 0.439939, 0.00714296, 0.945271, 0.32621, -4.5099, 0, 7.65757)
+
+[connection signal="InteractionBegin" from="Stuff/Pickup (monitor)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Stuff/Pickup2 (keyboard)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Stuff/Pickup3 (pc)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Stuff/Pickup4 (chair)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Stuff/Pickup5 (gameboy)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Stuff/Pickup6 (lamp)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Stuff/Pickup7 (headset)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Stuff/Pickup8 (bin)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Stuff/Pickup9 (plushie)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Stuff/Pickup10 (stand)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Sockets/MonitorSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Sockets/KeyboardSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Sockets/PCSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Sockets/ChairSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Sockets/GameboySocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Sockets/LampSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Sockets/BinSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Sockets/PlushieSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="InteractionBegin" from="Sockets/StandSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
