@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://checarg1ql6ao"]
+[gd_scene load_steps=12 format=3 uid="uid://checarg1ql6ao"]
 
 [ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="1_4q32i"]
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="2_0jona"]
 [ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="3_0hm0j"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_rgihe"]
+[ext_resource type="AudioStream" uid="uid://dm7cugia1b20e" path="res://Music/pickup.wav" id="5_cq5au"]
 [ext_resource type="PackedScene" uid="uid://4ju2to7qj2bc" path="res://Models/Tutorial/powerboxSOCKET.blend" id="5_rqp4w"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
@@ -101,7 +102,12 @@ layers = 524288
 material_override = SubResource("StandardMaterial3D_m75m1")
 size = Vector3(3, 1, 3)
 
+[node name="Pickup" type="AudioStreamPlayer" parent="Area3D"]
+stream = ExtResource("5_cq5au")
+
 [node name="ItemMount" type="Node3D" parent="Area3D"]
 
 [node name="powerboxSOCKET" parent="." instance=ExtResource("5_rqp4w")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.017, -0.508, -0.005)
+
+[connection signal="InteractionBegin" from="Area3D" to="Area3D/Pickup" method="play"]

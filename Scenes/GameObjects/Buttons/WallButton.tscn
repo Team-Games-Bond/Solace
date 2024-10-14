@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://l24j71pyvwho"]
+[gd_scene load_steps=11 format=3 uid="uid://l24j71pyvwho"]
 
 [ext_resource type="Script" path="res://Scripts/Button.cs" id="1_c2jg6"]
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="1_nckxi"]
 [ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="3_u8xoe"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_4gpjd"]
+[ext_resource type="AudioStream" uid="uid://dgx0pmiwlclv5" path="res://Music/press.wav" id="5_coul1"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -93,6 +94,9 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000442505, 0, 0.949793)
 shape = SubResource("BoxShape3D_ivm3t")
 
+[node name="Press" type="AudioStreamPlayer" parent="Area3D"]
+stream = ExtResource("5_coul1")
+
 [node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000442505, 0, 0.949793)
 layers = 524288
@@ -105,3 +109,5 @@ size = Vector3(1.2, 1, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.186289, 0, 0.695991, 0)
 visible = false
 size = Vector3(0.8, 0.8, 1)
+
+[connection signal="InteractionBegin" from="Area3D" to="Area3D/Press" method="play"]

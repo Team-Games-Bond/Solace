@@ -21,3 +21,14 @@
 1. Open the project in Godot
 2. In the editor settings under Dotnet set the editor to your prefered IDE
 3. Set up Blender path to Blender 4.2
+
+
+
+---
+
+### Sound Attributions
+<a href="https://freesound.org/people/Fania_Katz/sounds/749876/">Little melody</a> by <a href="https://freesound.org/people/Fania_Katz/">Fania_Katz</a> | License: <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0</a>
+<br>
+<a href="https://freesound.org/people/el_boss/sounds/665181/">Item or Material Pickup Pop 3 of 3</a> by <a href="https://freesound.org/people/el_boss/">el_boss</a> | License: <a href="http://creativecommons.org/publicdomain/zero/1.0/">Creative Commons 0</a>
+<br>
+<a href="https://freesound.org/people/LittleRobotSoundFactory/sounds/276097/">Gems_Single_06.wav</a> by <a href="https://freesound.org/people/LittleRobotSoundFactory/">LittleRobotSoundFactory</a> | License: <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0</a>

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3ck6p1xdvhnt"]
+[gd_scene load_steps=12 format=3 uid="uid://b3ck6p1xdvhnt"]
 
 [ext_resource type="Script" path="res://Scripts/Button.cs" id="1_dus0x"]
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="2_noerg"]
 [ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="3_oomik"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_mbyxh"]
+[ext_resource type="AudioStream" uid="uid://dgx0pmiwlclv5" path="res://Music/press.wav" id="5_vve2v"]
 [ext_resource type="PackedScene" uid="uid://brvdr6ktafe3m" path="res://Models/Tutorial/Rune rock 1.blend" id="6_7bsh5"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
@@ -99,6 +100,9 @@ layers = 524288
 material_override = SubResource("StandardMaterial3D_rgcj2")
 size = Vector3(3, 1, 3)
 
+[node name="push" type="AudioStreamPlayer" parent="Area3D"]
+stream = ExtResource("5_vve2v")
+
 [node name="Visuals" type="Node3D" parent="."]
 
 [node name="Baseplate" type="CSGBox3D" parent="Visuals"]
@@ -120,3 +124,5 @@ layers = 524288
 use_collision = true
 radius = 0.939434
 height = 4.53563
+
+[connection signal="InteractionBegin" from="Area3D" to="Area3D/push" method="play" unbinds=1]
