@@ -7,7 +7,7 @@
 
 [node name="Clutter room" parent="." node_paths=PackedStringArray("Sockets") instance=ExtResource("1_drdt3")]
 transform = Transform3D(2.26577, 0, 1.05655, 0, 2.5, 0, -1.05655, 0, 2.26577, -2.37136, -1.19209e-07, 0.293248)
-Sockets = [NodePath("Sockets/MonitorSocket"), NodePath("Sockets/KeyboardSocket"), NodePath("Sockets/PCSocket"), NodePath("Sockets/ChairSocket"), NodePath("Sockets/GameboySocket"), NodePath("Sockets/LampSocket"), NodePath("Sockets/BinSocket"), NodePath("Sockets/PlushieSocket"), NodePath("Sockets/StandSocket"), NodePath("")]
+Sockets = [NodePath("Sockets/MonitorSocket"), NodePath("Sockets/KeyboardSocket"), NodePath("Sockets/PCSocket"), NodePath("Sockets/ChairSocket"), NodePath("Sockets/GameboySocket"), NodePath("Sockets/LampSocket"), NodePath("Sockets/BinSocket"), NodePath("Sockets/PlushieSocket"), NodePath("Sockets/StandSocket"), null]
 
 [node name="Character" parent="." instance=ExtResource("2_bmiy2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.93356, 1)
