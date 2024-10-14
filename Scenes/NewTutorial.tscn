@@ -210,35 +210,30 @@ sequenceButtons = [NodePath("WallButton"), NodePath("WallButton3"), NodePath("Wa
 
 [node name="WallButton" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72301, 0.969002, -3.88971)
-verticalBounce = false
 
 [node name="WallButton1" parent="Room 3/ButtonSequence/WallButton" instance=ExtResource("12_7uwsh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.00272393, -0.505888, 0.161667)
 
 [node name="WallButton2" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17986, 0.969002, -3.88971)
-verticalBounce = false
 
 [node name="WallButton2" parent="Room 3/ButtonSequence/WallButton2" instance=ExtResource("13_1pnxe")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0482475, -0.505888, 0.161667)
 
 [node name="WallButton3" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.310832, 0.969002, -3.88971)
-verticalBounce = false
 
 [node name="WallButton3" parent="Room 3/ButtonSequence/WallButton3" instance=ExtResource("14_htcu2")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.035262, -0.505888, 0.161667)
 
 [node name="WallButton4" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79643, 0.969002, -3.88971)
-verticalBounce = false
 
 [node name="WallButton4" parent="Room 3/ButtonSequence/WallButton4" instance=ExtResource("15_fhdw3")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.030483, -0.505888, 0.161667)
 
 [node name="WallButton5" parent="Room 3/ButtonSequence" instance=ExtResource("11_2arag")]
 transform = Transform3D(0.999997, 0, 0.00242601, 0, 1, 0, -0.00242601, 0, 0.999997, 3.22643, 0.969002, -3.88971)
-verticalBounce = false
 
 [node name="WallButton5" parent="Room 3/ButtonSequence/WallButton5" instance=ExtResource("16_sxh5q")]
 transform = Transform3D(1.5, 0, 1.86265e-09, 0, 1.5, 0, -1.86265e-09, 0, 1.5, -0.00311613, -0.505888, 0.161682)
