@@ -41,7 +41,7 @@ material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 2.5)
 
 [node name="MazeEntrance2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 121.455, 10.1918, -101.915)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 120.917, 10.1918, -102.799)
 collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../MazeExit")
@@ -155,7 +155,7 @@ size = Vector3(3, 3, 2.5)
 transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, -0.879292, 1.23217, 1.35325)
 
 [node name="TutorialRoomEntrance3" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
-transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, 49.5537, -33.1333, -61.5108)
+transform = Transform3D(1.08126, 0, -0.6931, 0, 1, 0, 1.03965, 0, 0.720842, 47.5174, -33.1333, -61.5108)
 collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../TutorialRoomEntrance2")
