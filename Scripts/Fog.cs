@@ -229,6 +229,7 @@ public partial class Fog : MeshInstance3D
 		});
 		indicesTask.Start();
 		var arrayMesh = new ArrayMesh();
+		arrayMesh.CustomAabb=new Aabb(0,0,0,3*_planeScale.X,5,3*_planeScale.Y);
 		Mesh = arrayMesh;
 		var arrays = new Godot.Collections.Array();
 		arrays.Resize((int)Mesh.ArrayType.Max);
