@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cll5sdpg2ujtf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sjd05"]
+height = 20.0
+radius = 20.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vg32r"]
+height = 20.0
+radius = 17.0
+
+[node name="RepulsionFieldCylinder" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -6, -6)
+
+[node name="Area3D" type="Area3D" parent="."]
+gravity_space_override = 1
+gravity_point = true
+gravity_point_unit_distance = 17.0
+gravity_point_center = Vector3(0, 1, 0)
+gravity_direction = Vector3(0, 1, 0)
+gravity = -16.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_sjd05")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_vg32r")
