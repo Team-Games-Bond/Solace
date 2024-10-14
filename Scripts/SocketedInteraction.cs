@@ -60,8 +60,10 @@ public partial class SocketedInteraction : Interactable
 
 	public bool AttachItem(Node3D item)
 	{
+		//GD.Print("Socketing  ", item.Name);
 		if(HasItem()) return false;
 		Item = item;
+		if(Item.GetParent() != null) Item.GetParent().RemoveChild(Item);
 		MountPoint.AddChild(Item);
 		return true;
 	}

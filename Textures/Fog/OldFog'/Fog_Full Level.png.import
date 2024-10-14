@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cra53673pcwx3"
-path="res://.godot/imported/fred1.png-4106789427b386e99f60c7a1ac7fd04a.ctex"
+uid="uid://dxq8dxbym658e"
+path="res://.godot/imported/Fog_Full Level.png-14ef1c605ad8a5a952bd9ea9490ed8da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Fog/fred1.png"
-dest_files=["res://.godot/imported/fred1.png-4106789427b386e99f60c7a1ac7fd04a.ctex"]
+source_file="res://Textures/Fog/OldFog'/Fog_Full Level.png"
+dest_files=["res://.godot/imported/Fog_Full Level.png-14ef1c605ad8a5a952bd9ea9490ed8da.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=35 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="3_dfft7"]
 [ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="4_482h2"]
 [ext_resource type="PackedScene" uid="uid://ddh06lut0u3vn" path="res://Models/Main level/Clutter Room/bookshelf.blend" id="4_rbthr"]
+[ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="5_7polk"]
 [ext_resource type="PackedScene" uid="uid://bbulxw05fl62s" path="res://Models/Main level/Clutter Room/monitor.blend" id="5_41mbg"]
 [ext_resource type="PackedScene" uid="uid://daup4tw0qws35" path="res://Models/Main level/Clutter Room/Keyboard.blend" id="6_p7m2v"]
 [ext_resource type="PackedScene" uid="uid://cb58biarx7057" path="res://Models/Main level/Clutter Room/mouse.blend" id="7_sxjma"]
@@ -82,7 +83,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gbdka"]
-size = Vector3(1.43111, 0.627411, 1.55408)
+size = Vector3(1.52708, 0.627411, 0.933865)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqce2"]
 transparency = 1
@@ -90,10 +91,73 @@ shading_mode = 0
 diffuse_mode = 3
 albedo_color = Color(0, 1, 0.223529, 0.145098)
 
-[node name="Clutter room" type="Node3D" node_paths=PackedStringArray("Sockets")]
+[node name="Clutter room" type="Node3D" node_paths=PackedStringArray("Sockets", "Blockers")]
 script = ExtResource("1_0j78k")
 Sockets = [NodePath("Sockets/MonitorSocket"), NodePath("Sockets/KeyboardSocket"), NodePath("Sockets/PCSocket"), NodePath("Sockets/ChairSocket"), NodePath("Sockets/GameboySocket"), NodePath("Sockets/LampSocket"), NodePath("Sockets/BinSocket"), NodePath("Sockets/PlushieSocket"), NodePath("Sockets/StandSocket"), NodePath("Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket")]
 LockKeys = Array[String](["monitor", "keyboard", "pc", "chair", "gameboy", "lamp", "bin", "plushie", "stand", "headset"])
+Blockers = [NodePath("Blockers/Monitor"), NodePath("Blockers/Keyboard"), NodePath("Blockers/PC"), NodePath("Blockers/Chair"), NodePath("Blockers/Gameboy"), NodePath("Blockers/Lamp"), NodePath("Blockers/Bin"), NodePath("Blockers/Plushie"), NodePath("Blockers/Stand"), NodePath("Blockers/Headphones")]
+
+[node name="Blockers" type="Node3D" parent="."]
+
+[node name="Chair" type="CSGBox3D" parent="Blockers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51416, 1.00881, -0.488037)
+visible = false
+use_collision = true
+size = Vector3(0.236755, 2.32532, 1.97607)
+
+[node name="Bin" type="CSGBox3D" parent="Blockers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72179, 1.00881, -0.488037)
+visible = false
+use_collision = true
+size = Vector3(0.236755, 2.32532, 1.97607)
+
+[node name="Stand" type="CSGBox3D" parent="Blockers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67104, 1.00881, -0.488037)
+visible = false
+use_collision = true
+size = Vector3(0.236755, 2.32532, 1.97607)
+
+[node name="Keyboard" type="CSGBox3D" parent="Blockers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66997, 1.00881, -0.488037)
+visible = false
+use_collision = true
+size = Vector3(0.236755, 2.32532, 1.97607)
+
+[node name="Lamp" type="CSGBox3D" parent="Blockers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26525, 1.00881, -0.488037)
+visible = false
+use_collision = true
+size = Vector3(0.236755, 2.32532, 1.97607)
+
+[node name="Gameboy" type="CSGBox3D" parent="Blockers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.73036, 1.00881, -0.488037)
+visible = false
+use_collision = true
+size = Vector3(0.236755, 2.32532, 1.97607)
+
+[node name="PC" type="CSGBox3D" parent="Blockers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79825, 1.00881, -0.488037)
+visible = false
+use_collision = true
+size = Vector3(0.236755, 2.32532, 1.97607)
+
+[node name="Headphones" type="CSGBox3D" parent="Blockers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.28935, 1.00881, -0.488037)
+visible = false
+use_collision = true
+size = Vector3(0.236755, 2.32532, 1.97607)
+
+[node name="Plushie" type="CSGBox3D" parent="Blockers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.63289, 1.00881, -0.488037)
+visible = false
+use_collision = true
+size = Vector3(0.236755, 2.32532, 1.97607)
+
+[node name="Monitor" type="CSGBox3D" parent="Blockers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.33163, 1.00881, -0.488037)
+visible = false
+use_collision = true
+size = Vector3(0.236755, 2.32532, 1.97607)
 
 [node name="Stuff" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
@@ -111,11 +175,13 @@ Item = NodePath("ItemMount/monitor")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup (monitor)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup (monitor)/Area3D"]
 root_node = NodePath("../..")
@@ -137,6 +203,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="monitor" parent="Stuff/Pickup (monitor)/Area3D/ItemMount" instance=ExtResource("5_41mbg")]
 transform = Transform3D(0.15, 0, 4.65661e-09, 0, 0.15, 0, -4.65661e-09, 0, 0.15, 0, 0, 0)
+metadata/ItemKey = "monitor"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup (monitor)/Area3D/ItemMount/monitor"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
@@ -144,7 +211,7 @@ visible = false
 size = Vector3(4.46185, 10.5196, 1)
 
 [node name="Pickup2 (keyboard)" type="Node3D" parent="Stuff" node_paths=PackedStringArray("socket")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.82237, 0.403173, -0.317844)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.31082, 0.403173, -0.317844)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -156,11 +223,13 @@ Item = NodePath("ItemMount/Keyboard")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup2 (keyboard)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup2 (keyboard)/Area3D"]
 root_node = NodePath("../..")
@@ -202,11 +271,13 @@ Item = NodePath("ItemMount/PC case final")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup3 (pc)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup3 (pc)/Area3D"]
 root_node = NodePath("../..")
@@ -248,11 +319,13 @@ Item = NodePath("ItemMount/chair modifiers applied")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup4 (chair)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup4 (chair)/Area3D"]
 root_node = NodePath("../..")
@@ -274,6 +347,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="chair modifiers applied" parent="Stuff/Pickup4 (chair)/Area3D/ItemMount" instance=ExtResource("12_j0275")]
 transform = Transform3D(0.2, 0, 6.39488e-14, 0, 0.2, 0, -6.39488e-14, 0, 0.2, 0, 0, 0)
+metadata/ItemKey = "chair"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup4 (chair)/Area3D/ItemMount/chair modifiers applied"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -0.0935688, 2.87846, -0.0856326)
@@ -293,11 +367,13 @@ Item = NodePath("ItemMount/gameboy ")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 root_node = NodePath("../..")
@@ -319,6 +395,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="gameboy " parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount" instance=ExtResource("13_5u0q2")]
 transform = Transform3D(0.1, 0, -3.72529e-09, 0, 0.1, 0, 3.72529e-09, 0, 0.1, 0, 0, 0)
+metadata/ItemKey = "gameboy"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount/gameboy "]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.0373192, 7.54793, 0.322269)
@@ -338,11 +415,13 @@ Item = NodePath("ItemMount/lamp")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup6 (lamp)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup6 (lamp)/Area3D"]
 root_node = NodePath("../..")
@@ -364,6 +443,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="lamp" parent="Stuff/Pickup6 (lamp)/Area3D/ItemMount" instance=ExtResource("15_sjeq8")]
 transform = Transform3D(0.07, 0, -2.88658e-15, 0, 0.07, 0, 2.88658e-15, 0, 0.07, 0, 0, 0)
+metadata/ItemKey = "lamp"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup6 (lamp)/Area3D/ItemMount/lamp"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.857893, 6.82366, -0.153091)
@@ -383,11 +463,13 @@ Item = NodePath("ItemMount/headset")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup7 (headset)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup7 (headset)/Area3D"]
 root_node = NodePath("../..")
@@ -409,6 +491,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="headset" parent="Stuff/Pickup7 (headset)/Area3D/ItemMount" instance=ExtResource("16_ludrc")]
 transform = Transform3D(0.08, 0, -1.77636e-15, 0, 0.08, 0, 1.77636e-15, 0, 0.08, 0, 0, 0)
+metadata/ItemKey = "headset"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup7 (headset)/Area3D/ItemMount/headset"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.284388, 3.62418, 0)
@@ -428,11 +511,13 @@ Item = NodePath("ItemMount/bin")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup8 (bin)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup8 (bin)/Area3D"]
 root_node = NodePath("../..")
@@ -454,6 +539,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="bin" parent="Stuff/Pickup8 (bin)/Area3D/ItemMount" instance=ExtResource("18_ytpgd")]
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0, 0)
+metadata/ItemKey = "bin"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup8 (bin)/Area3D/ItemMount/bin"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -0.0283775, 4.04961, -0.0172424)
@@ -473,11 +559,13 @@ Item = NodePath("ItemMount/plushie smooth")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup9 (plushie)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup9 (plushie)/Area3D"]
 root_node = NodePath("../..")
@@ -519,11 +607,13 @@ Item = NodePath("ItemMount/stand")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup10 (stand)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup10 (stand)/Area3D"]
 root_node = NodePath("../..")
@@ -549,6 +639,7 @@ script = ExtResource("11_5afxo")
 Sockets = [NodePath("HeadsetSocket")]
 ItemKeys = Array[String](["headset"])
 Buttons = []
+metadata/ItemKey = "stand"
 
 [node name="HeadsetSocket" type="Node3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand" node_paths=PackedStringArray("socket")]
 transform = Transform3D(10, 0, -5.68434e-14, 0, 10, 0, 5.68434e-14, 0, 10, 0.0401001, 3.07584, 0.320101)
@@ -562,11 +653,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket/Area3D"]
 root_node = NodePath("../..")
@@ -606,11 +699,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/MonitorSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/MonitorSocket/Area3D"]
 root_node = NodePath("../..")
@@ -642,11 +737,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/KeyboardSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/KeyboardSocket/Area3D"]
 root_node = NodePath("../..")
@@ -655,7 +752,7 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/KeyboardSocket/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241514, 0, 0.276941)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241514, 0, 0.0747837)
 shape = SubResource("BoxShape3D_gbdka")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Sockets/KeyboardSocket/Area3D"]
@@ -678,11 +775,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/PCSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/PCSocket/Area3D"]
 root_node = NodePath("../..")
@@ -691,7 +790,7 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/PCSocket/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109296, 0, 0.289991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109296, 0, 0.182041)
 shape = SubResource("BoxShape3D_gbdka")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Sockets/PCSocket/Area3D"]
@@ -714,11 +813,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/ChairSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/ChairSocket/Area3D"]
 root_node = NodePath("../..")
@@ -727,7 +828,7 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sockets/ChairSocket/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.152523, 0, 0.290582)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200507, 0, 0.290582)
 shape = SubResource("BoxShape3D_gbdka")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Sockets/ChairSocket/Area3D"]
@@ -750,11 +851,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/GameboySocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/GameboySocket/Area3D"]
 root_node = NodePath("../..")
@@ -789,11 +892,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/LampSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/LampSocket/Area3D"]
 root_node = NodePath("../..")
@@ -825,11 +930,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/BinSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/BinSocket/Area3D"]
 root_node = NodePath("../..")
@@ -860,11 +967,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/PlushieSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/PlushieSocket/Area3D"]
 root_node = NodePath("../..")
@@ -896,11 +1005,13 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/StandSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+offset = Vector2(0, 370)
 pixel_size = 0.001
 billboard = 1
 no_depth_test = true
 render_priority = 10
 texture = ExtResource("4_482h2")
+script = ExtResource("5_7polk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sockets/StandSocket/Area3D"]
 root_node = NodePath("../..")

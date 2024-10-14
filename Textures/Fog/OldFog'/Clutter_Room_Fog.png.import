@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcmpwvyqlb3yu"
-path="res://.godot/imported/Puzzle_Fog.png-6cf45e66c833481f107a7357edf63acb.ctex"
+uid="uid://b3twchc7ct1x0"
+path="res://.godot/imported/Clutter_Room_Fog.png-ea541365dd7cf05145fb0f6765f81cd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Fog/Puzzle_Fog.png"
-dest_files=["res://.godot/imported/Puzzle_Fog.png-6cf45e66c833481f107a7357edf63acb.ctex"]
+source_file="res://Textures/Fog/OldFog'/Clutter_Room_Fog.png"
+dest_files=["res://.godot/imported/Clutter_Room_Fog.png-ea541365dd7cf05145fb0f6765f81cd6.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
