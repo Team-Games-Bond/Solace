@@ -5,6 +5,3 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_cabnp")
-shader_parameter/WAVE_HEIGHT = 3.0
-shader_parameter/NORMAL_STRENGTH = 0.06
-shader_parameter/NOISE_DENSITY = 12.0
