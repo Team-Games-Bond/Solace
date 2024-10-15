@@ -209,6 +209,7 @@ Item = NodePath("ItemMount/PC case final")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup3 (pc)/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup3 (pc)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -258,6 +259,7 @@ Item = NodePath("ItemMount/chair modifiers applied")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup4 (chair)/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup4 (chair)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -306,6 +308,7 @@ Item = NodePath("ItemMount/gameboy ")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -354,6 +357,7 @@ Item = NodePath("ItemMount/lamp")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup6 (lamp)/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup6 (lamp)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -402,6 +406,7 @@ Item = NodePath("ItemMount/headset")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup7 (headset)/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup7 (headset)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -450,6 +455,7 @@ Item = NodePath("ItemMount/bin")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup8 (bin)/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup8 (bin)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -498,6 +504,7 @@ Item = NodePath("ItemMount/plushie smooth")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup9 (plushie)/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup9 (plushie)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -547,6 +554,7 @@ Item = NodePath("ItemMount/stand")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Stuff/Pickup10 (stand)/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup10 (stand)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -637,6 +645,7 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Sockets/MonitorSocket/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/MonitorSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -676,6 +685,7 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Sockets/KeyboardSocket/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/KeyboardSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -715,6 +725,7 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Sockets/PCSocket/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/PCSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -754,6 +765,7 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Sockets/ChairSocket/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/ChairSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -793,6 +805,7 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Sockets/GameboySocket/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/GameboySocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -835,6 +848,7 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Sockets/LampSocket/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/LampSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -874,6 +888,7 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Sockets/BinSocket/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/BinSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -912,6 +927,7 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Sockets/PlushieSocket/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/PlushieSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -952,6 +968,7 @@ MountPoint = NodePath("ItemMount")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Sockets/StandSocket/Area3D"]
 stream = ExtResource("4_x6mgo")
+volume_db = 10.0
 
 [node name="Sprite3D" type="Sprite3D" parent="Sockets/StandSocket/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
