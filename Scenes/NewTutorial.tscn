@@ -31,7 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://b2dnn3qtihkwe" path="res://Music/749876__fania_katz__little-melody.wav" id="29_ypoka"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccuj1"]
-albedo_color = Color(0.905882, 0.74902, 0.505882, 1)
+albedo_color = Color(0.992157, 0.317647, 0.0431373, 1)
 
 [node name="Tutorial" type="Node3D"]
 
@@ -50,9 +50,9 @@ room3Sequence = NodePath("../Room 3/ButtonSequence")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.565)
 
 [node name="Door" type="CSGBox3D" parent="Room 1/Door"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11908, 1.79322, 15.666)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11908, 1.60834, 15.666)
 use_collision = true
-size = Vector3(2.98718, 3.68518, 0.0956268)
+size = Vector3(2.98718, 3.31543, 0.0956268)
 material = ExtResource("2_31byn")
 script = ExtResource("3_cmfws")
 moveDistance = 3.4
@@ -123,9 +123,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16.4665)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.129999)
 
 [node name="Doorway" type="CSGBox3D" parent="Room 2/Door"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11908, 1.88813, 15.7921)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11908, 1.60834, 15.7921)
 use_collision = true
-size = Vector3(2.98718, 3.875, 0.0956268)
+size = Vector3(2.98718, 3.31543, 0.0956268)
 material = ExtResource("2_31byn")
 script = ExtResource("3_cmfws")
 moveDistance = 3.4
