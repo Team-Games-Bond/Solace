@@ -31,7 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://b2dnn3qtihkwe" path="res://Music/749876__fania_katz__little-melody.wav" id="29_ypoka"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccuj1"]
-albedo_color = Color(0.992157, 0.317647, 0.0431373, 1)
+albedo_color = Color(0.611765, 0.431373, 0.254902, 1)
 
 [node name="Tutorial" type="Node3D"]
 
