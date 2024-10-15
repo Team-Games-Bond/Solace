@@ -1779,7 +1779,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29935, 1.54418, 2.31345)
 transform = Transform3D(-8.74228e-08, 0, 1, 0, 1, 0, -1, 0, -8.74228e-08, -0.0376835, -0.542026, -5.96811)
 
 [node name="CrystalRedSocket" parent="Exit Dias/Sockets" instance=ExtResource("15_eahny")]
-transform = Transform3D(-4.37114e-08, -1.55294e-22, -1, 0, 1, 2.68659e-16, 1, -3.55271e-15, -4.37114e-08, 5.75038, -0.139428, 0.104601)
+transform = Transform3D(-4.37114e-08, -1.55294e-22, -1, 0, 1, 2.68659e-16, 1, -3.55271e-15, -4.37114e-08, 5.63596, -0.139428, 0.0346584)
 
 [node name="CrystalBlackSocket3" parent="Exit Dias/Sockets" instance=ExtResource("15_eahny")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0364113, -0.265933, 5.86499)
