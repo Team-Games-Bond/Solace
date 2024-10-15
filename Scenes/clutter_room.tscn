@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=33 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -27,8 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://d2urpyh5gbh2l" path="res://Models/Main level/Clutter Room/paper ball.blend" id="19_yehl4"]
 [ext_resource type="PackedScene" uid="uid://ck4epmivcyeo3" path="res://Models/Main level/Clutter Room/headphone stand.blend" id="20_0t6tp"]
 [ext_resource type="PackedScene" uid="uid://c1fut2iw4ktry" path="res://Models/Main level/Clutter Room/plushie smooth.blend" id="21_v5qrm"]
-[ext_resource type="PackedScene" uid="uid://dbkphwuw6orlp" path="res://Models/Main level/Clutter Room/room layout second room.blend" id="27_qman2"]
-[ext_resource type="PackedScene" uid="uid://dn1gi0idebrts" path="res://Models/Main level/Clutter Room/doorframe.blend" id="28_tthre"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -95,7 +93,7 @@ albedo_color = Color(0, 1, 0.223529, 0.145098)
 script = ExtResource("1_0j78k")
 Sockets = [NodePath("Sockets/MonitorSocket"), NodePath("Sockets/KeyboardSocket"), NodePath("Sockets/PCSocket"), NodePath("Sockets/ChairSocket"), NodePath("Sockets/GameboySocket"), NodePath("Sockets/LampSocket"), NodePath("Sockets/BinSocket"), NodePath("Sockets/PlushieSocket"), NodePath("Sockets/StandSocket"), NodePath("Stuff/Pickup10 (stand)/Area3D/ItemMount/stand/HeadsetSocket")]
 LockKeys = Array[String](["monitor", "keyboard", "pc", "chair", "gameboy", "lamp", "bin", "plushie", "stand", "headset"])
-Blockers = [NodePath("Blockers/Monitor"), NodePath("Blockers/Keyboard"), NodePath("Blockers/PC"), NodePath("Blockers/Chair"), NodePath("Blockers/Gameboy"), NodePath("Blockers/Lamp"), NodePath("Blockers/Bin"), NodePath("Blockers/Plushie"), NodePath("Blockers/Stand"), NodePath("Blockers/Headphones")]
+Blockers = []
 
 [node name="Blockers" type="Node3D" parent="."]
 
@@ -1127,25 +1125,60 @@ transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 
 [node name="Coliders" type="Node3D" parent="."]
 visible = false
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Coliders"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 8.57486, -0.0606668, -0.1574)
+[node name="CSGBox3D21" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6519, 1.52414, 0.574567)
 use_collision = true
-size = Vector3(3.13191, 3.7627, 0.0726318)
+size = Vector3(0.842669, 3.7627, 0.0726318)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.716, 1.80509, 2.71787)
+use_collision = true
+size = Vector3(1.23647, 3.7627, 0.0726318)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(1, -2.13163e-14, 8.47033e-22, 0, -4.37114e-08, -1, 2.13163e-14, 1, -4.37114e-08, 3.94104, -0.0485992, 0.281189)
+use_collision = true
+size = Vector3(12.033, 5.00671, 0.0726318)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.62207, 1.62429, 2.24784)
+use_collision = true
+size = Vector3(1.23647, 3.7627, 0.0726318)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.019717, 1.69897, -2.23043)
+use_collision = true
+size = Vector3(4.15088, 3.7627, 0.0726318)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 8.43293, -0.0606668, -0.133718)
+use_collision = true
+size = Vector3(2.84806, 1.59131, 0.0726318)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.70238, 1.85369, 0.634337)
+use_collision = true
+size = Vector3(0.859393, 3.7627, 0.0726318)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6195, 1.67821, 0.658549)
+use_collision = true
+size = Vector3(0.650461, 3.7627, 0.0726318)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Coliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54625, 1.86709, 1.40186)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75722, 1.86709, 2.0628)
 use_collision = true
-size = Vector3(3.13191, 3.7627, 0.0726318)
+size = Vector3(1.23647, 3.7627, 0.0726318)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Coliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.52201, 1.87068, -1.75018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.52201, 1.87068, -0.955333)
 use_collision = true
 size = Vector3(3.13191, 3.7627, 0.0726318)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="Coliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53911, 1.74838, 0.550813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09318, 1.74838, 0.550813)
 use_collision = true
-size = Vector3(4.80325, 3.7627, 0.0726318)
+size = Vector3(1.91139, 3.7627, 0.0726318)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="Coliders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52488, 1.80478, -0.958251)
@@ -1153,7 +1186,7 @@ use_collision = true
 size = Vector3(4.75592, 3.7627, 0.0726318)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Coliders"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42609, 1.38135, 1.87087)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42609, 1.38135, 1.94153)
 use_collision = true
 size = Vector3(1.41052, 3.7627, 0.0726318)
 
@@ -1162,30 +1195,55 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3219, 1.38135, 1.87087)
 use_collision = true
 size = Vector3(1.39526, 3.7627, 0.0726318)
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="Coliders"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.97616, 1.81045, -1.3538)
+[node name="CSGBox3D23" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.33083, 1.72322, 1.651)
 use_collision = true
-size = Vector3(0.907166, 3.7627, 0.0726318)
+size = Vector3(2.03689, 3.7627, 0.0726318)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Coliders"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.93472, 1.72413, 0.97196)
+[node name="CSGBox3D12" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.12668, 1.81045, -1.59844)
 use_collision = true
-size = Vector3(0.907166, 3.7627, 0.0726318)
+size = Vector3(1.39645, 3.7627, 0.0726318)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.04471, 1.69358, 1.35571)
+use_collision = true
+size = Vector3(1.44942, 3.7627, 0.0726318)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Coliders"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.0961, 1.55274, -0.212144)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.8921, 1.55274, -0.146027)
 use_collision = true
-size = Vector3(3.39612, 3.7627, 0.0726318)
+size = Vector3(1.68106, 3.7627, 0.0726318)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Coliders"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.97693, 1.38135, -0.151771)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.03521, 1.38135, -0.151771)
 use_collision = true
 size = Vector3(4.15088, 3.7627, 0.0726318)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.33867, 1.75804, 1.36141)
+use_collision = true
+size = Vector3(1.45349, 3.7627, 0.0967407)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Coliders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.01149, 1.86114, 1.68131)
+use_collision = true
+size = Vector3(2.17877, 3.7627, 0.0967407)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Coliders"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.08947, 1.38135, 1.26693)
 use_collision = true
 size = Vector3(1.51807, 3.7627, 0.0967407)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Coliders/CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145699, 0.367844, 1.8523)
+use_collision = true
+size = Vector3(1.7738, 3.7627, 0.0967407)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Coliders/CSGBox3D4/CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.113622, 0.367844, 1.32167)
+use_collision = true
+size = Vector3(1.7738, 3.7627, 0.0967407)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Coliders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0467224, -0.0560303, 2.28843)
@@ -1199,12 +1257,6 @@ size = Vector3(2.21179, 1.16846, 1.46771)
 
 [node name="can final" parent="." instance=ExtResource("16_2437d")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.157653, 0.636308, -1.80342)
-
-[node name="room layout second room" parent="." instance=ExtResource("27_qman2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.71606, 0.550726, -0.247427)
-
-[node name="doorframe" parent="." instance=ExtResource("28_tthre")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94748, 1.08356, -0.167)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.463202, 0.292237, -0.836685, -0.886223, -0.145125, 0.439939, 0.00714296, 0.945271, 0.32621, -4.5099, 0, 7.65757)

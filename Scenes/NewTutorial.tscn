@@ -347,37 +347,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.472, 0, -0.437)
 [node name="Boxes" type="Node3D" parent="Room 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0664, 0.476829, 3.29677)
 
-[node name="BasicSocket" parent="Room 3/Boxes" node_paths=PackedStringArray("StartingItem") instance=ExtResource("20_svv4i")]
+[node name="BasicSocket" parent="Room 3/Boxes" instance=ExtResource("20_svv4i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.96886, 0, 1.28527)
-StartingItem = NodePath("cube11")
 
 [node name="cube11" parent="Room 3/Boxes/BasicSocket" instance=ExtResource("16_r3mgr")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 0)
 
-[node name="BasicSocket2" parent="Room 3/Boxes" node_paths=PackedStringArray("StartingItem") instance=ExtResource("20_svv4i")]
+[node name="BasicSocket2" parent="Room 3/Boxes" instance=ExtResource("20_svv4i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.824853, 0, 3.09631)
-StartingItem = NodePath("cube7")
 
 [node name="cube7" parent="Room 3/Boxes/BasicSocket2" instance=ExtResource("17_oku7v")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 0)
 
-[node name="BasicSocket3" parent="Room 3/Boxes" node_paths=PackedStringArray("StartingItem") instance=ExtResource("20_svv4i")]
+[node name="BasicSocket3" parent="Room 3/Boxes" instance=ExtResource("20_svv4i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.68101, 0, 8.9477)
-StartingItem = NodePath("cube3")
 
 [node name="cube3" parent="Room 3/Boxes/BasicSocket3" instance=ExtResource("18_hsf1w")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.0998001, 0)
 
-[node name="BasicSocket4" parent="Room 3/Boxes" node_paths=PackedStringArray("StartingItem") instance=ExtResource("20_svv4i")]
+[node name="BasicSocket4" parent="Room 3/Boxes" instance=ExtResource("20_svv4i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.37145, 4.76837e-07, 7.05783)
-StartingItem = NodePath("cube9")
 
 [node name="cube9" parent="Room 3/Boxes/BasicSocket4" instance=ExtResource("19_sq85m")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.497, 0)
 
-[node name="BasicSocket5" parent="Room 3/Boxes" node_paths=PackedStringArray("StartingItem") instance=ExtResource("20_svv4i")]
+[node name="BasicSocket5" parent="Room 3/Boxes" instance=ExtResource("20_svv4i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.366692, 0, 10.818)
-StartingItem = NodePath("cube4")
 
 [node name="cube4" parent="Room 3/Boxes/BasicSocket5" instance=ExtResource("20_fihni")]
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.1, 0)
