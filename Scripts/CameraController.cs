@@ -56,4 +56,9 @@ public partial class CameraController : Camera3D
 		currentCamera = this;	
 	}
 
+	public float GetDistance() 
+	{
+		return targetDistance;
+	}
+
 }
