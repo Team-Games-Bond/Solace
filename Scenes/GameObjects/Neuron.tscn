@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bt4nhl6e47gcv"]
+[gd_scene load_steps=3 format=3 uid="uid://bt4nhl6e47gcv"]
 
 [ext_resource type="PackedScene" uid="uid://dya6jm4o0tqnn" path="res://Models/Main level/neuron.blend" id="1_nh6bj"]
+[ext_resource type="PackedScene" uid="uid://btsiie6t4g41r" path="res://Scenes/Animated/neuron_wiggle.tscn" id="2_frlg4"]
 
 [node name="Neuron" type="Node3D"]
 
 [node name="neuron" parent="." instance=ExtResource("1_nh6bj")]
 transform = Transform3D(-0.126465, 0, -0.15494, 0, 0.2, 0, 0.15494, 0, -0.126465, 0.149237, 2.38419e-07, 0.161457)
+visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="neuron"]
 transform = Transform3D(-3.16164, 0, 3.87352, 0, 5, 0, -3.87352, 0, -3.16164, -0.337918, 11.5392, -1.24103)
+
+[node name="neuronWiggle" parent="." instance=ExtResource("2_frlg4")]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -0.0487494, 0, -0.0320586)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="neuronWiggle"]
+transform = Transform3D(5.55556, 0, -1.15898e-06, 0, 5.55556, 0, 1.15898e-06, 0, 5.55556, 2.40559, 12.8213, 1.65614)
