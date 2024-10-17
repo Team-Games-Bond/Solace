@@ -267,7 +267,7 @@ draw_pass_1 = SubResource("QuadMesh_6t1sx")
 [node name="ItemMount" type="Node3D" parent="PlayerPivot/sprite little flame"]
 transform = Transform3D(-0.833334, 0, 7.45058e-08, 0, 0.833334, 0, -7.45058e-08, 0, -0.833334, 0.000997679, -0.814175, 1.41784)
 
-[node name="Player Camera" type="Camera3D" parent="." node_paths=PackedStringArray("CharacterController")]
+[node name="Player Camera" type="Camera3D" parent="." node_paths=PackedStringArray("CharacterController") groups=["Character Controllers"]]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 10, 20)
 cull_mask = 524287
 environment = ExtResource("7_6u0kc")
