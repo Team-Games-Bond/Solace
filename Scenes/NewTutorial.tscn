@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtthixalssxpr"]
+[gd_scene load_steps=38 format=3 uid="uid://dtthixalssxpr"]
 
 [ext_resource type="Script" path="res://Scripts/TutorialWorldManager.cs" id="1_kdi47"]
 [ext_resource type="Material" uid="uid://ojjkfm66ff7k" path="res://Materials/Unobstructing Door.tres" id="2_31byn"]
@@ -29,6 +29,13 @@
 [ext_resource type="PackedScene" uid="uid://bywpl634670tt" path="res://Models/Tutorial/tutorialnew.blend" id="27_qmush"]
 [ext_resource type="PackedScene" uid="uid://pscqmxvgbgkq" path="res://Scenes/GameObjects/fountain.tscn" id="28_8winh"]
 [ext_resource type="AudioStream" uid="uid://b2dnn3qtihkwe" path="res://Music/749876__fania_katz__little-melody.wav" id="29_ypoka"]
+[ext_resource type="PackedScene" uid="uid://dy4uvvhxprc24" path="res://Models/Cables/Cable Straight 3m.blend" id="30_d5x6a"]
+[ext_resource type="Script" path="res://Scripts/Cable.cs" id="31_i13ch"]
+[ext_resource type="PackedScene" uid="uid://chvyshukvdh87" path="res://Models/Cables/Cable Straight 5m.blend" id="32_eu60r"]
+[ext_resource type="PackedScene" uid="uid://bigiuc18dniyw" path="res://Models/Cables/Cable 45 Right.blend" id="33_m0a5b"]
+[ext_resource type="PackedScene" uid="uid://bcd8ng7k40js3" path="res://Models/Cables/Cable Straight 4m.blend" id="34_vevf4"]
+[ext_resource type="PackedScene" uid="uid://cmiog0p8nut77" path="res://Models/Cables/Cable Straight 2m.blend" id="35_p4nh8"]
+[ext_resource type="PackedScene" uid="uid://67ar6qw0bmek" path="res://Models/Cables/Cable 45 Left.blend" id="36_0drk4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccuj1"]
 albedo_color = Color(0.992157, 0.317647, 0.0431373, 1)
@@ -393,3 +400,144 @@ stream = ExtResource("29_ypoka")
 
 [node name="Fountain2" parent="." instance=ExtResource("28_8winh")]
 transform = Transform3D(-1.7, 0, -2.56693e-07, 0, 1.7, 0, 2.56693e-07, 0, -1.7, 6.178, 0.096, 25.332)
+
+[node name="LeftCablePath" type="Node3D" parent="."]
+
+[node name="Cable Straight 3m" parent="LeftCablePath" instance=ExtResource("30_d5x6a")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 3.11342, 0, 15.2447)
+
+[node name="Cube" parent="LeftCablePath/Cable Straight 3m" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("31_i13ch")
+start = true
+length = 3.0
+Recievers = {
+3.0: NodePath("../../Cable Straight 5m/Cube")
+}
+
+[node name="Cable Straight 5m" parent="LeftCablePath" instance=ExtResource("32_eu60r")]
+transform = Transform3D(-2.18557e-08, -2.18557e-08, 0.5, -0.5, -2.18557e-08, -2.18557e-08, 2.18557e-08, -0.5, -2.18557e-08, 3.13406, 1.2934, 16.0101)
+
+[node name="Cube" parent="LeftCablePath/Cable Straight 5m" index="0"]
+transform = Transform3D(-1, -8.74228e-08, -8.74228e-08, -8.74228e-08, 1, 8.74228e-08, 8.74228e-08, 8.74228e-08, -1, 0, 0, 0)
+script = ExtResource("31_i13ch")
+length = 5.0
+Recievers = {
+5.0: NodePath("../../Cable 45 Right/Cube")
+}
+
+[node name="Cable 45 Right" parent="LeftCablePath" instance=ExtResource("33_m0a5b")]
+transform = Transform3D(9.55343e-16, 2.18557e-08, -0.5, 0.5, -2.18557e-08, 0, -2.18557e-08, -0.5, -2.18557e-08, 3.13183, 2.8, 16.0127)
+
+[node name="Cube" parent="LeftCablePath/Cable 45 Right" index="0"]
+script = ExtResource("31_i13ch")
+length = 1.0
+Recievers = {
+1.0: NodePath("../../Cable Straight 4m/Cube")
+}
+
+[node name="Cable Straight 4m" parent="LeftCablePath" instance=ExtResource("34_vevf4")]
+transform = Transform3D(0.353553, -6.40139e-09, 0.353553, -0.353553, -1.54543e-08, 0.353553, 6.40139e-09, -0.5, -1.54543e-08, 2.24272, 3.69135, 16)
+
+[node name="Cube" parent="LeftCablePath/Cable Straight 4m" index="0"]
+transform = Transform3D(-1, -2.56055e-08, -5.96046e-08, -2.56055e-08, 1, 6.18172e-08, 5.96046e-08, 6.18172e-08, -1, 0, 0, 0)
+script = ExtResource("31_i13ch")
+length = 4.0
+Recievers = {
+4.0: NodePath("../../Cable 45 Right2/Cube")
+}
+
+[node name="Cable 45 Right2" parent="LeftCablePath" instance=ExtResource("33_m0a5b")]
+transform = Transform3D(-0.353553, 3.09086e-08, -0.353553, 0.353553, -1.35555e-30, -0.353553, -2.18557e-08, -0.5, -2.18557e-08, 1.35923, 4.57459, 16.0127)
+
+[node name="Cube" parent="LeftCablePath/Cable 45 Right2" index="0"]
+transform = Transform3D(1, 0, 1.91069e-15, -7.10543e-15, 1, -7.10543e-15, 1.91069e-15, 0, 1, 0, 1.01702, 0)
+script = ExtResource("31_i13ch")
+length = 1.0
+Recievers = {
+1.0: NodePath("../../Cable Straight 2m/Cube")
+}
+
+[node name="Cable Straight 2m" parent="LeftCablePath" instance=ExtResource("35_p4nh8")]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0.612834, 4.57453, 16)
+
+[node name="Cube" parent="LeftCablePath/Cable Straight 2m" index="0"]
+transform = Transform3D(-1, -3.82137e-15, 8.74228e-08, 3.82137e-15, 1, 8.74228e-08, -8.74228e-08, 8.74228e-08, -1, 0, 0, 0)
+script = ExtResource("31_i13ch")
+length = 2.0
+
+[node name="RightCablePath" type="Node3D" parent="."]
+
+[node name="Cable Straight 3m2" parent="RightCablePath" instance=ExtResource("30_d5x6a")]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -3.42851, 0, 15.2)
+
+[node name="Cube" parent="RightCablePath/Cable Straight 3m2" index="0"]
+script = ExtResource("31_i13ch")
+start = true
+length = 3.0
+Recievers = {
+3.0: NodePath("../../Cable Straight 5m2/Cube")
+}
+
+[node name="Cable Straight 5m2" parent="RightCablePath" instance=ExtResource("32_eu60r")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, -0.5, -2.18557e-08, -2.18557e-08, 2.18557e-08, -0.5, 9.55343e-16, -3.429, 1.3, 16)
+
+[node name="Cube" parent="RightCablePath/Cable Straight 5m2" index="0"]
+transform = Transform3D(-1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 0, -8.74228e-08, -7.64274e-15, -1, 0, 0, 0)
+script = ExtResource("31_i13ch")
+length = 5.0
+Recievers = {
+5.0: NodePath("../../Cable 45 Left/Cube")
+}
+
+[node name="Cable 45 Left" parent="RightCablePath" instance=ExtResource("36_0drk4")]
+transform = Transform3D(-2.18557e-08, 2.18557e-08, -0.5, 0.5, -2.18557e-08, -2.18557e-08, -2.18557e-08, -0.5, -2.18557e-08, -3.429, 2.8, 16)
+
+[node name="Cube" parent="RightCablePath/Cable 45 Left" index="0"]
+script = ExtResource("31_i13ch")
+length = 1.0
+Recievers = {
+1.0: NodePath("../../Cable Straight 4m2/Cube")
+}
+
+[node name="Cable Straight 4m2" parent="RightCablePath" instance=ExtResource("34_vevf4")]
+transform = Transform3D(-0.353553, -1.54543e-08, 0.353553, -0.353553, -1.54543e-08, -0.353553, 2.18557e-08, -0.5, 9.55343e-16, -2.5444, 3.68494, 16)
+
+[node name="Cube" parent="RightCablePath/Cable Straight 4m2" index="0"]
+transform = Transform3D(-1, -8.74228e-08, 5.96046e-08, -8.74228e-08, 1, -1.34329e-16, -5.96046e-08, -1.24345e-14, -1, 0, 0, 0)
+script = ExtResource("31_i13ch")
+length = 4.0
+Recievers = {
+4.0: NodePath("../../Cable 45 Left2/Cube")
+}
+
+[node name="Cable 45 Left2" parent="RightCablePath" instance=ExtResource("36_0drk4")]
+transform = Transform3D(0.353553, -5.80545e-16, -0.353553, 0.353553, -3.09086e-08, 0.353553, -2.18557e-08, -0.5, -2.18557e-08, -1.66084, 4.56841, 16)
+
+[node name="Cube" parent="RightCablePath/Cable 45 Left2" index="0"]
+script = ExtResource("31_i13ch")
+length = 1.0
+Recievers = {
+1.0: NodePath("../../Cable Straight 2m2/Cube")
+}
+
+[node name="Cable Straight 2m2" parent="RightCablePath" instance=ExtResource("35_p4nh8")]
+transform = Transform3D(-0.5, -2.18557e-08, -4.37114e-08, 4.37114e-08, 9.55343e-16, -0.5, 2.18557e-08, -0.5, 9.55343e-16, -0.910806, 4.56801, 16)
+
+[node name="Cube" parent="RightCablePath/Cable Straight 2m2" index="0"]
+transform = Transform3D(-1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 0, -8.74228e-08, -7.64274e-15, -1, 0, 0, 0)
+script = ExtResource("31_i13ch")
+length = 2.0
+
+[editable path="LeftCablePath/Cable Straight 3m"]
+[editable path="LeftCablePath/Cable Straight 5m"]
+[editable path="LeftCablePath/Cable 45 Right"]
+[editable path="LeftCablePath/Cable Straight 4m"]
+[editable path="LeftCablePath/Cable 45 Right2"]
+[editable path="LeftCablePath/Cable Straight 2m"]
+[editable path="RightCablePath/Cable Straight 3m2"]
+[editable path="RightCablePath/Cable Straight 5m2"]
+[editable path="RightCablePath/Cable 45 Left"]
+[editable path="RightCablePath/Cable Straight 4m2"]
+[editable path="RightCablePath/Cable 45 Left2"]
+[editable path="RightCablePath/Cable Straight 2m2"]
