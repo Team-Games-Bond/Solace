@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public partial class FogClearDelete : Node
 {
@@ -14,8 +15,10 @@ public partial class FogClearDelete : Node
 	{
 	}
 	public void Delete(int toDelete){
+		GD.Print("Checking to delete ", (FogLocation)toDelete, " in ", location);
 		if((FogLocation)toDelete==location){
 			QueueFree();
+			GD.Print("Deleted ", location);
 		}
 	}
 }

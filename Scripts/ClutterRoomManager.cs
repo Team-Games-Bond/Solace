@@ -6,7 +6,8 @@ public partial class ClutterRoomManager : Node
 	[ExportGroup("Sockets")]
 	[Export] public Godot.Collections.Array<PlacementMonitor> Sockets { get; set; }
 	[Export] public Godot.Collections.Array<string> LockKeys { get; set; }
-
+	[ExportGroup("Blockers")]
+	[Export] public Godot.Collections.Array<CsgBox3D> Blockers { get; set; }
 	[Signal] public delegate void CompletedEventHandler();
 
 	private Godot.Collections.Array<bool> socketsFilled;
@@ -41,6 +42,7 @@ public partial class ClutterRoomManager : Node
 		if(!correctItem) GD.PushError("Item Placed In Locked Socket was not correct");
 		int socketIndex = GetSocketIndex(monitor);
 		socketsFilled[socketIndex] = true;
+		Blockers[socketIndex].UseCollision = false;
 
 		CheckCompletion();
 	}
