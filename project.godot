@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3", "C#", "Mobile")
 boot_splash/image="res://Textures/Games Bond Splash.png"
 config/icon="res://Textures/icon.svg"
 
+[autoload]
+
+WindowControl="*res://Scripts/WindowControl.cs"
+
 [dotnet]
 
 project/assembly_name="Capstone Project"
