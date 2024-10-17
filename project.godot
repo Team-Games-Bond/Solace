@@ -97,3 +97,10 @@ Bayer16={
 "type": "sampler2D",
 "value": "res://Textures/bayer16.png"
 }
+
+[shader_globals]
+
+Bayer16={
+"type": "sampler2D",
+"value": "res://Textures/bayer16.png"
+}
