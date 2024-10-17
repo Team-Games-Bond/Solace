@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public partial class PlacementMonitor : Node3D
 {
+	[Export] public Node3D StartingItem;
+
 	[ExportGroup("Settings")]
 	[Export] public String ItemKey = "";
 	[Export] bool SendRaw = false;
@@ -21,6 +23,9 @@ public partial class PlacementMonitor : Node3D
 	{
 		socket.InteractionBegin += Begin;
 		setSocketActive(isActive);
+
+		//Check if has item pre-placed
+		if(StartingItem != null) attachItem(StartingItem);
 	}
 
 	public void Begin(CharacterController player)
@@ -64,6 +69,7 @@ public partial class PlacementMonitor : Node3D
 
 	public bool attachItem(Node3D item) //Returns false if item already attached
 	{
+		GD.Print("Attaching ", item.Name);
 		var successful = socket.AttachItem(item);
 		if(successful) 
 		{
@@ -77,6 +83,7 @@ public partial class PlacementMonitor : Node3D
 				EmitSignal(SignalName.ItemPlacedRaw, socket.Item, this);
 			}
 		}
+		if(successful) GD.Print("Attaching ", item.Name, " was successful");
 		return successful;
 	}
 
