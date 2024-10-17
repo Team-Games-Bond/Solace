@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Capstone Project"
-run/main_scene="res://Scenes/Testing Scenes/Testing text and zoom.tscn"
+run/main_scene="res://Scenes/Testing Scenes/MainLevelTesting.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 boot_splash/image="res://Textures/Games Bond Splash.png"
 config/icon="res://Textures/icon.svg"
@@ -93,7 +93,6 @@ quick_exit={
 
 [rendering]
 
-renderer/rendering_method="mobile"
 Bayer16={
 "type": "sampler2D",
 "value": "res://Textures/bayer16.png"
