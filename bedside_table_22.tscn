@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://tppnoni3vcqq"]
+
+[ext_resource type="PackedScene" uid="uid://cxii2nrel0mct" path="res://Models/Main level/Clutter Room/bedside table.blend" id="1_wq5vv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxbee"]
+albedo_color = Color(0.730731, 0.318838, 0.131722, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xf6ku"]
+albedo_color = Color(0.987499, 0.466937, 0.136616, 1)
+
+[node name="bedside table2" instance=ExtResource("1_wq5vv")]
+
+[node name="Cylinder" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cxbee")
+
+[node name="bedside table" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xf6ku")
