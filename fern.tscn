@@ -1,14 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://xnvt870dpbim"]
+[gd_scene load_steps=6 format=3 uid="uid://xnvt870dpbim"]
 
 [ext_resource type="PackedScene" uid="uid://bvlobnvaju5bt" path="res://Models/Main level/Clutter Room/fern.blend" id="1_s8h84"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5yda"]
+albedo_color = Color(0.780407, 0.284692, 0, 1)
+roughness = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cu8f3"]
+albedo_color = Color(0.672528, 0.218823, 0.0209212, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1oxs2"]
 albedo_color = Color(0.836402, 0.496728, 1.92523e-07, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chkju"]
-albedo_color = Color(0.658824, 0.329412, 0.282353, 1)
+albedo_color = Color(0.908218, 0.408227, 0.180511, 1)
 
 [node name="fern" instance=ExtResource("1_s8h84")]
+
+[node name="Plane" parent="." index="0"]
+transform = Transform3D(-0.0697928, 0, 0.263017, 0, 0.272119, 0, -0.263017, 0, -0.0697928, 1.93124, 3.54797, 0.501449)
+surface_material_override/0 = SubResource("StandardMaterial3D_v5yda")
+
+[node name="NurbsPath" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cu8f3")
+
+[node name="Plane_001" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_v5yda")
+
+[node name="NurbsPath_001" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cu8f3")
+
+[node name="Plane_002" parent="." index="5"]
+transform = Transform3D(-0.0955878, 0, -0.254778, 0, 0.272119, 0, 0.254778, 0, -0.0955878, -1.18513, 3.39153, -1.53544)
+surface_material_override/0 = SubResource("StandardMaterial3D_v5yda")
+
+[node name="NurbsPath_002" parent="." index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cu8f3")
 
 [node name="Cylinder" parent="." index="7"]
 surface_material_override/0 = SubResource("StandardMaterial3D_1oxs2")
