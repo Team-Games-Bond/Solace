@@ -1,0 +1,159 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3dynlagjsiu5"]
+
+[ext_resource type="Texture2D" uid="uid://csn677i73r7oe" path="res://Textures/Lyra-vec.png" id="1_f3lbk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Melody" type="HBoxContainer" parent="ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer2/VBoxContainer/Melody"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_f3lbk")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/VBoxContainer/Melody"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=48][b]Person[/b][/font_size]
+sdfasdf
+dsafdsfa
+fdsdsafds"
+fit_content = true
+
+[node name="Maddie" type="HBoxContainer" parent="ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/VBoxContainer/Maddie"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=48][b]Person[/b][/font_size]
+visual Programmer
+sdfasdf
+dsafdsfa
+fdsdsafds"
+fit_content = true
+text_direction = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer2/VBoxContainer/Maddie"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_f3lbk")
+expand_mode = 2
+
+[node name="Selena" type="HBoxContainer" parent="ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer2/VBoxContainer/Selena"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_f3lbk")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/VBoxContainer/Selena"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=48][b]Person[/b][/font_size]
+sdfasdf
+dsafdsfa
+fdsdsafds"
+fit_content = true
+
+[node name="Fred" type="HBoxContainer" parent="ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/VBoxContainer/Fred"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=48][b]Person[/b][/font_size]
+visual Programmer
+sdfasdf
+dsafdsfa
+fdsdsafds"
+fit_content = true
+text_direction = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer2/VBoxContainer/Fred"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_f3lbk")
+expand_mode = 2
+
+[node name="Sam" type="HBoxContainer" parent="ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer2/VBoxContainer/Sam"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_f3lbk")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/VBoxContainer/Sam"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=48][b]Person[/b][/font_size]
+sdfasdf
+dsafdsfa
+fdsdsafds"
+fit_content = true
+
+[node name="Julia" type="HBoxContainer" parent="ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/VBoxContainer/Julia"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=48][b]Person[/b][/font_size]
+visual Programmer
+sdfasdf
+dsafdsfa
+fdsdsafds"
+fit_content = true
+text_direction = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer2/VBoxContainer/Julia"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_f3lbk")
+expand_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/VBoxContainer"]
+layout_mode = 2
