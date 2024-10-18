@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=38 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://xnvt870dpbim" path="res://fern.tscn" id="26_j4o2d"]
 [ext_resource type="PackedScene" uid="uid://bfwyxfo2v3mm0" path="res://paper_ball4.tscn" id="26_vbgpa"]
 [ext_resource type="PackedScene" uid="uid://daytihksimop5" path="res://bed.tscn" id="28_76mon"]
+[ext_resource type="PackedScene" uid="uid://bi0xlstfo2r4p" path="res://Models/Main level/Clutter Room/rug.blend" id="32_oitcy"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -253,7 +254,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="Keyboard" parent="Stuff/Pickup2 (keyboard)/Area3D/ItemMount" instance=ExtResource("6_p7m2v")]
 transform = Transform3D(0.11, 0, -6.21725e-15, 0, 0.11, 0, 6.21725e-15, 0, 0.11, 0, 0, 0)
-metadata/ItemKey = "keyboard"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup2 (keyboard)/Area3D/ItemMount/Keyboard"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
@@ -301,7 +301,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="PC case final" parent="Stuff/Pickup3 (pc)/Area3D/ItemMount" instance=ExtResource("8_440yg")]
 transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
-metadata/ItemKey = "pc"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup3 (pc)/Area3D/ItemMount/PC case final"]
 transform = Transform3D(1, 0, -7.45174e-09, 0, 1, 0, 7.45174e-09, 0, 1, 0.0457895, 6.80812, -1.3081)
@@ -588,7 +587,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="plushie smooth" parent="Stuff/Pickup9 (plushie)/Area3D/ItemMount" instance=ExtResource("21_v5qrm")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
-metadata/ItemKey = "plushie"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup9 (plushie)/Area3D/ItemMount/plushie smooth"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.42543, 27.9839, 1.25256)
@@ -1264,3 +1262,6 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.157653, 0.636308, -1.
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.463202, 0.292237, -0.836685, -0.886223, -0.145125, 0.439939, 0.00714296, 0.945271, 0.32621, -4.5099, 0, 7.65757)
+
+[node name="rug" parent="." instance=ExtResource("32_oitcy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.164311, 0.00650615, -0.0880682)

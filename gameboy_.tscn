@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://k26q0am8pn6v" path="res://Models/Main level/Clutter Room/gameboy .blend" id="1_c7c1i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksmc8"]
-albedo_color = Color(1, 0.564706, 0.133333, 1)
+albedo_color = Color(0.815686, 0.454902, 0.129412, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkh3c"]
-albedo_color = Color(0.907376, 0.395713, 0, 1)
+albedo_color = Color(0.815686, 0.454902, 0.129412, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xfcon"]
-albedo_color = Color(1, 0.427451, 0.168627, 1)
+albedo_color = Color(0.815686, 0.454902, 0.129412, 1)
 
 [node name="gameboy " instance=ExtResource("1_c7c1i")]
 
@@ -24,3 +24,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xfcon")
 
 [node name="Cube_ bottom (BOTTOM PANE)_002" parent="." index="22"]
 surface_material_override/0 = SubResource("StandardMaterial3D_xfcon")
+
+[node name="screen attachment righjt" parent="." index="23"]
+visible = false
