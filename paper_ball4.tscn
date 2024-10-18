@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfwyxfo2v3mm0"]
+
+[ext_resource type="PackedScene" uid="uid://d2urpyh5gbh2l" path="res://Models/Main level/Clutter Room/paper ball.blend" id="1_2348m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3swu"]
+albedo_color = Color(1, 0.784314, 0.788235, 1)
+
+[node name="paper ball" instance=ExtResource("1_2348m")]
+
+[node name="Icosphere" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_x3swu")
