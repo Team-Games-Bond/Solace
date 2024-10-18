@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://daytihksimop5"]
+
+[ext_resource type="PackedScene" uid="uid://byu6s2fgyikqn" path="res://Models/Main level/Clutter Room/bed.blend" id="1_xik35"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ck2r"]
+albedo_color = Color(0.981977, 0.392443, 0.221357, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3qqo"]
+albedo_color = Color(0.988465, 0.521175, 0.352825, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aakdj"]
+albedo_color = Color(0.878795, 0.426154, 0.217418, 1)
+
+[node name="bed" instance=ExtResource("1_xik35")]
+
+[node name="Sheets" parent="." index="0"]
+transform = Transform3D(0.851997, 0, 0, 0, 0.851997, 0, 0, 0, 0.851997, -0.567262, 0.598475, 1.09852)
+surface_material_override/0 = SubResource("StandardMaterial3D_3ck2r")
+surface_material_override/1 = SubResource("StandardMaterial3D_j3qqo")
+
+[node name="mattress" parent="Sheets" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_aakdj")
