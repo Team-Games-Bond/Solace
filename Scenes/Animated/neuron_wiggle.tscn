@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://btsiie6t4g41r"]
+[gd_scene load_steps=3 format=3 uid="uid://btsiie6t4g41r"]
 
 [ext_resource type="PackedScene" uid="uid://cyq705sa5lcef" path="res://Scenes/Animated/neuronWiggle.glb" id="1_ictuf"]
+[ext_resource type="Script" path="res://Scripts/NeuronWiggle.cs" id="2_nnq01"]
 
-[node name="neuronWiggle" instance=ExtResource("1_ictuf")]
+[node name="neuronWiggle" node_paths=PackedStringArray("timer", "animationPlayer") instance=ExtResource("1_ictuf")]
+script = ExtResource("2_nnq01")
+timer = NodePath("Timer")
+animationPlayer = NodePath("AnimationPlayer")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/rotation = Quaternion(1.17945e-11, 1.61544e-17, 0.0816653, 0.99666)
@@ -20,3 +24,6 @@ bones/10/position = Vector3(0.40303, 2.67648, 0)
 [node name="AnimationPlayer" parent="." index="3"]
 autoplay = "wiggle"
 speed_scale = 0.415
+
+[node name="Timer" type="Timer" parent="." index="4"]
+one_shot = true
