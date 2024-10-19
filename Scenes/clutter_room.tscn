@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=38 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://daup4tw0qws35" path="res://Models/Main level/Clutter Room/Keyboard.blend" id="6_p7m2v"]
 [ext_resource type="PackedScene" uid="uid://cb58biarx7057" path="res://Models/Main level/Clutter Room/mouse.blend" id="7_sxjma"]
 [ext_resource type="PackedScene" uid="uid://onn38v3lg6rn" path="res://Models/Main level/Clutter Room/PC case final.blend" id="8_440yg"]
-[ext_resource type="PackedScene" uid="uid://cjq0b0hiafijm" path="res://chair_modifiers_applied.tscn" id="9_0t85j"]
+[ext_resource type="PackedScene" path="res://chair_modifiers_applied.tscn" id="9_0t85j"]
 [ext_resource type="PackedScene" uid="uid://lyu2x115w6vo" path="res://Models/Main level/Clutter Room/mug.blend" id="9_odbiv"]
-[ext_resource type="PackedScene" uid="uid://dlwu5et4j1dwi" path="res://gameboy_.tscn" id="10_sgr12"]
+[ext_resource type="PackedScene" path="res://gameboy_.tscn" id="10_sgr12"]
 [ext_resource type="Script" path="res://Scripts/LockedItem.cs" id="11_5afxo"]
 [ext_resource type="PackedScene" uid="uid://blx188hqqcn7y" path="res://Models/Main level/Clutter Room/mousepad.blend" id="11_n4j80"]
 [ext_resource type="PackedScene" uid="uid://dh3yhu1p3mirs" path="res://Models/Main level/Clutter Room/chair modifiers applied.blend" id="12_j0275"]
@@ -20,17 +20,18 @@
 [ext_resource type="PackedScene" uid="uid://b6uwbfwdhnun" path="res://Models/Main level/Clutter Room/lamp.blend" id="15_sjeq8"]
 [ext_resource type="PackedScene" uid="uid://de2fnhrx0jxmu" path="res://Models/Main level/Clutter Room/can final.blend" id="16_2437d"]
 [ext_resource type="PackedScene" uid="uid://cl46y58q6ss7e" path="res://Models/Main level/Clutter Room/headset.blend" id="16_ludrc"]
-[ext_resource type="PackedScene" uid="uid://cig4okdecn5g3" path="res://room_layout.tscn" id="18_ui3ch"]
+[ext_resource type="PackedScene" path="res://room_layout.tscn" id="18_ui3ch"]
 [ext_resource type="PackedScene" uid="uid://dnm6wcryjotpr" path="res://Models/Main level/Clutter Room/bin.blend" id="18_ytpgd"]
-[ext_resource type="PackedScene" uid="uid://b3ol7vk36l5b3" path="res://desk.tscn" id="19_vkpkm"]
+[ext_resource type="PackedScene" uid="uid://b7yrd3uw4w0f4" path="res://Scenes/rug.blend" id="19_5nvf4"]
+[ext_resource type="PackedScene" path="res://desk.tscn" id="19_vkpkm"]
 [ext_resource type="PackedScene" uid="uid://ck4epmivcyeo3" path="res://Models/Main level/Clutter Room/headphone stand.blend" id="20_0t6tp"]
 [ext_resource type="PackedScene" uid="uid://c1fut2iw4ktry" path="res://Models/Main level/Clutter Room/plushie smooth.blend" id="21_v5qrm"]
-[ext_resource type="PackedScene" uid="uid://cln3xqb54q6vg" path="res://bookshelf.tscn" id="23_abatq"]
-[ext_resource type="PackedScene" uid="uid://tppnoni3vcqq" path="res://bedside_table_22.tscn" id="24_an4wl"]
-[ext_resource type="PackedScene" uid="uid://3cr3npks3a4i" path="res://paper_ball.tscn" id="25_lfds3"]
-[ext_resource type="PackedScene" uid="uid://xnvt870dpbim" path="res://fern.tscn" id="26_j4o2d"]
-[ext_resource type="PackedScene" uid="uid://bfwyxfo2v3mm0" path="res://paper_ball4.tscn" id="26_vbgpa"]
-[ext_resource type="PackedScene" uid="uid://daytihksimop5" path="res://bed.tscn" id="28_76mon"]
+[ext_resource type="PackedScene" path="res://bookshelf.tscn" id="23_abatq"]
+[ext_resource type="PackedScene" path="res://bedside_table_22.tscn" id="24_an4wl"]
+[ext_resource type="PackedScene" path="res://paper_ball.tscn" id="25_lfds3"]
+[ext_resource type="PackedScene" path="res://fern.tscn" id="26_j4o2d"]
+[ext_resource type="PackedScene" path="res://paper_ball4.tscn" id="26_vbgpa"]
+[ext_resource type="PackedScene" path="res://bed.tscn" id="28_76mon"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -1035,6 +1036,9 @@ size = Vector3(0.948846, 0.90918, 1.10649)
 
 [node name="room layout" parent="." instance=ExtResource("18_ui3ch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
+
+[node name="rug" parent="room layout" instance=ExtResource("19_5nvf4")]
+transform = Transform3D(0.590106, 0, 0, 0, 1, 0, 0, 0, 0.695593, -0.514924, -0.00259852, 1.04066)
 
 [node name="desk" parent="room layout" instance=ExtResource("19_vkpkm")]
 transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -1.34774, 0.414874, -1.3846)
