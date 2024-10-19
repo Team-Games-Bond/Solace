@@ -1,32 +1,37 @@
-[gd_scene load_steps=33 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=38 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
-[ext_resource type="PackedScene" uid="uid://byu6s2fgyikqn" path="res://Models/Main level/Clutter Room/bed.blend" id="2_tltt7"]
 [ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="2_wtvm2"]
-[ext_resource type="PackedScene" uid="uid://d2v1bwhvibuni" path="res://Models/Main level/Clutter Room/desk.blend" id="3_ahs05"]
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="3_dfft7"]
 [ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="4_482h2"]
-[ext_resource type="PackedScene" uid="uid://ddh06lut0u3vn" path="res://Models/Main level/Clutter Room/bookshelf.blend" id="4_rbthr"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="5_7polk"]
 [ext_resource type="PackedScene" uid="uid://bbulxw05fl62s" path="res://Models/Main level/Clutter Room/monitor.blend" id="5_41mbg"]
 [ext_resource type="PackedScene" uid="uid://daup4tw0qws35" path="res://Models/Main level/Clutter Room/Keyboard.blend" id="6_p7m2v"]
 [ext_resource type="PackedScene" uid="uid://cb58biarx7057" path="res://Models/Main level/Clutter Room/mouse.blend" id="7_sxjma"]
 [ext_resource type="PackedScene" uid="uid://onn38v3lg6rn" path="res://Models/Main level/Clutter Room/PC case final.blend" id="8_440yg"]
+[ext_resource type="PackedScene" uid="uid://cjq0b0hiafijm" path="res://chair_modifiers_applied.tscn" id="9_0t85j"]
 [ext_resource type="PackedScene" uid="uid://lyu2x115w6vo" path="res://Models/Main level/Clutter Room/mug.blend" id="9_odbiv"]
+[ext_resource type="PackedScene" uid="uid://dlwu5et4j1dwi" path="res://gameboy_.tscn" id="10_sgr12"]
 [ext_resource type="Script" path="res://Scripts/LockedItem.cs" id="11_5afxo"]
 [ext_resource type="PackedScene" uid="uid://blx188hqqcn7y" path="res://Models/Main level/Clutter Room/mousepad.blend" id="11_n4j80"]
 [ext_resource type="PackedScene" uid="uid://dh3yhu1p3mirs" path="res://Models/Main level/Clutter Room/chair modifiers applied.blend" id="12_j0275"]
 [ext_resource type="PackedScene" uid="uid://k26q0am8pn6v" path="res://Models/Main level/Clutter Room/gameboy .blend" id="13_5u0q2"]
-[ext_resource type="PackedScene" uid="uid://cxii2nrel0mct" path="res://Models/Main level/Clutter Room/bedside table.blend" id="14_mmxt8"]
 [ext_resource type="PackedScene" uid="uid://b6uwbfwdhnun" path="res://Models/Main level/Clutter Room/lamp.blend" id="15_sjeq8"]
 [ext_resource type="PackedScene" uid="uid://de2fnhrx0jxmu" path="res://Models/Main level/Clutter Room/can final.blend" id="16_2437d"]
 [ext_resource type="PackedScene" uid="uid://cl46y58q6ss7e" path="res://Models/Main level/Clutter Room/headset.blend" id="16_ludrc"]
-[ext_resource type="PackedScene" uid="uid://bvlobnvaju5bt" path="res://Models/Main level/Clutter Room/fern.blend" id="17_tyj78"]
+[ext_resource type="PackedScene" uid="uid://cig4okdecn5g3" path="res://room_layout.tscn" id="18_ui3ch"]
 [ext_resource type="PackedScene" uid="uid://dnm6wcryjotpr" path="res://Models/Main level/Clutter Room/bin.blend" id="18_ytpgd"]
-[ext_resource type="PackedScene" uid="uid://d2urpyh5gbh2l" path="res://Models/Main level/Clutter Room/paper ball.blend" id="19_yehl4"]
+[ext_resource type="PackedScene" uid="uid://b3ol7vk36l5b3" path="res://desk.tscn" id="19_vkpkm"]
 [ext_resource type="PackedScene" uid="uid://ck4epmivcyeo3" path="res://Models/Main level/Clutter Room/headphone stand.blend" id="20_0t6tp"]
 [ext_resource type="PackedScene" uid="uid://c1fut2iw4ktry" path="res://Models/Main level/Clutter Room/plushie smooth.blend" id="21_v5qrm"]
+[ext_resource type="PackedScene" uid="uid://cln3xqb54q6vg" path="res://bookshelf.tscn" id="23_abatq"]
+[ext_resource type="PackedScene" uid="uid://tppnoni3vcqq" path="res://bedside_table_22.tscn" id="24_an4wl"]
+[ext_resource type="PackedScene" uid="uid://3cr3npks3a4i" path="res://paper_ball.tscn" id="25_lfds3"]
+[ext_resource type="PackedScene" uid="uid://xnvt870dpbim" path="res://fern.tscn" id="26_j4o2d"]
+[ext_resource type="PackedScene" uid="uid://bfwyxfo2v3mm0" path="res://paper_ball4.tscn" id="26_vbgpa"]
+[ext_resource type="PackedScene" uid="uid://daytihksimop5" path="res://bed.tscn" id="28_76mon"]
+[ext_resource type="PackedScene" uid="uid://bi0xlstfo2r4p" path="res://Models/Main level/Clutter Room/rug.blend" id="32_oitcy"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -249,7 +254,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="Keyboard" parent="Stuff/Pickup2 (keyboard)/Area3D/ItemMount" instance=ExtResource("6_p7m2v")]
 transform = Transform3D(0.11, 0, -6.21725e-15, 0, 0.11, 0, 6.21725e-15, 0, 0.11, 0, 0, 0)
-metadata/ItemKey = "keyboard"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup2 (keyboard)/Area3D/ItemMount/Keyboard"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
@@ -297,7 +301,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="PC case final" parent="Stuff/Pickup3 (pc)/Area3D/ItemMount" instance=ExtResource("8_440yg")]
 transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
-metadata/ItemKey = "pc"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup3 (pc)/Area3D/ItemMount/PC case final"]
 transform = Transform3D(1, 0, -7.45174e-09, 0, 1, 0, 7.45174e-09, 0, 1, 0.0457895, 6.80812, -1.3081)
@@ -309,11 +312,10 @@ transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 2.3781
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup4 (chair)" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup4 (chair)" node_paths=PackedStringArray("MountPoint")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
-Item = NodePath("ItemMount/chair modifiers applied")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup4 (chair)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -343,11 +345,12 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="ItemMount" type="Node3D" parent="Stuff/Pickup4 (chair)/Area3D"]
 
-[node name="chair modifiers applied" parent="Stuff/Pickup4 (chair)/Area3D/ItemMount" instance=ExtResource("12_j0275")]
+[node name="chair modifiers applied2" parent="Stuff/Pickup4 (chair)/Area3D/ItemMount" instance=ExtResource("9_0t85j")]
 transform = Transform3D(0.2, 0, 6.39488e-14, 0, 0.2, 0, -6.39488e-14, 0, 0.2, 0, 0, 0)
 metadata/ItemKey = "chair"
+metadata/Itemkey = "chairs"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup4 (chair)/Area3D/ItemMount/chair modifiers applied"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup4 (chair)/Area3D/ItemMount/chair modifiers applied2"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -0.0935688, 2.87846, -0.0856326)
 visible = false
 size = Vector3(2.35642, 14.2823, 2.50427)
@@ -357,11 +360,10 @@ transform = Transform3D(0.319836, 0, 0.947473, 0, 1, 0, -0.947473, 0, 0.319836, 
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
-[node name="Area3D" type="Area3D" parent="Stuff/Pickup5 (gameboy)" node_paths=PackedStringArray("MountPoint", "Item")]
+[node name="Area3D" type="Area3D" parent="Stuff/Pickup5 (gameboy)" node_paths=PackedStringArray("MountPoint")]
 collision_mask = 2
 script = ExtResource("3_dfft7")
 MountPoint = NodePath("ItemMount")
-Item = NodePath("ItemMount/gameboy ")
 
 [node name="Sprite3D" type="Sprite3D" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -391,12 +393,12 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="ItemMount" type="Node3D" parent="Stuff/Pickup5 (gameboy)/Area3D"]
 
-[node name="gameboy " parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount" instance=ExtResource("13_5u0q2")]
-transform = Transform3D(0.1, 0, -3.72529e-09, 0, 0.1, 0, 3.72529e-09, 0, 0.1, 0, 0, 0)
+[node name="gameboy 2" parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount" instance=ExtResource("10_sgr12")]
+transform = Transform3D(0.1, 0, -1.86265e-09, 0, 0.1, 0, 1.86265e-09, 0, 0.1, 0, 0, 0)
 metadata/ItemKey = "gameboy"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount/gameboy "]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.0373192, 7.54793, 0.322269)
+[node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount/gameboy 2"]
+transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.0373211, 7.54793, 0.322266)
 visible = false
 size = Vector3(1.61229, 16.0959, 1.64453)
 
@@ -585,7 +587,6 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 
 [node name="plushie smooth" parent="Stuff/Pickup9 (plushie)/Area3D/ItemMount" instance=ExtResource("21_v5qrm")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
-metadata/ItemKey = "plushie"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup9 (plushie)/Area3D/ItemMount/plushie smooth"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.42543, 27.9839, 1.25256)
@@ -947,6 +948,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0185307, -0.0771179, 0.163
 shape = SubResource("BoxShape3D_gbdka")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Sockets/BinSocket/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00138569)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_hqce2")
 size = Vector3(1.23435, 0.90918, 1.10649)
@@ -1029,63 +1031,63 @@ size = Vector3(0.948846, 0.90918, 1.10649)
 
 [node name="ItemMount" type="Node3D" parent="Sockets/StandSocket/Area3D"]
 
-[node name="Bedroom" parent="." instance=ExtResource("1_w7dh4")]
+[node name="room layout" parent="." instance=ExtResource("18_ui3ch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
 
-[node name="desk2" parent="Bedroom" instance=ExtResource("3_ahs05")]
+[node name="desk" parent="room layout" instance=ExtResource("19_vkpkm")]
 transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -1.34774, 0.414874, -1.3846)
 
-[node name="mug" parent="Bedroom/desk2" instance=ExtResource("9_odbiv")]
+[node name="mug" parent="room layout/desk" instance=ExtResource("9_odbiv")]
 transform = Transform3D(0.0473736, 0, 0.0319539, 0, 0.0571429, 0, -0.0319539, 0, 0.0473736, -0.232171, 0.372564, 0.740529)
 
-[node name="mouse" parent="Bedroom/desk2" instance=ExtResource("7_sxjma")]
+[node name="mouse" parent="room layout/desk" instance=ExtResource("7_sxjma")]
 transform = Transform3D(-1.12401e-09, 0, 0.0257143, 0, 0.0257143, 0, -0.0257143, 0, -1.12401e-09, 0.0746572, 0.392379, -0.029757)
 
-[node name="mousepad" parent="Bedroom/desk2" instance=ExtResource("11_n4j80")]
+[node name="mousepad" parent="room layout/desk" instance=ExtResource("11_n4j80")]
 transform = Transform3D(-1.21767e-08, 0, 0.278571, 0, 0.278571, 0, -0.278571, 0, -1.21767e-08, 0.0131857, 0.379279, 0.271414)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/desk2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120422, -0.0571289, -0.101555)
+[node name="CSGBox3D" type="CSGBox3D" parent="room layout/desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120422, -0.0571288, -0.101555)
 visible = false
 use_collision = true
 size = Vector3(0.796021, 0.885742, 2.06255)
 
-[node name="bookshelf" parent="Bedroom" instance=ExtResource("4_rbthr")]
+[node name="bookshelf2" parent="room layout" instance=ExtResource("23_abatq")]
 transform = Transform3D(-5.68248e-09, 0, 0.13, 0, 0.13, 0, -0.13, 0, -5.68248e-09, 1.74448, 0.0374549, 1.57097)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bookshelf"]
-transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, 0.855437, 3.76855, 1.35138)
+[node name="CSGBox3D" type="CSGBox3D" parent="room layout/bookshelf2"]
+transform = Transform3D(1, 0, -2.4869e-14, 0, 1, 0, 2.4869e-14, 0, 1, 0.855437, 3.76855, 1.35138)
 visible = false
 size = Vector3(8.68097, 8.53711, 1.92297)
 
-[node name="bedside table3" parent="Bedroom" instance=ExtResource("14_mmxt8")]
+[node name="bedside table3" parent="room layout" instance=ExtResource("24_an4wl")]
 transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 1.69239, 0.427458, -1.57387)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bedside table3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015503, -0.823486, 0.228516)
+[node name="CSGBox3D" type="CSGBox3D" parent="room layout/bedside table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0155029, -0.823486, 0.228516)
 visible = false
 use_collision = true
 size = Vector3(2.29761, 2.64697, 2.33984)
 
-[node name="bedside table2" parent="Bedroom" instance=ExtResource("14_mmxt8")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.148058, 0.427037, -1.57366)
+[node name="bedside table4" parent="room layout" instance=ExtResource("24_an4wl")]
+transform = Transform3D(0.199488, 0, 0, 0, 0.199488, 0, 0, 0, 0.199488, 0.0860503, 0.427458, -1.57387)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Bedroom/bedside table2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015503, -0.823486, 0.228516)
+[node name="CSGBox3D" type="CSGBox3D" parent="room layout/bedside table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0155029, -0.823486, 0.228516)
 visible = false
 use_collision = true
 size = Vector3(2.29761, 2.64697, 2.33984)
 
-[node name="paper ball2" parent="Bedroom" instance=ExtResource("19_yehl4")]
+[node name="paper ball3" parent="room layout" instance=ExtResource("25_lfds3")]
 transform = Transform3D(0.925247, 0, -0.594911, 0, 1.1, 0, 0.594911, 0, 0.925247, -1.28297, 0.135893, 1.70218)
 
-[node name="paper ball" parent="Bedroom" instance=ExtResource("19_yehl4")]
+[node name="paper ball2" parent="room layout" instance=ExtResource("26_vbgpa")]
 transform = Transform3D(0.841133, 0, -0.540828, 0, 1, 0, 0.540828, 0, 0.841133, -1.50122, 0.148325, 1.41838)
 
-[node name="fern" parent="Bedroom" instance=ExtResource("17_tyj78")]
+[node name="fern2" parent="room layout" instance=ExtResource("26_j4o2d")]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.969488, 0.107831, 1.73336)
 
-[node name="bed2" parent="Bedroom" instance=ExtResource("2_tltt7")]
+[node name="bed" parent="room layout" instance=ExtResource("28_76mon")]
 transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.70139, -0.0698541, -0.495871)
 
 [node name="room COMPLETED  (MAIN)" parent="." instance=ExtResource("1_w7dh4")]
@@ -1260,3 +1262,6 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.157653, 0.636308, -1.
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.463202, 0.292237, -0.836685, -0.886223, -0.145125, 0.439939, 0.00714296, 0.945271, 0.32621, -4.5099, 0, 7.65757)
+
+[node name="rug" parent="." instance=ExtResource("32_oitcy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.164311, 0.00650615, -0.0880682)
