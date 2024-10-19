@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6dujpbf6m0eg"]
+[gd_scene load_steps=3 format=3 uid="uid://chnpg6m7hkg1"]
 
 [ext_resource type="Texture2D" uid="uid://tw33dthrabc8" path="res://Textures/GodotLogoLarge.svg" id="1_o6cei"]
 [ext_resource type="Texture2D" uid="uid://cs0ktq0ykuo22" path="res://Textures/dotnet-logo.svg" id="2_g66vl"]
