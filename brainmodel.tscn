@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cvjnr2uhhnv04"]
+[gd_scene load_steps=12 format=4 uid="uid://cvjnr2uhhnv04"]
 
 [ext_resource type="PackedScene" uid="uid://c7wl2ks5ms7h5" path="res://Models/Main level/brainmodel.blend" id="1_6h1lg"]
 
@@ -59,53 +59,6 @@ shadow_mesh = SubResource("ArrayMesh_txcw2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txubv"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qkki7"]
-albedo_color = Color(0.684918, 0.35627, 0.302268, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v27ge"]
-albedo_color = Color(0.614813, 0.304717, 0.254212, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqtjq"]
-resource_name = "Material.006"
-cull_mode = 2
-albedo_color = Color(0.678925, 0.286653, 0.19019, 1)
-roughness = 0.5
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_k7l46"]
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 2, 2),
-"format": 34896613377,
-"index_count": 36,
-"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
-"name": "Material.006",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_gn60o"]
-resource_name = "brainmodel_Cube_077"
-_surfaces = [{
-"aabb": AABB(-1, -1, -1, 2, 2, 2),
-"attribute_data": PackedByteArray("/18AAP8f/z//X////58AAP/f/z//n////1//v/8f/3//X/+//5//v//f/3//n/+//1//P/9f/z//X/8//5//P/+f/z//n/8//1//f/9f/3//X/9//5//f/+f/3//n/9/"),
-"format": 34896613399,
-"index_count": 36,
-"index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQA"),
-"material": SubResource("StandardMaterial3D_yqtjq"),
-"name": "Material.006",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("AAAAAP///78AAAAA////vwAAAAD//1TVAAD//////78AAP///////wAA/////1TVAAAAAAAA//8AAAAAAAD/vwAAAAAAAFTVAAD//wAA//8AAP//AAD//wAA//8AAFTV//8AAP///7///wAA////v///AAD//1TV/////////7///////////////////1TV//8AAAAA/////wAAAAD/v///AAAAAFTV/////wAA////////AAD///////8AAFTV/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_k7l46")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkw6h"]
-albedo_color = Color(0.499534, 0.203003, 0.152557, 1)
-
 [node name="brainmodel" instance=ExtResource("1_6h1lg")]
 
 [node name="Cube_039" parent="." index="0"]
@@ -123,96 +76,19 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iicu6")
 
 [node name="Cube2" type="MeshInstance3D" parent="." index="6"]
 transform = Transform3D(2.94343, 0, 0, 0, 2.94343, 0, 0, 0, 3.69432, -0.027086, -0.0625617, -0.717677)
+visible = false
 material_override = SubResource("StandardMaterial3D_5dhce")
 mesh = SubResource("ArrayMesh_g82xf")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_txubv")
 
-[node name="Cube" parent="." index="7"]
+[node name="Cube" parent="." index="8"]
 material_override = SubResource("StandardMaterial3D_5dhce")
 surface_material_override/0 = SubResource("StandardMaterial3D_txubv")
 
-[node name="Cube_125" parent="." index="17"]
-transform = Transform3D(-0.0249949, 0, -0.000166342, 0, 0.0249296, 0, -2.21126e-05, 0, 0.188024, 1.13907, -0.157914, 3.17544)
-surface_material_override/0 = SubResource("StandardMaterial3D_qkki7")
+[node name="Cube_002" parent="." index="19"]
+transform = Transform3D(0.620881, 0, 0, 0, 3.42713, 0, 0, 0, 0.643533, 3.35185, 0.00925525, 2.71142)
 
-[node name="Cube_126" parent="." index="18"]
-transform = Transform3D(0.0249948, 0, 0.000671371, 0, 0.0249296, 0, 8.92487e-05, 0, -0.188023, 1.23472, -0.255507, 3.1759)
-surface_material_override/0 = SubResource("StandardMaterial3D_qkki7")
-
-[node name="Cube_127" parent="." index="19"]
-transform = Transform3D(0.0249948, 0, 0.000671371, 0, 0.0249296, 0, 8.92487e-05, 0, -0.188023, 1.18794, -0.20512, 3.17567)
-surface_material_override/0 = SubResource("StandardMaterial3D_qkki7")
-
-[node name="Cube_130" parent="." index="20"]
-transform = Transform3D(0.0249948, 0, 0.000671371, 0, 0.0249296, 0, 8.92487e-05, 0, -0.188023, 1.28393, -0.303858, 3.17613)
-surface_material_override/0 = SubResource("StandardMaterial3D_qkki7")
-
-[node name="Cube_134" parent="." index="21"]
-transform = Transform3D(0.0249948, 0, 0.000671371, 0, 0.0249296, 0, 8.92487e-05, 0, -0.188023, 1.09267, -0.109625, 3.17524)
-surface_material_override/0 = SubResource("StandardMaterial3D_qkki7")
-
-[node name="Cube_137" parent="." index="22"]
-transform = Transform3D(0.0249948, 0, 0.000671371, 0, 0.0249296, 0, 8.92487e-05, 0, -0.188023, 1.04257, -0.0638375, 3.17502)
-surface_material_override/0 = SubResource("StandardMaterial3D_qkki7")
-
-[node name="Cube_140" parent="." index="23"]
-transform = Transform3D(0.0249948, 0, 0.000671371, 0, 0.0249296, 0, 8.92487e-05, 0, -0.188023, 0.995854, -0.0176589, 3.17479)
-surface_material_override/0 = SubResource("StandardMaterial3D_qkki7")
-
-[node name="Cube_141" parent="." index="24"]
-transform = Transform3D(0.0249948, 0, 0.000671371, 0, 0.0249296, 0, 8.92487e-05, 0, -0.188023, 0.94956, 0.0319355, 3.17458)
-surface_material_override/0 = SubResource("StandardMaterial3D_qkki7")
-
-[node name="Cube_142" parent="." index="25"]
-transform = Transform3D(0.0249948, 0, 0.000671371, 0, 0.0249296, 0, 8.92487e-05, 0, -0.188023, 0.90155, 0.079819, 3.17435)
-surface_material_override/0 = SubResource("StandardMaterial3D_qkki7")
-
-[node name="Cube_143" parent="." index="26"]
-transform = Transform3D(-0.0249949, 0, -0.000166342, 0, 0.0249296, 0, -2.21126e-05, 0, 0.188024, 2.32728, -0.410055, 3.17544)
-surface_material_override/0 = SubResource("StandardMaterial3D_v27ge")
-
-[node name="Cube_144" parent="." index="27"]
-surface_material_override/0 = SubResource("StandardMaterial3D_v27ge")
-
-[node name="Cube_145" parent="." index="28"]
-surface_material_override/0 = SubResource("StandardMaterial3D_v27ge")
-
-[node name="Cube_146" parent="." index="29"]
-surface_material_override/0 = SubResource("StandardMaterial3D_v27ge")
-
-[node name="Cube_147" parent="." index="30"]
-surface_material_override/0 = SubResource("StandardMaterial3D_v27ge")
-
-[node name="Cube_148" parent="." index="31"]
-surface_material_override/0 = SubResource("StandardMaterial3D_v27ge")
-
-[node name="Cube_152" parent="." index="32"]
-surface_material_override/0 = SubResource("StandardMaterial3D_v27ge")
-
-[node name="Cube_153" parent="." index="33"]
-surface_material_override/0 = SubResource("StandardMaterial3D_v27ge")
-
-[node name="Cube_156" type="MeshInstance3D" parent="." index="34"]
-transform = Transform3D(0.0249948, 0, 0.000671371, 0, 0.0249296, 0, 8.92487e-05, 0, -0.188023, 2.71358, -0.78868, 3.17588)
-mesh = SubResource("ArrayMesh_gn60o")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_v27ge")
-
-[node name="Cube_155" parent="." index="35"]
-surface_material_override/0 = SubResource("StandardMaterial3D_v27ge")
-
-[node name="Cube_122" parent="." index="36"]
-transform = Transform3D(0, 0, -1.81351, 0, 1.63378, 0, -0.189825, 0, 0, 1.33481, -1.53313, 3.17363)
-surface_material_override/0 = SubResource("StandardMaterial3D_pkw6h")
-
-[node name="Cube_157" parent="." index="37"]
-transform = Transform3D(0.63, 0, 0, 0, 3.478, 0, 0, 0, 0.653, 3.37314, 0.026378, 2.72275)
-
-[node name="Cube_002" parent="." index="38"]
-transform = Transform3D(0.620881, 0, 0, 0, 3.42713, 0, 0, 0, 0.643533, 3.3754, 0.00925525, 2.71142)
-
-[node name="Colliders" type="Node3D" parent="." index="41"]
+[node name="Colliders" type="Node3D" parent="." index="21"]
 visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Colliders" index="0"]
