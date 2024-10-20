@@ -3,7 +3,7 @@ extends Button
 @export
 var ScenePath: String = "res://Scenes/!MainGameScene/Game.tscn"
 @export
-var MainMenu: Node3D 
+var MainMenu: Node
 var been_pressed = false
 
 # Called when the node enters the scene tree for the first time.
