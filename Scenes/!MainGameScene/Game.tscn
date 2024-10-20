@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://du5hj5gtfqms7"]
+[gd_scene load_steps=8 format=3 uid="uid://du5hj5gtfqms7"]
 
 [ext_resource type="PackedScene" uid="uid://cfkv6wtyhhta0" path="res://Scenes/Character.tscn" id="2_imu7g"]
 [ext_resource type="PackedScene" uid="uid://un31ok75dwaf" path="res://Scenes/Main level.tscn" id="3_g7ck6"]
 [ext_resource type="PackedScene" uid="uid://dtthixalssxpr" path="res://Scenes/NewTutorial.tscn" id="4_rj7w4"]
 [ext_resource type="Script" path="res://Scripts/TeleportDoor.cs" id="4_yipme"]
+[ext_resource type="PackedScene" uid="uid://bv1hmgkx3o4ti" path="res://Scenes/GameObjects/Trigger-Areas/Text-Display.tscn" id="5_c5t10"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwslm"]
 size = Vector3(2.90178, 3, 2.2847)
@@ -177,3 +178,42 @@ transform = Transform3D(-0.463202, 0.292237, -0.836685, -0.886223, -0.145125, 0.
 
 [node name="Tutorial2" parent="." instance=ExtResource("4_rj7w4")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -2.10308, 0, 2.1192)
+
+[node name="Text" type="Node3D" parent="."]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0, 0)
+
+[node name="Text-display2" parent="Text" instance=ExtResource("5_c5t10")]
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, -230.397, -42.5044, 201.169)
+textToDisplay = "Welcome to Solace, a journey into the depths of your mind. But before we explore the brain, you must complete the tutorial to learn how the brain functions."
+timeToDisplay = 10.0
+timeToType = 1.0
+
+[node name="Text-display" parent="Text" instance=ExtResource("5_c5t10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218386, 1.12255, -1.1689)
+textToDisplay = "Here, you will encounter various challenges that will appear throughout Solace. Through trial and error, you can learn how to work with this world. "
+timeToDisplay = 10.0
+timeToType = 1.0
+
+[node name="Text-display4" parent="Text" instance=ExtResource("5_c5t10")]
+transform = Transform3D(4.3084, 0, 0, 0, 1, 0, 0, 0, 1, -0.182982, 1.5004, 6.13866)
+textToDisplay = "Press the runes in the right order to reveal the path ahead."
+timeToDisplay = 10.0
+timeToType = 1.0
+
+[node name="Text-display5" parent="Text" instance=ExtResource("5_c5t10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0932733, 1.12255, 14.514)
+textToDisplay = "Paths unfold as light reaches its end. Place the power cube in the receptacle to activate the light and open the doorway."
+timeToDisplay = 10.0
+timeToType = 1.0
+
+[node name="Text-display6" parent="Text" instance=ExtResource("5_c5t10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0932733, 1.12255, 29.9491)
+textToDisplay = "Some puzzles challenge you to find the right combination. Place the cubes in the correct slots to unlock the code and continue."
+timeToDisplay = 10.0
+timeToType = 1.0
+
+[node name="Text-display7" parent="Text" instance=ExtResource("5_c5t10")]
+transform = Transform3D(-1, 0, -1.33118e-07, 0, 1, 0, 1.33118e-07, 0, -1, -237.171, -25.2562, 247.698)
+textToDisplay = "Now you're ready to ascend and take on the brain's puzzles."
+timeToDisplay = 10.0
+timeToType = 1.0
