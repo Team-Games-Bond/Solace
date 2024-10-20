@@ -65,8 +65,8 @@ public partial class Cable : GeometryInstance3D, IPowerable
 		}
 	}
 
-    public void Power()
-    {
+	public void Power()
+	{
 		_recieverStream = _recievers.GetEnumerator();
 		MaterialOverride = CableAnimationShader;
 		timer = 0;
@@ -78,13 +78,13 @@ public partial class Cable : GeometryInstance3D, IPowerable
 		} else {
 			powerState = PowerState.Powered;
 		}
-    }
-    public override void _Input(InputEvent @event)
-    {
-        if (@event is InputEventKey eventKey){
+	}
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventKey eventKey){
 			if (eventKey.Pressed && eventKey.Keycode==Key.G && start){
 				Power();
 			}
 		}
-    }
+	}
 }
