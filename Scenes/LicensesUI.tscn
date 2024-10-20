@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://chnpg6m7hkg1"]
+[gd_scene load_steps=2 format=3 uid="uid://b6u0804fb6qld"]
 
-[ext_resource type="Texture2D" uid="uid://tw33dthrabc8" path="res://Textures/GodotLogoLarge.svg" id="1_o6cei"]
-[ext_resource type="Texture2D" uid="uid://cs0ktq0ykuo22" path="res://Textures/dotnet-logo.svg" id="2_g66vl"]
+[sub_resource type="GDScript" id="GDScript_5a2bg"]
+resource_name = "url_to_browser"
+script/source = "extends RichTextLabel
+
+func _on_meta_clicked(meta: Variant) -> void:
+	OS.shell_open(str(meta))
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,20 +29,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("1_o6cei")
-expand_mode = 3
-
 [node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 bbcode_enabled = true
-text = "[code]This game uses Godot Engine, available under the following license:
+text = "[center][img height=128]res://Textures/GodotLogoLarge.svg[/img][/center]
+[code]This game uses Godot Engine, available under the following license:
 
 Copyright (c) 2014-present Godot Engine contributors.
 Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
@@ -58,15 +56,9 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.[/code]"
-fit_content = true
+SOFTWARE.[/code]
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(800, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-bbcode_enabled = true
-text = "[font_size=36][b]ShaderV[/b][/font_size]
+[center][font_size=36][b]ShaderV[/b][/font_size][/center]
 [code]MIT License
 
 Copyright (c) 2019 arkology
@@ -88,23 +80,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-[/code]"
-fit_content = true
+[/code]
 
-[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("2_g66vl")
-expand_mode = 3
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(800, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-bbcode_enabled = true
-text = "[code]The MIT License (MIT)
+[center][img height=128]res://Textures/dotnet-logo.svg[/img][/center]
+[code]The MIT License (MIT)
 
 Copyright (c) .NET Foundation and Contributors
 
@@ -126,5 +105,13 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.[/code]"
+SOFTWARE.[/code]
+
+[center][font_size=36][b]Sounds[/b][/font_size][/center]
+[url=https://freesound.org/people/Fania_Katz/sounds/749876/]Little melody[/url] by [url=https://freesound.org/people/Fania_Katz/]Fania Katz[/url] | License: [url=https://creativecommons.org/licenses/by/4.0/]Attribution 4.0[/url]
+[url=https://freesound.org/people/el_boss/sounds/665181/]Item or Material Pickup Pop 3 of 3[/url] by [url=https://freesound.org/people/el_boss/]el_boss[/url] | License: [url=http://creativecommons.org/publicdomain/zero/1.0/]Creative Commons 0[/url]
+[url=https://freesound.org/people/LittleRobotSoundFactory/sounds/276097/]Gems_Single_06.wav[/url] by [url=https://freesound.org/people/LittleRobotSoundFactory/]LittleRobotSoundFactory[/url] | License: [url=https://creativecommons.org/licenses/by/4.0/]Attribution 4.0[/url]"
 fit_content = true
+script = SubResource("GDScript_5a2bg")
+
+[connection signal="meta_clicked" from="ScrollContainer/VBoxContainer/RichTextLabel" to="ScrollContainer/VBoxContainer/RichTextLabel" method="_on_meta_clicked"]
