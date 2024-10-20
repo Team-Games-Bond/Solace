@@ -26,7 +26,7 @@ public partial class NeuronWiggle : Node
 
 	public void StartAnimation()
 	{
-		GD.Print("Started: " + timer.WaitTime);
+		//GD.Print("Started: " + timer.WaitTime);
 		if(GD.Randi() % 2 == 1) animationPlayer.Play();
 		else animationPlayer.PlayBackwards();
 	}
