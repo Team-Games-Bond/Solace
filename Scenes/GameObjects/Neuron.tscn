@@ -3,7 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/Neuron.cs" id="1_f20wm"]
 [ext_resource type="Script" path="res://Scripts/NeuronWiggle.cs" id="1_ki4x5"]
 [ext_resource type="Material" uid="uid://bb4jrxmbt0s7k" path="res://Materials/GlowMat.tres" id="2_jynju"]
-[ext_resource type="Material" uid="uid://cto7gbknsgtoo" path="res://Materials/CableDull.tres" id="4_dqr4g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0c6o0"]
+albedo_color = Color(0.404511, 0.404511, 0.404511, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dk3ji"]
 resource_name = "Material.001"
@@ -243,7 +245,7 @@ _data = {
 [node name="Neuron" type="Node3D" node_paths=PackedStringArray("flagella", "sphere", "light")]
 script = ExtResource("1_f20wm")
 brightMaterial = ExtResource("2_jynju")
-dimMaterial = ExtResource("4_dqr4g")
+dimMaterial = SubResource("StandardMaterial3D_0c6o0")
 flagella = NodePath("neuronWiggle/Armature/Skeleton3D/Cylinder_001")
 sphere = NodePath("neuronWiggle/Sphere")
 light = NodePath("neuronWiggle/Sphere/OmniLight3D2")
