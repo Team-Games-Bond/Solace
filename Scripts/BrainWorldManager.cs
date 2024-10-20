@@ -10,7 +10,7 @@ public partial class BrainWorldManager : Node
 
 	[ExportSubgroup("Fog & Neuron References")]
 	[Export] public FogManager FogManager;
-	[Export] public PlacementMonitor powerSocketDias;
+	[Export] public Neuron powerSocketDias;
 	[Export] public PlacementMonitor powerSocketMaze;
 	[Export] public PlacementMonitor powerSocketMiddle;
 	[Export] public PlacementMonitor powerSocketBridge;
@@ -41,7 +41,7 @@ public partial class BrainWorldManager : Node
 
 		exitDias.CrystalsPlaced += crystalsPlaced;
 
-		powerSocketDias.ItemPlaced += powerSocketFilled;
+		powerSocketDias.NeuronActivated += neuronActivte;
 		powerSocketMaze.ItemPlaced += powerSocketFilled;
 		powerSocketMiddle.ItemPlaced += powerSocketFilled;
 		powerSocketBridge.ItemPlaced += powerSocketFilled;
@@ -49,11 +49,15 @@ public partial class BrainWorldManager : Node
 		powerSocketWater.ItemPlaced += powerSocketFilled;
 
 	}
+	private void neuronActivte()
+	{
+		FogManager.RemoveFog(FogLocation.maze1);
+	}
 
 	private void powerSocketFilled(bool correctItem, PlacementMonitor socket)
 	{
-		if(socket == powerSocketDias) FogManager.RemoveFog(FogLocation.maze1);
-		else if(socket == powerSocketMaze) FogManager.RemoveFog(FogLocation.maze2);
+		//if(socket == powerSocketDias) FogManager.RemoveFog(FogLocation.maze1);
+		/*else*/ if(socket == powerSocketMaze) FogManager.RemoveFog(FogLocation.maze2);
 		else if(socket == powerSocketMiddle) FogManager.RemoveFog(FogLocation.clutterAndSimon);
 		else if(socket == powerSocketBridge) FogManager.RemoveFog(FogLocation.bridge);
 		else if(socket == powerSocketTree) FogManager.RemoveFog(FogLocation.tree);
