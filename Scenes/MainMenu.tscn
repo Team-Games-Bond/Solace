@@ -1,0 +1,213 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2fm8smf81pca"]
+
+[ext_resource type="Texture2D" uid="uid://csn677i73r7oe" path="res://Textures/Lyra-vec.png" id="1_db4do"]
+[ext_resource type="Script" path="res://Scripts/LoadSceneButton.gd" id="2_3vylp"]
+[ext_resource type="Script" path="res://Scripts/LoadingBar.gd" id="4_f2m7m"]
+
+[sub_resource type="GDScript" id="GDScript_j2bxw"]
+resource_name = "LoadingStatusVisibility"
+script/source = "extends VBoxContainer
+
+@export
+var ScenePath: String = \"res://Scenes/!MainGameScene/Game.tscn\"
+var loaded = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if (!loaded) and ResourceLoader.load_threaded_get_status(ScenePath)==ResourceLoader.THREAD_LOAD_LOADED:
+		loaded = true
+		await get_tree().create_timer(2.0).timeout
+		visible = false
+"
+
+[sub_resource type="GDScript" id="GDScript_55kgx"]
+script/source = "extends RichTextLabel
+
+@export
+var ScenePath: String = \"res://Scenes/!MainGameScene/Game.tscn\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	match ResourceLoader.load_threaded_get_status(ScenePath):
+		ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
+			text = \"Missing Scene\"
+		ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+			text = \"Loading\"
+		ResourceLoader.THREAD_LOAD_FAILED:
+			text = \"Load Failed\"
+		ResourceLoader.THREAD_LOAD_LOADED:
+			text = \"Loaded\"
+"
+
+[sub_resource type="GDScript" id="GDScript_tu57m"]
+script/source = "extends RichTextLabel
+
+@export
+var ScenePath: String = \"res://Scenes/!MainGameScene/Game.tscn\"
+var dots = 0;
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_loading_timer_timeout() -> void:
+	match ResourceLoader.load_threaded_get_status(ScenePath):
+		ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
+			text = \"[center]Missing Scene[/center]\"
+		ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+			dots=(dots+1)%4
+			var str_dots = \"\"
+			for i in dots:
+				str_dots+=\".\"
+			text = \"[center]Loading%s[/center]\"%str_dots
+		ResourceLoader.THREAD_LOAD_FAILED:
+			text = \"[center]Load Failed[/center]\"
+		ResourceLoader.THREAD_LOAD_LOADED:
+			text = \"[center]Loaded[/center]\"
+			
+	
+"
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" type="Control" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoadingPreview" type="VBoxContainer" parent="CanvasLayer/Control/MainMenu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 160.0
+grow_vertical = 0
+script = SubResource("GDScript_j2bxw")
+
+[node name="LoadingText" type="RichTextLabel" parent="CanvasLayer/Control/MainMenu/LoadingPreview"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Loading[/center]"
+fit_content = true
+script = SubResource("GDScript_55kgx")
+
+[node name="LoadingTimer" type="Timer" parent="CanvasLayer/Control/MainMenu/LoadingPreview/LoadingText"]
+wait_time = 0.5
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/MainMenu/LoadingPreview"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+max_value = 1.0
+script = ExtResource("4_f2m7m")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/MainMenu"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_right = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control/MainMenu/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MainMenu/PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/MainMenu/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_db4do")
+expand_mode = 4
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/MainMenu/PanelContainer/CenterContainer/VBoxContainer" node_paths=PackedStringArray("MainMenu")]
+layout_mode = 2
+text = "Start"
+script = ExtResource("2_3vylp")
+MainMenu = NodePath("../../../../../../..")
+
+[node name="LoadingScreen" type="Panel" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -80.0
+offset_right = 180.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/LoadingScreen"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -27.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/LoadingScreen/MarginContainer"]
+layout_mode = 2
+
+[node name="LoadingText" type="RichTextLabel" parent="CanvasLayer/Control/LoadingScreen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Loading[/center]"
+fit_content = true
+script = SubResource("GDScript_tu57m")
+
+[node name="LoadingTimer" type="Timer" parent="CanvasLayer/Control/LoadingScreen/MarginContainer/VBoxContainer/LoadingText"]
+wait_time = 0.5
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/LoadingScreen/MarginContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+script = ExtResource("4_f2m7m")
+
+[connection signal="timeout" from="CanvasLayer/Control/MainMenu/LoadingPreview/LoadingText/LoadingTimer" to="CanvasLayer/Control/MainMenu/LoadingPreview/LoadingText" method="_on_loading_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/Control/LoadingScreen/MarginContainer/VBoxContainer/LoadingText/LoadingTimer" to="CanvasLayer/Control/LoadingScreen/MarginContainer/VBoxContainer/LoadingText" method="_on_loading_timer_timeout"]
