@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=39 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" path="res://fern.tscn" id="26_j4o2d"]
 [ext_resource type="PackedScene" path="res://paper_ball4.tscn" id="26_vbgpa"]
 [ext_resource type="PackedScene" path="res://bed.tscn" id="28_76mon"]
+[ext_resource type="PackedScene" uid="uid://byma622ny7duy" path="res://Scenes/GameObjects/Bear.blend" id="30_lrq37"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -1095,6 +1096,9 @@ transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.969488, 0.107831, 
 
 [node name="bed" parent="room layout" instance=ExtResource("28_76mon")]
 transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, 1.70139, -0.0698541, -0.495871)
+
+[node name="Bear" parent="room layout" instance=ExtResource("30_lrq37")]
+transform = Transform3D(-0.183954, -0.0326447, -0.116169, -0.0100198, 0.215197, -0.0446065, 0.120251, -0.0320072, -0.181425, -1.74858, 0.05204, 0.142745)
 
 [node name="room COMPLETED  (MAIN)" parent="." instance=ExtResource("1_w7dh4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045248, 0, -0.167129)
