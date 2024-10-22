@@ -1,5 +1,15 @@
 ## Team 35 Project 50: Common Ground Initiative
 
+---
+
+- [Team 35 Project 50: Common Ground Initiative](#team-35-project-50-common-ground-initiative)
+- [Contributors](#contributors)
+- [Getting Started](#getting-started)
+  - [What You'll Need](#what-youll-need)
+  - [Setup](#setup)
+  - [Sound Attributions](#sound-attributions)
+
+
 ## Contributors
 
 - Julia Sokhon (Team Lead)
