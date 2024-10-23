@@ -751,6 +751,7 @@ use_collision = true
 size = Vector3(1, 6.86609, 13.9315)
 
 [node name="LeftCablePath" type="Node3D" parent="."]
+
 [connection signal="TutorialRoom1Completed" from="TutorialWorldManager" to="Room 1/LeftCablePath/Cable Straight 3m/Cube" method="Power"]
 [connection signal="TutorialRoom1Completed" from="TutorialWorldManager" to="Room 1/RightCablePath/Cable Straight 3m2/Cube" method="Power"]
 [connection signal="TutorialRoom2Completed" from="TutorialWorldManager" to="Room 2/Cable Path/Cable Straight 3m2/Cube" method="Power"]
