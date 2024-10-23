@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="20_57khf"]
 [ext_resource type="PackedScene" uid="uid://bpsaexwtgl6pi" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/unrec4.tscn" id="20_fihni"]
 [ext_resource type="PackedScene" uid="uid://bywpl634670tt" path="res://Models/Tutorial/tutorialnew.blend" id="27_qmush"]
-[ext_resource type="PackedScene" uid="uid://pscqmxvgbgkq" path="res://Scenes/fountain.tscn" id="28_8winh"]
+[ext_resource type="PackedScene" path="res://Scenes/fountain.tscn" id="28_8winh"]
 [ext_resource type="AudioStream" uid="uid://b2dnn3qtihkwe" path="res://Music/749876__fania_katz__little-melody.wav" id="29_ypoka"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdpma"]
