@@ -113,37 +113,45 @@ public partial class Fog : MeshInstance3D
 	public static async Task combine(byte[] target, Texture2D from, Sprite3D sprite)
 	{
 		//GD.Print("combine running");
-		Stopwatch sw = new Stopwatch(); //Not used
-		sw.Start();
-		var fromTask = new Task<byte[]>(() =>
+		var fromTask = new Task<ushort[]>(() =>
 		{
 			var image = from.GetImage();
 			image.Convert(Image.Format.R8);
 			var fromData = image.GetData();
-			return fromData;
+			return fromData.Select(r => (ushort)r).ToArray();
 		});
 		fromTask.Start();
+		var targetTask = new Task<ushort[]>(() => target.Select(r => (ushort)r).ToArray());
+		targetTask.Start();
 
 		int length = target.Length;
 		int remaining = length % Vector<ushort>.Count;
-        Vector<ushort> maxVector = Vector<ushort>.One >> 8;
-		await fromTask;
-		byte[] source = fromTask.Result;
-		for (int i = 0; i < length - remaining; i += Vector<ushort>.Count*2)
+
+		ushort[] maxValues = new ushort[Vector<ushort>.Count];
+		for (int j = 0; j < Vector<ushort>.Count; j++)
 		{
-			var targetVector = new Vector<ushort>(new Span<byte>(target, i, Vector<ushort>.Count*2));
-			var fromVector = new Vector<ushort>(new Span<byte>(source, i, Vector<ushort>.Count*2));
-			var pt1 = ((targetVector&maxVector)*(fromVector&maxVector))/255;
-			var pt2 = (((targetVector>>8)*(fromVector>>8))/255)<<8;
-			var result = pt1&pt2;
-			result.CopyTo(new Span<byte>(target, i, Vector<ushort>.Count*2));
+			maxValues[j] = 255;
 		}
+		Vector<ushort> maxVector = new Vector<ushort>(maxValues, 0);
+		await targetTask;
+		await fromTask;
+		for (int i = 0; i < length - remaining; i += Vector<ushort>.Count)
+		{
+			var targetVector = new Vector<ushort>(targetTask.Result, i);
+			var fromVector = new Vector<ushort>(fromTask.Result, i);
+			ushort[] s = new ushort[Vector<ushort>.Count];
+			((targetVector * fromVector) / maxVector).CopyTo(s, 0);
+			for (int j = 0; j < Vector<ushort>.Count; j++)
+			{
+				target[i + j] = (byte)s[j];
+			}
+		}
+		//GD.Print("fromtask: ", fromTask.Result.Length);
+		//GD.Print("target: ", length);
 		for (int i = length - remaining; i < length; i++)
 		{
 			target[i] = (byte)((target[i] * fromTask.Result[i]) / 255);
 		}
-		var elapsed = sw.ElapsedMilliseconds;
-		GD.Print("Combine finished in: ", elapsed, "ms");
 
 		//GD.Print("combine done");
 		//var img = ImageTexture.CreateFromImage(Image.CreateFromData(256, 256, false, Image.Format.R8, target[0..65536]));
