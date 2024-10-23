@@ -77,6 +77,7 @@ public partial class Fog : MeshInstance3D
 			SetInstanceShaderParameter("SECONDARY_STRENGTH", 1 - (TransitionTimer.TimeLeft / TransitionTimer.WaitTime));
 			//GD.Print(TransitionTimer.TimeLeft/TransitionTimer.WaitTime);
 		}
+		//GD.Print(TransitionTimer.TimeLeft/TransitionTimer.WaitTime);
 	}
 
 	public async void Recede(Texture2D image)
@@ -94,7 +95,7 @@ public partial class Fog : MeshInstance3D
 
 	public async void endTransition()
 	{
-		//GD.Print("End");
+		GD.Print("End");
 		await _combineTask;
 		//GD.Print(_primaryImage.Length);
 		//GD.Print("combineTask");
@@ -229,6 +230,7 @@ public partial class Fog : MeshInstance3D
 		});
 		indicesTask.Start();
 		var arrayMesh = new ArrayMesh();
+		arrayMesh.CustomAabb=new Aabb(0,0,0,3*_planeScale.X,5,3*_planeScale.Y);
 		Mesh = arrayMesh;
 		var arrays = new Godot.Collections.Array();
 		arrays.Resize((int)Mesh.ArrayType.Max);

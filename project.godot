@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="Capstone Project"
-run/main_scene="res://Scenes/clutterTest.tscn"
+run/main_scene="res://Scenes/!MainGameScene/Game.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 boot_splash/image="res://Textures/Games Bond Splash.png"
 config/icon="res://Textures/icon.svg"
+
+[autoload]
+
+WindowControl="*res://Scripts/WindowControl.cs"
 
 [dotnet]
 
@@ -24,6 +28,10 @@ project/assembly_name="Capstone Project"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[global_group]
+
+"Character Controllers"=""
 
 [input]
 
@@ -85,7 +93,13 @@ quick_exit={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+Bayer16={
+"type": "sampler2D",
+"value": "res://Textures/bayer16.png"
+}
+
+[shader_globals]
+
 Bayer16={
 "type": "sampler2D",
 "value": "res://Textures/bayer16.png"
