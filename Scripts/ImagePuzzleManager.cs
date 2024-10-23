@@ -113,14 +113,14 @@ public partial class ImagePuzzleManager : Node
 			socketArray[i%socketArray.Count][i%socketArray[i%socketArray.Count].Count].attachItem(itemInFrame);
 		}
 		
-		/*
+		
 		GD.Print("Sockets:");
 		GD.Print(socketArray);
 		GD.Print("ClueImage:");
 		GD.Print(clueImageArray);
 		GD.Print("CreatedImage:");
 		GD.Print(createdImageArray);
-		*/
+		
 	}
 
 	private void ItemPlacedInSocket(Node3D itemNode, PlacementMonitor monitor)

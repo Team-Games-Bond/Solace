@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://op1n61jis8oc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xbydh"]
+size = Vector3(38, 20, 7)
+
+[node name="RepulsionFieldSquare" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+gravity_space_override = 1
+gravity_point_center = Vector3(0.7, 0, 0.7)
+gravity_direction = Vector3(0.7, 0, 0.7)
+gravity = 15.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -2)
+shape = SubResource("BoxShape3D_xbydh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -7)
+shape = SubResource("BoxShape3D_xbydh")
