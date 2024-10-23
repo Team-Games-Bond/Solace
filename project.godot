@@ -166,6 +166,7 @@ ScrollRight={
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 Bayer16={
 "type": "sampler2D",
 "value": "res://Textures/bayer16.png"
