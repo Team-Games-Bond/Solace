@@ -36,32 +36,51 @@ Solace is a puzzle-based game where you play as a soul navigating through a brai
 
 Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/CC/boards/1/timeline) as our project management tool. We followed an Agile methodology, incorporating Kanban as our primary tool to manage our workflow. Our Gantt Chart was created on [Team Gantt](https://www.teamgantt.com/). To track client and group meeting minutes, reports and documentation, we used a shared Google Drive. Our group meetings were held in person, on our Discord server and on Zoom. 
 
-![Team 35 Jira Kanban Board](<Jira Kanban board.png>)
-![Team 35 Gantt Chart](<Team 35 Gantt Chart.jpg>)
+![Team 35 Jira Kanban Board](<Documentation/Jira Kanban board.png>)
+![Team 35 Gantt Chart](<Documentation/Team 35 Gantt Chart.jpg>)
 
-# Technologies Used
-
-[![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/download/) .NET Version 4.3  
-[**GDScript**](https://godotengine.org/download/)  
-[![.Net SDK](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/en-us/download) .NET 8  
-[![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://dotnet.microsoft.com/en-us/download) .NET 8  
+# Building
+## Build Dependencies
+[![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/download/) .NET Version 4.3   
+[![.Net SDK](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/en-us/download) .NET 8 SDK  
 [![Blender](https://img.shields.io/badge/blender-%23F5792A.svg?style=for-the-badge&logo=blender&logoColor=white)](https://www.blender.org/download/) Version 4.2  
+### Android only
+[![Android Studio](https://img.shields.io/badge/android%20studio-346ac1?style=for-the-badge&logo=android%20studio&logoColor=white)]()  
+[![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/temurin/releases/?version=17) JDK 17
+
+## Building
+This Guide Assumes you have already installed all the above 
+1. In godot import the project by navigating to the repo and selecting the 
+project.godot file contained inside
+2. The Editor should automatically locate your blender install, hit confirm 
+path to continue.
+3. (For Android) Instructions aren't included here but if you want to build 
+for android the instructions on how to locate and tell the godot editor where 
+to find the android build dependencies are 
+[here](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html)
+4. In the navbar go to Editor > Manage Export Templates, then download and 
+install the templates
+5. In Project > Export, Select your desired build profile, hit 
+"Export Project...", select the directory and filename and hit save
+
+
+# Programming Languages
+[![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://dotnet.microsoft.com/en-us/download) Version 12/.NET 8  
+[**GDScript**](https://godotengine.org/download/)  
+[**Godot Shading Language**](https://godotengine.org/download/)  
+[**Godot Visual Shading**](https://godotengine.org/download/)  
+
+# Libraries (Already Included)
+[**ShaderV 1.3**](https://github.com/arkology/ShaderV)  
+[**Godot Virtual Joystick 1.6**](https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot)
+
+# Other Software used
 [![Adobe Illustrator](https://img.shields.io/badge/Adobe%20Illustrator-FF9A00?style=for-the-badge&logo=adobe%20illustrator&logoColor=white)](https://www.adobe.com/nz/products/illustrator.html) Version 2024  
 [![Adobe Photoshop](https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?style=for-the-badge&logo=Adobe%20Photoshop&logoColor=black)](https://www.adobe.com/nz/products/photoshop.html) Version 2024  
 [![Inkscape](https://img.shields.io/badge/Inkscape-000000?style=for-the-badge&logo=Inkscape&logoColor=white)](https://inkscape.org/) Version 2024  
 [![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)](https://www.atlassian.com/software/jira)  
 [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com)  
 
-
-
-- [Godot Engine - .NET Version 4.3](https://godotengine.org/download/)
-- [.NET SDK](https://dotnet.microsoft.com/en-us/download)
-- [Blender 4.2](https://www.blender.org/download/)
-- [Jira](https://www.atlassian.com/software/jira)
-- [Github](https://www.github.com)
-- [Adobe Illustrator 2024](https://www.adobe.com/nz/products/illustrator.html)
-- [Adobe Photoshop 2024](https://www.adobe.com/nz/products/photoshop.html)
-- [Inkscape 2024](https://inkscape.org/)
 
 # Getting Started
 ## What You'll Need 
