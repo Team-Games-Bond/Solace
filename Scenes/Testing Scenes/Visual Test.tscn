@@ -7,7 +7,7 @@
 [ext_resource type="Shader" uid="uid://d4mu3nhjubty3" path="res://Shaders/Water Ripple.tres" id="7_i5q4q"]
 [ext_resource type="Shader" uid="uid://b16xg3l1q7te3" path="res://Shaders/Skybox.tres" id="8_gdr64"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_352li"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_d8cxx"]
 _surfaces = [{
 "aabb": AABB(-0.5625, 0, -0.5, 1.125, 1e-05, 1),
 "attribute_data": PackedByteArray("AACAPwAAgD+rqqo/AACAP1ZV1T8AAIA/AAAAQAAAgD9WVRVAAACAPwAAgD+rqqo/q6qqP6uqqj9WVdU/q6qqPwAAAECrqqo/VlUVQKuqqj8AAIA/VlXVP6uqqj9WVdU/VlXVP1ZV1T8AAABAVlXVP1ZVFUBWVdU/AACAPwAAAECrqqo/AAAAQFZV1T8AAABAAAAAQAAAAEBWVRVAAAAAQAAAgD9WVRVAq6qqP1ZVFUBWVdU/VlUVQAAAAEBWVRVAVlUVQFZVFUA="),
@@ -20,6 +20,7 @@ _surfaces = [{
 "vertex_count": 25,
 "vertex_data": PackedByteArray("AAAQvwAAAAAAAAC/AACgvgAAAAAAAAC/AACAvQAAAAAAAAC/AABAPgAAAAAAAAC/AADgPgAAAAAAAAC/AADgvgAAAAAAAIC+AABAvgAAAAAAAIC+AACAPQAAAAAAAIC+AACgPgAAAAAAAIC+AAAQPwAAAAAAAIC+AAAQvwAAAAAAAAAAAACgvgAAAAAAAAAAAACAvQAAAAAAAAAAAABAPgAAAAAAAAAAAADgPgAAAAAAAAAAAADgvgAAAAAAAIA+AABAvgAAAAAAAIA+AACAPQAAAAAAAIA+AACgPgAAAAAAAIA+AAAQPwAAAAAAAIA+AAAQvwAAAAAAAAA/AACgvgAAAAAAAAA/AACAvQAAAAAAAAA/AABAPgAAAAAAAAA/AADgPgAAAAAAAAA/")
 }]
+custom_aabb = AABB(0, 0, 0, 3, 5, 3)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s424d"]
 render_priority = 0
@@ -55,6 +56,7 @@ size = Vector2(0.1, 0.1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_edlya"]
 render_priority = 0
 shader = ExtResource("3_oura3")
+shader_parameter/Edge = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fb2kd"]
 material = SubResource("ShaderMaterial_edlya")
@@ -114,7 +116,7 @@ size = 4.39
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Fog Stuff" node_paths=PackedStringArray("TransitionTimer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33088, -0.523567, 1.4)
-mesh = SubResource("ArrayMesh_352li")
+mesh = SubResource("ArrayMesh_d8cxx")
 skeleton = NodePath("../..")
 script = ExtResource("3_f6npi")
 TransitionTimer = NodePath("Timer")
