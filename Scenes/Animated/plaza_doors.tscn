@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjesdvgx2ujfo"]
+
+[ext_resource type="PackedScene" uid="uid://xbv7a235edqf" path="res://Scenes/Animated/plaza DOORS.glb" id="1_qsea5"]
+
+[node name="plaza DOORS" instance=ExtResource("1_qsea5")]
+
+[node name="AnimationPlayer" parent="." index="4"]
+autoplay = "open"
+speed_scale = 2.0

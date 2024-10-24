@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=4 uid="uid://un31ok75dwaf"]
+[gd_scene load_steps=121 format=4 uid="uid://un31ok75dwaf"]
 
 [ext_resource type="Script" path="res://Scripts/ImagePuzzleManager.cs" id="1_bvm8w"]
 [ext_resource type="Script" path="res://Scripts/BrainWorldManager.cs" id="1_quknv"]
@@ -13,11 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://bqm4vmat6upp4" path="res://temple.tscn" id="7_mp8es"]
 [ext_resource type="Material" uid="uid://dagxh04aellbm" path="res://Materials/ImagePuzzleMaterials/green.tres" id="7_r6t2i"]
 [ext_resource type="PackedScene" uid="uid://bt4nhl6e47gcv" path="res://Scenes/GameObjects/Neuron.tscn" id="8_p73ow"]
-[ext_resource type="PackedScene" uid="uid://ju43hbanmqtm" path="res://Models/Tutorial/cube-symbols/cube1.blend" id="10_t1uay"]
 [ext_resource type="PackedScene" uid="uid://bu4jphgc2a4e" path="res://Models/Main level/maze.blend" id="12_rldek"]
 [ext_resource type="Script" path="res://Scripts/SimonSaysManager.cs" id="13_j6mjl"]
 [ext_resource type="PackedScene" uid="uid://hcb2t4qod38t" path="res://Scenes/GameObjects/Sockets/BasicSocket.tscn" id="15_eahny"]
 [ext_resource type="Material" uid="uid://der6tedb2mesv" path="res://Materials/CableAnimation.tres" id="16_do5l6"]
+[ext_resource type="PackedScene" uid="uid://h846kbjh7oaa" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/Blue3.tscn" id="17_o8pkw"]
 [ext_resource type="PackedScene" uid="uid://b751t0fx18op1" path="res://maze.tscn" id="18_flp3t"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="18_gfamk"]
 [ext_resource type="Script" path="res://Scripts/LockedItem.cs" id="19_k22ro"]
@@ -59,10 +59,20 @@
 [ext_resource type="PackedScene" uid="uid://c1ciju2mbrr6" path="res://tree.tscn" id="49_e6gvn"]
 [ext_resource type="Texture2D" uid="uid://dmqb0r0rviawd" path="res://Textures/Fog/OldFog'/fred6.png" id="49_isxq5"]
 [ext_resource type="PackedScene" uid="uid://ba1nigsvakgys" path="res://Models/!Incidentals/ROCK #1.blend" id="53_ffeiv"]
+[ext_resource type="PackedScene" uid="uid://dy4uvvhxprc24" path="res://Models/Cables/Cable Straight 3m.blend" id="53_u565l"]
 [ext_resource type="PackedScene" uid="uid://dhy1wktrpfe1t" path="res://Models/!Incidentals/ROCK #2.blend" id="54_3j27k"]
 [ext_resource type="PackedScene" uid="uid://kkjy5m105ys0" path="res://Models/!Incidentals/ROCK #3.blend" id="55_qdfba"]
 [ext_resource type="PackedScene" uid="uid://bg8w0wyhfeihg" path="res://Models/!Incidentals/ROCK #4.blend" id="56_qrhse"]
 [ext_resource type="PackedScene" uid="uid://btsiie6t4g41r" path="res://Scenes/Animated/neuron_wiggle.tscn" id="62_o6xbc"]
+[ext_resource type="PackedScene" uid="uid://blueurvc3igue" path="res://Scenes/GameObjects/Trigger-Areas/Zoom-Change.tscn" id="64_w30e5"]
+[ext_resource type="PackedScene" uid="uid://cmiog0p8nut77" path="res://Models/Cables/Cable Straight 2m.blend" id="66_ulna3"]
+[ext_resource type="Script" path="res://Scripts/Cable.cs" id="67_vpnyl"]
+[ext_resource type="PackedScene" uid="uid://chvyshukvdh87" path="res://Models/Cables/Cable Straight 5m.blend" id="68_e63iw"]
+[ext_resource type="PackedScene" uid="uid://67ar6qw0bmek" path="res://Models/Cables/Cable 45 Left.blend" id="69_sy5bp"]
+[ext_resource type="PackedScene" uid="uid://bigiuc18dniyw" path="res://Models/Cables/Cable 45 Right.blend" id="70_c5rrd"]
+[ext_resource type="PackedScene" uid="uid://dkhwkdi0ml1uw" path="res://Models/Cables/Cable Straight 1m.blend" id="71_of2ck"]
+[ext_resource type="PackedScene" uid="uid://bcd8ng7k40js3" path="res://Models/Cables/Cable Straight 4m.blend" id="72_helid"]
+[ext_resource type="PackedScene" uid="uid://tvqtitkx2k1m" path="res://Models/Cables/Cable 90 Right.blend" id="73_mg3df"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6oa5"]
 albedo_color = Color(0, 0, 0.772549, 1)
@@ -600,6 +610,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_w8uyk")
 
+
 [sub_resource type="Animation" id="Animation_2hstk"]
 resource_name = "Button Prompt Appear"
 length = 0.2
@@ -681,7 +692,7 @@ script = ExtResource("1_quknv")
 imagePuzzleCover = NodePath("Imagepuzzle Cage")
 simonSaysCover = NodePath("SimonSays Cage")
 FogManager = NodePath("Fog and neurons")
-powerSocketDias = NodePath("Fog and neurons/Power Sockets/BasicSocket")
+powerSocketDias = NodePath("Fog and neurons/Neurons LV2/Neuron4")
 powerSocketMaze = NodePath("Fog and neurons/Power Sockets/BasicSocket2")
 powerSocketMiddle = NodePath("Fog and neurons/Power Sockets/BasicSocket3")
 powerSocketBridge = NodePath("Fog and neurons/Power Sockets/BasicSocket4")
@@ -896,7 +907,7 @@ transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 5.8745
 transform = Transform3D(-5, 0, 7.54979e-07, 0, 5, 0, -7.54979e-07, 0, -5, 62.6757, -0.364755, -13.97)
 
 [node name="Maze" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.28923, -1.83657, 82.2469)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.348, -1.83657, 201.53)
 
 [node name="ImagePuzzle" type="Node3D" parent="Maze" node_paths=PackedStringArray("socketParent", "clueImageParent", "createdImageParent", "colourSpawnerParent")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8468, 25.2288, 50.5622)
@@ -904,7 +915,7 @@ script = ExtResource("1_bvm8w")
 unrecognizedMaterial = ExtResource("2_pe0ng")
 possibleMaterials = Array[Material]([ExtResource("3_pk8v6"), ExtResource("6_73vr8"), ExtResource("5_2pqoc"), ExtResource("4_xfx0l")])
 socketParent = NodePath("Sockets")
-clueImageParent = NodePath("../BasicSocket2/cube1/ImageClue")
+clueImageParent = NodePath("../BasicSocket2/cube3/ImageClue")
 createdImageParent = NodePath("CreatedImage")
 colourSpawnerParent = NodePath("Colour Spawners")
 
@@ -1055,16 +1066,19 @@ visible = false
 visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(1.80525, 0, 0, 0, 1, 0, 0, 0, 12.7856, 4.80424, 3.46082, 4.15573)
+transform = Transform3D(1.80525, 0, 0, 0, 1, 0, 0, 0, 12.7856, 4.33001, 3.41295, 3.84358)
 use_collision = true
+size = Vector3(1.52539, 1, 1.04883)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 10.9051, -13.8481, 6.16233, 23.2133)
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 10.9051, -14.1122, 6.16233, 23.1707)
 use_collision = true
+size = Vector3(1.52075, 1, 1.00781)
 
 [node name="CSGBox3D28" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(4.9855, 0, 0, 0, 14.9123, 0, 0, 0, 5.38869, -13.5698, -5.52677, 9.3235)
+transform = Transform3D(4.9855, 0, 0, 0, 14.9123, 0, 0, 0, 5.38869, -13.9508, -5.52677, 9.3235)
 use_collision = true
+size = Vector3(1.15283, 1, 1)
 
 [node name="CSGBox3D29" type="CSGBox3D" parent="Maze/Maze floor colliders"]
 transform = Transform3D(24.2418, 0, 0, 0, 14.9123, 0, 0, 0, 23.8653, 31.7483, 17.218, 56.4516)
@@ -1072,16 +1086,19 @@ use_collision = true
 size = Vector3(1, 1, 1.021)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 11.105, 2.72467, 8.89902, 21.8333)
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 11.105, 2.31184, 8.89902, 21.769)
 use_collision = true
+size = Vector3(1.32031, 1, 1.01158)
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(-8.76407e-08, 0, -11.105, 0, 1, 0, 2.00499, 0, -4.85413e-07, 8.95593, 8.89902, 17.211)
+transform = Transform3D(-8.76407e-08, 0, -11.105, 0, 1, 0, 2.00499, 0, -4.85413e-07, 8.95593, 8.89902, 17.1806)
 use_collision = true
+size = Vector3(1.03027, 1, 1)
 
 [node name="CSGBox3D24" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(-8.76407e-08, 0, -11.105, 0, 1, 0, 2.00499, 0, -4.85413e-07, -3.75309, 8.8763, 26.5934)
+transform = Transform3D(-8.76407e-08, 0, -11.105, 0, 1, 0, 2.00499, 0, -4.85413e-07, -3.81535, 8.899, 25.9814)
 use_collision = true
+size = Vector3(1.61011, 1, 1.01123)
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="Maze/Maze floor colliders"]
 transform = Transform3D(-8.76407e-08, 0, -19.8923, 0, 1, 0, 2.00499, 0, -8.69521e-07, 12.7726, 21.4839, 48.5763)
@@ -1092,52 +1109,62 @@ transform = Transform3D(-2.00382, 0, 0.36201, 0, 1, 0, -0.0684693, 0, -10.5946, 
 use_collision = true
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 26.449, 9.55042, 21.2867)
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 26.1607, 9.52998, 21.2623)
 use_collision = true
+size = Vector3(1.2876, 1, 0.996216)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 24.4815, 18.8678, 38.1505)
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 24.4815, 18.8898, 38.0939)
 use_collision = true
+size = Vector3(1, 1, 1.00407)
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="Maze/Maze floor colliders"]
 transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 12.0024, 16.5951, 41.8014)
 use_collision = true
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 4.85427, 3.77716, 10.2273)
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 10.8029, 0, -0.642788, 12.8744, 4.32586, 3.69342, 10.1275)
 use_collision = true
+size = Vector3(1.5271, 1, 0.984497)
 
 [node name="CSGBox3D27" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 7.2637, 0, -0.642787, 8.65654, -13.9189, 2.73676, 13.7243)
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 7.2637, 0, -0.642787, 8.65654, -14.0351, 2.7044, 13.6857)
 use_collision = true
+size = Vector3(1.58246, 1, 0.991089)
 
 [node name="CSGBox3D25" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 7.14014, 0, -0.642788, 8.50928, -8.44758, 10.9184, 30.2259)
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 7.14014, 0, -0.642788, 8.50928, -8.96326, 11.7011, 31.1587)
 use_collision = true
+size = Vector3(1.5144, 1, 0.780762)
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(-8.76407e-08, -0.642788, 5.69358, 0, 0.766045, 4.77748, -2.00499, 2.80971e-08, -2.48874e-07, -11.9916, 6.67081, 26.4954)
+transform = Transform3D(-8.76407e-08, -0.642788, 5.69358, 0, 0.766045, 4.77748, -2.00499, 2.80971e-08, -2.48874e-07, -11.9916, 6.67081, 26.1157)
 use_collision = true
+size = Vector3(1.37878, 1, 1)
 
 [node name="CSGBox3D21" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 4.5911, 0, -0.642787, 5.47146, 26.4412, 5.01205, 13.7548)
+transform = Transform3D(2.00499, 0, 0, 0, 0.766044, 4.5911, 0, -0.642787, 5.47146, 26.2797, 4.97828, 13.7146)
 use_collision = true
+size = Vector3(1.16113, 1, 0.985291)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Maze/Maze floor colliders"]
 transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 13.2057, 4.91049, 15.7138, 33.5429)
 use_collision = true
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 13.2057, 24.5055, 14.8763, 34.0134)
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 13.2057, 24.3724, 14.777, 34.0134)
 use_collision = true
+size = Vector3(1.13281, 1, 1)
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 3.72776, 26.5102, 7.09779, 17.9523)
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 3.72776, 26.1942, 7.10406, 18.0067)
 use_collision = true
+size = Vector3(1.29736, 1, 1.02917)
 
 [node name="CSGBox3D23" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 3.72776, 26.4358, 3.36605, 11.2706)
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 3.72776, 26.2028, 3.41603, 11.2706)
 use_collision = true
+size = Vector3(1.23242, 1, 1)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Maze/Maze floor colliders"]
 transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 7.30762, 33.8777, 14.7415, 32.9064)
@@ -1160,8 +1187,9 @@ transform = Transform3D(-0.0242151, 0, 11.9045, 0, 1, 0, -2.00484, 0, -0.143786,
 use_collision = true
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(-8.76407e-08, 0, 21.9787, 0, 1, 0, -2.00499, 0, -9.60718e-07, 16.4306, 3.41982, 8.64264)
+transform = Transform3D(-8.76407e-08, 0, 21.9787, 0, 1, 0, -2.00499, 0, -9.60718e-07, 16.4306, 3.41982, 8.21274)
 use_collision = true
+size = Vector3(1.42883, 1, 1)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Maze/Maze floor colliders"]
 transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 11.105, 13.0862, 8.89902, 21.8333)
@@ -1196,7 +1224,7 @@ use_collision = true
 size = Vector3(1, 1, 0.843628)
 
 [node name="CSGBox3D36" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(-8.76407e-08, -0.0871557, 11.0627, 0, 0.996195, 0.96786, -2.00499, 3.8097e-09, -4.83566e-07, 13.765, 8.82768, 17.2737)
+transform = Transform3D(-8.76407e-08, -0.0871557, 11.0627, 0, 0.996195, 0.96786, -2.00499, 3.8097e-09, -4.83566e-07, 14.6424, 8.91066, 17.2403)
 use_collision = true
 size = Vector3(1, 1, 0.843628)
 
@@ -1216,16 +1244,17 @@ use_collision = true
 size = Vector3(1, 1, 0.843628)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Maze/Maze floor colliders"]
-transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 22.033, -8.47495, 14.3099, 45.2968)
+transform = Transform3D(2.00499, 0, 0, 0, 1, 0, 0, 0, 22.033, -8.96201, 14.3099, 45.2968)
 use_collision = true
+size = Vector3(1.48584, 1, 1)
 
 [node name="Maze walls" type="Node3D" parent="Maze"]
 visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Maze/Maze walls"]
-transform = Transform3D(17.0396, 0, 0, 0, 18.0707, 0, 5.68434e-14, 0, 12.1784, 18.5598, 5.7659, 1.23953)
+transform = Transform3D(17.0396, 0, 0, 0, 18.0707, 0, 5.68434e-14, 0, 12.1784, 18.5598, 5.7659, 0.978439)
 use_collision = true
-size = Vector3(1.50928, 0.831909, 1)
+size = Vector3(1.50928, 0.831909, 0.957123)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Maze/Maze walls"]
 transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 34.4494, 9.26104, 11.1047)
@@ -1258,17 +1287,17 @@ use_collision = true
 size = Vector3(1.64383, 2.02444, 1.3418)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Maze/Maze walls"]
-transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -14.5975, 9.80567, 43.8802)
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -15.0712, 9.80567, 43.8802)
 use_collision = true
-size = Vector3(0.573013, 2.02444, 2.69434)
+size = Vector3(0.547609, 2.02444, 2.69434)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Maze/Maze walls"]
-transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -19.8098, 3.4448, 28.6958)
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -20.6, 3.445, 28.5)
 use_collision = true
 size = Vector3(0.573013, 1.33498, 2.69434)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="Maze/Maze walls"]
-transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -20.9284, -1.97195, 22.2845)
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -21.7, -1.972, 22.285)
 use_collision = true
 size = Vector3(0.573013, 1.33498, 2.69434)
 
@@ -1283,9 +1312,9 @@ use_collision = true
 size = Vector3(0.573013, 0.807014, 0.599609)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Maze/Maze walls"]
-transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -5.57541, 5.29557, 18.7579)
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -5.91301, 5.296, 18.2533)
 use_collision = true
-size = Vector3(0.855257, 0.807014, 1.11591)
+size = Vector3(0.800048, 0.807014, 1.01169)
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="Maze/Maze walls"]
 transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -1.86738, 15.7557, 38.6912)
@@ -1313,9 +1342,9 @@ use_collision = true
 size = Vector3(0.465078, 1.10712, 0.714618)
 
 [node name="CSGBox3D20" type="CSGBox3D" parent="Maze/Maze walls"]
-transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 19.6692, 12.5177, 21.5347)
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 19.5622, 12.5177, 21.5347)
 use_collision = true
-size = Vector3(0.654356, 1.10712, 0.944279)
+size = Vector3(0.641792, 1.10712, 0.944279)
 
 [node name="CSGBox3D22" type="CSGBox3D" parent="Maze/Maze walls"]
 transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 31.0855, 14.4761, 40.4562)
@@ -1328,9 +1357,9 @@ use_collision = true
 size = Vector3(0.40876, 1.36325, 0.746502)
 
 [node name="CSGBox3D24" type="CSGBox3D" parent="Maze/Maze walls"]
-transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 0.312866, 4.29374, 6.12613)
+transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, -0.0944519, 4.29374, 5.85825)
 use_collision = true
-size = Vector3(0.40876, 1.36325, 1.63595)
+size = Vector3(0.360951, 1.36325, 1.59196)
 
 [node name="CSGBox3D25" type="CSGBox3D" parent="Maze/Maze walls"]
 transform = Transform3D(17.0396, 0, 0, 0, 18.4515, 0, 5.68434e-14, 0, 12.1784, 3.77134, 4.29374, -3.77902)
@@ -1343,9 +1372,9 @@ use_collision = true
 size = Vector3(0.355986, 1.10712, 1.44139)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Maze/Maze walls"]
-transform = Transform3D(12.9405, 0, 0, 0, 18.0707, 0, 4.31688e-14, 0, 6.98223, 15.6478, 5.7659, 12.5997)
+transform = Transform3D(12.9405, 0, 0, 0, 18.0707, 0, 4.31688e-14, 0, 6.98223, 15.4598, 5.7659, 12.5997)
 use_collision = true
-size = Vector3(1.50928, 0.831909, 1)
+size = Vector3(1.48023, 0.831909, 1)
 
 [node name="BasicSocket" parent="Maze" instance=ExtResource("15_eahny")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2202, 15.7367, 28.9755)
@@ -1356,67 +1385,66 @@ transform = Transform3D(-14, 0, -2.11394e-06, 0, 14, 0, 2.11394e-06, 0, -14, 14.
 [node name="BasicSocket2" parent="Maze" instance=ExtResource("15_eahny")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6373, 2.42269, 9.21272)
 
-[node name="cube1" parent="Maze/BasicSocket2" instance=ExtResource("10_t1uay")]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.429844, 0)
-metadata/ItemKey = "Box"
+[node name="cube3" parent="Maze/BasicSocket2" instance=ExtResource("17_o8pkw")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, 0.181755, 0)
 
-[node name="ImageClue" type="Node3D" parent="Maze/BasicSocket2/cube1"]
-transform = Transform3D(-8.30516e-09, 0, 0.19, 0, 0.19, 0, -0.19, 0, -8.30516e-09, -0.574036, 1.93165, 0.581715)
+[node name="ImageClue" type="Node3D" parent="Maze/BasicSocket2/cube3"]
+transform = Transform3D(-8.30517e-09, 0, 0.19, 0, 0.19, 0, -0.19, 0, -8.30517e-09, -0.574036, 0.912319, 0.581715)
 
-[node name="Row 1" type="Node3D" parent="Maze/BasicSocket2/cube1/ImageClue"]
+[node name="Row 1" type="Node3D" parent="Maze/BasicSocket2/cube3/ImageClue"]
 
-[node name="Pixel 1" type="CSGBox3D" parent="Maze/BasicSocket2/cube1/ImageClue/Row 1"]
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/BasicSocket2/cube3/ImageClue/Row 1"]
 material_override = ExtResource("3_pk8v6")
 size = Vector3(3, 1, 3)
 material = ExtResource("3_pk8v6")
 
-[node name="Pixel 2" type="CSGBox3D" parent="Maze/BasicSocket2/cube1/ImageClue/Row 1"]
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/BasicSocket2/cube3/ImageClue/Row 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 material_override = ExtResource("4_xfx0l")
 size = Vector3(3, 1, 3)
 material = ExtResource("4_xfx0l")
 
-[node name="Pixel 3" type="CSGBox3D" parent="Maze/BasicSocket2/cube1/ImageClue/Row 1"]
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/BasicSocket2/cube3/ImageClue/Row 1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 material_override = ExtResource("3_pk8v6")
 size = Vector3(3, 1, 3)
 material = ExtResource("3_pk8v6")
 
-[node name="Row 2" type="Node3D" parent="Maze/BasicSocket2/cube1/ImageClue"]
+[node name="Row 2" type="Node3D" parent="Maze/BasicSocket2/cube3/ImageClue"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="Pixel 1" type="CSGBox3D" parent="Maze/BasicSocket2/cube1/ImageClue/Row 2"]
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/BasicSocket2/cube3/ImageClue/Row 2"]
 material_override = ExtResource("4_xfx0l")
 size = Vector3(3, 1, 3)
 material = ExtResource("4_xfx0l")
 
-[node name="Pixel 2" type="CSGBox3D" parent="Maze/BasicSocket2/cube1/ImageClue/Row 2"]
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/BasicSocket2/cube3/ImageClue/Row 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 material_override = ExtResource("5_2pqoc")
 size = Vector3(3, 1, 3)
 material = ExtResource("5_2pqoc")
 
-[node name="Pixel 3" type="CSGBox3D" parent="Maze/BasicSocket2/cube1/ImageClue/Row 2"]
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/BasicSocket2/cube3/ImageClue/Row 2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 material_override = ExtResource("4_xfx0l")
 size = Vector3(3, 1, 3)
 material = ExtResource("4_xfx0l")
 
-[node name="Row 3" type="Node3D" parent="Maze/BasicSocket2/cube1/ImageClue"]
+[node name="Row 3" type="Node3D" parent="Maze/BasicSocket2/cube3/ImageClue"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
-[node name="Pixel 1" type="CSGBox3D" parent="Maze/BasicSocket2/cube1/ImageClue/Row 3"]
+[node name="Pixel 1" type="CSGBox3D" parent="Maze/BasicSocket2/cube3/ImageClue/Row 3"]
 material_override = ExtResource("3_pk8v6")
 size = Vector3(3, 1, 3)
 material = ExtResource("3_pk8v6")
 
-[node name="Pixel 2" type="CSGBox3D" parent="Maze/BasicSocket2/cube1/ImageClue/Row 3"]
+[node name="Pixel 2" type="CSGBox3D" parent="Maze/BasicSocket2/cube3/ImageClue/Row 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 material_override = ExtResource("4_xfx0l")
 size = Vector3(3, 1, 3)
 material = ExtResource("4_xfx0l")
 
-[node name="Pixel 3" type="CSGBox3D" parent="Maze/BasicSocket2/cube1/ImageClue/Row 3"]
+[node name="Pixel 3" type="CSGBox3D" parent="Maze/BasicSocket2/cube3/ImageClue/Row 3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 material_override = ExtResource("3_pk8v6")
 size = Vector3(3, 1, 3)
@@ -1455,8 +1483,8 @@ script = ExtResource("13_j6mjl")
 sequences = Array[Array]([[0, 1], [0, 1, 3], [0, 1, 3, 1], [0, 1, 3, 1, 2]])
 brightMaterial = ExtResource("21_77adm")
 dimMaterial = ExtResource("3_pk8v6")
-buttons = []
-indicators = []
+buttons = [NodePath("Button"), NodePath("Button2"), NodePath("Button3"), NodePath("Button4")]
+indicators = [NodePath("Simon says rock #1/Curve"), NodePath("Simon says rock #2/Curve_002"), NodePath("Simon says rock #3/Curve_013"), NodePath("Simon says rock #4/Curve_012")]
 
 [node name="Button" type="Node3D" parent="Simon Says" node_paths=PackedStringArray("interactable")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2118, 0, -2.62444)
@@ -1917,8 +1945,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85179, 0)
 script = ExtResource("22_vohlp")
 sequenceButtons = []
 
-[node name="BasicSocket" parent="Exit Dias/Crystal Pickups" instance=ExtResource("15_eahny")]
+[node name="BasicSocket" parent="Exit Dias/Crystal Pickups" node_paths=PackedStringArray("StartingItem") instance=ExtResource("15_eahny")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0813, -1.4599, 15.2231)
+StartingItem = NodePath("green_crystal")
 
 [node name="green_crystal" parent="Exit Dias/Crystal Pickups/BasicSocket" node_paths=PackedStringArray("Sockets", "Buttons") instance=ExtResource("25_jqpoo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.333998, -0.304015, -0.0374537)
@@ -1928,8 +1957,9 @@ ItemKeys = []
 Buttons = []
 metadata/ItemKey = "CrystalGreen"
 
-[node name="BasicSocket2" parent="Exit Dias/Crystal Pickups" instance=ExtResource("15_eahny")]
+[node name="BasicSocket2" parent="Exit Dias/Crystal Pickups" node_paths=PackedStringArray("StartingItem") instance=ExtResource("15_eahny")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8278, 1.63891, -17.6514)
+StartingItem = NodePath("vision_crystal")
 
 [node name="vision_crystal" parent="Exit Dias/Crystal Pickups/BasicSocket2" node_paths=PackedStringArray("Sockets", "Buttons") instance=ExtResource("27_hrqml")]
 transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -3.8147e-06, 0.0764556, 0)
@@ -1939,8 +1969,9 @@ ItemKeys = []
 Buttons = []
 metadata/ItemKey = "CrystalBlack"
 
-[node name="BasicSocket3" parent="Exit Dias/Crystal Pickups" instance=ExtResource("15_eahny")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8619, 1.49424, -44.6306)
+[node name="BasicSocket3" parent="Exit Dias/Crystal Pickups" node_paths=PackedStringArray("StartingItem") instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4406, 1.49424, -43.9119)
+StartingItem = NodePath("memory_crystal")
 
 [node name="memory_crystal" parent="Exit Dias/Crystal Pickups/BasicSocket3" node_paths=PackedStringArray("Sockets", "Buttons") instance=ExtResource("28_uvfqr")]
 transform = Transform3D(-2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 9.55343e-16, 0, 0.301642, 0)
@@ -1950,8 +1981,9 @@ ItemKeys = []
 Buttons = []
 metadata/ItemKey = "CrystalBlue"
 
-[node name="BasicSocket4" parent="Exit Dias/Crystal Pickups" instance=ExtResource("15_eahny")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.46708, 1.56884, -40.6272)
+[node name="BasicSocket4" parent="Exit Dias/Crystal Pickups" node_paths=PackedStringArray("StartingItem") instance=ExtResource("15_eahny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.36806, 1.56884, -41.2986)
+StartingItem = NodePath("resilience_crystal")
 
 [node name="resilience_crystal" parent="Exit Dias/Crystal Pickups/BasicSocket4" node_paths=PackedStringArray("Sockets", "Buttons") instance=ExtResource("29_7bu68")]
 transform = Transform3D(0.5, -2.18557e-08, -2.18557e-08, 2.18557e-08, -2.18557e-08, 0.5, -2.18557e-08, -0.5, -2.18557e-08, 0.422771, 0.106156, 0.578087)
@@ -1961,19 +1993,18 @@ ItemKeys = []
 Buttons = []
 metadata/ItemKey = "CrystalRed"
 
-[node name="Clutter room" parent="." node_paths=PackedStringArray("Sockets") instance=ExtResource("33_vpiim")]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 132.214, 0, 42.5315)
-Sockets = []
+[node name="Clutter room" parent="." instance=ExtResource("33_vpiim")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -190.58, 3.05176e-05, 428.75)
 
 [node name="Fog and neurons" type="Node3D" parent="." node_paths=PackedStringArray("fog")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5439, 0.576016, -40.817)
-visible = false
 script = ExtResource("24_teicv")
 fog = NodePath("Fog/MeshInstance3D3")
 textures = [ExtResource("36_0d1bk"), ExtResource("37_rxcbj"), ExtResource("38_2rgj1"), ExtResource("39_ltqrq"), ExtResource("40_6n52t")]
 
 [node name="Fog" type="Node3D" parent="Fog and neurons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4781, 8.2103, -30.4142)
+visible = false
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Fog and neurons/Fog" node_paths=PackedStringArray("TransitionTimer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.39829, -2.87253, -1.52833)
@@ -2002,10 +2033,10 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0129547, -0.163687, -0.0671883)
 
 [node name="BasicSocket" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2025, -0.0802045, -10.3785)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.2025, -0.0802045, -10.3785)
 
 [node name="BasicSocket2" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 59.3997, 4.29309, -15.2475)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60.1785, 4.29309, -15.2475)
 
 [node name="BasicSocket3" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1186, 2.90702, -38.0694)
@@ -2014,7 +2045,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1186, 2.90702, -38.0694)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.9731, 5.47487, -56.8471)
 
 [node name="BasicSocket5" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5895, 3.02607, -48.9272)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.744, 3.02607, -49.6357)
 
 [node name="WaterSocket" parent="Fog and neurons/Power Sockets" instance=ExtResource("25_lydc0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5177, -0.147918, -35.9711)
@@ -2026,94 +2057,117 @@ fog = NodePath("../Fog/MeshInstance3D3")
 textures = Array[Texture2D]([ExtResource("45_d3hji"), ExtResource("46_myti3"), ExtResource("47_weyop"), ExtResource("48_7vxn4"), ExtResource("49_isxq5")])
 
 [node name="Neuron" parent="Fog and neurons/Neurons LV1" instance=ExtResource("8_p73ow")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.772, -0.905375, -3.72548)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.236, -0.807, -17.883)
+startOn = true
 
 [node name="Neuron2" parent="Fog and neurons/Neurons LV1" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.329608, 0, 0.944118, 0, 1, 0, -0.944118, 0, 0.329608, 7.99303, -0.806898, -25.1314)
+transform = Transform3D(0.329608, 0, 0.944118, 0, 1, 0, -0.944118, 0, 0.329608, 26.325, -0.807, -26.011)
+startOn = true
 
 [node name="Neuron3" parent="Fog and neurons/Neurons LV1" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.0802337, 0, 0.996776, 0, 1, 0, -0.996776, 0, 0.0802337, 26.4229, -0.806899, -1.08223)
+transform = Transform3D(0.0802337, 0, 0.996776, 0, 1, 0, -0.996776, 0, 0.0802337, 18.122, -0.905, -5.987)
+startOn = true
 
 [node name="Neuron4" parent="Fog and neurons/Neurons LV1" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.259561, 0, -0.965727, 0, 1, 0, 0.965727, 0, 0.259561, 9.97552, -0.806899, -8.61008)
+transform = Transform3D(0.259561, 0, -0.965727, 0, 1, 0, 0.965727, 0, 0.259561, 12.825, -0.807, -27.482)
+startOn = true
+
+[node name="Neuron5" parent="Fog and neurons/Neurons LV1" instance=ExtResource("8_p73ow")]
+transform = Transform3D(0.259561, 0, -0.965727, 0, 1, 0, 0.965727, 0, 0.259561, 28.278, -0.807, -13.558)
+startOn = true
 
 [node name="Neurons LV2" type="Node3D" parent="Fog and neurons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5185, 0, -1.43051e-06)
 
-[node name="Neuron" parent="Fog and neurons/Neurons LV2" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.0812949, 0, 0.99669, 0, 1, 0, -0.99669, 0, 0.0812949, 20.3502, -0.905375, -4.8177)
-
-[node name="Neuron2" parent="Fog and neurons/Neurons LV2" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.947891, 0, -0.318595, 0, 1, 0, 0.318595, 0, 0.947891, 3.95878, -0.806898, -19.2112)
-
-[node name="Neuron3" parent="Fog and neurons/Neurons LV2" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.473135, 0, -0.88099, 0, 1, 0, 0.88099, 0, 0.473135, 31.0888, -0.806899, -4.75585)
-
 [node name="Neuron4" parent="Fog and neurons/Neurons LV2" instance=ExtResource("8_p73ow")]
 transform = Transform3D(-0.0298407, 0, 0.999555, 0, 1, 0, -0.999555, 0, -0.0298407, 12.1676, -0.806899, -10.3169)
 
+[node name="Neuron" parent="Fog and neurons/Neurons LV2" instance=ExtResource("8_p73ow")]
+transform = Transform3D(0.0812949, 0, 0.99669, 0, 1, 0, -0.99669, 0, 0.0812949, 20.3502, -0.905375, -4.78134)
+
+[node name="Neuron2" parent="Fog and neurons/Neurons LV2" instance=ExtResource("8_p73ow")]
+transform = Transform3D(0.947891, 0, -0.318595, 0, 1, 0, 0.318595, 0, 0.947891, 3.22366, -0.806898, -19.4798)
+
+[node name="Neuron3" parent="Fog and neurons/Neurons LV2" instance=ExtResource("8_p73ow")]
+transform = Transform3D(0.473135, 0, -0.88099, 0, 1, 0, 0.88099, 0, 0.473135, 30.0586, -0.806899, -3.93167)
+
 [node name="Neuron5" parent="Fog and neurons/Neurons LV2" instance=ExtResource("8_p73ow")]
-transform = Transform3D(-0.824502, 0, 0.565859, 0, 1, 0, -0.565859, 0, -0.824502, 6.02511, -0.806899, -3.27609)
+transform = Transform3D(-0.824502, 0, 0.565859, 0, 1, 0, -0.565859, 0, -0.824502, 6.31748, -0.806899, -3.17543)
+
+[node name="Neuron6" parent="Fog and neurons/Neurons LV2" instance=ExtResource("8_p73ow")]
+transform = Transform3D(0.554627, 0, 0.832099, 0, 1, 0, -0.832099, 0, 0.554627, 29.4762, -0.877279, -28.8663)
+
+[node name="Neuron7" parent="Fog and neurons/Neurons LV2" instance=ExtResource("8_p73ow")]
+transform = Transform3D(-0.311854, 0, 0.95013, 0, 1, 0, -0.95013, 0, -0.311854, 15.3873, -0.877279, -18.2881)
 
 [node name="Neurons LV3" type="Node3D" parent="Fog and neurons"]
 
-[node name="Neuron" parent="Fog and neurons/Neurons LV3" instance=ExtResource("8_p73ow")]
-transform = Transform3D(-0.311854, 0, 0.95013, 0, 1, 0, -0.95013, 0, -0.311854, 49.5942, -0.877279, -24.1623)
-
-[node name="Neuron2" parent="Fog and neurons/Neurons LV3" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.554627, 0, 0.832099, 0, 1, 0, -0.832099, 0, 0.554627, 64.1932, -0.877279, -28.7908)
-
 [node name="Neuron3" parent="Fog and neurons/Neurons LV3" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.554627, 0, 0.832099, 0, 1, 0, -0.832099, 0, 0.554627, 42.1415, 2.20403, -37.0647)
+transform = Transform3D(0.554627, 0, 0.832099, 0, 1, 0, -0.832099, 0, 0.554627, 42.1415, 2.20403, -37.4468)
+startOn = true
 
 [node name="Neuron4" parent="Fog and neurons/Neurons LV3" instance=ExtResource("8_p73ow")]
-transform = Transform3D(-0.850765, 0, 0.525546, 0, 1, 0, -0.525546, 0, -0.850765, 68.839, 2.20403, -37.1945)
+transform = Transform3D(-0.850765, 0, 0.525546, 0, 1, 0, -0.525546, 0, -0.850765, 68.839, 2.20403, -37.4833)
+startOn = true
 
 [node name="Neurons LV4" type="Node3D" parent="Fog and neurons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.6735, -22.7586)
 
 [node name="Neuron" parent="Fog and neurons/Neurons LV4" instance=ExtResource("8_p73ow")]
-transform = Transform3D(-0.311854, 0, 0.95013, 0, 1, 0, -0.95013, 0, -0.311854, 46.5332, -0.877279, -20.7134)
+transform = Transform3D(-0.311854, 0, 0.95013, 0, 1, 0, -0.95013, 0, -0.311854, 46.0212, -0.877279, -20.6773)
+startOn = true
 
 [node name="Neuron2" parent="Fog and neurons/Neurons LV4" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.554627, 0, 0.832099, 0, 1, 0, -0.832099, 0, 0.554627, 65.8588, -0.877279, -20.6215)
+transform = Transform3D(0.554627, 0, 0.832099, 0, 1, 0, -0.832099, 0, 0.554627, 65.4301, -0.877279, -21.0364)
+startOn = true
 
 [node name="Neuron3" parent="Fog and neurons/Neurons LV4" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.554627, 0, 0.832099, 0, 1, 0, -0.832099, 0, 0.554627, 65.8588, -0.877279, -39.982)
+transform = Transform3D(0.554627, 0, 0.832099, 0, 1, 0, -0.832099, 0, 0.554627, 65.1948, -0.877279, -39.5433)
+startOn = true
 
 [node name="Neuron4" parent="Fog and neurons/Neurons LV4" instance=ExtResource("8_p73ow")]
-transform = Transform3D(-0.85502, 0, 0.518594, 0, 1, 0, -0.518594, 0, -0.85502, 30.6754, -3.31142, -18.8524)
+transform = Transform3D(-0.85502, 0, 0.518594, 0, 1, 0, -0.518594, 0, -0.85502, 30.8478, -3.31142, -19.3093)
+startOn = true
 
 [node name="Neuron5" parent="Fog and neurons/Neurons LV4" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.150571, 0, -0.988599, 0, 1, 0, 0.988599, 0, 0.150571, 7.71808, -3.31142, -14.9209)
+transform = Transform3D(0.150571, 0, -0.988599, 0, 1, 0, 0.988599, 0, 0.150571, 7.94467, -3.31142, -15.2718)
+startOn = true
 
 [node name="Neuron8" parent="Fog and neurons/Neurons LV4" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.91897, 0, -0.394327, 0, 1, 0, 0.394327, 0, 0.91897, 14.1573, -3.31142, -23.8018)
+transform = Transform3D(0.91897, 0, -0.394327, 0, 1, 0, 0.394327, 0, 0.91897, 14.1087, -3.31142, -23.178)
+startOn = true
 
 [node name="Neuron6" parent="Fog and neurons/Neurons LV4" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.446744, 0, 0.894662, 0, 1, 0, -0.894662, 0, 0.446744, 23.7003, -3.31142, -14.9209)
+transform = Transform3D(0.446744, 0, 0.894662, 0, 1, 0, -0.894662, 0, 0.446744, 23.3987, -3.31142, -15.7353)
+startOn = true
 
 [node name="Neuron7" parent="Fog and neurons/Neurons LV4" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.446744, 0, 0.894662, 0, 1, 0, -0.894662, 0, 0.446744, 21.5128, -3.31142, -28.7637)
+transform = Transform3D(0.446744, 0, 0.894662, 0, 1, 0, -0.894662, 0, 0.446744, 20.9699, -3.31142, -28.8743)
+startOn = true
 
 [node name="Neuron LV5" type="Node3D" parent="Fog and neurons"]
 
 [node name="Neuron4" parent="Fog and neurons/Neuron LV5" instance=ExtResource("8_p73ow")]
-transform = Transform3D(-0.995132, 0, -0.0985555, 0, 1, 0, 0.0985555, 0, -0.995132, 26.7411, 2.3527, -64.1258)
+transform = Transform3D(-0.995132, 0, -0.0985555, 0, 1, 0, 0.0985555, 0, -0.995132, 26.9339, 2.3527, -64.1199)
+startOn = true
 
 [node name="Neuron6" parent="Fog and neurons/Neuron LV5" instance=ExtResource("8_p73ow")]
-transform = Transform3D(0.999631, 0, 0.027154, 0, 1, 0, -0.027154, 0, 0.999631, 31.2332, 2.3527, -57.842)
+transform = Transform3D(0.999631, 0, 0.027154, 0, 1, 0, -0.027154, 0, 0.999631, 31.2332, 2.3527, -57.8876)
+startOn = true
 
 [node name="Neuron5" parent="Fog and neurons/Neuron LV5" instance=ExtResource("8_p73ow")]
-transform = Transform3D(-0.311854, 0, 0.95013, 0, 1, 0, -0.95013, 0, -0.311854, 38.0685, 2.3527, -65.9736)
+transform = Transform3D(-0.311854, 0, 0.95013, 0, 1, 0, -0.95013, 0, -0.311854, 37.9579, 2.3527, -65.6247)
+startOn = true
 
 [node name="Neurons LV6" type="Node3D" parent="Fog and neurons"]
 
 [node name="Neuron9" parent="Fog and neurons/Neurons LV6" instance=ExtResource("8_p73ow")]
 transform = Transform3D(0.240889, 0, -0.970553, 0, 1, 0, 0.970553, 0, 0.240889, 9.01992, 2.36208, -57.5642)
+startOn = true
 
 [node name="Neuron10" parent="Fog and neurons/Neurons LV6" instance=ExtResource("8_p73ow")]
 transform = Transform3D(0.699152, 0, 0.714973, 0, 1, 0, -0.714973, 0, 0.699152, 5.71859, 2.36208, -64.0745)
+startOn = true
 
 [node name="Power boxes" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5439, 2.87495, -40.817)
@@ -2122,13 +2176,13 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5439
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83874, -2.73732, -11.9512)
 
 [node name="PowerBoxPickup2" parent="Power boxes" instance=ExtResource("26_7pnpm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.003, 20.4126, -22.7593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 288.286, 20.4126, 96.8778)
 
 [node name="PowerBoxPickup3" parent="Power boxes" instance=ExtResource("26_7pnpm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.3984, 0.359182, -37.7815)
 
 [node name="PowerBoxPickup4" parent="Power boxes" instance=ExtResource("26_7pnpm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.295, -2.05988, -124.791)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 486.514, -2.05985, 198.003)
 
 [node name="PowerBoxPickup5" parent="Power boxes" instance=ExtResource("26_7pnpm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.9014, 2.97583, -61.6584)
@@ -2275,7 +2329,7 @@ use_collision = true
 size = Vector3(0.231689, 2.15942, 0.193237)
 
 [node name="Imagepuzzle Cage" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.2913, 23.2719, 126.951)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.3458, 23.2719, 246.234)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Imagepuzzle Cage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355362, 0.579712, 0.174946)
@@ -2403,6 +2457,1997 @@ transform = Transform3D(-0.0187921, 0.597229, -0.0544496, -0.0289541, -0.0553164
 transform = Transform3D(-0.166318, 0, -0.249676, 0, 0.3, 0, 0.249676, 0, -0.166318, 49.0587, 2.93011, -29.5849)
 
 [node name="neuronWiggle" parent="." instance=ExtResource("62_o6xbc")]
-transform = Transform3D(-0.289363, 0, 0.0791771, 0, 0.3, 0, -0.0791771, 0, -0.289363, 4.9458, -44.0326, -45.336)
+transform = Transform3D(-0.229003, -9.28953e-09, 0.193797, -0.193797, 1.21138e-08, -0.229003, 1.86265e-09, -0.3, -3.51617e-17, 11.0673, -37.845, -51.9101)
+
+[node name="Zoom Gate" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.58487, -25.2303, -2.54658)
+
+[node name="Zoom-change" parent="Zoom Gate" instance=ExtResource("64_w30e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.11672)
+overideWithStartDistance = true
+
+[node name="Zoom-change2" parent="Zoom Gate" instance=ExtResource("64_w30e5")]
+distance = 100.0
+
+[node name="Zoom Gate2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.16131, -2.83978, -17.8483)
+
+[node name="Zoom-change" parent="Zoom Gate2" instance=ExtResource("64_w30e5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.11672)
+overideWithStartDistance = true
+
+[node name="Zoom-change2" parent="Zoom Gate2" instance=ExtResource("64_w30e5")]
+distance = 100.0
+
+[node name="Zoom-change" parent="." instance=ExtResource("64_w30e5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 59.6502, 4.15286, -23.3806)
+overideWithStartDistance = true
+
+[node name="Zoom-change2" parent="." instance=ExtResource("64_w30e5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -193.404, 1.40241, 428.778)
+distance = 6.0
+
+[node name="Cables0" type="Node3D" parent="."]
+
+[node name="1" parent="Cables0" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 15.121, -0.288, -22.706)
+
+[node name="Cube" parent="Cables0/1" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+start = true
+length = 0.4
+
+[node name="2" parent="Cables0" instance=ExtResource("66_ulna3")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 32.62, -0.288, -15.497)
+
+[node name="Cube" parent="Cables0/2" index="0"]
+script = ExtResource("67_vpnyl")
+start = true
+length = 0.4
+
+[node name="3" parent="Cables0" instance=ExtResource("66_ulna3")]
+transform = Transform3D(-6.55671e-08, 0, 1, 0, 1, 0, -1.5, 0, -4.37114e-08, 25.472, -0.288, -32.932)
+
+[node name="Cube" parent="Cables0/3" index="0"]
+script = ExtResource("67_vpnyl")
+start = true
+length = 0.4
+
+[node name="4" parent="Cables0" instance=ExtResource("66_ulna3")]
+transform = Transform3D(0.424199, 0, 0.905569, 0, 1, 0, -0.905569, 0, 0.424199, 21.51, -0.314, -13.656)
+
+[node name="Cube" parent="Cables0/4" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+start = true
+length = 0.4
+
+[node name="5" parent="Cables0" instance=ExtResource("66_ulna3")]
+transform = Transform3D(0.877146, 0, 0.480224, 0, 1, 0, -0.480224, 0, 0.877146, 33.921, -0.288, -27.45)
+
+[node name="Cube" parent="Cables0/5" index="0"]
+script = ExtResource("67_vpnyl")
+start = true
+length = 0.4
+
+[node name="Cables1" type="Node3D" parent="."]
+
+[node name="1" parent="Cables1" instance=ExtResource("66_ulna3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.9177, -0.286578, -9.15243)
+
+[node name="Cube" parent="Cables1/1" index="0"]
+script = ExtResource("67_vpnyl")
+start = true
+length = 0.75
+Recievers = {
+0.75: NodePath("../../2/Cube")
+}
+
+[node name="2" parent="Cables1" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 17.9177, -1.20067, -8.23997)
+
+[node name="Cube" parent="Cables1/2" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../3/Cube")
+}
+
+[node name="3" parent="Cables1" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 17.9177, -1.20067, -3.97736)
+
+[node name="Cube" parent="Cables1/3" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../4/Cube")
+}
+
+[node name="4" parent="Cables1" instance=ExtResource("66_ulna3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.9177, -0.286578, -2.97696)
+
+[node name="Cube" parent="Cables1/4" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../5/Cube")
+}
+
+[node name="5" parent="Cables1" instance=ExtResource("68_e63iw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.918, -0.287, 0.461)
+
+[node name="Cube" parent="Cables1/5" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.875
+Recievers = {
+1.874: NodePath("../../6/Cube"),
+1.875: NodePath("../../12/Cube"),
+1.876: NodePath("../../27/Cube"),
+1.877: NodePath("../../7/Cube")
+}
+
+[node name="6" parent="Cables1" instance=ExtResource("53_u565l")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.9188, -0.294062, 4.36085)
+
+[node name="Cube" parent="Cables1/6" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+
+[node name="7" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.694068, 0, -0.719909, 0, 1, 0, 0.719909, 0, 0.694068, 17.2402, -0.192, 2.65782)
+
+[node name="Cube" parent="Cables1/7" index="0"]
+transform = Transform3D(-0.69388, 0, 0.720091, 0, 0.5, 0, 0.720091, 0, 0.69388, 0.0150318, 0.410832, -0.00288773)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../8/Cube")
+}
+
+[node name="8" parent="Cables1" instance=ExtResource("66_ulna3")]
+transform = Transform3D(0.682509, 0, -0.730877, 0, 1, 0, 0.730877, 0, 0.682509, 16.2011, -0.192, 1.56676)
+
+[node name="Cube" parent="Cables1/8" index="0"]
+transform = Transform3D(-0.999836, 0, -0.0181331, 0, 1, 0, 0.0181331, 0, -0.999836, 0.0331936, -0.09337, 0.0185041)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../9/Cube")
+}
+
+[node name="9" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-0.694646, 0, 0.719352, 0, 1, 0, -0.719352, 0, -0.694646, 15.1723, -0.192, 0.486085)
+
+[node name="Cube" parent="Cables1/9" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.0392704, 0.41313, -0.0277567)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../10/Cube")
+}
+
+[node name="10" parent="Cables1" instance=ExtResource("53_u565l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.198, -0.192, 0.486085)
+
+[node name="Cube" parent="Cables1/10" index="0"]
+transform = Transform3D(-0.999948, 0, -0.0102274, 0, 1, 0, 0.0102274, 0, -0.999948, 0.0134001, -0.0913717, 0.0556423)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../11/Cube")
+}
+
+[node name="11" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.712222, 0, -0.701954, 0, 1, 0, 0.701954, 0, 0.712222, 11.2029, -0.192, 0.475693)
+
+[node name="Cube" parent="Cables1/11" index="0"]
+transform = Transform3D(-0.67554, -0.00412681, 0.737277, 0.0122169, -0.499963, 0, 0.737222, 0.00450362, 0.67559, 0.0877018, -0.494448, 0.0667229)
+script = ExtResource("67_vpnyl")
+length = 0.75
+
+[node name="12" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-0.999994, 0, -0.003508, 0, 1, 0, 0.003508, 0, -0.999994, 17.237, -0.192, 2.668)
+
+[node name="Cube" parent="Cables1/12" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.410095, 0)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../13/Cube")
+}
+
+[node name="13" parent="Cables1" instance=ExtResource("53_u565l")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 15.8157, -0.192, 4.07984)
+
+[node name="Cube" parent="Cables1/13" index="0"]
+transform = Transform3D(-0.999997, 0, 0.0022516, 0, 1, 0, -0.0022516, 0, -0.999997, 0.0193224, -0.0789324, 0.00145054)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../14/Cube")
+}
+
+[node name="14" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.0260199, 0, 0.999661, 0, 1, 0, -0.999661, 0, 0.0260199, 14.4068, -0.19173, 5.47217)
+
+[node name="Cube" parent="Cables1/14" index="0"]
+transform = Transform3D(-0.728909, -6.37232e-08, -0.684611, -8.74228e-08, 1, -4.78204e-15, -0.684611, -5.98505e-08, 0.728909, 0.0136666, 0.924915, 0.0271463)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../15/Cube")
+}
+
+[node name="15" parent="Cables1" instance=ExtResource("68_e63iw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.4038, -0.19173, 8.42977)
+
+[node name="Cube" parent="Cables1/15" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0733446, -0.0300951)
+script = ExtResource("67_vpnyl")
+length = 1.875
+Recievers = {
+1.875: NodePath("../../19/Cube"),
+1.876: NodePath("../../16/Cube")
+}
+
+[node name="16" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(-0.0215356, 0, -0.999768, 0, 1, 0, 0.999768, 0, -0.0215356, 14.3955, -0.19173, 11.4286)
+
+[node name="Cube" parent="Cables1/16" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000511169, 0.930757, -0.023798)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../17/Cube")
+}
+
+[node name="17" parent="Cables1" instance=ExtResource("66_ulna3")]
+transform = Transform3D(0.709817, 0, 0.704386, 0, 1, 0, -0.704386, 0, 0.709817, 13.3325, -0.19173, 12.471)
+
+[node name="Cube" parent="Cables1/17" index="0"]
+transform = Transform3D(-0.99997, 0, -0.00766179, 0, 1, 0, 0.00766179, 0, -0.99997, 0.0117846, -0.0649586, 0.0224171)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../18/Cube")
+}
+
+[node name="18" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(-0.00596894, 0, 0.999982, 0, 1, 0, -0.999982, 0, -0.00596894, 12.2714, -0.19173, 13.5223)
+
+[node name="Cube" parent="Cables1/18" index="0"]
+transform = Transform3D(-0.690865, 0.0048232, -0.722967, -0.00698123, -0.999976, 0, -0.722949, 0.0050472, 0.690881, 0.00499153, -0.977572, 0.0411787)
+script = ExtResource("67_vpnyl")
+length = 0.75
+
+[node name="19" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.00724305, 0, -0.999974, 0, 1, 0, 0.999974, 0, 0.00724305, 14.4017, -0.19173, 11.4109)
+
+[node name="Cube" parent="Cables1/19" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.000243187, 0.431702, -0.0335131)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../20/Cube")
+}
+
+[node name="20" parent="Cables1" instance=ExtResource("53_u565l")]
+transform = Transform3D(0.740066, 0, -0.672535, 0, 1, 0, 0.672535, 0, 0.740066, 15.8436, -0.19173, 12.7398)
+
+[node name="Cube" parent="Cables1/20" index="0"]
+transform = Transform3D(0.999937, 0, -0.0111701, 0, 1, 0, 0.0111701, 0, 0.999937, 0.0449772, -0.0664749, 0.0021534)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../21/Cube")
+}
+
+[node name="21" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.705933, 0, -0.708278, 0, 1, 0, 0.708278, 0, 0.705933, 17.2825, -0.19173, 14.0678)
+
+[node name="Cube" parent="Cables1/21" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0625801, 0.936719, 0.0224123)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../50/Cube")
+}
+
+[node name="22" parent="Cables1" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.052, -0.19173, 16.732)
+
+[node name="Cube" parent="Cables1/22" index="0"]
+transform = Transform3D(-0.999966, 0, 0.0082379, 0, 1, 0, -0.0082379, 0, -0.999966, 0.067791, -0.06763, 0.043787)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../53/Cube")
+}
+
+[node name="23" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.710456, 0, 0.703742, 0, 1, 0, -0.703742, 0, 0.710456, 11.5896, -0.19173, 16.7245)
+
+[node name="Cube" parent="Cables1/23" index="0"]
+transform = Transform3D(-0.72657, -0.00253618, -0.687087, 0.00349059, -0.999994, 0, -0.687083, -0.00239834, 0.726575, -0.0147362, -0.978012, 0.0751953)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../24/Cube")
+}
+
+[node name="24" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(-0.00385717, 0, 0.999993, 0, 1, 0, -0.999993, 0, -0.00385717, 10.8938, -0.19173, 17.4378)
+
+[node name="Cube" parent="Cables1/24" index="0"]
+transform = Transform3D(-0.702745, -0.00245301, -0.711437, 0.00349059, -0.999994, 0, -0.711433, -0.00248334, 0.702749, -0.0674973, -0.971101, 0.0421982)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../54/Cube")
+}
+
+[node name="25" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(-0.723738, 0, 0.690074, 0, 1, 0, -0.690074, 0, -0.723738, 10.8572, -0.19173, 22.3917)
+
+[node name="Cube" parent="Cables1/25" index="0"]
+transform = Transform3D(-0.675586, 0.00235821, -0.737277, -0.00349059, -0.999994, 0, -0.737273, 0.00257353, 0.67559, -0.0721626, -0.973441, -0.033823)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../26/Cube")
+}
+
+[node name="26" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-0.0188484, 0, 0.999822, 0, 1, 0, -0.999822, 0, -0.0188484, 11.5479, -0.19173, 23.0811)
+
+[node name="Cube" parent="Cables1/26" index="0"]
+transform = Transform3D(-0.724063, -3.16498e-08, 0.689733, 8.74228e-08, -0.5, -2.22023e-16, 0.689733, 3.01492e-08, 0.724063, -0.0995617, -0.475742, 0.0270138)
+script = ExtResource("67_vpnyl")
+length = 0.75
+
+[node name="27" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5492, -0.192, 2.6822)
+
+[node name="Cube" parent="Cables1/27" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.0353928, 0.402933, 0.325523)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../28/Cube")
+}
+
+[node name="28" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.690946, 0, 0.722907, 0, 1, 0, -0.722907, 0, 0.690946, 19.2512, -0.192, 1.97194)
+
+[node name="Cube" parent="Cables1/28" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.216742, 0.905566, 0.242912)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../29/Cube")
+}
+
+[node name="29" parent="Cables1" instance=ExtResource("71_of2ck")]
+transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1, 20.2241, -0.192, 1.97194)
+
+[node name="Cube" parent="Cables1/29" index="0"]
+transform = Transform3D(0.87, 0, 0, 0, 1, 0, 0, 0, 1, 0.0817013, -0.0948316, 0.315914)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../55/Cube")
+}
+
+[node name="30" parent="Cables1" instance=ExtResource("71_of2ck")]
+transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1, 25.5114, -0.192, 1.97194)
+
+[node name="Cube" parent="Cables1/30" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0153141, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../31/Cube"),
+0.76: NodePath("../../32/Cube")
+}
+
+[node name="31" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.712, -0.192, 1.972)
+
+[node name="Cube" parent="Cables1/31" index="0"]
+transform = Transform3D(0.999995, 0, 0.00305432, 0, 0.5, 0, -0.00305432, 0, 0.999995, 0.0123806, 0.5, -0.00412655)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../39/Cube")
+}
+
+[node name="32" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6983, -0.192, 1.98596)
+
+[node name="Cube" parent="Cables1/32" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0660229, 1, -0.0165062)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../33/Cube")
+}
+
+[node name="33" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.709103, 0, -0.705105, 0, 1, 0, 0.705105, 0, 0.709103, 27.391, -0.192, 2.69281)
+
+[node name="Cube" parent="Cables1/33" index="0"]
+transform = Transform3D(0.999974, 0, -0.00727794, 0, 1, 0, 0.00727794, 0, 0.999974, 0.0235214, 1, -0.064127)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../34/Cube")
+}
+
+[node name="34" parent="Cables1" instance=ExtResource("72_helid")]
+transform = Transform3D(0.0167021, 0, -0.999861, 0, 1, 0, 0.999861, 0, 0.0167021, 27.4193, -0.192, 5.16679)
+
+[node name="Cube" parent="Cables1/34" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0113449, 0, -0.0620937)
+script = ExtResource("67_vpnyl")
+length = 1.5
+Recievers = {
+1.5: NodePath("../../35/Cube")
+}
+
+[node name="35" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.0374635, 0, -0.999298, 0, 1, 0, 0.999298, 0, 0.0374635, 27.4883, -0.191853, 7.65172)
+
+[node name="Cube" parent="Cables1/35" index="0"]
+transform = Transform3D(0.999472, 0, -0.0324749, 0, 0.5, 0, 0.0324749, 0, 0.999472, -0.0236597, 0.5, -0.0297928)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../36/Cube")
+}
+
+[node name="36" parent="Cables1" instance=ExtResource("71_of2ck")]
+transform = Transform3D(0.690466, 0, -0.723365, 0, 1, 0, 0.723365, 0, 0.690466, 28.2093, -0.191853, 8.34443)
+
+[node name="Cube" parent="Cables1/36" index="0"]
+transform = Transform3D(0.999983, 0, 0.00586423, 0, 1, 0, -0.00586423, 0, 0.999983, -0.00325775, 0, -0.0145178)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../37/Cube"),
+0.76: NodePath("../../41/Cube")
+}
+
+[node name="37" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.716046, 0, -0.698053, 0, 1, 0, 0.698053, 0, 0.716046, 28.8596, -0.191853, 8.96646)
+
+[node name="Cube" parent="Cables1/37" index="0"]
+transform = Transform3D(-0.0087612, -7.6459e-06, 0.999962, 0.00174537, -0.499999, 8.19491e-11, 0.99996, 0.000872654, 0.00876141, -0.531223, -0.429217, 0.633994)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../38/Cube")
+}
+
+[node name="38" parent="Cables1" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.344, -0.192, 8.95232)
+
+[node name="Cube" parent="Cables1/38" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.8052, -0.0192148, 0.0969191)
+script = ExtResource("67_vpnyl")
+length = 0.75
+
+[node name="39" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.714082, 0, 0.700062, 0, 1, 0, -0.700062, 0, 0.714082, 27.4405, -0.192, 1.2694)
+
+[node name="Cube" parent="Cables1/39" index="0"]
+transform = Transform3D(1, 0, -0.000488609, 0, 0.5, 0, 0.000488609, 0, 1, -0.00589752, 0.5, -0.00577354)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../40/Cube")
+}
+
+[node name="40" parent="Cables1" instance=ExtResource("53_u565l")]
+transform = Transform3D(0.00383968, 0, -0.999993, 0, 1, 0, 0.999993, 0, 0.00383968, 27.4547, -0.192, -0.723916)
+
+[node name="Cube" parent="Cables1/40" index="0"]
+transform = Transform3D(-0.999999, 0, 0.00129143, 0, 1, 0, -0.00129143, 0, -0.999999, -7.92146e-05, 0, 0.0206318)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../57/Cube")
+}
+
+[node name="41" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-0.0235249, 0, 0.999723, 0, 1, 0, -0.999723, 0, -0.0235249, 28.9707, -0.191608, 9.11557)
+
+[node name="Cube" parent="Cables1/41" index="0"]
+transform = Transform3D(-0.715203, 0.00374493, 0.698877, -0.0104718, -0.499973, -1.46073e-11, 0.698839, -0.00365924, 0.715241, 0.075717, -0.421024, -0.060133)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../42/Cube")
+}
+
+[node name="42" parent="Cables1" instance=ExtResource("68_e63iw")]
+transform = Transform3D(0.00539301, 0, -0.999985, 0, 1, 0, 0.999985, 0, 0.00539301, 29.0131, -0.192, 12.0985)
+
+[node name="Cube" parent="Cables1/42" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0678205, -0.0171137, 0.0838509)
+script = ExtResource("67_vpnyl")
+length = 1.875
+Recievers = {
+1.875: NodePath("../../43/Cube")
+}
+
+[node name="43" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.0274505, 0, -0.999623, 0, 1, 0, 0.999623, 0, 0.0274505, 29.0409, -0.191853, 15.0811)
+
+[node name="Cube" parent="Cables1/43" index="0"]
+transform = Transform3D(0.999915, 0, -0.0130547, 0, 0.5, 0, 0.0130547, 0, 0.999915, -0.0590115, 0.4827, 0.0868645)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../44/Cube")
+}
+
+[node name="44" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.709694, 0, -0.70451, 0, 1, 0, 0.70451, 0, 0.709694, 29.7353, -0.191853, 15.7687)
+
+[node name="Cube" parent="Cables1/44" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.087616, 0.486063, 0.0171909)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../45/Cube")
+}
+
+[node name="45" parent="Cables1" instance=ExtResource("68_e63iw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.7216, -0.191853, 15.7687)
+
+[node name="Cube" parent="Cables1/45" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0672188, -0.0168552, -0.0530672)
+script = ExtResource("67_vpnyl")
+length = 1.875
+Recievers = {
+1.875: NodePath("../../46/Cube")
+}
+
+[node name="46" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.704, -0.192, 15.7715)
+
+[node name="Cube" parent="Cables1/46" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04953, 0.988551, -0.0566063)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../47/Cube")
+}
+
+[node name="47" parent="Cables1" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.708992, 0, -0.705216, 0, 1, 0, 0.705216, 0, 0.708992, 36.4108, -0.192, 16.4784)
+
+[node name="Cube" parent="Cables1/47" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0875549, 0.987499, -0.00273705)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../48/Cube")
+}
+
+[node name="48" parent="Cables1" instance=ExtResource("68_e63iw")]
+transform = Transform3D(0.00452043, 0, -0.99999, 0, 1, 0, 0.99999, 0, 0.00452043, 36.4177, -0.192, 19.4727)
+
+[node name="Cube" parent="Cables1/48" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0676231, -0.0104263, 0.0558395)
+script = ExtResource("67_vpnyl")
+length = 1.875
+Recievers = {
+1.875: NodePath("../../49/Cube")
+}
+
+[node name="49" parent="Cables1" instance=ExtResource("71_of2ck")]
+transform = Transform3D(0.00914545, 0, -0.999958, 0, 1, 0, 0.999958, 0, 0.00914545, 36.4177, -0.192, 22.4556)
+
+[node name="Cube" parent="Cables1/49" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0677338, -0.0081411, 0.0378876)
+script = ExtResource("67_vpnyl")
+length = 0.75
+
+[node name="50" parent="Cables1" instance=ExtResource("71_of2ck")]
+transform = Transform3D(0.00123914, 0, -0.999999, 0, 1, 0, 0.999999, 0, 0.00123914, 17.277, -0.191853, 15.0708)
+
+[node name="Cube" parent="Cables1/50" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0630512, -0.0681084, -0.0352993)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../51/Cube")
+}
+
+[node name="51" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.719437, 0, 0.694558, 0, 1, 0, -0.694558, 0, 0.719437, 17.2666, -0.191853, 16.0683)
+
+[node name="Cube" parent="Cables1/51" index="0"]
+transform = Transform3D(-0.70091, 3.06377e-08, 0.713251, -8.74228e-08, -0.5, 0, 0.713251, -3.11772e-08, 0.700909, -0.0039463, -0.478583, 0.0601177)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../52/Cube")
+}
+
+[node name="52" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5704, -0.191853, 16.7437)
+
+[node name="Cube" parent="Cables1/52" index="0"]
+transform = Transform3D(-0.714472, -3.12306e-08, 0.699663, 8.74228e-08, -0.5, 0, 0.699663, 3.05832e-08, 0.714473, 0.04953, -0.474257, 0.0424538)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../22/Cube")
+}
+
+[node name="53" parent="Cables1" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0749, -0.191853, 16.7251)
+
+[node name="Cube" parent="Cables1/53" index="0"]
+transform = Transform3D(-0.999992, 0, -0.00389209, 0, 1, 0, 0.00389209, 0, -0.999992, 0.0530663, -0.0734185, 0.0496445)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../23/Cube")
+}
+
+[node name="54" parent="Cables1" instance=ExtResource("72_helid")]
+transform = Transform3D(-0.0109081, 0, -0.999941, 0, 1, 0, 0.999941, 0, -0.0109081, 10.8764, -0.191853, 19.9458)
+
+[node name="Cube" parent="Cables1/54" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0525188, -0.0572126, -0.0390739)
+script = ExtResource("67_vpnyl")
+length = 1.5
+Recievers = {
+1.5: NodePath("../../25/Cube")
+}
+
+[node name="55" parent="Cables1" instance=ExtResource("71_of2ck")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 20.8641, -0.612964, 1.96253)
+
+[node name="Cube" parent="Cables1/55" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0856315, -0.00811386, 0.324116)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../56/Cube")
+}
+
+[node name="56" parent="Cables1" instance=ExtResource("71_of2ck")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 24.8335, -0.612964, 1.96253)
+
+[node name="Cube" parent="Cables1/56" index="0"]
+transform = Transform3D(-0.999118, -8.73842e-08, -0.0419802, -8.73842e-08, 1, -1.83501e-09, 0.0419802, 1.83501e-09, -0.999118, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../30/Cube")
+}
+
+[node name="57" parent="Cables1" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-0.0241006, 0, 0.99971, 0, 1, 0, -0.99971, 0, -0.0241006, 27.4541, -0.191853, -2.67575)
+
+[node name="Cube" parent="Cables1/57" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.000795841, 0.5, -0.0330029)
+script = ExtResource("67_vpnyl")
+length = 0.75
+
+[node name="Cables2" type="Node3D" parent="."]
+
+[node name="1" parent="Cables2" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.706712, 0, 0.707502, 0, 1, 0, -0.707502, 0, 0.706712, 23.2471, 4.20296, 17.5695)
+
+[node name="Cube" parent="Cables2/1" index="0"]
+script = ExtResource("67_vpnyl")
+start = true
+length = 0.45
+Recievers = {
+0.45: NodePath("../../2/Cube")
+}
+
+[node name="2" parent="Cables2" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1.028, 0, 0, 0, 1, 0, 0, 0, 1, 24.7653, 4.20691, 17.5708)
+
+[node name="Cube" parent="Cables2/2" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../3/Cube")
+}
+
+[node name="3" parent="Cables2" instance=ExtResource("68_e63iw")]
+transform = Transform3D(0.833886, 0.551937, 0, -0.551937, 0.833886, 0, 0, 0, 1, 27.8232, 2.82693, 17.5872)
+
+[node name="Cube" parent="Cables2/3" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../4/Cube")
+}
+
+[node name="4" parent="Cables2" instance=ExtResource("53_u565l")]
+transform = Transform3D(0.917274, 0.551937, 0, -0.607131, 0.833886, 0, 0, 0, 1, 31.2678, 0.542585, 17.5924)
+
+[node name="Cube" parent="Cables2/4" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../5/Cube")
+}
+
+[node name="5" parent="Cables2" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0892, -0.311837, 17.5936)
+
+[node name="Cube" parent="Cables2/5" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../6/Cube")
+}
+
+[node name="6" parent="Cables2" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 33.7354, -0.310081, 18.2377)
+
+[node name="Cube" parent="Cables2/6" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../7/Cube")
+}
+
+[node name="7" parent="Cables2" instance=ExtResource("68_e63iw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.7334, -0.309872, 21.2082)
+
+[node name="Cube" parent="Cables2/7" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../8/Cube")
+}
+
+[node name="8" parent="Cables2" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.7293, -0.310562, 24.2088)
+
+[node name="Cube" parent="Cables2/8" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../9/Cube")
+}
+
+[node name="9" parent="Cables2" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 34.4184, -0.310562, 24.9037)
+
+[node name="Cube" parent="Cables2/9" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../10/Cube")
+}
+
+[node name="10" parent="Cables2" instance=ExtResource("72_helid")]
+transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 1, 36.3103, -0.313346, 24.9067)
+
+[node name="Cube" parent="Cables2/10" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.65
+Recievers = {
+0.65: NodePath("../../15/Cube"),
+0.66: NodePath("../../11/Cube")
+}
+
+[node name="11" parent="Cables2" instance=ExtResource("72_helid")]
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 1, 38.8628, -0.313346, 24.9067)
+
+[node name="Cube" parent="Cables2/11" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.65
+Recievers = {
+0.65: NodePath("../../26/Cube")
+}
+
+[node name="12" parent="Cables2" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2126, 2.76949, 24.9124)
+
+[node name="Cube" parent="Cables2/12" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../13/Cube")
+}
+
+[node name="13" parent="Cables2" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 44.9192, 2.76303, 25.6202)
+
+[node name="Cube" parent="Cables2/13" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../14/Cube")
+}
+
+[node name="14" parent="Cables2" instance=ExtResource("66_ulna3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 44.9236, 2.7632, 27.1004)
+
+[node name="Cube" parent="Cables2/14" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+
+[node name="15" parent="Cables2" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.077, -0.313459, 24.9091)
+
+[node name="Cube" parent="Cables2/15" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../16/Cube")
+}
+
+[node name="16" parent="Cables2" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 38.7799, -0.312886, 24.2053)
+
+[node name="Cube" parent="Cables2/16" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../17/Cube")
+}
+
+[node name="17" parent="Cables2" instance=ExtResource("68_e63iw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 38.7728, -0.309484, 21.2163)
+
+[node name="Cube" parent="Cables2/17" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../18/Cube")
+}
+
+[node name="18" parent="Cables2" instance=ExtResource("68_e63iw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 38.7728, -0.309484, 16.2344)
+
+[node name="Cube" parent="Cables2/18" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../19/Cube")
+}
+
+[node name="19" parent="Cables2" instance=ExtResource("68_e63iw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 38.7728, -0.309484, 11.2461)
+
+[node name="Cube" parent="Cables2/19" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../20/Cube")
+}
+
+[node name="20" parent="Cables2" instance=ExtResource("68_e63iw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 38.7728, -0.309484, 6.2609)
+
+[node name="Cube" parent="Cables2/20" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../21/Cube")
+}
+
+[node name="21" parent="Cables2" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 38.7691, -0.306071, 3.29084)
+
+[node name="Cube" parent="Cables2/21" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../22/Cube")
+}
+
+[node name="22" parent="Cables2" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.4735, -0.312288, 2.58827)
+
+[node name="Cube" parent="Cables2/22" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../23/Cube")
+}
+
+[node name="23" parent="Cables2" instance=ExtResource("68_e63iw")]
+transform = Transform3D(0.750724, -0.642788, 0, 0.629932, 0.766044, 0, 0, 0, 1, 41.918, 1.26888, 2.59174)
+
+[node name="Cube" parent="Cables2/23" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../24/Cube")
+}
+
+[node name="24" parent="Cables2" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2513, 2.80928, 2.5907)
+
+[node name="Cube" parent="Cables2/24" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../25/Cube")
+}
+
+[node name="25" parent="Cables2" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 44.93, 2.79902, 1.93144)
+
+[node name="Cube" parent="Cables2/25" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+
+[node name="26" parent="Cables2" instance=ExtResource("68_e63iw")]
+transform = Transform3D(0.735403, -0.642788, -1.06581e-14, 0.617076, 0.766044, -2.28364e-15, 7.10543e-15, -5.32907e-15, 1, 41.9318, 1.24524, 24.911)
+
+[node name="Cube" parent="Cables2/26" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../12/Cube")
+}
+
+[node name="Cables3" type="Node3D" parent="."]
+
+[node name="1" parent="Cables3" instance=ExtResource("72_helid")]
+transform = Transform3D(0.766044, -0.642788, 0, 0.642788, 0.766044, 0, 0, 0, 1, 48.6819, 4.11521, 10.3079)
+
+[node name="Cube" parent="Cables3/1" index="0"]
+script = ExtResource("67_vpnyl")
+start = true
+length = 1.125
+Recievers = {
+1.125: NodePath("../../2/Cube"),
+1.126: NodePath("../../6/Cube")
+}
+
+[node name="2" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.7025, 5.37346, 10.3131)
+
+[node name="Cube" parent="Cables3/2" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../3/Cube")
+}
+
+[node name="3" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 51.3914, 5.37346, 9.62906)
+
+[node name="Cube" parent="Cables3/3" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../4/Cube")
+}
+
+[node name="4" parent="Cables3" instance=ExtResource("53_u565l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 51.3929, 5.37346, 7.63539)
+
+[node name="Cube" parent="Cables3/4" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../19/Cube"),
+0.46: NodePath("../../5/Cube")
+}
+
+[node name="5" parent="Cables3" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 51.3945, 5.37346, 5.6517)
+
+[node name="Cube" parent="Cables3/5" index="0"]
+transform = Transform3D(-0.707107, 6.18172e-08, -0.707107, -8.74228e-08, -1, 0, -0.707107, 6.18172e-08, 0.707107, 0, -0.903015, 0)
+script = ExtResource("67_vpnyl")
+length = 0.35
+
+[node name="6" parent="Cables3" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.6586, 5.37346, 10.3121)
+
+[node name="Cube" parent="Cables3/6" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../7/Cube")
+}
+
+[node name="7" parent="Cables3" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 51.3475, 5.37346, 11.0046)
+
+[node name="Cube" parent="Cables3/7" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../8/Cube")
+}
+
+[node name="8" parent="Cables3" instance=ExtResource("68_e63iw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 51.3455, 5.3734, 14.0026)
+
+[node name="Cube" parent="Cables3/8" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../9/Cube")
+}
+
+[node name="9" parent="Cables3" instance=ExtResource("68_e63iw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 51.3455, 5.3734, 18.9953)
+
+[node name="Cube" parent="Cables3/9" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../10/Cube"),
+1.126: NodePath("../../11/Cube")
+}
+
+[node name="10" parent="Cables3" instance=ExtResource("53_u565l")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 51.3442, 5.3734, 22.995)
+
+[node name="Cube" parent="Cables3/10" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.45
+
+[node name="11" parent="Cables3" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.0081, 5.3734, 21.5151)
+
+[node name="Cube" parent="Cables3/11" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../12/Cube")
+}
+
+[node name="12" parent="Cables3" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 52.7134, 5.3734, 22.2205)
+
+[node name="Cube" parent="Cables3/12" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../13/Cube")
+}
+
+[node name="13" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 52.715, 5.3734, 23.1947)
+
+[node name="Cube" parent="Cables3/13" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../14/Cube")
+}
+
+[node name="14" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 53.413, 5.3734, 23.8852)
+
+[node name="Cube" parent="Cables3/14" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../15/Cube")
+}
+
+[node name="15" parent="Cables3" instance=ExtResource("68_e63iw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.3891, 5.3734, 23.8852)
+
+[node name="Cube" parent="Cables3/15" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../16/Cube")
+}
+
+[node name="16" parent="Cables3" instance=ExtResource("68_e63iw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.3691, 5.37346, 23.8852)
+
+[node name="Cube" parent="Cables3/16" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../17/Cube")
+}
+
+[node name="17" parent="Cables3" instance=ExtResource("68_e63iw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.3489, 5.37346, 23.8867)
+
+[node name="Cube" parent="Cables3/17" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../18/Cube")
+}
+
+[node name="18" parent="Cables3" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.3226, 5.37346, 23.8889)
+
+[node name="Cube" parent="Cables3/18" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+
+[node name="19" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.055, 5.37273, 6.68967)
+
+[node name="Cube" parent="Cables3/19" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../20/Cube")
+}
+
+[node name="20" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 52.7576, 5.37273, 5.98604)
+
+[node name="Cube" parent="Cables3/20" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../21/Cube")
+}
+
+[node name="21" parent="Cables3" instance=ExtResource("71_of2ck")]
+transform = Transform3D(-4.15258e-08, 0, 1, 0, 1, 0, -0.95, 0, -4.37114e-08, 52.7563, 5.37273, 5.06101)
+
+[node name="Cube" parent="Cables3/21" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../22/Cube")
+}
+
+[node name="22" parent="Cables3" instance=ExtResource("53_u565l")]
+transform = Transform3D(-4.35303e-08, -2.80971e-08, 1, -0.835624, 0.766044, 3.64441e-15, -0.995858, -0.642788, -4.37114e-08, 52.7548, 4.13864, 3.14765)
+
+[node name="Cube" parent="Cables3/22" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../23/Cube")
+}
+
+[node name="23" parent="Cables3" instance=ExtResource("68_e63iw")]
+transform = Transform3D(-5.02681e-08, 0, 1, 0, 1, 0, -1.15, 0, -4.37114e-08, 52.7612, 2.82968, -1.08079)
+
+[node name="Cube" parent="Cables3/23" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../24/Cube")
+}
+
+[node name="24" parent="Cables3" instance=ExtResource("66_ulna3")]
+transform = Transform3D(2.48389e-15, 4.37114e-08, 1, 1.3, -4.37114e-08, 0, 5.68248e-08, 1, -4.37114e-08, 52.7666, 1.61468, -3.98939)
+
+[node name="Cube" parent="Cables3/24" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 0.45
+Recievers = {
+0.45: NodePath("../../25/Cube")
+}
+
+[node name="25" parent="Cables3" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 52.7666, 2.05611, -8.29823)
+
+[node name="Cube" parent="Cables3/25" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../26/Cube"),
+0.36: NodePath("../../30/Cube")
+}
+
+[node name="26" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52.7618, 2.96092, -8.73393)
+
+[node name="Cube" parent="Cables3/26" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../27/Cube"),
+0.36: NodePath("../../35/Cube")
+}
+
+[node name="27" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 52.0774, 2.961, -9.41722)
+
+[node name="Cube" parent="Cables3/27" index="0"]
+transform = Transform3D(1, 4.37114e-08, -5.96046e-08, 8.74228e-08, -0.5, 0, -5.96046e-08, -3.55271e-15, -1, -0.0683384, -0.40661, -0.00430298)
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../28/Cube")
+}
+
+[node name="28" parent="Cables3" instance=ExtResource("71_of2ck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0761, 2.961, -9.41794)
+
+[node name="Cube" parent="Cables3/28" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../29/Cube")
+}
+
+[node name="29" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 50.0876, 2.961, -9.42164)
+
+[node name="Cube" parent="Cables3/29" index="0"]
+transform = Transform3D(-0.707107, 3.09086e-08, 0.707107, -8.74228e-08, -0.5, 0, 0.707107, -3.09086e-08, 0.707107, 0, -0.408584, 0)
+script = ExtResource("67_vpnyl")
+length = 0.2
+
+[node name="30" parent="Cables3" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52.7633, 2.961, -8.75944)
+
+[node name="Cube" parent="Cables3/30" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../31/Cube")
+}
+
+[node name="31" parent="Cables3" instance=ExtResource("68_e63iw")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 54.8777, 2.961, -10.8666)
+
+[node name="Cube" parent="Cables3/31" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../32/Cube")
+}
+
+[node name="32" parent="Cables3" instance=ExtResource("72_helid")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 57.9026, 2.961, -13.8904)
+
+[node name="Cube" parent="Cables3/32" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../33/Cube"),
+1.126: NodePath("../../41/Cube")
+}
+
+[node name="33" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 59.6652, 2.961, -15.6492)
+
+[node name="Cube" parent="Cables3/33" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../34/Cube")
+}
+
+[node name="34" parent="Cables3" instance=ExtResource("53_u565l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 59.6688, 2.961, -17.6158)
+
+[node name="Cube" parent="Cables3/34" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../55/Cube")
+}
+
+[node name="35" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 52.1215, 2.961, -9.38036)
+
+[node name="Cube" parent="Cables3/35" index="0"]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 0.5, 0, 0.707107, 0, -0.707107, -0.03582, 0.5, 0.0488701)
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../36/Cube")
+}
+
+[node name="36" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52.1226, 2.961, -10.366)
+
+[node name="Cube" parent="Cables3/36" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.50207, 0)
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../37/Cube")
+}
+
+[node name="37" parent="Cables3" instance=ExtResource("72_helid")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 50.3628, 2.961, -12.1247)
+
+[node name="Cube" parent="Cables3/37" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../38/Cube")
+}
+
+[node name="38" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 48.6056, 2.961, -13.887)
+
+[node name="Cube" parent="Cables3/38" index="0"]
+transform = Transform3D(-0.707106, 3.09086e-08, 0.707106, -8.74228e-08, -0.5, 0, 0.707106, -3.09086e-08, 0.707106, 0, -0.41411, 0)
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../39/Cube")
+}
+
+[node name="39" parent="Cables3" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 48.6056, 2.961, -14.8727)
+
+[node name="Cube" parent="Cables3/39" index="0"]
+transform = Transform3D(-0.707107, 6.18172e-08, -0.707107, -8.74228e-08, -1, 0, -0.707107, 6.18172e-08, 0.707107, 0, -0.904968, 0)
+script = ExtResource("67_vpnyl")
+length = 0.35
+Recievers = {
+0.35: NodePath("../../40/Cube")
+}
+
+[node name="40" parent="Cables3" instance=ExtResource("53_u565l")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 47.2478, 2.961, -16.2402)
+
+[node name="Cube" parent="Cables3/40" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 0.75
+
+[node name="41" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 58.8878, 2.961, -15.4992)
+
+[node name="Cube" parent="Cables3/41" index="0"]
+transform = Transform3D(-0.70702, -0.00555335, 0.707107, 0.0157072, -0.499938, 0, 0.70702, 0.00555335, 0.707107, 0, -0.403536, 0)
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../42/Cube")
+}
+
+[node name="42" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 58.8899, 2.9301, -16.4943)
+
+[node name="Cube" parent="Cables3/42" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.540721, 0)
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../43/Cube")
+}
+
+[node name="43" parent="Cables3" instance=ExtResource("68_e63iw")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 56.8329, 2.961, -18.5442)
+
+[node name="Cube" parent="Cables3/43" index="0"]
+transform = Transform3D(-1, 0, -0.000750482, 0, 1, 0, 0.000750482, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../44/Cube")
+}
+
+[node name="44" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 54.7326, 2.961, -20.647)
+
+[node name="Cube" parent="Cables3/44" index="0"]
+transform = Transform3D(-0.707107, 3.09086e-08, 0.707107, -8.74228e-08, -0.5, 0, 0.707107, -3.09086e-08, 0.707107, 0, -0.406554, 0)
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../45/Cube")
+}
+
+[node name="45" parent="Cables3" instance=ExtResource("72_helid")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.7303, 2.961, -23.0643)
+
+[node name="Cube" parent="Cables3/45" index="0"]
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../46/Cube"),
+1.126: NodePath("../../47/Cube")
+}
+
+[node name="46" parent="Cables3" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 54.732, 2.961, -25.5195)
+
+[node name="Cube" parent="Cables3/46" index="0"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -0.0135784, 1, -0.0299911)
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../56/Cube")
+}
+
+[node name="47" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 54.7408, 2.961, -25.5527)
+
+[node name="Cube" parent="Cables3/47" index="0"]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 0.5, 0, 0.707107, 0, -0.707107, 0.0222626, 0.5, -0.0116329)
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../48/Cube")
+}
+
+[node name="48" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 55.4506, 2.961, -26.2544)
+
+[node name="Cube" parent="Cables3/48" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.507043, 0)
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../49/Cube")
+}
+
+[node name="49" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.4499, 2.961, -27.228)
+
+[node name="Cube" parent="Cables3/49" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.00831032, 0.502248, 0.00415421)
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../50/Cube")
+}
+
+[node name="50" parent="Cables3" instance=ExtResource("68_e63iw")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 53.3454, 2.961, -29.3473)
+
+[node name="Cube" parent="Cables3/50" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 1.125
+Recievers = {
+1.125: NodePath("../../51/Cube")
+}
+
+[node name="51" parent="Cables3" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.274, 2.961, -31.423)
+
+[node name="Cube" parent="Cables3/51" index="0"]
+transform = Transform3D(-0.707107, 6.18172e-08, -0.707107, -8.74228e-08, -1, 0, -0.707107, 6.18172e-08, 0.707107, 0, -0.911341, 0)
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../52/Cube")
+}
+
+[node name="52" parent="Cables3" instance=ExtResource("72_helid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.826, 2.961, -31.423)
+
+[node name="Cube" parent="Cables3/52" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 0.75
+Recievers = {
+0.75: NodePath("../../53/Cube")
+}
+
+[node name="53" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 46.332, 2.961, -31.4226)
+
+[node name="Cube" parent="Cables3/53" index="0"]
+transform = Transform3D(-0.707107, 3.09086e-08, 0.707107, -8.74228e-08, -0.5, 0, 0.707107, -3.09086e-08, 0.707107, 0, -0.405018, 0)
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../54/Cube")
+}
+
+[node name="54" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45.6408, 2.961, -32.1151)
+
+[node name="Cube" parent="Cables3/54" index="0"]
+transform = Transform3D(-0.707551, -3.0928e-08, 0.706662, 8.74228e-08, -0.5, 0, 0.706662, 3.08892e-08, 0.707551, 0, -0.415523, 0)
+script = ExtResource("67_vpnyl")
+length = 0.2
+
+[node name="55" parent="Cables3" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 59.6665, 2.95624, -19.3871)
+
+[node name="Cube" parent="Cables3/55" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+
+[node name="56" parent="Cables3" instance=ExtResource("71_of2ck")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 54.0352, 2.95624, -26.2137)
+
+[node name="Cube" parent="Cables3/56" index="0"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 0.2
+
+[node name="Cables4" type="Node3D" parent="."]
+
+[node name="1" parent="Cables4" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.008, 5.373, 7.153)
+
+[node name="Cube" parent="Cables4/1" index="0"]
+script = ExtResource("67_vpnyl")
+start = true
+length = 0.3
+Recievers = {
+0.3: NodePath("../../2/Cube")
+}
+
+[node name="2" parent="Cables4" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.501, 5.373, 7.155)
+
+[node name="Cube" parent="Cables4/2" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../3/Cube")
+}
+
+[node name="3" parent="Cables4" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 69.208, 5.373, 6.448)
+
+[node name="Cube" parent="Cables4/3" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../4/Cube")
+}
+
+[node name="4" parent="Cables4" instance=ExtResource("71_of2ck")]
+transform = Transform3D(-5.90104e-08, 0, 1, 0, 1, 0, -1.35, 0, -4.37114e-08, 69.21, 5.373, 5.273)
+
+[node name="Cube" parent="Cables4/4" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.3
+Recievers = {
+0.3: NodePath("../../5/Cube")
+}
+
+[node name="5" parent="Cables4" instance=ExtResource("72_helid")]
+transform = Transform3D(-3.34849e-08, -2.80971e-08, 1, -0.642788, 0.766044, 0, -0.766044, -0.642788, -4.37114e-08, 69.212, 4.107, 3.13)
+
+[node name="Cube" parent="Cables4/5" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.5
+Recievers = {
+0.5: NodePath("../../6/Cube"),
+0.51: NodePath("../../7/Cube")
+}
+
+[node name="6" parent="Cables4" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 69.22, 2.802, 1.105)
+
+[node name="Cube" parent="Cables4/6" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../10/Cube")
+}
+
+[node name="7" parent="Cables4" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 69.214, 2.796, 1.098)
+
+[node name="Cube" parent="Cables4/7" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../8/Cube")
+}
+
+[node name="8" parent="Cables4" instance=ExtResource("72_helid")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 70.978, 2.799, -0.672)
+
+[node name="Cube" parent="Cables4/8" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.4
+Recievers = {
+0.4: NodePath("../../9/Cube")
+}
+
+[node name="9" parent="Cables4" instance=ExtResource("71_of2ck")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 72.737, 2.8, -2.432)
+
+[node name="Cube" parent="Cables4/9" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+
+[node name="10" parent="Cables4" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.522, 2.801, 0.405)
+
+[node name="Cube" parent="Cables4/10" index="0"]
+transform = Transform3D(-0.707107, 0.0148086, -0.706952, -8.74036e-08, -0.999781, -0.0209424, -0.707107, -0.0148085, 0.706952, 0.0173187, -0.901267, -0.0115422)
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../11/Cube")
+}
+
+[node name="11" parent="Cables4" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.027, 2.8, 0.405)
+
+[node name="Cube" parent="Cables4/11" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 0.3
+Recievers = {
+0.3: NodePath("../../12/Cube")
+}
+
+[node name="12" parent="Cables4" instance=ExtResource("73_mg3df")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 65.526, 2.8, 0.404)
+
+[node name="Cube" parent="Cables4/12" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../13/Cube")
+}
+
+[node name="13" parent="Cables4" instance=ExtResource("72_helid")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65.527, 2.8, -2.036)
+
+[node name="Cube" parent="Cables4/13" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0591557, 0, 0)
+script = ExtResource("67_vpnyl")
+length = 0.4
+Recievers = {
+0.4: NodePath("../../14/Cube")
+}
+
+[node name="14" parent="Cables4" instance=ExtResource("71_of2ck")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 65.536, 2.382, -3.979)
+
+[node name="Cube" parent="Cables4/14" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.000487566, 0)
+script = ExtResource("67_vpnyl")
+length = 0.3
+Recievers = {
+0.3: NodePath("../../15/Cube")
+}
+
+[node name="15" parent="Cables4" instance=ExtResource("71_of2ck")]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 65.532, 2.508, -8.226)
+
+[node name="Cube" parent="Cables4/15" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.3
+Recievers = {
+0.3: NodePath("../../16/Cube")
+}
+
+[node name="16" parent="Cables4" instance=ExtResource("71_of2ck")]
+transform = Transform3D(-5.68248e-08, 0, 1, 0, 1, 0, -1.3, 0, -4.37114e-08, 65.531, 2.92, -8.789)
+
+[node name="Cube" parent="Cables4/16" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../17/Cube")
+}
+
+[node name="17" parent="Cables4" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65.513, 2.916, -10.304)
+
+[node name="Cube" parent="Cables4/17" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../18/Cube")
+}
+
+[node name="18" parent="Cables4" instance=ExtResource("72_helid")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 67.283, 2.914, -12.067)
+
+[node name="Cube" parent="Cables4/18" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.4
+Recievers = {
+0.4: NodePath("../../19/Cube")
+}
+
+[node name="19" parent="Cables4" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 69.045, 2.908, -13.821)
+
+[node name="Cube" parent="Cables4/19" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../20/Cube")
+}
+
+[node name="20" parent="Cables4" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.524, 2.907, -13.821)
+
+[node name="Cube" parent="Cables4/20" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+
+[node name="Cables5" type="Node3D" parent="."]
+
+[node name="1" parent="Cables5" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.764, 2.93, -30.074)
+
+[node name="Cube" parent="Cables5/1" index="0"]
+script = ExtResource("67_vpnyl")
+start = true
+length = 0.2
+Recievers = {
+0.2: NodePath("../../2/Cube")
+}
+
+[node name="2" parent="Cables5" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.265, 2.93, -30.073)
+
+[node name="Cube" parent="Cables5/2" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../3/Cube")
+}
+
+[node name="3" parent="Cables5" instance=ExtResource("71_of2ck")]
+transform = Transform3D(1.06066, 0, 0.707107, 0, 1, 0, -1.06066, 0, 0.707107, 62.151, 2.93, -30.957)
+
+[node name="Cube" parent="Cables5/3" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../4/Cube")
+}
+
+[node name="4" parent="Cables5" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 63.021, 2.93, -31.829)
+
+[node name="Cube" parent="Cables5/4" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../5/Cube")
+}
+
+[node name="5" parent="Cables5" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.41, 2.93, -31.826)
+
+[node name="Cube" parent="Cables5/5" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../6/Cube")
+}
+
+[node name="6" parent="Cables5" instance=ExtResource("69_sy5bp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.832, 2.93, -31.873)
+
+[node name="Cube" parent="Cables5/6" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../7/Cube")
+}
+
+[node name="7" parent="Cables5" instance=ExtResource("53_u565l")]
+transform = Transform3D(0.848528, 0, 0.707107, 0, 1, 0, -0.848528, 0, 0.707107, 67.439, 2.93, -33.486)
+
+[node name="Cube" parent="Cables5/7" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.3
+Recievers = {
+0.3: NodePath("../../8/Cube")
+}
+
+[node name="8" parent="Cables5" instance=ExtResource("70_c5rrd")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 69.057, 2.93, -35.103)
+
+[node name="Cube" parent="Cables5/8" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.2
+Recievers = {
+0.2: NodePath("../../9/Cube")
+}
+
+[node name="9" parent="Cables5" instance=ExtResource("66_ulna3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.536, 2.93, -35.104)
+
+[node name="Cube" parent="Cables5/9" index="0"]
+script = ExtResource("67_vpnyl")
+length = 0.3
 
 [connection signal="FogRemoved" from="Fog and neurons" to="Fog and neurons/Fog Fields" method="remove_fog"]
+[connection signal="PowerCable" from="Fog and neurons/Power Sockets/BasicSocket" to="Cables1/1/Cube" method="Power"]
+[connection signal="PowerCable" from="Fog and neurons/Power Sockets/BasicSocket2" to="Cables2/1/Cube" method="Power"]
+[connection signal="PowerCable" from="Fog and neurons/Power Sockets/BasicSocket3" to="Cables3/1/Cube" method="Power"]
+[connection signal="CableEndReached" from="Cables1/6/Cube" to="Fog and neurons/Neurons LV2/Neuron4" method="PowerNeuron"]
+[connection signal="CableEndReached" from="Cables1/11/Cube" to="Fog and neurons/Neurons LV2/Neuron5" method="PowerNeuron"]
+[connection signal="CableEndReached" from="Cables1/18/Cube" to="Fog and neurons/Neurons LV2/Neuron" method="PowerNeuron"]
+[connection signal="CableEndReached" from="Cables1/26/Cube" to="Fog and neurons/Neurons LV2/Neuron3" method="PowerNeuron"]
+[connection signal="CableEndReached" from="Cables1/38/Cube" to="Fog and neurons/Neurons LV2/Neuron7" method="PowerNeuron"]
+[connection signal="CableEndReached" from="Cables1/49/Cube" to="Fog and neurons/Neurons LV2/Neuron6" method="PowerNeuron"]
+[connection signal="CableEndReached" from="Cables1/57/Cube" to="Fog and neurons/Neurons LV2/Neuron2" method="PowerNeuron"]
+
+[editable path="Cables0/1"]
+[editable path="Cables0/2"]
+[editable path="Cables0/3"]
+[editable path="Cables0/4"]
+[editable path="Cables0/5"]
+[editable path="Cables1/1"]
+[editable path="Cables1/2"]
+[editable path="Cables1/3"]
+[editable path="Cables1/4"]
+[editable path="Cables1/5"]
+[editable path="Cables1/6"]
+[editable path="Cables1/7"]
+[editable path="Cables1/8"]
+[editable path="Cables1/9"]
+[editable path="Cables1/10"]
+[editable path="Cables1/11"]
+[editable path="Cables1/12"]
+[editable path="Cables1/13"]
+[editable path="Cables1/14"]
+[editable path="Cables1/15"]
+[editable path="Cables1/16"]
+[editable path="Cables1/17"]
+[editable path="Cables1/18"]
+[editable path="Cables1/19"]
+[editable path="Cables1/20"]
+[editable path="Cables1/21"]
+[editable path="Cables1/22"]
+[editable path="Cables1/23"]
+[editable path="Cables1/24"]
+[editable path="Cables1/25"]
+[editable path="Cables1/26"]
+[editable path="Cables1/27"]
+[editable path="Cables1/28"]
+[editable path="Cables1/29"]
+[editable path="Cables1/30"]
+[editable path="Cables1/31"]
+[editable path="Cables1/32"]
+[editable path="Cables1/33"]
+[editable path="Cables1/34"]
+[editable path="Cables1/35"]
+[editable path="Cables1/36"]
+[editable path="Cables1/37"]
+[editable path="Cables1/38"]
+[editable path="Cables1/39"]
+[editable path="Cables1/40"]
+[editable path="Cables1/41"]
+[editable path="Cables1/42"]
+[editable path="Cables1/43"]
+[editable path="Cables1/44"]
+[editable path="Cables1/45"]
+[editable path="Cables1/46"]
+[editable path="Cables1/47"]
+[editable path="Cables1/48"]
+[editable path="Cables1/49"]
+[editable path="Cables1/50"]
+[editable path="Cables1/51"]
+[editable path="Cables1/52"]
+[editable path="Cables1/53"]
+[editable path="Cables1/54"]
+[editable path="Cables1/55"]
+[editable path="Cables1/56"]
+[editable path="Cables1/57"]
+[editable path="Cables2/1"]
+[editable path="Cables2/2"]
+[editable path="Cables2/3"]
+[editable path="Cables2/4"]
+[editable path="Cables2/5"]
+[editable path="Cables2/6"]
+[editable path="Cables2/7"]
+[editable path="Cables2/8"]
+[editable path="Cables2/9"]
+[editable path="Cables2/10"]
+[editable path="Cables2/11"]
+[editable path="Cables2/12"]
+[editable path="Cables2/13"]
+[editable path="Cables2/14"]
+[editable path="Cables2/15"]
+[editable path="Cables2/16"]
+[editable path="Cables2/17"]
+[editable path="Cables2/18"]
+[editable path="Cables2/19"]
+[editable path="Cables2/20"]
+[editable path="Cables2/21"]
+[editable path="Cables2/22"]
+[editable path="Cables2/23"]
+[editable path="Cables2/24"]
+[editable path="Cables2/25"]
+[editable path="Cables2/26"]
+[editable path="Cables3/1"]
+[editable path="Cables3/2"]
+[editable path="Cables3/3"]
+[editable path="Cables3/4"]
+[editable path="Cables3/5"]
+[editable path="Cables3/6"]
+[editable path="Cables3/7"]
+[editable path="Cables3/8"]
+[editable path="Cables3/9"]
+[editable path="Cables3/10"]
+[editable path="Cables3/11"]
+[editable path="Cables3/12"]
+[editable path="Cables3/13"]
+[editable path="Cables3/14"]
+[editable path="Cables3/15"]
+[editable path="Cables3/16"]
+[editable path="Cables3/17"]
+[editable path="Cables3/18"]
+[editable path="Cables3/19"]
+[editable path="Cables3/20"]
+[editable path="Cables3/21"]
+[editable path="Cables3/22"]
+[editable path="Cables3/23"]
+[editable path="Cables3/24"]
+[editable path="Cables3/25"]
+[editable path="Cables3/26"]
+[editable path="Cables3/27"]
+[editable path="Cables3/28"]
+[editable path="Cables3/29"]
+[editable path="Cables3/30"]
+[editable path="Cables3/31"]
+[editable path="Cables3/32"]
+[editable path="Cables3/33"]
+[editable path="Cables3/34"]
+[editable path="Cables3/35"]
+[editable path="Cables3/36"]
+[editable path="Cables3/37"]
+[editable path="Cables3/38"]
+[editable path="Cables3/39"]
+[editable path="Cables3/40"]
+[editable path="Cables3/41"]
+[editable path="Cables3/42"]
+[editable path="Cables3/43"]
+[editable path="Cables3/44"]
+[editable path="Cables3/45"]
+[editable path="Cables3/46"]
+[editable path="Cables3/47"]
+[editable path="Cables3/48"]
+[editable path="Cables3/49"]
+[editable path="Cables3/50"]
+[editable path="Cables3/51"]
+[editable path="Cables3/52"]
+[editable path="Cables3/53"]
+[editable path="Cables3/54"]
+[editable path="Cables3/55"]
+[editable path="Cables3/56"]
+[editable path="Cables4/1"]
+[editable path="Cables4/2"]
+[editable path="Cables4/3"]
+[editable path="Cables4/4"]
+[editable path="Cables4/5"]
+[editable path="Cables4/6"]
+[editable path="Cables4/7"]
+[editable path="Cables4/8"]
+[editable path="Cables4/9"]
+[editable path="Cables4/10"]
+[editable path="Cables4/11"]
+[editable path="Cables4/12"]
+[editable path="Cables4/13"]
+[editable path="Cables4/14"]
+[editable path="Cables4/15"]
+[editable path="Cables4/16"]
+[editable path="Cables4/17"]
+[editable path="Cables4/18"]
+[editable path="Cables4/19"]
+[editable path="Cables4/20"]
+[editable path="Cables5/1"]
+[editable path="Cables5/2"]
+[editable path="Cables5/3"]
+[editable path="Cables5/4"]
+[editable path="Cables5/5"]
+[editable path="Cables5/6"]
+[editable path="Cables5/7"]
+[editable path="Cables5/8"]
+[editable path="Cables5/9"]
