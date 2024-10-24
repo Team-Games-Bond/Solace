@@ -117,7 +117,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_jxbjq")
 surface_material_override/0 = SubResource("StandardMaterial3D_6py85")
 
 [node name="Cube_053" parent="." index="9"]
-transform = Transform3D(0, 0, -0.0778416, 0, 0.978488, 0, -0.346714, 0, 0, 0.711041, -1.03299, 1.05041)
+transform = Transform3D(0, 0, -0.0778416, 0, 0.978488, 0, -0.346714, 0, 0, 0.70604, -1.03299, 1.05041)
 material_override = SubResource("StandardMaterial3D_h46ft")
 
 [node name="Cube_054" parent="." index="10"]
@@ -164,7 +164,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tx7wv")
 surface_material_override/0 = SubResource("StandardMaterial3D_bsclb")
 
 [node name="Cube_066" parent="." index="24"]
-transform = Transform3D(-0.000343989, 0, -0.0761603, 0, 0.0649216, 0, 0.0649795, 0, -0.000403177, 0.709336, -0.119328, 1.3315)
+transform = Transform3D(-0.000264687, 0, -0.0599992, 0, 0.05, 0, 0.0499993, 0, -0.000317625, 0.704881, -0.104121, 1.3315)
 surface_material_override/0 = SubResource("StandardMaterial3D_lkfn7")
 
 [node name="Cube_067" parent="." index="25"]

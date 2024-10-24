@@ -7,7 +7,11 @@ public partial class ClutterRoomManager : Node
 	[Export] public Godot.Collections.Array<PlacementMonitor> Sockets { get; set; }
 	[Export] public Godot.Collections.Array<string> LockKeys { get; set; }
 	[ExportGroup("Blockers")]
-	[Export] public Godot.Collections.Array<CsgBox3D> Blockers { get; set; }
+	[Export] public Door door1;
+	[Export] public Door door2;
+	[Export] public int threshold1;
+	[Export] public int threshold2;
+
 	[Signal] public delegate void CompletedEventHandler();
 
 	private Godot.Collections.Array<bool> socketsFilled;
@@ -42,7 +46,6 @@ public partial class ClutterRoomManager : Node
 		if(!correctItem) GD.PushError("Item Placed In Locked Socket was not correct");
 		int socketIndex = GetSocketIndex(monitor);
 		socketsFilled[socketIndex] = true;
-		Blockers[socketIndex].UseCollision = false;
 
 		CheckCompletion();
 	}
@@ -64,7 +67,12 @@ public partial class ClutterRoomManager : Node
 
 	private void CheckCompletion()
 	{
-		if(isCompleted()) EmitSignal(SignalName.Completed);
+		if(numberCompleted() == threshold1) door1.Open();
+		if(isCompleted()) 
+		{
+			EmitSignal(SignalName.Completed);
+			door2.Open();
+		}
 	}
 
 	private bool isCompleted()
@@ -74,5 +82,15 @@ public partial class ClutterRoomManager : Node
 			if(!socketFilled) return false;
 		}
 		return true;
+	}
+
+	private int numberCompleted()
+	{
+		var i = 0;
+		foreach (var socketFilled in socketsFilled)
+		{
+			if(socketFilled) i++;
+		}
+		return i;
 	}
 }
