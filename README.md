@@ -1,14 +1,18 @@
 # Solace
-
-[Image of the game logo]
-
+![Solace Logo](Documentation/Logo.svg)
 
 # Table of Contents
 - [Solace](#solace)
 - [Table of Contents](#table-of-contents)
 - [Our Team](#our-team)
 - [Project Information](#project-information)
-- [Technologies Used](#technologies-used)
+- [Building](#building)
+  - [Build Dependencies](#build-dependencies)
+    - [Android only](#android-only)
+  - [Building](#building-1)
+- [Programming Languages](#programming-languages)
+- [Libraries (Already Included)](#libraries-already-included)
+- [Other Software used](#other-software-used)
 - [Getting Started](#getting-started)
   - [What You'll Need](#what-youll-need)
     - [Setup](#setup)
