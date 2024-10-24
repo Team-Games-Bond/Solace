@@ -3,8 +3,7 @@
 [ext_resource type="Shader" uid="uid://b16xg3l1q7te3" path="res://Shaders/Skybox.tres" id="1_s53kd"]
 
 [sub_resource type="Gradient" id="Gradient_kiuwv"]
-offsets = PackedFloat32Array(0.0289634, 1)
-colors = PackedColorArray(0.933073, 0.57264, 0.301741, 1, 1, 0.838974, 0.646836, 1)
+colors = PackedColorArray(9.2411e-06, 0.656646, 0.896555, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_e6641"]
 gradient = SubResource("Gradient_kiuwv")

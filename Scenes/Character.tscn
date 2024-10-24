@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://cfkv6wtyhhta0"]
+[gd_scene load_steps=31 format=4 uid="uid://cfkv6wtyhhta0"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.cs" id="1_g771o"]
 [ext_resource type="Shader" uid="uid://cahw01ei5mqun" path="res://Scenes/Shader/FireShader.res" id="2_qlqug"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cwcst7y7umekt" path="res://Models/Particles/GAP_Fire_Textures/Flame02.png" id="5_gkaii"]
 [ext_resource type="Environment" uid="uid://cxm0dp40vn0qe" path="res://RenderingEnvironment.tres" id="7_6u0kc"]
 [ext_resource type="AudioStream" uid="uid://dgx0pmiwlclv5" path="res://Music/press.wav" id="7_n32jk"]
-[ext_resource type="PackedScene" uid="uid://ui72lska8rj8" path="res://Scenes/Pause Screen.tscn" id="9_v2200"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_13pt1"]
 
@@ -268,7 +267,7 @@ draw_pass_1 = SubResource("QuadMesh_6t1sx")
 [node name="ItemMount" type="Node3D" parent="PlayerPivot/sprite little flame"]
 transform = Transform3D(-0.833334, 0, 7.45058e-08, 0, 0.833334, 0, -7.45058e-08, 0, -0.833334, 0.000997679, -0.814175, 1.41784)
 
-[node name="Player Camera" type="Camera3D" parent="." node_paths=PackedStringArray("CharacterController") groups=["Character Controllers"]]
+[node name="Player Camera" type="Camera3D" parent="." node_paths=PackedStringArray("CharacterController")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 10, 20)
 cull_mask = 524287
 environment = ExtResource("7_6u0kc")
@@ -287,5 +286,3 @@ CharacterController = NodePath("..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stair Detector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.868554, 0)
 shape = SubResource("CylinderShape3D_ukuk1")
-
-[node name="CanvasLayer" parent="." instance=ExtResource("9_v2200")]
