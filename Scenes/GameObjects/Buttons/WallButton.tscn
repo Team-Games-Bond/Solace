@@ -59,7 +59,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ivm3t"]
-size = Vector3(1.195, 1, 2)
+size = Vector3(1.5, 1, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_165mt"]
 transparency = 1
@@ -92,17 +92,17 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000442505, 0, 0.949793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000442505, 0, 0.983734)
 shape = SubResource("BoxShape3D_ivm3t")
 
 [node name="Press" type="AudioStreamPlayer" parent="Area3D"]
 stream = ExtResource("5_coul1")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000442505, 0, 0.949793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000442505, 0, 0.987658)
 layers = 524288
 material_override = SubResource("StandardMaterial3D_165mt")
-size = Vector3(1.2, 1, 2)
+size = Vector3(1.5, 1, 2)
 
 [node name="Visuals" type="Node3D" parent="."]
 
