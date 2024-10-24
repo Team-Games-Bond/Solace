@@ -44,33 +44,24 @@ public partial class TutorialWorldManager : Node
 		room3Sequence.Completed += Room3Completed;
 	}
 
-	[Signal]
-	public delegate void TutorialRoom1CompletedEventHandler();
 	public void Room1Completed()
 	{
 		GD.Print("Room 1 Completed");
-		//room1Door.Open();
-		EmitSignal(SignalName.TutorialRoom1Completed);
+		room1Door.Open();
 		room1Done = true;
 	}
 
-	[Signal]
-	public delegate void TutorialRoom2CompletedEventHandler();
 	public void Room2Completed()
 	{
 		GD.Print("Room 2 Completed");
-		//room2Door.Open();
-		EmitSignal(SignalName.TutorialRoom2Completed);
+		room2Door.Open();
 		room2Done = true;
 	}
 
-	[Signal]
-	public delegate void TutorialRoom3CompletedEventHandler();
 	public void Room3Completed()
 	{
 		GD.Print("Room 3 Completed");
-		//room3Door.Open();
-		EmitSignal(SignalName.TutorialRoom3Completed);
+		room3Door.Open();
 		room3Done = true;
 	}
 

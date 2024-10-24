@@ -5,5 +5,5 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_uwgbh")
-shader_parameter/PulseWidth = 0.45
-shader_parameter/PulseGradient = 0.3
+shader_parameter/PulseWidth = 0.1
+shader_parameter/PulseGradient = 0.05
