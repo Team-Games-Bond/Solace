@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx78cbmcnb8ea"]
+[gd_scene load_steps=4 format=3 uid="uid://bx78cbmcnb8ea"]
 
 [ext_resource type="Script" path="res://Scripts/TouchScreenInputButton.cs" id="1_ihub6"]
+[ext_resource type="Script" path="res://Scripts/TouchScreenControls.cs" id="1_ytmfj"]
+[ext_resource type="PackedScene" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_6veuv"]
 
 [node name="TouchScreenControls" type="Control"]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ytmfj")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
@@ -25,3 +28,11 @@ theme_override_font_sizes/font_size = 64
 text = "Interact"
 script = ExtResource("1_ihub6")
 Action = "Interact"
+
+[node name="Virtual Joystick" parent="." instance=ExtResource("2_6veuv")]
+layout_mode = 1
+visibility_mode = 1
+action_left = "CharLeft"
+action_right = "CharRight"
+action_up = "CharUp"
+action_down = "CharDown"
