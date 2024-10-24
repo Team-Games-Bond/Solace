@@ -123,12 +123,12 @@ initialized = true
 script = ExtResource("2_ibb7h")
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_m5is8"]
-size = Vector2(2244, 859)
+size = Vector2(2244, 818)
 title = "Water Edge"
 attached_nodes = PackedInt32Array(34, 28, 29, 31, 27, 30, 38, 37, 33, 46, 44, 45, 51, 52, 53, 50, 55)
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_a0cpt"]
-size = Vector2(824, 332)
+size = Vector2(824, 198)
 title = "Water Pattern"
 attached_nodes = PackedInt32Array(18, 8, 7, 14, 26, 25, 24, 23, 22, 21, 20, 17, 16, 15, 13, 11, 10, 9, 2, 48, 47)
 
@@ -346,7 +346,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1547.75, 656.922)
 nodes/fragment/0/position = Vector2(720, 180)
 nodes/fragment/2/node = SubResource("VisualShaderNodeCustom_oxl1b")
 nodes/fragment/2/position = Vector2(-2000, 60)

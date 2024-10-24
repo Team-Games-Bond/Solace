@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://ck0iwfsfbmsof" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/green9.tscn" id="19_sq85m"]
 [ext_resource type="PackedScene" uid="uid://bpsaexwtgl6pi" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/unrec4.tscn" id="20_fihni"]
 [ext_resource type="PackedScene" uid="uid://hcb2t4qod38t" path="res://Scenes/GameObjects/Sockets/BasicSocket.tscn" id="20_svv4i"]
-[ext_resource type="PackedScene" uid="uid://pscqmxvgbgkq" path="res://Scenes/GameObjects/fountain.tscn" id="28_8winh"]
+[ext_resource type="PackedScene" path="res://Scenes/GameObjects/fountain.tscn" id="28_8winh"]
 [ext_resource type="AudioStream" uid="uid://b2dnn3qtihkwe" path="res://Music/749876__fania_katz__little-melody.wav" id="29_ypoka"]
 [ext_resource type="PackedScene" uid="uid://dy4uvvhxprc24" path="res://Models/Cables/Cable Straight 3m.blend" id="30_d5x6a"]
 [ext_resource type="Script" path="res://Scripts/Cable.cs" id="31_i13ch"]
@@ -39,9 +39,9 @@
 [ext_resource type="PackedScene" uid="uid://cmiog0p8nut77" path="res://Models/Cables/Cable Straight 2m.blend" id="35_p4nh8"]
 [ext_resource type="Material" uid="uid://c405lqe1cf5" path="res://Materials/ImagePuzzleMaterials/red.tres" id="35_q3hyc"]
 [ext_resource type="PackedScene" uid="uid://67ar6qw0bmek" path="res://Models/Cables/Cable 45 Left.blend" id="36_0drk4"]
-[ext_resource type="Material" uid="uid://br0d818fq5ql4" path="res://Materials/DoorSymbolFading.tres" id="36_mtf0m"]
+[ext_resource type="Material" path="res://Materials/DoorSymbolFading.tres" id="36_mtf0m"]
 [ext_resource type="Script" path="res://Scripts/CableThreshold.cs" id="37_ce7k7"]
-[ext_resource type="Material" uid="uid://cjxwo5ne0jb58" path="res://Materials/DoorFading.tres" id="37_y0711"]
+[ext_resource type="Material" path="res://Materials/DoorFading.tres" id="37_y0711"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pp6xa"]
 shading_mode = 2
