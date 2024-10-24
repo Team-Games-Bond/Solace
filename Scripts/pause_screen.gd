@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal pauseToggle
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = false
@@ -33,3 +35,4 @@ func _input(event: InputEvent) -> void:
 			await tween.chain().finished
 			visible=false
 			tree.paused = !tree.paused
+		pauseToggle.emit()
