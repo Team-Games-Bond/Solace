@@ -55,6 +55,7 @@ size = Vector2(0.1, 0.1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_edlya"]
 render_priority = 0
 shader = ExtResource("3_oura3")
+shader_parameter/Edge = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fb2kd"]
 material = SubResource("ShaderMaterial_edlya")

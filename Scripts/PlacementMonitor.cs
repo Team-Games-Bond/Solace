@@ -18,6 +18,7 @@ public partial class PlacementMonitor : Node3D
 	[Signal] public delegate void ItemPlacedRawEventHandler(Node3D item, PlacementMonitor thisMonitor);
 	[Signal] public delegate void ItemRemovedEventHandler();
 	[Signal] public delegate void ItemRemovedRawEventHandler(PlacementMonitor thisMonitor);
+	[Signal] public delegate void PowerCableEventHandler();
 
 	public override void _Ready()
 	{
@@ -31,9 +32,12 @@ public partial class PlacementMonitor : Node3D
 	public void Begin(CharacterController player)
 	{
 		if (socket.Item!=null){
+			var itemType = socket.Item.GetMeta("ItemKey");
+
+			if(ItemKey=="" || itemType.AsString() == ItemKey) EmitSignal(SignalName.PowerCable);
+
 			if(!SendRaw)
 			{
-				var itemType = socket.Item.GetMeta("ItemKey");
 				EmitSignal(SignalName.ItemPlaced, ItemKey=="" || itemType.AsString() == ItemKey, this);
 			}
 			else
