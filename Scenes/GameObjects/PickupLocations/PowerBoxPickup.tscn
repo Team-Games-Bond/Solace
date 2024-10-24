@@ -193,6 +193,7 @@ shape = SubResource("BoxShape3D_rqwqr")
 
 [node name="Pickup" type="AudioStreamPlayer" parent="Area3D"]
 stream = ExtResource("4_naklo")
+volume_db = 10.0
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
 layers = 524288
