@@ -212,6 +212,7 @@ radius = 0.534782
 
 [node name="Character" type="CharacterBody3D" node_paths=PackedStringArray("PlayerPivot", "LadderDetector", "ItemMount")]
 collision_layer = 3
+floor_constant_speed = true
 script = ExtResource("1_g771o")
 Speed = 15.0
 PlayerPivot = NodePath("PlayerPivot")
