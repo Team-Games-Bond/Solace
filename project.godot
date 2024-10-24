@@ -20,6 +20,11 @@ config/icon="res://Icons/regular-icon.png"
 
 WindowControl="*res://Scripts/WindowControl.cs"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [dotnet]
 
 project/assembly_name="Capstone Project"
