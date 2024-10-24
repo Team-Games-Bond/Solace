@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6bnwrbibg3nl"]
+
+[ext_resource type="PackedScene" uid="uid://cxii2nrel0mct" path="res://Models/Main level/Clutter Room/bedside table.blend" id="1_rxfl3"]
+
+[node name="bedside table2" instance=ExtResource("1_rxfl3")]
+
+[node name="Cylinder" parent="." index="1"]
+transform = Transform3D(0.0938132, 0.000181746, 0, -0.000181746, 0.0938132, 0, 0, 0, 0.0938134, -0.766311, -0.222014, -0.711828)

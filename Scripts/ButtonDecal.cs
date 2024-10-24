@@ -20,11 +20,11 @@ public partial class ButtonDecal : Decal
 
 	public override void _Input(InputEvent @event)
 	{
-		if ((@event as InputEventKey).Keycode == Key){
-			if(@event.IsPressed()){
+		if ((@event is InputEventKey eventKey) && eventKey.Keycode == Key){
+			if(eventKey.IsPressed()){
 				TextureAlbedo = TexturePressed;
 			}
-			else if (@event.IsReleased())
+			else if (eventKey.IsReleased())
 			{
 				TextureAlbedo = TextureReleased;
 			}
