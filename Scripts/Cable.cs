@@ -12,6 +12,7 @@ public partial class Cable : GeometryInstance3D, IPowerable
 	}
 	public PowerState powerState = PowerState.Inactive;
 	public double timer=0;
+	public bool endReached = false;
 	[Export] public bool start = false;
 	[Export] public Material CableAnimationShader = GD.Load<Material>("res://Materials/CableAnimation.tres");
 	[Export] public float length = 6f;
@@ -42,7 +43,7 @@ public partial class Cable : GeometryInstance3D, IPowerable
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_recieverStream = _recievers.GetEnumerator();
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,17 +56,22 @@ public partial class Cable : GeometryInstance3D, IPowerable
 				GetNode<IPowerable>(_recieverStream.Current.Value).Power();
 				if (!_recieverStream.MoveNext()) {
 					powerState = PowerState.Powered;
-					EmitSignal(SignalName.CableEndReached);
 				} 
 			}
+		}
+		if (powerState!=PowerState.Inactive&&(!endReached)&&timer>=length){
+			EmitSignal(SignalName.CableEndReached);
+			endReached = true;
 		}
 	}
 
     public void Power()
     {
+		_recieverStream = _recievers.GetEnumerator();
 		MaterialOverride = CableAnimationShader;
 		timer = 0;
 		SetInstanceShaderParameter("time_offset", timer);
+		SetInstanceShaderParameter("CableLength", length);
 		if (_recieverStream.MoveNext()){
 			powerState = PowerState.Powering;
 			//powerTimer.Timeout += ()=>{powerState = PowerState.Powered;};
