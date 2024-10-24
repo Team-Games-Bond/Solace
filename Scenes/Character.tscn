@@ -9,7 +9,7 @@
 [ext_resource type="Environment" uid="uid://cxm0dp40vn0qe" path="res://RenderingEnvironment.tres" id="7_6u0kc"]
 [ext_resource type="AudioStream" uid="uid://dgx0pmiwlclv5" path="res://Music/press.wav" id="7_n32jk"]
 [ext_resource type="PackedScene" uid="uid://bx78cbmcnb8ea" path="res://Scenes/Ui/TouchScreenControls.tscn" id="9_7eedt"]
-[ext_resource type="PackedScene" path="res://Scenes/Pause Screen.tscn" id="9_v2200"]
+[ext_resource type="PackedScene" uid="uid://45bvwwui7l2f" path="res://Scenes/Pause Screen.tscn" id="9_v2200"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_13pt1"]
 
@@ -295,4 +295,7 @@ shape = SubResource("CylinderShape3D_ukuk1")
 [node name="CanvasLayer" parent="." instance=ExtResource("9_v2200")]
 visible = false
 
+[connection signal="pressed" from="TouchScreenControls/Pause" to="CanvasLayer" method="PauseToggle"]
 [connection signal="pauseToggle" from="CanvasLayer" to="TouchScreenControls" method="VisibilityCheck"]
+
+[editable path="TouchScreenControls"]

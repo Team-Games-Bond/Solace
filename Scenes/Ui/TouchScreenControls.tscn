@@ -13,21 +13,51 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ytmfj")
 
-[node name="Button" type="Button" parent="."]
+[node name="Interact" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -69.0
-offset_top = -31.0
+offset_left = -252.0
+offset_top = -96.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "Interact"
 script = ExtResource("1_ihub6")
 Action = "Interact"
+
+[node name="Pause" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.5
+offset_right = 84.5
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Pause"
+
+[node name="Jump" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -426.0
+offset_top = -235.0
+offset_right = -174.0
+offset_bottom = -139.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "Jump"
+script = ExtResource("1_ihub6")
+Action = "Jump"
 
 [node name="Virtual Joystick" parent="." instance=ExtResource("2_6veuv")]
 layout_mode = 1
