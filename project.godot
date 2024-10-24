@@ -14,7 +14,7 @@ config/name="Solace"
 run/main_scene="res://Scenes/!MainGameScene/Game.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 boot_splash/image="res://Textures/Games Bond Splash.png"
-config/icon="res://Textures/icon.svg"
+config/icon="res://Icons/regular-icon.png"
 
 [autoload]
 
