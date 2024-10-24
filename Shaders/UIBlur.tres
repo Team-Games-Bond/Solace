@@ -1,0 +1,88 @@
+[gd_resource type="VisualShader" load_steps=8 format=3 uid="uid://cyr13vacu12k2"]
+
+[ext_resource type="Script" path="res://addons/shaderV/rgba/blur/blurCustom.gd" id="1_umgmv"]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_4rn0l"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_1k8gs"]
+default_input_values = [2, -1.0, 3, 8, 4, 0.001]
+initialized = true
+script = ExtResource("1_umgmv")
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_b0ksh"]
+parameter_name = "Texture2DParameter"
+texture_source = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_vbd46"]
+input_name = "screen_uv"
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_natf7"]
+constant = 0.001
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_mfiog"]
+parameter_name = "blur_strength"
+default_value_enabled = true
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform sampler2D Texture2DParameter : hint_screen_texture;
+uniform float blur_strength = 0;
+
+
+// BlurCustom
+#include \"res://addons/shaderV/rgba/blur/blurCustom.gdshaderinc\"
+
+void fragment() {
+// Input:6
+	vec2 n_out6p0 = SCREEN_UV;
+
+
+// FloatConstant:8
+	float n_out8p0 = 0.001000;
+
+
+// FloatParameter:9
+	float n_out9p0 = blur_strength;
+
+
+// FloatOp:10
+	float n_out10p0 = n_out8p0 * n_out9p0;
+
+
+	vec3 n_out4p0;
+	float n_out4p1;
+// BlurCustom:4
+	float n_in4p2 = -1.00000;
+	int n_in4p3 = 8;
+	{
+		vec4 n_out4p0n_out4p1 = _blurWithAmountFunc(Texture2DParameter, vec3(n_out6p0, 0.0).xy, n_in4p2, int(n_in4p3), n_out10p0);
+		n_out4p0 = n_out4p0n_out4p1.rgb;
+		n_out4p1 = n_out4p0n_out4p1.a;
+	}
+
+
+// Output:0
+	COLOR.rgb = n_out4p0;
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(560, 180)
+nodes/fragment/4/node = SubResource("VisualShaderNodeCustom_1k8gs")
+nodes/fragment/4/position = Vector2(220, 400)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture2DParameter_b0ksh")
+nodes/fragment/5/position = Vector2(-140, 180)
+nodes/fragment/6/node = SubResource("VisualShaderNodeInput_vbd46")
+nodes/fragment/6/position = Vector2(-140, 500)
+nodes/fragment/8/node = SubResource("VisualShaderNodeFloatConstant_natf7")
+nodes/fragment/8/position = Vector2(-240, 640)
+nodes/fragment/9/node = SubResource("VisualShaderNodeFloatParameter_mfiog")
+nodes/fragment/9/position = Vector2(-320, 720)
+nodes/fragment/10/node = SubResource("VisualShaderNodeFloatOp_4rn0l")
+nodes/fragment/10/position = Vector2(-20, 620)
+nodes/fragment/connections = PackedInt32Array(4, 0, 0, 0, 5, 0, 4, 0, 6, 0, 4, 1, 8, 0, 10, 0, 10, 0, 4, 4, 9, 0, 10, 1)

@@ -22,11 +22,12 @@
 [ext_resource type="PackedScene" uid="uid://b811gfiwmtplp" path="res://Models/Cables/Cable 90 Left.blend" id="17_8nnvv"]
 [ext_resource type="PackedScene" uid="uid://c3r5d5kuejvhs" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/Red6.tscn" id="17_oku7v"]
 [ext_resource type="PackedScene" uid="uid://h846kbjh7oaa" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/Blue3.tscn" id="18_hsf1w"]
-[ext_resource type="PackedScene" uid="uid://dv6ttxwx5gja7" path="res://Scenes/EPrompt.tscn" id="18_ucnw2"]
+[ext_resource type="PackedScene" path="res://Scenes/EPrompt.tscn" id="18_ucnw2"]
 [ext_resource type="PackedScene" uid="uid://ck0iwfsfbmsof" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/green9.tscn" id="19_sq85m"]
 [ext_resource type="PackedScene" uid="uid://bpsaexwtgl6pi" path="res://Models/Tutorial/cube-symbols/Coloured Cubes/unrec4.tscn" id="20_fihni"]
 [ext_resource type="PackedScene" uid="uid://hcb2t4qod38t" path="res://Scenes/GameObjects/Sockets/BasicSocket.tscn" id="20_svv4i"]
-[ext_resource type="PackedScene" uid="uid://pscqmxvgbgkq" path="res://Scenes/GameObjects/fountain.tscn" id="28_8winh"]
+[ext_resource type="PackedScene" uid="uid://bywpl634670tt" path="res://Models/Tutorial/tutorialnew.blend" id="27_qmush"]
+[ext_resource type="PackedScene" path="res://Scenes/GameObjects/fountain.tscn" id="28_8winh"]
 [ext_resource type="AudioStream" uid="uid://b2dnn3qtihkwe" path="res://Music/749876__fania_katz__little-melody.wav" id="29_ypoka"]
 [ext_resource type="PackedScene" uid="uid://dy4uvvhxprc24" path="res://Models/Cables/Cable Straight 3m.blend" id="30_d5x6a"]
 [ext_resource type="Script" path="res://Scripts/Cable.cs" id="31_i13ch"]
@@ -2958,6 +2959,46 @@ stream = ExtResource("29_ypoka")
 
 [node name="Fountain2" parent="." instance=ExtResource("28_8winh")]
 transform = Transform3D(-1.7, 0, -2.56693e-07, 0, 1.7, 0, 2.56693e-07, 0, -1.7, 6.178, 0.096, 25.332)
+
+[node name="Colliders" type="Node3D" parent="."]
+visible = false
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Colliders"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -5.52652, 2.63392, 31.8667)
+use_collision = true
+size = Vector3(1, 6.86609, 2.41704)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Colliders"]
+transform = Transform3D(-0.765876, 0, 0.642988, 0, 1, 0, -0.642988, 0, -0.765876, -5.59387, 2.81836, 0.966253)
+use_collision = true
+size = Vector3(1, 6.86609, 2.13201)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Colliders"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -5.78813, 2.95603, 16.4211)
+use_collision = true
+size = Vector3(1, 6.86609, 2.13201)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Colliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96161, 3.06936, 41.6956)
+use_collision = true
+size = Vector3(1, 6.86609, 18.7806)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Colliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91003, 2.93096, 23.8994)
+use_collision = true
+size = Vector3(1, 6.86609, 13.5733)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Colliders"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.444161, 2.89738, -0.300581)
+use_collision = true
+size = Vector3(1, 6.86609, 12.3656)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Colliders"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.08374, 2.93304, 8.68113)
+use_collision = true
+size = Vector3(1, 6.86609, 13.9315)
+
+[node name="LeftCablePath" type="Node3D" parent="."]
 
 [connection signal="TutorialRoom1Completed" from="TutorialWorldManager" to="Room 1/LeftCablePath/Cable Straight 3m/Cube" method="Power"]
 [connection signal="TutorialRoom1Completed" from="TutorialWorldManager" to="Room 1/RightCablePath/Cable Straight 3m2/Cube" method="Power"]
