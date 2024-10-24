@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cd6su2yh38r4n"]
+
+[ext_resource type="Shader" uid="uid://xxwfyvtomvl4" path="res://Shaders/TextureBlur.tres" id="1_i6sbl"]
+
+[resource]
+shader = ExtResource("1_i6sbl")
