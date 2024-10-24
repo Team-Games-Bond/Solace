@@ -18,7 +18,7 @@ public partial class NeuronActivator : Node
 	{
 		
 	}
-
+	
 	public override void _Input(InputEvent @event)
     {
         if (@event.IsActionPressed("DebugClick")){
