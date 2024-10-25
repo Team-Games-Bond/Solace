@@ -78,7 +78,8 @@ install the templates
 
 # Libraries (Already Included)
 [**ShaderV 1.3**](https://github.com/arkology/ShaderV)  
-[**Godot Virtual Joystick 1.6**](https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot)
+[**Godot Virtual Joystick 1.6**](https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot)  
+[**Godot Interactive Touchscreen Button**](https://github.com/Mustache-Games/Godot-Interactive-Touchscreen-Button)
 
 # Other Software used
 [![Adobe Illustrator](https://img.shields.io/badge/Adobe%20Illustrator-FF9A00?style=for-the-badge&logo=adobe%20illustrator&logoColor=white)](https://www.adobe.com/nz/products/illustrator.html) Version 2024  
