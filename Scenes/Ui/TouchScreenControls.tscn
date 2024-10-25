@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx78cbmcnb8ea"]
+[gd_scene load_steps=9 format=3 uid="uid://bx78cbmcnb8ea"]
 
 [ext_resource type="Script" path="res://Scripts/TouchScreenInputButton.cs" id="1_ihub6"]
 [ext_resource type="Script" path="res://Scripts/TouchScreenControls.cs" id="1_ytmfj"]
-[ext_resource type="PackedScene" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_6veuv"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="2_6veuv"]
+[ext_resource type="Texture2D" uid="uid://rfb0ibnvx7jj" path="res://Textures/Touch UI/interact.png" id="4_56ox4"]
+[ext_resource type="Texture2D" uid="uid://vdas2dkt0tqn" path="res://Textures/Touch UI/interact_pressed.png" id="5_ogch3"]
+[ext_resource type="Script" path="res://addons/Godot-Interactive-Touchscreen-Button/interactive_touchscreen_button.gd" id="6_cfj6w"]
+[ext_resource type="Texture2D" uid="uid://csss3oirjd3ce" path="res://Textures/Touch UI/jump.png" id="7_vbuyd"]
+[ext_resource type="Texture2D" uid="uid://d10flq6sc5mk8" path="res://Textures/Touch UI/jump_pressed.png" id="8_nkwy7"]
 
 [node name="TouchScreenControls" type="Control"]
 layout_mode = 3
@@ -14,6 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_ytmfj")
 
 [node name="Interact" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -30,6 +36,7 @@ script = ExtResource("1_ihub6")
 Action = "Interact"
 
 [node name="Pause" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -42,6 +49,7 @@ theme_override_font_sizes/font_size = 64
 text = "Pause"
 
 [node name="Jump" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -66,3 +74,60 @@ action_left = "CharLeft"
 action_right = "CharRight"
 action_up = "CharUp"
 action_down = "CharDown"
+
+[node name="Interact Touch" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = -162.0
+offset_right = 233.0
+offset_bottom = 229.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_56ox4")
+texture_pressed = ExtResource("5_ogch3")
+stretch_mode = 0
+script = ExtResource("6_cfj6w")
+input_action = &"Interact"
+
+[node name="Jump Touch" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -332.0
+offset_top = -254.0
+offset_right = 59.0
+offset_bottom = 137.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_vbuyd")
+texture_pressed = ExtResource("8_nkwy7")
+stretch_mode = 0
+script = ExtResource("6_cfj6w")
+input_action = &"Jump"
+
+[node name="Pause Touch" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.5
+offset_top = 10.0
+offset_right = 195.5
+offset_bottom = 402.0
+grow_horizontal = 2
+scale = Vector2(0.4, 0.4)
+pivot_offset = Vector2(200, 0)
+texture_normal = ExtResource("7_vbuyd")
+texture_pressed = ExtResource("8_nkwy7")
+stretch_mode = 0
+script = ExtResource("6_cfj6w")

@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbxp1atppwt1g"
 path.s3tc="res://.godot/imported/lyra.webp-1af4f6fc8d7e915d5f7381dd4a56e8f9.s3tc.ctex"
-path.etc2="res://.godot/imported/lyra.webp-1af4f6fc8d7e915d5f7381dd4a56e8f9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/lyra.webp"
-dest_files=["res://.godot/imported/lyra.webp-1af4f6fc8d7e915d5f7381dd4a56e8f9.s3tc.ctex", "res://.godot/imported/lyra.webp-1af4f6fc8d7e915d5f7381dd4a56e8f9.etc2.ctex"]
+dest_files=["res://.godot/imported/lyra.webp-1af4f6fc8d7e915d5f7381dd4a56e8f9.s3tc.ctex"]
 
 [params]
 
