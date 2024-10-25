@@ -10,11 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Capstone Project"
+config/name="Solace"
 run/main_scene="res://Scenes/!MainGameScene/Game.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 boot_splash/image="res://Textures/Games Bond Splash.png"
-config/icon="res://Textures/icon.svg"
+config/icon="res://Icons/regular-icon.png"
 
 [autoload]
 
@@ -133,6 +133,7 @@ pause={
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 Bayer16={
 "type": "sampler2D",
 "value": "res://Textures/bayer16.png"

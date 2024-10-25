@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cus1m51mantj4"
 path.s3tc="res://.godot/imported/Interact.png-bf1908ecb4c9edeb5e36c0784f6c3f41.s3tc.ctex"
+path.etc2="res://.godot/imported/Interact.png-bf1908ecb4c9edeb5e36c0784f6c3f41.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/Press E/Interact.png"
-dest_files=["res://.godot/imported/Interact.png-bf1908ecb4c9edeb5e36c0784f6c3f41.s3tc.ctex"]
+dest_files=["res://.godot/imported/Interact.png-bf1908ecb4c9edeb5e36c0784f6c3f41.s3tc.ctex", "res://.godot/imported/Interact.png-bf1908ecb4c9edeb5e36c0784f6c3f41.etc2.ctex"]
 
 [params]
 
