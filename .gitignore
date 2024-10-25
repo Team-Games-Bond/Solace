@@ -2,3 +2,5 @@
 .godot/
 # Ignore Blender Backups
 *.blend[1-9]
+# Android Build Directory
+Android/
