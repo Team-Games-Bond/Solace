@@ -75,7 +75,7 @@ public partial class SimonSaysManager : Node
 
 	private void ButtonPressed(Button pressedButton)
 	{
-		GD.Print("Simon Says Pressed");
+		//GD.Print("Simon Says Pressed");
 
 		ResetIdleTimer();
 		if(isFlashing) endPatternDisplay();
@@ -101,9 +101,9 @@ public partial class SimonSaysManager : Node
 	{
 		currentNumberInSequence = 0;
 		//Check if complete
+		signalSequences();
 		if(currentSequence >= sequences.Count-1) puzzleCompleted();
 		else currentSequence += 1;
-		signalSequences();
 		//GD.Print("Sequence Completed");
 		startPatternDisplay();
 	}
@@ -150,9 +150,10 @@ public partial class SimonSaysManager : Node
 
 	private void signalSequences()
 	{
-		if(currentNumberInSequence == 1) EmitSignal(SignalName.Sequence1);
-		else if(currentNumberInSequence == 2) EmitSignal(SignalName.Sequence2);
-		else if(currentNumberInSequence == 3) EmitSignal(SignalName.Sequence3);
-		else if(currentNumberInSequence == 4) EmitSignal(SignalName.Sequence4);
+		//GD.Print("Sequence: " + currentSequence);
+		if(currentSequence == 0) EmitSignal(SignalName.Sequence1);
+		else if(currentSequence == 1) EmitSignal(SignalName.Sequence2);
+		else if(currentSequence == 2) EmitSignal(SignalName.Sequence3);
+		else if(currentSequence == 3) EmitSignal(SignalName.Sequence4);
 	}
 }
