@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgum08onb0dgq"]
+[gd_scene load_steps=7 format=3 uid="uid://cgum08onb0dgq"]
 
-[ext_resource type="Texture2D" uid="uid://csn677i73r7oe" path="res://Textures/Lyra-vec.png" id="1_f3lbk"]
+[ext_resource type="Texture2D" uid="uid://bq7vwuqm3pbtc" path="res://Textures/Images/Finite_State_Avatar_Transparent.png" id="1_va1sm"]
+[ext_resource type="Texture2D" uid="uid://cpfymi2eh7jlm" path="res://Textures/Images/Maddie-Credits.png" id="2_byf2q"]
+[ext_resource type="Texture2D" uid="uid://rm0f21d44lu" path="res://Textures/Images/Pucca.jpg" id="3_l3itq"]
+[ext_resource type="Texture2D" uid="uid://b82gexc4ktwj2" path="res://Textures/Images/21c75fa3963bc4381c69521e8abc66a97ac64a93_full.png" id="4_7xd1f"]
+[ext_resource type="Texture2D" uid="uid://8m2eyhkuvwaw" path="res://Textures/Images/7D71BB5D-9901-4C80-8AA1-FE0B4D8B2D26.jpg" id="5_2wcf1"]
+[ext_resource type="Texture2D" uid="uid://b45fdbsyh0tqt" path="res://Textures/Images/Screenshot_2024-10-25_224944.png" id="6_2il2t"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -40,17 +45,17 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("1_f3lbk")
+texture = ExtResource("1_va1sm")
 expand_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/MarginContainer/VBoxContainer/Melody"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[font_size=48][b]Person[/b][/font_size]
-sdfasdf
-dsafdsfa
-fdsdsafds"
+text = "[font_size=48][b]Melody[/b][/font_size]
+Backend Software Developer and Game Designer 
+
+"
 fit_content = true
 
 [node name="Maddie" type="HBoxContainer" parent="ScrollContainer2/MarginContainer/VBoxContainer"]
@@ -60,11 +65,10 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[font_size=48][b]Person[/b][/font_size]
-visual Programmer
-sdfasdf
-dsafdsfa
-fdsdsafds"
+text = "[font_size=48][b]Madeline[/b][/font_size]
+Backend and Graphics Programmer
+
+"
 fit_content = true
 text_direction = 2
 
@@ -73,7 +77,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("1_f3lbk")
+texture = ExtResource("2_byf2q")
 expand_mode = 2
 
 [node name="Selena" type="HBoxContainer" parent="ScrollContainer2/MarginContainer/VBoxContainer"]
@@ -84,17 +88,17 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("1_f3lbk")
+texture = ExtResource("3_l3itq")
 expand_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/MarginContainer/VBoxContainer/Selena"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[font_size=48][b]Person[/b][/font_size]
-sdfasdf
-dsafdsfa
-fdsdsafds"
+text = "[font_size=48][b]Selena Wu[/b][/font_size]
+Concept Artist and 3D Modeller
+
+"
 fit_content = true
 
 [node name="Fred" type="HBoxContainer" parent="ScrollContainer2/MarginContainer/VBoxContainer"]
@@ -104,11 +108,11 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[font_size=48][b]Person[/b][/font_size]
-visual Programmer
-sdfasdf
-dsafdsfa
-fdsdsafds"
+text = "[font_size=48][b]Fred[/b][/font_size]
+Art Lead and Software Developer
+
+
+"
 fit_content = true
 text_direction = 2
 
@@ -117,7 +121,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("1_f3lbk")
+texture = ExtResource("4_7xd1f")
 expand_mode = 2
 
 [node name="Sam" type="HBoxContainer" parent="ScrollContainer2/MarginContainer/VBoxContainer"]
@@ -128,17 +132,17 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("1_f3lbk")
+texture = ExtResource("5_2wcf1")
 expand_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/MarginContainer/VBoxContainer/Sam"]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[font_size=48][b]Person[/b][/font_size]
-sdfasdf
-dsafdsfa
-fdsdsafds"
+text = "[font_size=48][b]Sam Son[/b][/font_size]
+UI/UX Designer
+
+"
 fit_content = true
 
 [node name="Julia" type="HBoxContainer" parent="ScrollContainer2/MarginContainer/VBoxContainer"]
@@ -148,11 +152,11 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[font_size=48][b]Person[/b][/font_size]
-visual Programmer
-sdfasdf
-dsafdsfa
-fdsdsafds"
+text = "[font_size=48][b]Julia[/b][/font_size]
+UX/UI Designer
+
+
+"
 fit_content = true
 text_direction = 2
 
@@ -161,7 +165,7 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("1_f3lbk")
+texture = ExtResource("6_2il2t")
 expand_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer2/MarginContainer/VBoxContainer"]
