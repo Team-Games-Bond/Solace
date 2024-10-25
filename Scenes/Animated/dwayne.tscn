@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dijyoiu4jqgir"]
+
+[ext_resource type="PackedScene" uid="uid://vrxu54teaofc" path="res://Scenes/Animated/Dwayne.glb" id="1_kqddq"]
+
+[node name="Dwayne" instance=ExtResource("1_kqddq")]
+
+[node name="Icosphere_004" parent="." index="3"]
+transform = Transform3D(0.244639, 0, 0, 0, 0.574758, 0.122839, 0, -0.333719, 0.211563, 4.03877e-16, 1.62841, 1.02807)
+
+[node name="Icosphere_003" parent="." index="5"]
+transform = Transform3D(-0.244639, 1.29955e-07, -8.23858e-08, -3.47654e-15, 0.574758, 0.122839, 9.52661e-08, 0.333719, -0.211563, 4.03877e-16, 1.62841, -1.00387)
+
+[node name="AnimationPlayer" parent="." index="6"]
+autoplay = "idle"
