@@ -4,6 +4,8 @@ using System;
 public partial class BrainWorldManager : Node
 {
 	[ExportGroup("Object References")]
+	[Export] public ExitDoors exitDoors;
+
 	[ExportSubgroup("Fog & Neuron References")]
 	[Export] public FogManager FogManager;
 	[Export] public Neuron powerSocketDias;
@@ -95,6 +97,6 @@ public partial class BrainWorldManager : Node
 	private void crystalsPlaced()
 	{
 		GD.Print("All Crystals Placed");
-		//waterCover.QueueFree();
+		exitDoors.Open();
 	}
 }
