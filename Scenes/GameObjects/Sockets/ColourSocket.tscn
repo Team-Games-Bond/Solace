@@ -108,6 +108,6 @@ size = Vector3(2.5, 1, 2.5)
 [node name="ItemMount" type="Node3D" parent="Area3D"]
 
 [node name="CubeStation1" parent="." instance=ExtResource("5_ejlhp")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.016, -0.415, -0.016)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.00169209, -0.415, -0.000566987)
 
 [connection signal="InteractionBegin" from="Area3D" to="Area3D/Pickup" method="play"]
