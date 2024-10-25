@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Capstone Project"
-run/main_scene="res://Scenes/Testing Scenes/Testing text and zoom.tscn"
+config/name="Solace"
+run/main_scene="res://Scenes/!MainGameScene/Game.tscn"
 config/features=PackedStringArray("4.3", "C#", "Mobile")
 boot_splash/image="res://Textures/Games Bond Splash.png"
 config/icon="res://Textures/icon.svg"
