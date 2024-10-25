@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Button.cs" id="1_c2jg6"]
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="1_nckxi"]
-[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact-export.svg" id="3_u8xoe"]
+[ext_resource type="Texture2D" uid="uid://cwf6l6iijtre0" path="res://Textures/Press E/Interact-export.svg" id="3_6odri"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_4gpjd"]
 [ext_resource type="AudioStream" uid="uid://dgx0pmiwlclv5" path="res://Music/press.wav" id="5_coul1"]
 
@@ -82,7 +82,7 @@ pixel_size = 0.003
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("3_u8xoe")
+texture = ExtResource("3_6odri")
 script = ExtResource("4_4gpjd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]

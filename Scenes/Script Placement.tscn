@@ -1,12 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnyjrg4x5c2eb"]
+[gd_scene load_steps=3 format=3 uid="uid://bnyjrg4x5c2eb"]
 
-[ext_resource type="PackedScene" uid="uid://un31ok75dwaf" path="res://Scenes/Main level.tscn" id="1_6cx1d"]
 [ext_resource type="PackedScene" uid="uid://dbojdid8sclq" path="res://Scenes/GameObjects/Buttons/Dwayne.tscn" id="2_fqwc1"]
 [ext_resource type="PackedScene" uid="uid://bv1hmgkx3o4ti" path="res://Scenes/GameObjects/Trigger-Areas/Text-Display.tscn" id="3_w2qan"]
 
 [node name="ScriptPlacement" type="Node3D"]
-
-[node name="MainLevel" parent="." instance=ExtResource("1_6cx1d")]
 
 [node name="Dwayne2" parent="." instance=ExtResource("2_fqwc1")]
 transform = Transform3D(-0.595776, 0, -0.80315, 0, 1, 0, 0.80315, 0, -0.595776, 8.97498, -43.7855, -51.2283)
@@ -36,7 +33,7 @@ height = 0.699
 sides = 12
 
 [node name="Dwayne4" parent="." instance=ExtResource("2_fqwc1")]
-transform = Transform3D(-0.696489, 0, -0.717567, 0, 1, 0, 0.717567, 0, -0.696489, -103.657, 2.34561, 207.927)
+transform = Transform3D(-0.696489, 0, -0.717567, 0, 1, 0, 0.717567, 0, -0.696489, -103.744, 2.34561, 208.212)
 textToDisplay = "First, find the image cube and let it imprint on your mind. then explore the maze to discover your canvas"
 
 [node name="Dwayne5" parent="." instance=ExtResource("2_fqwc1")]
