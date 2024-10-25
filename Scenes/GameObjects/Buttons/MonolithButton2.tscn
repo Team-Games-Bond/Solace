@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://vi8r7yemmosv"]
+[gd_scene load_steps=4 format=3 uid="uid://dmkrxucr6i8u6"]
 
 [ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="1_7he2i"]
 [ext_resource type="PackedScene" uid="uid://d185l5su44ek3" path="res://Models/Tutorial/Rune rock 2.blend" id="2_aut64"]

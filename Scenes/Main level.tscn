@@ -28,7 +28,7 @@
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="23_qrvoa"]
 [ext_resource type="Material" uid="uid://whwpat23q0xr" path="res://Materials/FogMaterial.tres" id="24_6vvwk"]
 [ext_resource type="Script" path="res://Scripts/FogManager.cs" id="24_teicv"]
-[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="24_vbcc1"]
+[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact-export.svg" id="24_vbcc1"]
 [ext_resource type="PackedScene" uid="uid://5emhfv7l1g4n" path="res://Models/Main level/plaza EMPTY.blend" id="25_jih8d"]
 [ext_resource type="PackedScene" uid="uid://dfmru8k5fqmvx" path="res://Models/Main level/green_crystal.blend" id="25_jqpoo"]
 [ext_resource type="PackedScene" uid="uid://checarg1ql6ao" path="res://Scenes/GameObjects/Sockets/BasicPowerSocket.tscn" id="25_lydc0"]

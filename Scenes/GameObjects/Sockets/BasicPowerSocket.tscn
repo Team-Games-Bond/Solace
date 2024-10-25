@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="1_4q32i"]
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="2_0jona"]
-[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="3_0hm0j"]
+[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact-export.svg" id="3_0hm0j"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_rgihe"]
 [ext_resource type="AudioStream" uid="uid://dm7cugia1b20e" path="res://Music/pickup.wav" id="5_cq5au"]
 [ext_resource type="PackedScene" uid="uid://4ju2to7qj2bc" path="res://Models/Tutorial/powerboxSOCKET.blend" id="5_rqp4w"]
