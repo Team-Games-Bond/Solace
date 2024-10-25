@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ogqs55npum6h"]
+[gd_scene load_steps=3 format=3 uid="uid://ogqs55npum6h"]
+
+[ext_resource type="Script" path="res://Scenes/ControllerScroller.gd" id="1_cy0x0"]
 
 [sub_resource type="GDScript" id="GDScript_5a2bg"]
 resource_name = "url_to_browser"
@@ -23,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cy0x0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2

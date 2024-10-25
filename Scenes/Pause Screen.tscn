@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://45bvwwui7l2f"]
+[gd_scene load_steps=10 format=3 uid="uid://45bvwwui7l2f"]
 
 [ext_resource type="Shader" uid="uid://b87nkvrh0161d" path="res://Shaders/UIBlur.tres" id="1_ikemm"]
 [ext_resource type="Script" path="res://Scripts/pause_screen.gd" id="1_q1mp6"]
-[ext_resource type="PackedScene" path="res://Scenes/CreditsUI.tscn" id="1_q8ya1"]
-[ext_resource type="PackedScene" path="res://Scenes/LicensesUI.tscn" id="2_p31x6"]
+[ext_resource type="PackedScene" uid="uid://cgum08onb0dgq" path="res://Scenes/CreditsUI.tscn" id="1_q8ya1"]
+[ext_resource type="PackedScene" uid="uid://ogqs55npum6h" path="res://Scenes/LicensesUI.tscn" id="2_p31x6"]
 [ext_resource type="Script" path="res://Scripts/MenuSwitcher.gd" id="3_qi6ql"]
+[ext_resource type="Script" path="res://Scripts/button_default_selection.gd" id="3_v3esm"]
 [ext_resource type="Script" path="res://Scripts/FullscreenButton.gd" id="3_wwpwm"]
 [ext_resource type="Script" path="res://Scripts/QuitButton.gd" id="4_thce6"]
 
@@ -63,6 +64,8 @@ layout_mode = 2
 [node name="ToGame" type="Button" parent="Blur/Darken/HBoxContainer/PanelContainer/MarginContainer/Buttons"]
 layout_mode = 2
 text = "Back To Game"
+script = ExtResource("3_v3esm")
+ControllerDefault = true
 
 [node name="Credits2" type="Button" parent="Blur/Darken/HBoxContainer/PanelContainer/MarginContainer/Buttons"]
 layout_mode = 2
