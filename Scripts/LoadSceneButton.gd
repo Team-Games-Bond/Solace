@@ -8,7 +8,8 @@ var been_pressed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	ResourceLoader.load_threaded_request(ScenePath)
+	if ResourceLoader.load_threaded_get_status(ScenePath)==ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
+		ResourceLoader.load_threaded_request(ScenePath)
 
 func _pressed() -> void:
 	been_pressed = true
