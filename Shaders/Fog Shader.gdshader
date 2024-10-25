@@ -1,8 +1,8 @@
 shader_type spatial;
 render_mode vertex_lighting;
 
-uniform sampler2D PRIMARY_DEPTH: hint_default_white;
-uniform sampler2D SECONDARY_DEPTH: hint_default_white;
+uniform sampler2D PRIMARY_DEPTH: hint_default_white, repeat_disable;
+uniform sampler2D SECONDARY_DEPTH: hint_default_white, repeat_disable;
 uniform sampler2D DEPTH_TEXTURE: hint_depth_texture;
 uniform float WAVE_HEIGHT = 3.0f;
 uniform float NORMAL_STRENGTH = 0.06f;
