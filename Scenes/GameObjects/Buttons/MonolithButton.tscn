@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Button.cs" id="1_dus0x"]
 [ext_resource type="Script" path="res://Scripts/Interactable.cs" id="2_noerg"]
-[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="3_oomik"]
+[ext_resource type="Texture2D" uid="uid://cwf6l6iijtre0" path="res://Textures/Press E/Interact-export.svg" id="3_aou53"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="4_mbyxh"]
 [ext_resource type="AudioStream" uid="uid://dgx0pmiwlclv5" path="res://Music/press.wav" id="5_vve2v"]
 [ext_resource type="PackedScene" uid="uid://brvdr6ktafe3m" path="res://Models/Tutorial/Rune rock 1.blend" id="6_7bsh5"]
@@ -83,7 +83,7 @@ pixel_size = 0.003
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("3_oomik")
+texture = ExtResource("3_aou53")
 script = ExtResource("4_mbyxh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
