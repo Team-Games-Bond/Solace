@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgum08onb0dgq"]
+[gd_scene load_steps=3 format=3 uid="uid://cgum08onb0dgq"]
 
 [ext_resource type="Texture2D" uid="uid://csn677i73r7oe" path="res://Textures/Lyra-vec.png" id="1_f3lbk"]
+[ext_resource type="Script" path="res://Scenes/ControllerScroller.gd" id="1_tlnq7"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tlnq7")
 
 [node name="MarginContainer" type="MarginContainer" parent="ScrollContainer2"]
 layout_mode = 2

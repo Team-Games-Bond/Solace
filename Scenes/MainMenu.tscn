@@ -174,6 +174,7 @@ theme_override_font_sizes/font_size = 36
 text = "Start"
 script = ExtResource("2_3vylp")
 MainMenu = NodePath("../../../../../..")
+ControllerDefault = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu/PanelContainer"]
 layout_mode = 2
