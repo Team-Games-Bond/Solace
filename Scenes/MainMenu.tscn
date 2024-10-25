@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://drdwv37pt4dv6" path="res://Textures/Concept Art/Concept6.jpg" id="1_1n3eh"]
 [ext_resource type="Material" uid="uid://cd6su2yh38r4n" path="res://Materials/TextureBlur.tres" id="1_wvbd0"]
-[ext_resource type="Script" path="res://Scripts/LoadSceneButton.gd" id="2_3vylp"]
 [ext_resource type="Texture2D" uid="uid://dtrb0v7dkq6v2" path="res://Textures/Concept Art/Concept1.png" id="2_q65l5"]
 [ext_resource type="Texture2D" uid="uid://b8n0d7lgug86s" path="res://Textures/Concept Art/Concept2.jpg" id="3_oyxef"]
 [ext_resource type="Script" path="res://Scripts/LoadingBar.gd" id="4_f2m7m"]
@@ -10,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b3uw64sblkm3a" path="res://Textures/Concept Art/Concept4.jpg" id="5_dr67d"]
 [ext_resource type="Texture2D" uid="uid://dgpirqwshgbl8" path="res://Textures/Concept Art/Concept5.jpg" id="6_i5mgf"]
 [ext_resource type="Texture2D" uid="uid://dc8vvqoxnmjen" path="res://Textures/solacelogo.png" id="8_vlm5v"]
+[ext_resource type="Script" path="res://Scripts/QuitButton.gd" id="9_4t3re"]
 
 [sub_resource type="GDScript" id="GDScript_g6y1f"]
 resource_name = "TextureRandomizer"
@@ -168,12 +168,11 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Button" type="Button" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("MainMenu")]
+[node name="Button" type="Button" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Start"
-script = ExtResource("2_3vylp")
-MainMenu = NodePath("../../../../../..")
+text = "Exit"
+script = ExtResource("9_4t3re")
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu/PanelContainer"]
 layout_mode = 2
