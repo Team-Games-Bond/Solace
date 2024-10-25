@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=46 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -36,6 +36,7 @@
 [ext_resource type="Script" path="res://Scripts/Door.cs" id="33_h0h5u"]
 [ext_resource type="Texture2D" uid="uid://odmmq58a2gdj" path="res://Scenes/Testing Scenes/Clutter room painting 2.png" id="35_r0ytl"]
 [ext_resource type="PackedScene" uid="uid://cjl5s3c7gnovk" path="res://Scenes/Testing Scenes/rug.blend" id="36_2k2m4"]
+[ext_resource type="PackedScene" uid="uid://btknb6oa4jsws" path="res://Scenes/!MainGameScene/Bear.blend" id="37_8dvsa"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -1395,6 +1396,9 @@ size = Vector3(1.06816, 0.0341797, 0.0956726)
 
 [node name="rug2" parent="." instance=ExtResource("36_2k2m4")]
 transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -0.840623, -0.0132036, -0.13178)
+
+[node name="Bear" parent="." instance=ExtResource("37_8dvsa")]
+transform = Transform3D(0.207158, 0, 0.0344322, 0.00740262, 0.205089, -0.0445371, -0.0336271, 0.0451481, 0.202314, 1.42948, 0.0130848, 1.54907)
 
 [connection signal="InteractionBegin" from="Stuff/Pickup (monitor)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
 [connection signal="InteractionBegin" from="Stuff/Pickup2 (keyboard)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
