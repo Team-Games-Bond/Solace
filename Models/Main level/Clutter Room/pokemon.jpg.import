@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://lief5jwbm02p"
 path.s3tc="res://.godot/imported/pokemon.jpg-bcf7cf413401b172d7f27cd66ec96b4e.s3tc.ctex"
+path.etc2="res://.godot/imported/pokemon.jpg-bcf7cf413401b172d7f27cd66ec96b4e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/Main level/Clutter Room/pokemon.jpg"
-dest_files=["res://.godot/imported/pokemon.jpg-bcf7cf413401b172d7f27cd66ec96b4e.s3tc.ctex"]
+dest_files=["res://.godot/imported/pokemon.jpg-bcf7cf413401b172d7f27cd66ec96b4e.s3tc.ctex", "res://.godot/imported/pokemon.jpg-bcf7cf413401b172d7f27cd66ec96b4e.etc2.ctex"]
 
 [params]
 
