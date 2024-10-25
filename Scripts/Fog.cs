@@ -192,7 +192,7 @@ public partial class Fog : MeshInstance3D
 				for (int x = 0; x < Subdivisions.X + 2; x++)
 				{
 					int i = y * (Subdivisions.X + 2) + x;
-					uv[i] = new Vector2((float)x / (float)Subdivisions.X + (float)1, (float)y / (float)Subdivisions.Y + (float)1);
+					uv[i] = new Vector2((float)x / ((float)Subdivisions.X + (float)1), (float)y / ((float)Subdivisions.Y + (float)1));
 				}
 			}
 			return uv;
