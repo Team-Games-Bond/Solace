@@ -43,6 +43,8 @@ Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/
 ![Team 35 Jira Kanban Board](<Documentation/Jira Kanban board.png>)
 ![Team 35 Gantt Chart](<Documentation/Team 35 Gantt Chart.jpg>)
 
+We initially developed a desktop version of the game. However, after our discussion with Allan, we decided to create an Android version as well. Please note that since the development was primarily geared towards desktop, the highest asset quality can be seen in that version.
+
 # Building
 ## Build Dependencies
 [![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/download/) .NET Version 4.3   
@@ -103,10 +105,10 @@ install the templates
 Due to the collaborative nature of our project, we felt it necessary to make the game accessible beyond our university course. By uploading the game to platforms like Itch.io, we hope to receive feedback from experienced developers and a wider audience. This feedback would help us refine both the narrative and implementation, allowing us to improve the game further.  
 
 ## Series Expansion
-One of our initial goals was to develop a game series that encompassed all components of health, beyond just mental health. As illustrated in Figure X, we envisioned incorporating aspects such as physical health, represented by models of organs like the lungs. However, due to the time limitations of this project, we were unable to expand beyond the mental health focus. In the future, we hope to create additional installments in the series, using gamification to promote holistic wellbeing across various health components.  
+One of our initial goals was to develop a game series that encompassed all components of health, beyond just mental health. We envisioned incorporating aspects such as physical health, represented by models of organs like the lungs. However, due to the time limitations of this project, we were unable to expand beyond the mental health focus. In the future, we hope to create additional installments in the series, using gamification to promote holistic wellbeing across various health components.  
 
 ## Expanding to Mobile Platforms
-During our presentation, Allan suggested expanding the game to mobile platforms, particularly the Android market. Based on this feedback, we have started exploring ways to adapt the game for tablets and mobile devices, with the goal of uploading it to the Google Play Store. However, some assets do not transfer smoothly to Android at the moment, so adjustments will be needed to ensure compatibility.  
+During our presentation, Allan suggested expanding the game to mobile platforms, particularly the Android market. Based on this feedback, we have started exploring ways to adapt the game for tablets and mobile devices, with the goal of uploading it to the Google Play Store. At this stage, we have a working version for Android but have yet to upload it onto the Google Play Store. Our next steps are to refine the app to ensure clarity on tablet and mobile devices.
 
 ## Introduce Difficulty Levels
 Through user testing, we found that the skill level between our testers varied. Whilst some found the game to be easy, others found it difficult. Based on this feedback we plan to introduce different difficulty modes, giving the players the option to choose between easy and hard settings. Our team felt that for the game to be best enjoyed and to invoke the thinking and reflecting element of the game, we would like minimal support text throughout the game, but found that this was not realistic given how long a user would spend playing the game. Through the suggestions of Asma and Allan, we were encouraged to think about different game modes, ensuring that it was accessible to all experiences, skill levels and ages.  
