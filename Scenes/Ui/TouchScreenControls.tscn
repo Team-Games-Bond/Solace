@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx78cbmcnb8ea"]
+[gd_scene load_steps=11 format=3 uid="uid://bx78cbmcnb8ea"]
 
 [ext_resource type="Script" path="res://Scripts/TouchScreenInputButton.cs" id="1_ihub6"]
 [ext_resource type="Script" path="res://Scripts/TouchScreenControls.cs" id="1_ytmfj"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://addons/Godot-Interactive-Touchscreen-Button/interactive_touchscreen_button.gd" id="6_cfj6w"]
 [ext_resource type="Texture2D" uid="uid://csss3oirjd3ce" path="res://Textures/Touch UI/jump.png" id="7_vbuyd"]
 [ext_resource type="Texture2D" uid="uid://d10flq6sc5mk8" path="res://Textures/Touch UI/jump_pressed.png" id="8_nkwy7"]
+[ext_resource type="Texture2D" uid="uid://dwuy1ovv7123d" path="res://Textures/Touch UI/pause.png" id="9_3hoh4"]
+[ext_resource type="Texture2D" uid="uid://c2batu8c6t12u" path="res://Textures/Touch UI/pause_pressed.png" id="10_dn11f"]
 
 [node name="TouchScreenControls" type="Control"]
 layout_mode = 3
@@ -84,11 +86,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -158.0
 offset_top = -162.0
-offset_right = 233.0
-offset_bottom = 229.0
+offset_right = -2.0
+offset_bottom = -6.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("4_56ox4")
 texture_pressed = ExtResource("5_ogch3")
 stretch_mode = 0
@@ -104,11 +105,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -332.0
 offset_top = -254.0
-offset_right = 59.0
-offset_bottom = 137.0
+offset_right = -176.0
+offset_bottom = -98.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("7_vbuyd")
 texture_pressed = ExtResource("8_nkwy7")
 stretch_mode = 0
@@ -120,14 +120,11 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -195.5
-offset_top = 10.0
-offset_right = 195.5
-offset_bottom = 402.0
+offset_left = -38.0
+offset_right = 38.0
+offset_bottom = 76.0
 grow_horizontal = 2
-scale = Vector2(0.4, 0.4)
-pivot_offset = Vector2(200, 0)
-texture_normal = ExtResource("7_vbuyd")
-texture_pressed = ExtResource("8_nkwy7")
+texture_normal = ExtResource("9_3hoh4")
+texture_pressed = ExtResource("10_dn11f")
 stretch_mode = 0
 script = ExtResource("6_cfj6w")
