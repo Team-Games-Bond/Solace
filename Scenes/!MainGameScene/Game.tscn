@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bv1hmgkx3o4ti" path="res://Scenes/GameObjects/Trigger-Areas/Text-Display.tscn" id="5_c5t10"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwslm"]
-size = Vector3(2.90178, 3, 2.2847)
+size = Vector3(7.30491, 4.66321, 17.5145)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oiyo"]
 transparency = 1
@@ -74,13 +74,13 @@ material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 1)
 
 [node name="TutorialEntrance" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
-transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 335.728, -25.7643, -9.85611)
+transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 335.728, -26.2612, -9.85611)
 collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../TutorialEntrance2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/TutorialEntrance"]
-transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0.224655, 1.35101, -2.65631)
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0.195023, 2.18261, -4.04054)
 shape = SubResource("BoxShape3D_dwslm")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Doors/TutorialEntrance"]
@@ -90,7 +90,7 @@ material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 2.5)
 
 [node name="TutorialEntrance2" type="Node3D" parent="Doors"]
-transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 336.003, -24.5263, -9.72181)
+transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 336.003, -25.0232, -9.72181)
 
 [node name="MazeExit" type="Node3D" parent="Doors"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 556.276, 3.35429, -82.0456)
@@ -191,25 +191,13 @@ timeToType = 1.0
 [node name="Text-display" parent="Text" instance=ExtResource("5_c5t10")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218386, 1.12255, -1.1689)
 textToDisplay = "Here, you will encounter various challenges that will appear throughout Solace. Through trial and error, you can learn how to work with this world. "
-timeToDisplay = 10.0
-timeToType = 1.0
-
-[node name="Text-display4" parent="Text" instance=ExtResource("5_c5t10")]
-transform = Transform3D(4.3084, 0, 0, 0, 1, 0, 0, 0, 1, -0.182982, 1.5004, 6.13866)
-textToDisplay = "Press the runes in the right order to reveal the path ahead."
-timeToDisplay = 10.0
+timeToDisplay = 4.0
 timeToType = 1.0
 
 [node name="Text-display5" parent="Text" instance=ExtResource("5_c5t10")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0932733, 1.12255, 14.514)
-textToDisplay = "Paths unfold as light reaches its end. Place the power cube in the receptacle to activate the light and open the doorway."
-timeToDisplay = 10.0
-timeToType = 1.0
-
-[node name="Text-display6" parent="Text" instance=ExtResource("5_c5t10")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0932733, 1.12255, 29.9491)
-textToDisplay = "Some puzzles challenge you to find the right combination. Place the cubes in the correct slots to unlock the code and continue."
-timeToDisplay = 10.0
+textToDisplay = "Paths unfold as light reaches its end."
+timeToDisplay = 4.0
 timeToType = 1.0
 
 [node name="Text-display7" parent="Text" instance=ExtResource("5_c5t10")]

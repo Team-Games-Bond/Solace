@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cr1efcuqdirgs"]
 
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="1_wjjsr"]
-[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact-export.svg" id="2_0nsh7"]
+[ext_resource type="Texture2D" uid="uid://cwf6l6iijtre0" path="res://Textures/Press E/Interact-export.svg" id="2_vk3sb"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="3_sf7r1"]
 [ext_resource type="AudioStream" uid="uid://dgx0pmiwlclv5" path="res://Music/press.wav" id="4_p4isg"]
 
@@ -80,7 +80,7 @@ pixel_size = 0.003
 billboard = 1
 no_depth_test = true
 render_priority = 10
-texture = ExtResource("2_0nsh7")
+texture = ExtResource("2_vk3sb")
 script = ExtResource("3_sf7r1")
 
 [node name="Press" type="AudioStreamPlayer" parent="Area3D"]
