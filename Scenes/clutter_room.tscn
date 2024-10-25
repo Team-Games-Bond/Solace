@@ -1,18 +1,17 @@
-[gd_scene load_steps=43 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=45 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
 [ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="2_wtvm2"]
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="3_dfft7"]
 [ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="4_482h2"]
-[ext_resource type="PackedScene" uid="uid://ddh06lut0u3vn" path="res://Models/Main level/Clutter Room/bookshelf.blend" id="4_rbthr"]
 [ext_resource type="AudioStream" uid="uid://dm7cugia1b20e" path="res://Music/pickup.wav" id="4_x6mgo"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="5_7polk"]
 [ext_resource type="PackedScene" uid="uid://bbulxw05fl62s" path="res://Models/Main level/Clutter Room/monitor.blend" id="5_41mbg"]
 [ext_resource type="PackedScene" uid="uid://daup4tw0qws35" path="res://Models/Main level/Clutter Room/Keyboard.blend" id="6_p7m2v"]
 [ext_resource type="PackedScene" uid="uid://cb58biarx7057" path="res://Models/Main level/Clutter Room/mouse.blend" id="7_sxjma"]
 [ext_resource type="PackedScene" uid="uid://onn38v3lg6rn" path="res://Models/Main level/Clutter Room/PC case final.blend" id="8_440yg"]
-[ext_resource type="PackedScene" uid="uid://cjq0b0hiafijm" path="res://chair_modifiers_applied.tscn" id="9_0t85j"]
+[ext_resource type="PackedScene" path="res://chair_modifiers_applied.tscn" id="9_0t85j"]
 [ext_resource type="PackedScene" uid="uid://lyu2x115w6vo" path="res://Models/Main level/Clutter Room/mug.blend" id="9_odbiv"]
 [ext_resource type="PackedScene" uid="uid://dlwu5et4j1dwi" path="res://gameboy_.tscn" id="10_sgr12"]
 [ext_resource type="Script" path="res://Scripts/LockedItem.cs" id="11_5afxo"]
@@ -22,20 +21,21 @@
 [ext_resource type="PackedScene" uid="uid://b6uwbfwdhnun" path="res://Models/Main level/Clutter Room/lamp.blend" id="15_sjeq8"]
 [ext_resource type="PackedScene" uid="uid://de2fnhrx0jxmu" path="res://Models/Main level/Clutter Room/can final.blend" id="16_2437d"]
 [ext_resource type="PackedScene" uid="uid://cl46y58q6ss7e" path="res://Models/Main level/Clutter Room/headset.blend" id="16_ludrc"]
-[ext_resource type="PackedScene" uid="uid://cig4okdecn5g3" path="res://room_layout.tscn" id="18_ui3ch"]
+[ext_resource type="PackedScene" path="res://room_layout.tscn" id="18_ui3ch"]
 [ext_resource type="PackedScene" uid="uid://dnm6wcryjotpr" path="res://Models/Main level/Clutter Room/bin.blend" id="18_ytpgd"]
-[ext_resource type="PackedScene" uid="uid://b3ol7vk36l5b3" path="res://desk.tscn" id="19_vkpkm"]
+[ext_resource type="PackedScene" path="res://desk.tscn" id="19_vkpkm"]
 [ext_resource type="PackedScene" uid="uid://ck4epmivcyeo3" path="res://Models/Main level/Clutter Room/headphone stand.blend" id="20_0t6tp"]
 [ext_resource type="PackedScene" uid="uid://c1fut2iw4ktry" path="res://Models/Main level/Clutter Room/plushie smooth.blend" id="21_v5qrm"]
-[ext_resource type="PackedScene" uid="uid://cln3xqb54q6vg" path="res://bookshelf.tscn" id="23_abatq"]
+[ext_resource type="PackedScene" path="res://bookshelf.tscn" id="23_abatq"]
 [ext_resource type="PackedScene" uid="uid://tppnoni3vcqq" path="res://bedside_table_22.tscn" id="24_an4wl"]
-[ext_resource type="PackedScene" uid="uid://3cr3npks3a4i" path="res://paper_ball.tscn" id="25_lfds3"]
-[ext_resource type="PackedScene" uid="uid://xnvt870dpbim" path="res://fern.tscn" id="26_j4o2d"]
-[ext_resource type="PackedScene" uid="uid://bfwyxfo2v3mm0" path="res://paper_ball4.tscn" id="26_vbgpa"]
-[ext_resource type="PackedScene" uid="uid://daytihksimop5" path="res://bed.tscn" id="28_76mon"]
-[ext_resource type="Texture2D" uid="uid://dwdwl6nprnbbb" path="res://Textures/ClutterRoomImage.jpg" id="29_sqlr5"]
+[ext_resource type="PackedScene" path="res://paper_ball.tscn" id="25_lfds3"]
+[ext_resource type="PackedScene" path="res://fern.tscn" id="26_j4o2d"]
+[ext_resource type="PackedScene" path="res://paper_ball4.tscn" id="26_vbgpa"]
+[ext_resource type="PackedScene" path="res://bed.tscn" id="28_76mon"]
 [ext_resource type="PackedScene" uid="uid://bi0xlstfo2r4p" path="res://Models/Main level/Clutter Room/rug.blend" id="32_oitcy"]
 [ext_resource type="Script" path="res://Scripts/Door.cs" id="33_h0h5u"]
+[ext_resource type="Texture2D" uid="uid://odmmq58a2gdj" path="res://Scenes/Testing Scenes/Clutter room painting 2.png" id="35_r0ytl"]
+[ext_resource type="PackedScene" uid="uid://cjl5s3c7gnovk" path="res://Scenes/Testing Scenes/rug.blend" id="36_2k2m4"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -98,8 +98,8 @@ shading_mode = 0
 diffuse_mode = 3
 albedo_color = Color(0, 1, 0.223529, 0.145098)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h88h7"]
-albedo_texture = ExtResource("29_sqlr5")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4k7x"]
+albedo_texture = ExtResource("35_r0ytl")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdy2v"]
 transparency = 1
@@ -1299,6 +1299,7 @@ transform = Transform3D(-0.463202, 0.292237, -0.836685, -0.886223, -0.145125, 0.
 
 [node name="rug" parent="." instance=ExtResource("32_oitcy")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.164311, 0.00650615, -0.0880682)
+visible = false
 
 [node name="Cage" type="Node3D" parent="."]
 
@@ -1368,7 +1369,7 @@ size = Vector3(0.231689, 2.15942, 0.193237)
 
 [node name="Painting" type="CSGBox3D" parent="Painting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.371891, 1.16492, -2.16721)
-material_override = SubResource("StandardMaterial3D_h88h7")
+material_override = SubResource("StandardMaterial3D_o4k7x")
 size = Vector3(1.82, 1, 0.001)
 material = SubResource("StandardMaterial3D_gdy2v")
 
@@ -1391,6 +1392,10 @@ size = Vector3(1.8634, 0.0341797, 0.0956726)
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.914643, 0.517533, 0)
 material_override = SubResource("StandardMaterial3D_lakng")
 size = Vector3(1.06816, 0.0341797, 0.0956726)
+
+[node name="rug2" parent="." instance=ExtResource("36_2k2m4")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -0.840623, -0.0132036, -0.13178)
+
 [connection signal="InteractionBegin" from="Stuff/Pickup (monitor)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
 [connection signal="InteractionBegin" from="Stuff/Pickup2 (keyboard)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
 [connection signal="InteractionBegin" from="Stuff/Pickup3 (pc)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
