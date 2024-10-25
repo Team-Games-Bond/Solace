@@ -1,7 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bvvkgk6k7fhdh"]
 
 [ext_resource type="Texture2D" uid="uid://drdwv37pt4dv6" path="res://Textures/Concept Art/Concept6.jpg" id="1_1n3eh"]
-[ext_resource type="Texture2D" uid="uid://csn677i73r7oe" path="res://Textures/Lyra-vec.png" id="1_db4do"]
 [ext_resource type="Material" uid="uid://cd6su2yh38r4n" path="res://Materials/TextureBlur.tres" id="1_wvbd0"]
 [ext_resource type="Script" path="res://Scripts/LoadSceneButton.gd" id="2_3vylp"]
 [ext_resource type="Texture2D" uid="uid://dtrb0v7dkq6v2" path="res://Textures/Concept Art/Concept1.png" id="2_q65l5"]
@@ -10,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cn8icswv5363f" path="res://Textures/Concept Art/Concept3.jpg" id="4_ifkpn"]
 [ext_resource type="Texture2D" uid="uid://b3uw64sblkm3a" path="res://Textures/Concept Art/Concept4.jpg" id="5_dr67d"]
 [ext_resource type="Texture2D" uid="uid://dgpirqwshgbl8" path="res://Textures/Concept Art/Concept5.jpg" id="6_i5mgf"]
+[ext_resource type="Texture2D" uid="uid://dc8vvqoxnmjen" path="res://Textures/solacelogo.png" id="8_vlm5v"]
 
 [sub_resource type="GDScript" id="GDScript_g6y1f"]
 resource_name = "TextureRandomizer"
@@ -149,12 +149,12 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
-texture = ExtResource("1_db4do")
-expand_mode = 4
+texture = ExtResource("8_vlm5v")
+expand_mode = 5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
 bbcode_enabled = true
