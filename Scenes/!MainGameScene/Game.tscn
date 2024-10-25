@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bv1hmgkx3o4ti" path="res://Scenes/GameObjects/Trigger-Areas/Text-Display.tscn" id="5_c5t10"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dwslm"]
-size = Vector3(7.30491, 4.66321, 17.5145)
+size = Vector3(3.96643, 3.7182, 2.06045)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oiyo"]
 transparency = 1
@@ -26,13 +26,13 @@ transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107
 [node name="Doors" type="Node3D" parent="."]
 
 [node name="TutorialExit" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0234, 4.76838e-07, -38.0594)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0234, 4.76838e-07, -38.2255)
 collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../TutorialEntrance2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/TutorialExit"]
-transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.35101, 0)
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, -0.0719566, 0.878506, 0.02211)
 shape = SubResource("BoxShape3D_dwslm")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Doors/TutorialExit"]
@@ -80,7 +80,7 @@ script = ExtResource("4_yipme")
 destination = NodePath("../TutorialEntrance2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/TutorialEntrance"]
-transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0.195023, 2.18261, -4.04054)
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 1.63393, 0)
 shape = SubResource("BoxShape3D_dwslm")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Doors/TutorialEntrance"]
@@ -89,14 +89,20 @@ layers = 524288
 material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 2.5)
 
+[node name="CSGBox3D2" type="CSGBox3D" parent="Doors/TutorialEntrance"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -0.118195, 2.19135, -1.85045)
+layers = 524288
+use_collision = true
+size = Vector3(5.58557, 5.38269, 1)
+
 [node name="TutorialEntrance2" type="Node3D" parent="Doors"]
 transform = Transform3D(0.6931, 0, 0.720842, 0, 1, 0, -0.720842, 0, 0.6931, 336.003, -25.0232, -9.72181)
 
 [node name="MazeExit" type="Node3D" parent="Doors"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 556.276, 3.35429, -82.0456)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 555.87, 3.35429, -81.6401)
 
 [node name="MazeEntrance" type="Node3D" parent="Doors"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 346.288, 11.3068, -52.5159)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 345.789, 11.3068, -53.4883)
 
 [node name="ClutterRoomEntrance2" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 279.853, 3.07897, -42.2805)
@@ -105,7 +111,7 @@ script = ExtResource("4_yipme")
 destination = NodePath("../ClutterRoomExit2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Doors/ClutterRoomEntrance2"]
-transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, -0.252777, 1.35101, 0.477654)
+transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, -0.252762, 1.35101, 0.200516)
 shape = SubResource("BoxShape3D_dwslm")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Doors/ClutterRoomEntrance2"]
@@ -134,7 +140,7 @@ material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(2.58502, 3, 2.03607)
 
 [node name="ClutterRoomExit2" type="Node3D" parent="Doors"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 779.922, 1.42278, -181.29)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 780.02, 1.42278, -181.054)
 
 [node name="TutorialRoomEntrance" type="Area3D" parent="Doors"]
 transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, -0.744973, -0.00582266, 1.0784)
@@ -152,10 +158,10 @@ material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 2.5)
 
 [node name="TutorialRoomEntrance2" type="Node3D" parent="Doors"]
-transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, -0.879292, 1.23217, 1.35325)
+transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, -0.768852, 1.22929, 1.23839)
 
 [node name="TutorialRoomEntrance3" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
-transform = Transform3D(1.08126, 0, -0.6931, 0, 1, 0, 1.03965, 0, 0.720842, 272.804, -33.1333, -12.4597)
+transform = Transform3D(0.720841, 0, -0.693101, 0, 1, 0, 0.693101, 0, 0.720841, 272.804, -32.4335, -12.4597)
 collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../TutorialRoomEntrance2")
@@ -171,7 +177,7 @@ material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(3, 3, 2.5)
 
 [node name="TutorialRoomEntrance4" type="Node3D" parent="Doors"]
-transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, 274.706, -31.8953, -12.1849)
+transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, 273.345, -31.8953, -13.0973)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.463202, 0.292237, -0.836685, -0.886223, -0.145125, 0.439939, 0.00714296, 0.945271, 0.32621, -4.5099, 0, 7.65757)
@@ -191,7 +197,7 @@ timeToType = 1.0
 [node name="Text-display" parent="Text" instance=ExtResource("5_c5t10")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.218386, 1.12255, -1.1689)
 textToDisplay = "Here, you will encounter various challenges that will appear throughout Solace. Through trial and error, you can learn how to work with this world. "
-timeToDisplay = 4.0
+timeToDisplay = 6.0
 timeToType = 1.0
 
 [node name="Text-display5" parent="Text" instance=ExtResource("5_c5t10")]
