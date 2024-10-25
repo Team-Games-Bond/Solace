@@ -10,6 +10,7 @@ public partial class PlacementMonitor : Node3D
 	[Export] public String ItemKey = "";
 	[Export] bool SendRaw = false;
 	[Export] bool isActive = true;
+	[Export] bool isLocked = false;
 
 	[ExportGroup("Setup")]
 	[Export] SocketedInteraction socket;
@@ -25,6 +26,8 @@ public partial class PlacementMonitor : Node3D
 		socket.InteractionBegin += Begin;
 		setSocketActive(isActive);
 
+		if(isLocked) SetLockedKey(ItemKey);
+		
 		//Check if has item pre-placed
 		if(StartingItem != null) attachItem(StartingItem);
 	}
