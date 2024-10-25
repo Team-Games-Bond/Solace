@@ -18,6 +18,10 @@ public partial class SimonSaysManager : Node
 	[Export] public Godot.Collections.Array<MeshInstance3D> indicators { get; set; } //Change to particle effects or something?
 
 	[Signal] public delegate void SequenceCompletedEventHandler();
+	[Signal] public delegate void Sequence1EventHandler();
+	[Signal] public delegate void Sequence2EventHandler();
+	[Signal] public delegate void Sequence3EventHandler();
+	[Signal] public delegate void Sequence4EventHandler();
 	[Signal] public delegate void CompletedEventHandler();
 	
 	//Other variables
@@ -99,6 +103,7 @@ public partial class SimonSaysManager : Node
 		//Check if complete
 		if(currentSequence >= sequences.Count-1) puzzleCompleted();
 		else currentSequence += 1;
+		signalSequences();
 		//GD.Print("Sequence Completed");
 		startPatternDisplay();
 	}
@@ -141,5 +146,13 @@ public partial class SimonSaysManager : Node
 	public void setActive(bool active)
 	{
 		isActive = active;
+	}
+
+	private void signalSequences()
+	{
+		if(currentNumberInSequence == 1) EmitSignal(SignalName.Sequence1);
+		else if(currentNumberInSequence == 2) EmitSignal(SignalName.Sequence2);
+		else if(currentNumberInSequence == 3) EmitSignal(SignalName.Sequence3);
+		else if(currentNumberInSequence == 4) EmitSignal(SignalName.Sequence4);
 	}
 }

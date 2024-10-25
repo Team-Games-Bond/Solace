@@ -8,7 +8,9 @@ public partial class TextDisplay : Node
 	[Export] public double timeToType = 0.5;
 	[Export] public string rgb = "000";
 	[ExportGroup("Setup Settings")]
+	[Export] public bool isDwane = false;
 	[Export] public Area3D area;
+	[Export] public Button button;
 	[Export] public CanvasLayer canvas;
 	[Export] public RichTextLabel textLabel;
 	[Export] public Timer disapearTimer;
@@ -28,7 +30,8 @@ public partial class TextDisplay : Node
 		typingTimer.WaitTime = timeToType;
 
 		disapearTimer.Timeout += RemoveText;
-		area.BodyEntered += EnteredZone;
+		if(!isDwane) area.BodyEntered += EnteredZone;
+		else if(isDwane) button.ButtonPress += dwaneSpeaks;
 	}
 
     public override void _Process(double delta)
@@ -45,6 +48,18 @@ public partial class TextDisplay : Node
 
 		CharacterController player = (CharacterController)body;
 
+		StartText();
+	}
+
+	public void dwaneSpeaks(Button button)
+	{
+		if(!isActive) return;
+		
+		StartText();
+	}
+
+	public void StartText()
+	{
 		canvas.Visible = true;
 		disapearTimer.Start();
 		typingTimer.Start();
