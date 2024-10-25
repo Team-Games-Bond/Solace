@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcf2cy2akx3ef"]
+
+[ext_resource type="PackedScene" uid="uid://b3ck6p1xdvhnt" path="res://Scenes/GameObjects/Buttons/MonolithButton.tscn" id="1_qa08d"]
+[ext_resource type="PackedScene" uid="uid://dijyoiu4jqgir" path="res://Scenes/Animated/dwayne.tscn" id="2_dayjp"]
+
+[node name="Button" instance=ExtResource("1_qa08d")]
+
+[node name="Sprite3D" parent="Area3D" index="0"]
+offset = Vector2(0, 500)
+
+[node name="Dwayne" parent="Visuals" index="1" instance=ExtResource("2_dayjp")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0, -0.433903, 0)
+
+[node name="Rune Rock Holder" parent="Visuals" index="2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.3, 0)
+visible = false
