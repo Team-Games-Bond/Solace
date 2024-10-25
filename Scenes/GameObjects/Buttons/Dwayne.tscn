@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbojdid8sclq"]
+
+[ext_resource type="PackedScene" uid="uid://bcf2cy2akx3ef" path="res://Scenes/GameObjects/Buttons/DwayneButton.tscn" id="2_s1kce"]
+[ext_resource type="Script" path="res://Scripts/TextDisplay.cs" id="3_yq2gc"]
+
+[node name="Dwayne" type="Node3D" node_paths=PackedStringArray("button", "canvas", "textLabel", "disapearTimer", "typingTimer")]
+script = ExtResource("3_yq2gc")
+textToDisplay = "Hi, I'm Dwayne"
+timeToDisplay = 4.0
+timeToType = 1.0
+isDwane = true
+button = NodePath("Button")
+canvas = NodePath("CanvasLayer")
+textLabel = NodePath("CanvasLayer/RichTextLabel")
+disapearTimer = NodePath("DisapearTimer")
+typingTimer = NodePath("TypingTimer")
+
+[node name="DisapearTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="TypingTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+clip_contents = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -78.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[center][color=#000]Testing the text that is displayed to check if it worksaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa[/color][/center]"
+fit_content = true
+scroll_active = false
+visible_characters_behavior = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/RichTextLabel"]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.622, 0.622, 0.622, 0.486)
+
+[node name="Button" parent="." instance=ExtResource("2_s1kce")]
