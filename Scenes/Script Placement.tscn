@@ -33,7 +33,7 @@ height = 0.699
 sides = 12
 
 [node name="Dwayne4" parent="." instance=ExtResource("2_fqwc1")]
-transform = Transform3D(-0.696489, 0, -0.717567, 0, 1, 0, 0.717567, 0, -0.696489, -103.657, 2.34561, 207.927)
+transform = Transform3D(-0.696489, 0, -0.717567, 0, 1, 0, 0.717567, 0, -0.696489, -103.744, 2.34561, 208.212)
 textToDisplay = "First, find the image cube and let it imprint on your mind. then explore the maze to discover your canvas"
 
 [node name="Dwayne5" parent="." instance=ExtResource("2_fqwc1")]
