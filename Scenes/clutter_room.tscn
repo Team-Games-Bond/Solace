@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=50 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -32,13 +32,15 @@
 [ext_resource type="PackedScene" uid="uid://xnvt870dpbim" path="res://fern.tscn" id="26_j4o2d"]
 [ext_resource type="PackedScene" uid="uid://bfwyxfo2v3mm0" path="res://paper_ball4.tscn" id="26_vbgpa"]
 [ext_resource type="PackedScene" uid="uid://daytihksimop5" path="res://bed.tscn" id="28_76mon"]
-[ext_resource type="Texture2D" uid="uid://dwdwl6nprnbbb" path="res://Textures/ClutterRoomImage.jpg" id="29_sqlr5"]
 [ext_resource type="PackedScene" uid="uid://bi0xlstfo2r4p" path="res://Models/Main level/Clutter Room/rug.blend" id="32_oitcy"]
 [ext_resource type="Script" path="res://Scripts/Door.cs" id="33_h0h5u"]
+[ext_resource type="Texture2D" uid="uid://1jr82y333i44" path="res://Models/ClutterRoom/Clutter room painting 2.png" id="35_82nf3"]
 [ext_resource type="PackedScene" uid="uid://cmiog0p8nut77" path="res://Models/Cables/Cable Straight 2m.blend" id="36_dnid6"]
 [ext_resource type="Script" path="res://Scripts/Cable.cs" id="37_debw0"]
 [ext_resource type="PackedScene" uid="uid://b811gfiwmtplp" path="res://Models/Cables/Cable 90 Left.blend" id="38_8ad4j"]
 [ext_resource type="PackedScene" uid="uid://tvqtitkx2k1m" path="res://Models/Cables/Cable 90 Right.blend" id="39_1k4mk"]
+[ext_resource type="PackedScene" uid="uid://da3vxbubcv7yt" path="res://Models/ClutterRoom/rug.blend" id="40_g4ces"]
+[ext_resource type="PackedScene" uid="uid://cdhiegkyya36x" path="res://Models/ClutterRoom/Bear.blend" id="41_rmd67"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -101,8 +103,8 @@ shading_mode = 0
 diffuse_mode = 3
 albedo_color = Color(0, 1, 0.223529, 0.145098)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h88h7"]
-albedo_texture = ExtResource("29_sqlr5")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wwsf"]
+albedo_texture = ExtResource("35_82nf3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdy2v"]
 transparency = 1
@@ -942,7 +944,7 @@ size = Vector3(1.23435, 0.90918, 1.10649)
 [node name="ItemMount" type="Node3D" parent="Sockets/LampSocket/Area3D"]
 
 [node name="BinSocket" type="Node3D" parent="Sockets" node_paths=PackedStringArray("socket")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19387, 0.468626, 1.35386)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52705, 0.249984, 1.75021)
 script = ExtResource("2_wtvm2")
 socket = NodePath("Area3D")
 
@@ -1302,6 +1304,7 @@ transform = Transform3D(-0.463202, 0.292237, -0.836685, -0.886223, -0.145125, 0.
 
 [node name="rug" parent="." instance=ExtResource("32_oitcy")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.164311, 0.00650615, -0.0880682)
+visible = false
 
 [node name="Cage" type="Node3D" parent="."]
 
@@ -1370,8 +1373,8 @@ size = Vector3(0.231689, 2.15942, 0.193237)
 [node name="Painting" type="Node3D" parent="."]
 
 [node name="Painting" type="CSGBox3D" parent="Painting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.371891, 1.16492, -2.16721)
-material_override = SubResource("StandardMaterial3D_h88h7")
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0.371891, 1.16492, -2.16721)
+material_override = SubResource("StandardMaterial3D_2wwsf")
 size = Vector3(1.82, 1, 0.001)
 material = SubResource("StandardMaterial3D_gdy2v")
 
@@ -1510,6 +1513,12 @@ transform = Transform3D(-3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0, 0, 0, 0.7, 0.
 [node name="Cube" parent="CablesClutter/11" index="0"]
 script = ExtResource("37_debw0")
 length = 0.1
+
+[node name="rug2" parent="." instance=ExtResource("40_g4ces")]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -0.900135, 0, 0.279177)
+
+[node name="Bear" parent="." instance=ExtResource("41_rmd67")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.59209, 0, 1.71753)
 
 [connection signal="Completed" from="." to="CablesClutter/6/Cube" method="Power"]
 [connection signal="Threshold" from="." to="CablesClutter/1/Cube" method="Power"]
