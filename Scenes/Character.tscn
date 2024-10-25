@@ -296,6 +296,7 @@ shape = SubResource("CylinderShape3D_ukuk1")
 visible = false
 
 [connection signal="pressed" from="TouchScreenControls/Pause" to="CanvasLayer" method="PauseToggle"]
+[connection signal="pressed" from="TouchScreenControls/Pause Touch" to="CanvasLayer" method="PauseToggle"]
 [connection signal="pauseToggle" from="CanvasLayer" to="TouchScreenControls" method="VisibilityCheck"]
 
 [editable path="TouchScreenControls"]
