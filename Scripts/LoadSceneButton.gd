@@ -4,10 +4,14 @@ extends Button
 var ScenePath: String = "res://Scenes/!MainGameScene/Game.tscn"
 @export
 var MainMenu: Node
+@export
+var ControllerDefault: bool = false
 var been_pressed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Input.get_connected_joypads().size()!=0 and ControllerDefault:
+		grab_focus()
 	ResourceLoader.load_threaded_request(ScenePath)
 
 func _pressed() -> void:
