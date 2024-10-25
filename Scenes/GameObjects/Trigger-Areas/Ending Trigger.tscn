@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://j23qbgsivmh6"]
+
+[ext_resource type="Shader" uid="uid://cyr13vacu12k2" path="res://Shaders/UIBlur.tres" id="1_8lr4u"]
+[ext_resource type="Script" path="res://Scripts/Ending.cs" id="1_y6rcv"]
+[ext_resource type="PackedScene" uid="uid://cgum08onb0dgq" path="res://Scenes/CreditsUI.tscn" id="3_ua6ls"]
+[ext_resource type="PackedScene" uid="uid://b6u0804fb6qld" path="res://Scenes/LicensesUI.tscn" id="4_v0f3s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v576a"]
+size = Vector3(6, 1, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6hvp"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+albedo_color = Color(0, 1, 0.223529, 0.145098)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5dlpg"]
+shader = ExtResource("1_8lr4u")
+shader_parameter/blur_strength = 10.0
+
+[node name="EndingTrigger" type="Node3D"]
+script = ExtResource("1_y6rcv")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_v576a")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
+layers = 524288
+material_override = SubResource("StandardMaterial3D_q6hvp")
+size = Vector3(6, 1, 6)
+
+[node name="DisapearTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="TypingTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="Blur" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_5dlpg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Darken" type="ColorRect" parent="CanvasLayer/Blur"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.751)
+
+[node name="Credits" parent="CanvasLayer/Blur/Darken" instance=ExtResource("3_ua6ls")]
+layout_mode = 1
+offset_bottom = 280.0
+
+[node name="Licenses" parent="CanvasLayer/Blur/Darken/Credits" instance=ExtResource("4_v0f3s")]
+layout_mode = 1
+offset_top = 943.0
+offset_bottom = 2075.0

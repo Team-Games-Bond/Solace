@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cfkv6wtyhhta0" path="res://Scenes/Character.tscn" id="1_xeu0n"]
 [ext_resource type="PackedScene" uid="uid://bv1hmgkx3o4ti" path="res://Scenes/GameObjects/Trigger-Areas/Text-Display.tscn" id="2_rqs2v"]
 [ext_resource type="PackedScene" uid="uid://blueurvc3igue" path="res://Scenes/GameObjects/Trigger-Areas/Zoom-Change.tscn" id="3_cl3mt"]
-[ext_resource type="PackedScene" uid="uid://dbojdid8sclq" path="res://Scenes/GameObjects/Buttons/Dwayne.tscn" id="4_f0rts"]
+[ext_resource type="PackedScene" uid="uid://j23qbgsivmh6" path="res://Scenes/GameObjects/Trigger-Areas/Ending Trigger.tscn" id="4_imtkr"]
 
 [node name="TestingTextAndZoom" type="Node3D"]
 
