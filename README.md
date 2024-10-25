@@ -42,7 +42,7 @@ Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/
 ![Team 35 Jira Kanban Board](<Documentation/Jira Kanban board.png>)
 ![Team 35 Gantt Chart](<Documentation/Team 35 Gantt Chart.jpg>)
 
-**We are submitting an .exe file for the desktop version, but we have included build instructions for Android. For submission purposes, we're focusing on the desktop version; however, we are actively developing an Android version that we’ll showcase at the event.**
+**We are submitting the godot version as git hub can not hold an exe, but we have included build instructions for Android. For submission purposes, we're focusing on the desktop version; however, we are actively developing an Android version that we’ll showcase at the event.**
 
 ## Build Dependencies
 [![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/download/) .NET Version 4.3   
@@ -51,6 +51,12 @@ Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/
 ### Android only
 [![Android Studio](https://img.shields.io/badge/android%20studio-346ac1?style=for-the-badge&logo=android%20studio&logoColor=white)]()  
 [![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/temurin/releases/?version=17) JDK 17
+
+### Playing the current version
+1. Open the project in Godot
+2. In the editor settings under Dotnet set the editor to your prefered IDE
+3. Set up Blender path to Blender 4.2
+4. Launch Godot and press the play button in the upper right
 
 ## Building
 This Guide Assumes you have already installed all the above 
@@ -85,18 +91,6 @@ install the templates
 [![Inkscape](https://img.shields.io/badge/Inkscape-000000?style=for-the-badge&logo=Inkscape&logoColor=white)](https://inkscape.org/) Version 2024  
 [![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)](https://www.atlassian.com/software/jira)  
 [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://www.github.com)  
-
-
-# Getting Started
-## What You'll Need 
-- [Godot Engine - .NET Version](https://godotengine.org/download/)
-- [.NET SDK](https://dotnet.microsoft.com/en-us/download)
-- A C# IDE
-
-### Setup
-1. Open the project in Godot
-2. In the editor settings under Dotnet set the editor to your prefered IDE
-3. Set up Blender path to Blender 4.2
 
 # Future Plans
 
