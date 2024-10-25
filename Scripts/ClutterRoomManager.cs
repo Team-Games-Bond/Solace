@@ -10,9 +10,9 @@ public partial class ClutterRoomManager : Node
 	[Export] public Door door1;
 	[Export] public Door door2;
 	[Export] public int threshold1;
-	[Export] public int threshold2;
 
 	[Signal] public delegate void CompletedEventHandler();
+	[Signal] public delegate void ThresholdEventHandler();
 
 	private Godot.Collections.Array<bool> socketsFilled;
 	// Called when the node enters the scene tree for the first time.
@@ -67,11 +67,15 @@ public partial class ClutterRoomManager : Node
 
 	private void CheckCompletion()
 	{
-		if(numberCompleted() == threshold1) door1.Open();
+		if(numberCompleted() == threshold1) 
+		{
+			door1.Open();
+			EmitSignal(SignalName.Threshold);
+		}
 		if(isCompleted()) 
 		{
 			EmitSignal(SignalName.Completed);
-			door2.Open();
+			//door2.Open();
 		}
 	}
 

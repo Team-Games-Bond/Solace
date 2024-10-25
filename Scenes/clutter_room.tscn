@@ -1,11 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=48 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
 [ext_resource type="Script" path="res://Scripts/PlacementMonitor.cs" id="2_wtvm2"]
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="3_dfft7"]
 [ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="4_482h2"]
-[ext_resource type="PackedScene" uid="uid://ddh06lut0u3vn" path="res://Models/Main level/Clutter Room/bookshelf.blend" id="4_rbthr"]
 [ext_resource type="AudioStream" uid="uid://dm7cugia1b20e" path="res://Music/pickup.wav" id="4_x6mgo"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="5_7polk"]
 [ext_resource type="PackedScene" uid="uid://bbulxw05fl62s" path="res://Models/Main level/Clutter Room/monitor.blend" id="5_41mbg"]
@@ -36,6 +35,10 @@
 [ext_resource type="Texture2D" uid="uid://dwdwl6nprnbbb" path="res://Textures/ClutterRoomImage.jpg" id="29_sqlr5"]
 [ext_resource type="PackedScene" uid="uid://bi0xlstfo2r4p" path="res://Models/Main level/Clutter Room/rug.blend" id="32_oitcy"]
 [ext_resource type="Script" path="res://Scripts/Door.cs" id="33_h0h5u"]
+[ext_resource type="PackedScene" uid="uid://cmiog0p8nut77" path="res://Models/Cables/Cable Straight 2m.blend" id="36_dnid6"]
+[ext_resource type="Script" path="res://Scripts/Cable.cs" id="37_debw0"]
+[ext_resource type="PackedScene" uid="uid://b811gfiwmtplp" path="res://Models/Cables/Cable 90 Left.blend" id="38_8ad4j"]
+[ext_resource type="PackedScene" uid="uid://tvqtitkx2k1m" path="res://Models/Cables/Cable 90 Right.blend" id="39_1k4mk"]
 
 [sub_resource type="Animation" id="Animation_jtjrm"]
 resource_name = "Button Prompt Appear"
@@ -1391,6 +1394,125 @@ size = Vector3(1.8634, 0.0341797, 0.0956726)
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.914643, 0.517533, 0)
 material_override = SubResource("StandardMaterial3D_lakng")
 size = Vector3(1.06816, 0.0341797, 0.0956726)
+
+[node name="CablesClutter" type="Node3D" parent="."]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 1.51779, -0.0504816, -0.41727)
+
+[node name="1" parent="CablesClutter" instance=ExtResource("36_dnid6")]
+transform = Transform3D(-3.27835e-08, 1, -3.0598e-08, 0, -4.37114e-08, -0.7, -0.75, -4.37114e-08, 1.33748e-15, 3.45324, 2.96524, 0.275711)
+
+[node name="Cube" parent="CablesClutter/1" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("37_debw0")
+start = true
+length = 0.3
+Recievers = {
+0.3: NodePath("../../2/Cube")
+}
+
+[node name="2" parent="CablesClutter" instance=ExtResource("36_dnid6")]
+transform = Transform3D(1.4, 0, 0, 0, -4.37114e-08, -0.7, 0, 1, -3.0598e-08, 2.16024, 2.96524, 0.949692)
+
+[node name="Cube" parent="CablesClutter/2" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 2.11758e-22, 1, -7.10543e-15, 8.74228e-08, -7.10543e-15, -1, 0.041748, 0.0116272, 0)
+script = ExtResource("37_debw0")
+length = 0.3
+Recievers = {
+0.3: NodePath("../../3/Cube")
+}
+
+[node name="3" parent="CablesClutter" instance=ExtResource("36_dnid6")]
+transform = Transform3D(-1.44248e-07, 1, -3.0598e-08, 0, -4.37114e-08, -0.7, -3.3, -4.37114e-08, 1.33748e-15, 0.763252, 2.96524, 4.2617)
+
+[node name="Cube" parent="CablesClutter/3" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("37_debw0")
+length = 0.6
+Recievers = {
+0.6: NodePath("../../4/Cube")
+}
+
+[node name="4" parent="CablesClutter" instance=ExtResource("38_8ad4j")]
+transform = Transform3D(-3.0598e-08, -0.7, 3.0598e-08, 0, -3.0598e-08, -0.7, 0.7, -3.0598e-08, 1.33748e-15, 0.82325, 2.96663, 7.81972)
+
+[node name="Cube" parent="CablesClutter/4" index="0"]
+script = ExtResource("37_debw0")
+length = 0.1
+Recievers = {
+0.1: NodePath("../../5/Cube")
+}
+
+[node name="5" parent="CablesClutter" instance=ExtResource("39_1k4mk")]
+transform = Transform3D(-3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0, 0, 0, 0.7, 0.82325, 3.66752, 7.8217)
+
+[node name="Cube" parent="CablesClutter/5" index="0"]
+script = ExtResource("37_debw0")
+length = 0.1
+
+[node name="6" parent="CablesClutter" instance=ExtResource("36_dnid6")]
+transform = Transform3D(-3.27835e-08, 1, -3.0598e-08, 0, -4.37114e-08, -0.7, -0.75, -4.37114e-08, 1.33748e-15, 3.45324, 1.75758, 0.275711)
+
+[node name="Cube" parent="CablesClutter/6" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("37_debw0")
+start = true
+length = 0.3
+Recievers = {
+0.3: NodePath("../../7/Cube")
+}
+
+[node name="7" parent="CablesClutter" instance=ExtResource("36_dnid6")]
+transform = Transform3D(1.4, 0, 0, 0, -4.37114e-08, -0.7, 0, 1, -3.0598e-08, 2.16024, 1.75758, 0.949692)
+
+[node name="Cube" parent="CablesClutter/7" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 2.11758e-22, 1, -7.10543e-15, 8.74228e-08, -7.10543e-15, -1, 0.041748, 0.0187683, 0)
+script = ExtResource("37_debw0")
+length = 0.3
+Recievers = {
+0.3: NodePath("../../8/Cube")
+}
+
+[node name="8" parent="CablesClutter" instance=ExtResource("36_dnid6")]
+transform = Transform3D(-1.35505e-07, 1, -3.0598e-08, 0, -4.37114e-08, -0.7, -3.1, -4.37114e-08, 1.33748e-15, 0.763252, 1.75758, 4.06871)
+
+[node name="Cube" parent="CablesClutter/8" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("37_debw0")
+length = 0.6
+Recievers = {
+0.6: NodePath("../../9/Cube")
+}
+
+[node name="9" parent="CablesClutter" instance=ExtResource("36_dnid6")]
+transform = Transform3D(-1.09278e-07, 1, -3.0598e-08, 0, -4.37114e-08, -0.7, -2.5, -4.37114e-08, 1.33748e-15, 0.763249, 1.75758, 9.24172)
+
+[node name="Cube" parent="CablesClutter/9" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("37_debw0")
+length = 0.5
+Recievers = {
+0.5: NodePath("../../10/Cube")
+}
+
+[node name="10" parent="CablesClutter" instance=ExtResource("38_8ad4j")]
+transform = Transform3D(-3.0598e-08, -0.7, 3.0598e-08, 0, -3.0598e-08, -0.7, 0.7, -3.0598e-08, 1.33748e-15, 0.82024, 1.75896, 12.0827)
+
+[node name="Cube" parent="CablesClutter/10" index="0"]
+script = ExtResource("37_debw0")
+length = 0.1
+Recievers = {
+0.1: NodePath("../../11/Cube")
+}
+
+[node name="11" parent="CablesClutter" instance=ExtResource("39_1k4mk")]
+transform = Transform3D(-3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0, 0, 0, 0.7, 0.819249, 2.45985, 12.0837)
+
+[node name="Cube" parent="CablesClutter/11" index="0"]
+script = ExtResource("37_debw0")
+length = 0.1
+
+[connection signal="Completed" from="." to="CablesClutter/6/Cube" method="Power"]
+[connection signal="Threshold" from="." to="CablesClutter/1/Cube" method="Power"]
 [connection signal="InteractionBegin" from="Stuff/Pickup (monitor)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
 [connection signal="InteractionBegin" from="Stuff/Pickup2 (keyboard)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
 [connection signal="InteractionBegin" from="Stuff/Pickup3 (pc)/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
@@ -1410,3 +1532,17 @@ size = Vector3(1.06816, 0.0341797, 0.0956726)
 [connection signal="InteractionBegin" from="Sockets/BinSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
 [connection signal="InteractionBegin" from="Sockets/PlushieSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
 [connection signal="InteractionBegin" from="Sockets/StandSocket/Area3D" to="Stuff/Pickup (monitor)/Area3D/Pickup" method="play"]
+[connection signal="CableEndReached" from="CablesClutter/5/Cube" to="Cage/First Cage" method="Open"]
+[connection signal="CableEndReached" from="CablesClutter/11/Cube" to="Cage/Second Cage" method="Open"]
+
+[editable path="CablesClutter/1"]
+[editable path="CablesClutter/2"]
+[editable path="CablesClutter/3"]
+[editable path="CablesClutter/4"]
+[editable path="CablesClutter/5"]
+[editable path="CablesClutter/6"]
+[editable path="CablesClutter/7"]
+[editable path="CablesClutter/8"]
+[editable path="CablesClutter/9"]
+[editable path="CablesClutter/10"]
+[editable path="CablesClutter/11"]
