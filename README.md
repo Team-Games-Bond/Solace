@@ -6,10 +6,9 @@
 - [Table of Contents](#table-of-contents)
 - [Our Team](#our-team)
 - [Project Information](#project-information)
-- [Building](#building)
   - [Build Dependencies](#build-dependencies)
     - [Android only](#android-only)
-  - [Building](#building-1)
+  - [Building](#building)
 - [Programming Languages](#programming-languages)
 - [Libraries (Already Included)](#libraries-already-included)
 - [Other Software used](#other-software-used)
@@ -43,9 +42,8 @@ Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/
 ![Team 35 Jira Kanban Board](<Documentation/Jira Kanban board.png>)
 ![Team 35 Gantt Chart](<Documentation/Team 35 Gantt Chart.jpg>)
 
-We initially developed a desktop version of the game. However, after our discussion with Allan, we decided to create an Android version as well. Please note that since the development was primarily geared towards desktop, the highest asset quality can be seen in that version.
+**We are submitting an .exe file for the desktop version, but we have included build instructions for Android. For submission purposes, we're focusing on the desktop version; however, we are actively developing an Android version that we’ll showcase at the event.**
 
-# Building
 ## Build Dependencies
 [![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/download/) .NET Version 4.3   
 [![.Net SDK](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/en-us/download) .NET 8 SDK  
