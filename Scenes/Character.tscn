@@ -292,6 +292,11 @@ shape = SubResource("CylinderShape3D_ukuk1")
 
 [node name="TouchScreenControls" parent="." instance=ExtResource("9_7eedt")]
 
+[node name="Virtual Joystick" parent="TouchScreenControls" index="3"]
+offset_top = -308.0
+offset_right = 300.0
+clampzone_size = 90.0
+
 [node name="CanvasLayer" parent="." instance=ExtResource("9_v2200")]
 visible = false
 
