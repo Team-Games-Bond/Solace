@@ -38,7 +38,7 @@
 # Project Information
 Solace is a puzzle-based game where you play as a soul navigating through a brain. As you progress, you encounter different brain-related puzzles, each symbolising different aspects to achieve mental clarity. The game subtly promotes health awareness through tasks that reflect mental aspects such as resilience, organisation, and focus. Collect crystals representing various elements of mental well-being as you clear brain fog through completing puzzles and unlocking powercubes. Solace provides an engaging experience, encouraging players to reflect on their mental health and promote ways of achieving mental clarity.
 
-Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/CC/boards/1/timeline) as our project management tool. We followed an Agile methodology, incorporating Kanban as our primary tool to manage our workflow. Our Gantt Chart was created on [Team Gantt](https://www.teamgantt.com/). To track client and group meeting minutes, reports and documentation, we used a shared Google Drive. Our group meetings were held in person, on our Discord server and on Zoom. 
+Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/CC/boards/1) as our project management tool. We followed an Agile methodology, incorporating Kanban as our primary tool to manage our workflow. Our Gantt Chart was created on [Team Gantt](https://www.teamgantt.com/). To track client and group meeting minutes, reports and documentation, we used a shared Google Drive. Our group meetings were held in person, on our Discord server and on Zoom. 
 
 ![Team 35 Jira Kanban Board](<Documentation/Jira Kanban board.png>)
 ![Team 35 Gantt Chart](<Documentation/Team 35 Gantt Chart.jpg>)
