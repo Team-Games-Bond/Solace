@@ -3,7 +3,7 @@ using System;
 
 public partial class Ending : Node
 {
-	
+	[Export] public string AfterScenePath = "res://Scenes/MainMenu.tscn";
 	[Export] public float zoomDistance = 100;
 	[Export] public double fadeTime = 5;
 	[Export] public double blurStrength = 2;
@@ -60,7 +60,9 @@ public partial class Ending : Node
 			if(EndPoint.GlobalPosition.Y <= 0)
 			{
 				GD.Print("Return to main menu!");
-				//TODO: Return to Main Menu!
+				var MainMenu = ((PackedScene)ResourceLoader.LoadThreadedGet(AfterScenePath)).Instantiate();
+				GetTree().Root.AddChild(MainMenu);
+				GetNode("/root/Game").QueueFree();
 			}
 		} 
 
@@ -78,6 +80,9 @@ public partial class Ending : Node
 
 	public void StartScroll()
 	{
+		if (ResourceLoader.LoadThreadedGetStatus(AfterScenePath)==ResourceLoader.ThreadLoadStatus.InvalidResource){
+			ResourceLoader.LoadThreadedRequest(AfterScenePath);
+		}
 		isScrolling = true;
 		GD.Print("StartingScroll");
 	}
