@@ -42,7 +42,7 @@ Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/
 ![Team 35 Jira Kanban Board](<Documentation/Jira Kanban board.png>)
 ![Team 35 Gantt Chart](<Documentation/Team 35 Gantt Chart.jpg>)
 
-**We are submitting the godot version as git hub can not hold an exe, but we have included build instructions for Android. For submission purposes, we're focusing on the desktop version; however, we are actively developing an Android version that we’ll showcase at the event.**
+**We are submitting the godot version as git hub can not hold an exe. For submission purposes, we're focusing on the desktop version; however, we are actively developing an Android version that we’ll showcase at the event.**
 
 ## Build Dependencies
 [![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/download/) .NET Version 4.3   
@@ -52,26 +52,13 @@ Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/
 [![Android Studio](https://img.shields.io/badge/android%20studio-346ac1?style=for-the-badge&logo=android%20studio&logoColor=white)]()  
 [![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/temurin/releases/?version=17) JDK 17
 
-### Playing the current version
-1. Open the project in Godot
-2. In the editor settings under Dotnet set the editor to your prefered IDE
-3. Set up Blender path to Blender 4.2
-4. Launch Godot and press the play button in the upper right
-
 ## Building
 This Guide Assumes you have already installed all the above 
 1. In godot import the project by navigating to the repo and selecting the 
 project.godot file contained inside
 2. The Editor should automatically locate your blender install, hit confirm 
 path to continue.
-3. (For Android) Instructions aren't included here but if you want to build 
-for android the instructions on how to locate and tell the godot editor where 
-to find the android build dependencies are 
-[here](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html)
-4. In the navbar go to Editor > Manage Export Templates, then download and 
-install the templates
-5. In Project > Export, Select your desired build profile, hit 
-"Export Project...", select the directory and filename and hit save
+3. Launch Godot and press the play button in the upper right
 
 
 # Programming Languages
