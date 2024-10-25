@@ -8,8 +8,65 @@
 
 [node name="MainLevel" parent="." instance=ExtResource("1_6cx1d")]
 
-[node name="Dwayne" parent="." instance=ExtResource("2_fqwc1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.90948, -5.11785, 22.692)
+[node name="Dwayne2" parent="." instance=ExtResource("2_fqwc1")]
+transform = Transform3D(-0.595776, 0, -0.80315, 0, 1, 0, 0.80315, 0, -0.595776, 8.97498, -43.7855, -51.2283)
+textToDisplay = "Hi, I'm Dwayne, I will answer your questions to life"
+
+[node name="Text-display2" parent="." instance=ExtResource("3_w2qan")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 32.6773, -31.3321, -54.2636)
+textToDisplay = "tutorial up ahead..."
+
+[node name="Text-display3" parent="." instance=ExtResource("3_w2qan")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 6.82431, -4.45591, -17.7106)
+textToDisplay = "You have reached the top of the brain, a complex maze covered in brain fog. As you navigate, complete puzzles and find power cubes to place in the power stations. This will awaken the neurons, dissolve the fog, and reveal crystals to help you complete your mission. "
+timeToDisplay = 7.0
+
+[node name="Dwayne3" parent="." instance=ExtResource("2_fqwc1")]
+transform = Transform3D(-0.791213, 0, -0.611541, 0, 1, 0, 0.611541, 0, -0.791213, 13.8538, -0.112878, -10.4726)
+textToDisplay = "Place your first power cube and reveal a whole new area to explore!"
 
 [node name="Text-display" parent="." instance=ExtResource("3_w2qan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24666, -4.88557, 25.3816)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.484, 3.41635, 200.7)
+textToDisplay = "Life often feels like a maze, full of twists and obstacles. If your path is blocked, you can always find another way—life isn't always linear."
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.964197, 0, -0.265186, 0, 1, 0, 0.265186, 0, 0.964197, -103.419, 1.6701, 208.162)
+radius = 1.0
+height = 0.699
+sides = 12
+
+[node name="Dwayne4" parent="." instance=ExtResource("2_fqwc1")]
+transform = Transform3D(-0.696489, 0, -0.717567, 0, 1, 0, 0.717567, 0, -0.696489, -103.657, 2.34561, 207.927)
+textToDisplay = "First, find the image cube and let it imprint on your mind. then explore the maze to discover your canvas"
+
+[node name="Dwayne5" parent="." instance=ExtResource("2_fqwc1")]
+transform = Transform3D(-0.00778406, 0, -0.99997, 0, 1, 0, 0.99997, 0, -0.00778406, -72.1134, 23.0758, 254.005)
+textToDisplay = "Recall the image, and let your mind connect the dots. Piece by piece, will your memory paint a picture to unlock the power cube."
+
+[node name="Dwayne6" parent="." instance=ExtResource("2_fqwc1")]
+transform = Transform3D(-0.495565, 0, -0.868571, 0, 1, 0, 0.868571, 0, -0.495565, 68.2666, 5.67235, 19.3308)
+textToDisplay = "Learning from your past, living in the present and looking forward to the future will aid in tackling life’s challenges. Follow the combination to unlock the next cube"
+
+[node name="Dwayne7" parent="." instance=ExtResource("2_fqwc1")]
+transform = Transform3D(-0.2, 0, 0.000265287, 0, 0.2, 0, -0.000265287, 0, -0.2, -193.717, 0.943979, 432.636)
+textToDisplay = "Having too many thoughts can be overwhelming. Clearing your physical space can create breathing room and bring clarity to your mind. A picture can speak a thousand words."
+
+[node name="Text-display4" parent="." instance=ExtResource("3_w2qan")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -193.086, 1.46635, 428.751)
+textToDisplay = "Clearing your physical surroundings can bring clarity to your mental space."
+
+[node name="Text-display5" parent="." instance=ExtResource("3_w2qan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.5, 45.724, 2.24494, 8.00031)
+textToDisplay = "The Crystal of Insight is now yours, representing clarity and perception. Remember to place it in the plaza as you continue to find the next crystal."
+
+[node name="Text-display6" parent="." instance=ExtResource("3_w2qan")]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 2.5, 12.6295, -0.794792, -28.9932)
+textToDisplay = "You’ve collected the Crystal of Lucidity, a symbol of mental focus and organisation. Place it at the town plaza, then continue your journey to find the remaining crystals."
+
+[node name="Text-display7" parent="." instance=ExtResource("3_w2qan")]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 2.5, 71.6961, 2.2327, 0.565754)
+textToDisplay = "You’ve obtained the Crystal of Cognition, signifying your growing memory and problem-solving skills. Place it in the plaza and set out to collect the final crystal."
+
+[node name="Text-display8" parent="." instance=ExtResource("3_w2qan")]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 2.5, 69.0959, 2.26402, -32.2451)
+textToDisplay = "The final crystal, the Crystal of Endurance, is now yours. It stands for resilience and adaptability. Place it in the plaza to complete your collection and proceed further on your journey."
