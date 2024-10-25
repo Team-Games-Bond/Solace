@@ -4,18 +4,15 @@ using System;
 public partial class BrainWorldManager : Node
 {
 	[ExportGroup("Object References")]
-	[ExportSubgroup("Flags")]
-	[Export] public Node3D imagePuzzleCover;
-	[Export] public Node3D simonSaysCover;
+	[Export] public ExitDoors exitDoors;
 
 	[ExportSubgroup("Fog & Neuron References")]
 	[Export] public FogManager FogManager;
 	[Export] public Neuron powerSocketDias;
-	[Export] public PlacementMonitor powerSocketMaze;
-	[Export] public PlacementMonitor powerSocketMiddle;
-	[Export] public PlacementMonitor powerSocketBridge;
-	[Export] public PlacementMonitor powerSocketTree;
-	[Export] public PlacementMonitor powerSocketWater;
+	[Export] public Neuron powerSocketMaze;
+	[Export] public Neuron powerSocketMiddle;
+	[Export] public Neuron powerSocketBridge;
+	[Export] public Neuron powerSocketTree;
 
 
 
@@ -31,6 +28,8 @@ public partial class BrainWorldManager : Node
 	bool clutterRoomDone = false;
 	bool exitDiasDone = false;
 
+	[Signal] public delegate void StartSignalEventHandler();
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -41,28 +40,23 @@ public partial class BrainWorldManager : Node
 
 		exitDias.CrystalsPlaced += crystalsPlaced;
 
-		powerSocketDias.NeuronActivated += neuronActivte;
-		powerSocketMaze.ItemPlaced += powerSocketFilled;
-		powerSocketMiddle.ItemPlaced += powerSocketFilled;
-		powerSocketBridge.ItemPlaced += powerSocketFilled;
-		powerSocketTree.ItemPlaced += powerSocketFilled;
-		powerSocketWater.ItemPlaced += powerSocketFilled;
+		powerSocketDias.NeuronActivatedWithReference += neuronActivte;
+		powerSocketMaze.NeuronActivatedWithReference += neuronActivte;
+		powerSocketMiddle.NeuronActivatedWithReference += neuronActivte;
+		powerSocketBridge.NeuronActivatedWithReference += neuronActivte;
+		powerSocketTree.NeuronActivatedWithReference += neuronActivte;
 
-	}
-	private void neuronActivte()
-	{
-		FogManager.RemoveFog(FogLocation.maze1);
+		EmitSignal(SignalName.StartSignal);
 	}
 
-	private void powerSocketFilled(bool correctItem, PlacementMonitor socket)
+	private void neuronActivte(Neuron sendingNeuron)
 	{
-		//if(socket == powerSocketDias) FogManager.RemoveFog(FogLocation.maze1);
-		/*else*/ if(socket == powerSocketMaze) FogManager.RemoveFog(FogLocation.maze2);
-		else if(socket == powerSocketMiddle) FogManager.RemoveFog(FogLocation.clutterAndSimon);
-		else if(socket == powerSocketBridge) FogManager.RemoveFog(FogLocation.bridge);
-		else if(socket == powerSocketTree) FogManager.RemoveFog(FogLocation.tree);
-		//else if(socket == powerSocketWater) river.QueueFree(); 
-		else GD.PushError("Unhandled Power Socket: " + socket.Name);
+		if(sendingNeuron == powerSocketDias) FogManager.RemoveFog(FogLocation.maze1);
+		else if(sendingNeuron == powerSocketMaze) FogManager.RemoveFog(FogLocation.maze2);
+		else if(sendingNeuron == powerSocketMiddle) FogManager.RemoveFog(FogLocation.clutterAndSimon);
+		else if(sendingNeuron == powerSocketBridge) FogManager.RemoveFog(FogLocation.bridge);
+		else if(sendingNeuron == powerSocketTree) FogManager.RemoveFog(FogLocation.tree);
+		else GD.PushError("Unhandled Neuron: " + sendingNeuron.Name);
 	}
 
 
@@ -70,7 +64,7 @@ public partial class BrainWorldManager : Node
 	{
 		GD.Print("Image Puzzle Completed");
 		//imagePuzzleFlag.Open();
-		imagePuzzleCover.QueueFree();
+		//imagePuzzleCover.Open();
 		imagePuzzleDone = true;
 
 		imagePuzzle.setActive(false);
@@ -80,7 +74,7 @@ public partial class BrainWorldManager : Node
 	{
 		GD.Print("Simon Says Completed");
 		//simonSaysFlag.Open();
-		simonSaysCover.QueueFree();
+		//simonSaysCover.Open();
 		simonSaysDone = true;
 		
 		simonSays.setActive(false);
@@ -103,6 +97,6 @@ public partial class BrainWorldManager : Node
 	private void crystalsPlaced()
 	{
 		GD.Print("All Crystals Placed");
-		//waterCover.QueueFree();
+		exitDoors.Open();
 	}
 }
