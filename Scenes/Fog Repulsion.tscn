@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dillofuoarxae"]
+[gd_scene load_steps=15 format=3 uid="uid://dillofuoarxae"]
 
 [ext_resource type="Script" path="res://Scripts/FogRelay.gd" id="1_pnc55"]
 [ext_resource type="Script" path="res://Scripts/FogClearDelete.cs" id="2_awd21"]
@@ -6,19 +6,31 @@
 [ext_resource type="PackedScene" uid="uid://op1n61jis8oc" path="res://Scenes/GameObjects/repulsion_field_square.tscn" id="4_ohh0d"]
 [ext_resource type="Texture2D" uid="uid://bxef4f5hpaycr" path="res://Textures/fogmapsdecal.png" id="5_bkfx1"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_es6ns"]
+albedo_color = Color(0.667068, 0.0489786, 0.125347, 1)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qhlsx"]
 height = 20.0
 radius = 17.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfmpi"]
+albedo_color = Color(0.804381, 0.199811, 0.658771, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dxfj1"]
 height = 20.0
 radius = 14.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rhrdk"]
-size = Vector3(11, 20, 7)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b13gu"]
+albedo_color = Color(0.0082042, 0.348877, 0.286748, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_bsgg5"]
-size = Vector3(11, 20, 7)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v0jb"]
+albedo_color = Color(0.0082042, 0.348877, 0.286748, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfsp5"]
+albedo_color = Color(0.293433, 0.485267, 0.925546, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f4gsu"]
+albedo_color = Color(0.394344, 0.471681, 0.194459, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_thpvd"]
 size = Vector3(24, 20, 7)
@@ -33,19 +45,33 @@ location = 3
 
 [node name="RepulsionFieldCylinder" parent="Field 5" instance=ExtResource("3_q4yoe")]
 
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Field 5/RepulsionFieldCylinder/Area3D" index="1"]
+visible = false
+material_override = SubResource("StandardMaterial3D_es6ns")
+radius = 20.0
+height = 20.0
+sides = 20
+
 [node name="Field 6" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.92628, 5.5594, -63.0481)
 script = ExtResource("2_awd21")
 location = 4
 
 [node name="RepulsionFieldCylinder" parent="Field 6" instance=ExtResource("3_q4yoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -6, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.66208, -6, -4.24807)
 
 [node name="Area3D" parent="Field 6/RepulsionFieldCylinder" index="0"]
 gravity_point_unit_distance = 14.0
 
 [node name="CollisionShape3D" parent="Field 6/RepulsionFieldCylinder/Area3D" index="0"]
 shape = SubResource("CylinderShape3D_qhlsx")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Field 6/RepulsionFieldCylinder/Area3D" index="1"]
+visible = false
+material_override = SubResource("StandardMaterial3D_pfmpi")
+radius = 17.0
+height = 20.0
+sides = 20
 
 [node name="CollisionShape3D" parent="Field 6/RepulsionFieldCylinder/StaticBody3D" index="0"]
 shape = SubResource("CylinderShape3D_dxfj1")
@@ -56,36 +82,45 @@ script = ExtResource("2_awd21")
 location = 2
 
 [node name="RepulsionFieldSquare" parent="Field 4" instance=ExtResource("4_ohh0d")]
+transform = Transform3D(0.994522, 0, -0.104528, 0, 1, 0, 0.104528, 0, 0.994522, 0, 0, -7.17362)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Field 4/RepulsionFieldSquare/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -2)
+visible = false
+material_override = SubResource("StandardMaterial3D_b13gu")
+size = Vector3(38, 20, 7)
 
 [node name="RepulsionFieldSquare2" parent="Field 4" instance=ExtResource("4_ohh0d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, -17)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Field 4/RepulsionFieldSquare2/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -2)
+visible = false
+material_override = SubResource("StandardMaterial3D_4v0jb")
+size = Vector3(38, 20, 7)
 
 [node name="Field 3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -31.7287)
 script = ExtResource("2_awd21")
 location = 1
 
-[node name="RepulsionFieldSquare" parent="Field 3" instance=ExtResource("4_ohh0d")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -15)
+[node name="RepulsionFieldSquare3" parent="Field 3" instance=ExtResource("4_ohh0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5145, 0, -2.03817)
 
-[node name="CollisionShape3D" parent="Field 3/RepulsionFieldSquare/Area3D" index="0"]
-shape = SubResource("BoxShape3D_rhrdk")
+[node name="CSGBox3D" type="CSGBox3D" parent="Field 3/RepulsionFieldSquare3/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -2)
+visible = false
+material_override = SubResource("StandardMaterial3D_nfsp5")
+size = Vector3(38, 20, 7)
 
-[node name="CollisionShape3D" parent="Field 3/RepulsionFieldSquare/StaticBody3D" index="0"]
-shape = SubResource("BoxShape3D_rhrdk")
+[node name="RepulsionFieldSquare4" parent="Field 3" instance=ExtResource("4_ohh0d")]
+transform = Transform3D(0.579352, 0, 0.815077, 0, 1, 0, -0.815077, 0, 0.579352, 13.2001, 5.72205e-06, -15.4793)
 
-[node name="RepulsionFieldSquare2" parent="Field 3" instance=ExtResource("4_ohh0d")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9, 0, -5.10393)
-
-[node name="Area3D" parent="Field 3/RepulsionFieldSquare2" index="0"]
-gravity_point_center = Vector3(-0.7, 0, 0.7)
-gravity_direction = Vector3(-0.7, 0, 0.7)
-
-[node name="CollisionShape3D" parent="Field 3/RepulsionFieldSquare2/Area3D" index="0"]
-shape = SubResource("BoxShape3D_bsgg5")
-
-[node name="CollisionShape3D" parent="Field 3/RepulsionFieldSquare2/StaticBody3D" index="0"]
-shape = SubResource("BoxShape3D_bsgg5")
+[node name="CSGBox3D" type="CSGBox3D" parent="Field 3/RepulsionFieldSquare4/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -2)
+visible = false
+material_override = SubResource("StandardMaterial3D_nfsp5")
+size = Vector3(38, 20, 7)
 
 [node name="Field 2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -16)
@@ -98,6 +133,12 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.83
 gravity_point_center = Vector3(-0.7, 0, -0.7)
 gravity_direction = Vector3(-0.7, 0, -0.7)
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Field 2/RepulsionFieldSquare2/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -2)
+visible = false
+material_override = SubResource("StandardMaterial3D_f4gsu")
+size = Vector3(38, 20, 7)
+
 [node name="RepulsionFieldSquare" parent="Field 2" instance=ExtResource("4_ohh0d")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12, 0, 23)
 
@@ -107,6 +148,12 @@ gravity_direction = Vector3(-0.7, 0, 0.7)
 
 [node name="CollisionShape3D" parent="Field 2/RepulsionFieldSquare/Area3D" index="0"]
 shape = SubResource("BoxShape3D_thpvd")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Field 2/RepulsionFieldSquare/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -2)
+visible = false
+material_override = SubResource("StandardMaterial3D_f4gsu")
+size = Vector3(24, 20, 7)
 
 [node name="CollisionShape3D" parent="Field 2/RepulsionFieldSquare/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -4)
@@ -121,6 +168,12 @@ gravity_direction = Vector3(-0.7, 0, 0.7)
 
 [node name="CollisionShape3D" parent="Field 2/RepulsionFieldSquare3/Area3D" index="0"]
 shape = SubResource("BoxShape3D_thpvd")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Field 2/RepulsionFieldSquare3/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -2)
+visible = false
+material_override = SubResource("StandardMaterial3D_f4gsu")
+size = Vector3(24, 20, 7)
 
 [node name="CollisionShape3D" parent="Field 2/RepulsionFieldSquare3/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -6)
@@ -142,8 +195,8 @@ texture_albedo = ExtResource("5_bkfx1")
 [editable path="Field 6/RepulsionFieldCylinder"]
 [editable path="Field 4/RepulsionFieldSquare"]
 [editable path="Field 4/RepulsionFieldSquare2"]
-[editable path="Field 3/RepulsionFieldSquare"]
-[editable path="Field 3/RepulsionFieldSquare2"]
+[editable path="Field 3/RepulsionFieldSquare3"]
+[editable path="Field 3/RepulsionFieldSquare4"]
 [editable path="Field 2/RepulsionFieldSquare2"]
 [editable path="Field 2/RepulsionFieldSquare"]
 [editable path="Field 2/RepulsionFieldSquare3"]
