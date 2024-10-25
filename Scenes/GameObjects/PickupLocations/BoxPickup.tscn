@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://vwdqmlafqdqy"]
 
 [ext_resource type="Script" path="res://Scripts/SocketedInteraction.cs" id="1_xlpxs"]
-[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact.png" id="2_2r3oj"]
+[ext_resource type="Texture2D" uid="uid://cus1m51mantj4" path="res://Textures/Press E/Interact-export.svg" id="2_2r3oj"]
 [ext_resource type="Script" path="res://Scripts/ButtonPromptAnimator.cs" id="3_64xf2"]
 [ext_resource type="PackedScene" uid="uid://ju43hbanmqtm" path="res://Models/Tutorial/cube-symbols/cube1.blend" id="4_2xj54"]
 [ext_resource type="AudioStream" uid="uid://dm7cugia1b20e" path="res://Music/pickup.wav" id="4_m532n"]
