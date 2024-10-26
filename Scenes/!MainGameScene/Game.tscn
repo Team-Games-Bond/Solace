@@ -124,7 +124,7 @@ size = Vector3(2.11938, 3, 1.74414)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 280.005, 4.31697, -41.8644)
 
 [node name="ClutterRoomExit" type="Area3D" parent="Doors" node_paths=PackedStringArray("destination")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 780.283, 0.18478, -181.043)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 780.918, 0.18478, -180.51)
 collision_mask = 2
 script = ExtResource("4_yipme")
 destination = NodePath("../ClutterRoomEntrance")
@@ -140,7 +140,7 @@ material_override = SubResource("StandardMaterial3D_2oiyo")
 size = Vector3(2.58502, 3, 2.03607)
 
 [node name="ClutterRoomExit2" type="Node3D" parent="Doors"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 780.02, 1.42278, -181.054)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 780.209, 0.877552, -180.462)
 
 [node name="TutorialRoomEntrance" type="Area3D" parent="Doors"]
 transform = Transform3D(0.720842, 0, -0.6931, 0, 1, 0, 0.6931, 0, 0.720842, -0.744973, -0.00582266, 1.0784)
