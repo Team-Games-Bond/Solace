@@ -34,15 +34,15 @@ public partial class TextDisplay : Node
 		else if(isDwane) button.ButtonPress += dwaneSpeaks;
 	}
 
-    public override void _Process(double delta)
-    {
-        if (!typingTimer.IsStopped())
+	public override void _Process(double delta)
+	{
+		if (!typingTimer.IsStopped())
 		{
 			textLabel.VisibleRatio = (float)(1-(typingTimer.TimeLeft/typingTimer.WaitTime));
 		} else textLabel.VisibleRatio = 1;
-    }
+	}
 
-    public void EnteredZone(Node3D body)
+	public void EnteredZone(Node3D body)
 	{
 		if(!isActive) return;
 
