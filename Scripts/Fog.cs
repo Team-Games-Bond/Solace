@@ -113,8 +113,6 @@ public partial class Fog : MeshInstance3D
 	public static async Task combine(byte[] target, Texture2D from, Sprite3D sprite)
 	{
 		//GD.Print("combine running");
-		Stopwatch sw = new Stopwatch(); //Not used
-		sw.Start();
 		var fromTask = new Task<ushort[]>(() =>
 		{
 			var image = from.GetImage();
@@ -154,8 +152,6 @@ public partial class Fog : MeshInstance3D
 		{
 			target[i] = (byte)((target[i] * fromTask.Result[i]) / 255);
 		}
-		var elapsed = sw.ElapsedMilliseconds;
-
 
 		//GD.Print("combine done");
 		//var img = ImageTexture.CreateFromImage(Image.CreateFromData(256, 256, false, Image.Format.R8, target[0..65536]));
