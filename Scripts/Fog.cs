@@ -42,7 +42,7 @@ public partial class Fog : MeshInstance3D
 			Refresh();
 		}
 	}
-	private ShaderMaterial _fogMaterial = GD.Load<ShaderMaterial>("res://Materials/FogMaterial.tres");
+	[Export] public ShaderMaterial _fogMaterial;
 	[Export]
 	public ShaderMaterial FogMaterial
 	{
@@ -59,6 +59,8 @@ public partial class Fog : MeshInstance3D
 	{
 		if (!Engine.IsEditorHint())
 		{
+			MeshGen();
+
 			var image = InitialTexture.GetImage();
 			map_width = image.GetWidth();
 			map_height = image.GetHeight();

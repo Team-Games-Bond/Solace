@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvvkgk6k7fhdh"]
+[gd_scene load_steps=16 format=3 uid="uid://bvvkgk6k7fhdh"]
 
+[ext_resource type="Script" path="res://Scripts/LinkTo.cs" id="1_0k0hi"]
 [ext_resource type="Texture2D" uid="uid://drdwv37pt4dv6" path="res://Textures/Concept Art/Concept6.jpg" id="1_1n3eh"]
 [ext_resource type="Material" uid="uid://cd6su2yh38r4n" path="res://Materials/TextureBlur.tres" id="1_wvbd0"]
 [ext_resource type="Texture2D" uid="uid://dtrb0v7dkq6v2" path="res://Textures/Concept Art/Concept1.png" id="2_q65l5"]
@@ -9,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b3uw64sblkm3a" path="res://Textures/Concept Art/Concept4.jpg" id="5_dr67d"]
 [ext_resource type="Texture2D" uid="uid://dgpirqwshgbl8" path="res://Textures/Concept Art/Concept5.jpg" id="6_i5mgf"]
 [ext_resource type="Texture2D" uid="uid://dc8vvqoxnmjen" path="res://Textures/solacelogo.png" id="8_vlm5v"]
-[ext_resource type="Script" path="res://Scripts/QuitButton.gd" id="9_4t3re"]
+[ext_resource type="Script" path="res://Scripts/LoadSceneButton.gd" id="9_3p18w"]
 
 [sub_resource type="GDScript" id="GDScript_g6y1f"]
 resource_name = "TextureRandomizer"
@@ -101,13 +102,14 @@ func _on_loading_timer_timeout() -> void:
 	
 "
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" groups=["MainMenu"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0k0hi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = ExtResource("1_wvbd0")
@@ -168,11 +170,12 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Button" type="Button" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer"]
+[node name="Button" type="Button" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("MainMenu")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Exit"
-script = ExtResource("9_4t3re")
+text = "Start"
+script = ExtResource("9_3p18w")
+MainMenu = NodePath("../../../../../..")
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu/PanelContainer"]
 layout_mode = 2
@@ -253,5 +256,6 @@ layout_mode = 2
 max_value = 1.0
 script = ExtResource("4_f2m7m")
 
+[connection signal="TriggerLink" from="." to="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/Button" method="_on_main_menu_trigger_link"]
 [connection signal="timeout" from="MainMenu/PanelContainer/MarginContainer/LoadingPreview/LoadingText/LoadingTimer" to="MainMenu/PanelContainer/MarginContainer/LoadingPreview/LoadingText" method="_on_loading_timer_timeout"]
 [connection signal="timeout" from="LoadingScreen/MarginContainer/VBoxContainer/LoadingText/LoadingTimer" to="LoadingScreen/MarginContainer/VBoxContainer/LoadingText" method="_on_loading_timer_timeout"]
