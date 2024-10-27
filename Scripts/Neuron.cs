@@ -26,7 +26,7 @@ public partial class Neuron : Node
 		if(startOn) SetMaterial(brightMaterial);
 		else SetMaterial(dimMaterial);
 
-		cable.CableEndReached += PowerNeuron;
+		if(cable != null) cable.CableEndReached += PowerNeuron;
 	}
 
 	public void PowerNeuron()
