@@ -42,7 +42,8 @@ Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/
 ![Team 35 Jira Kanban Board](<Documentation/Jira Kanban board.png>)
 ![Team 35 Gantt Chart](<Documentation/Team 35 Gantt Chart.jpg>)
 
-**We are submitting the godot version as git hub can not hold an exe. For submission purposes, we're focusing on the desktop version; however, we are actively developing an Android version that we’ll showcase at the event.**
+**We initially developed a desktop version of the game. For submission purposes, we're focusing on the desktop version; however, we are actively developing an Android version that we’ll showcase at the event.**
+[You can download the latest windows desktop version of the game here.](https://drive.google.com/file/d/1-EJzp5Atnq2zX_npFk2wgj_3lML1Onv2/view?usp=sharing)
 
 ## Build Dependencies
 [![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/download/) .NET Version 4.3   
@@ -58,8 +59,9 @@ This Guide Assumes you have already installed all the above
 project.godot file contained inside
 2. The Editor should automatically locate your blender install, hit confirm 
 path to continue.
-3. Launch Godot and press the play button in the upper right
-
+3. (For Android) Instructions aren't included here but if you want to build for android the instructions on how to locate and tell the godot editor where to find the android build dependencies are [here](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html)
+4. In the navbar go to Editor > Manage Export Templates, then download and install the templates
+5. In Project > Export, Select your desired build profile, hit "Export Project...", select the directory and filename and hit save
 
 # Programming Languages
 [![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://dotnet.microsoft.com/en-us/download) Version 12/.NET 8  

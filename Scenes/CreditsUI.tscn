@@ -1,12 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgum08onb0dgq"]
+[gd_scene load_steps=8 format=3 uid="uid://cgum08onb0dgq"]
 
+[ext_resource type="Script" path="res://Scenes/ControllerScroller.gd" id="1_tlnq7"]
 [ext_resource type="Texture2D" uid="uid://bq7vwuqm3pbtc" path="res://Textures/Images/Finite_State_Avatar_Transparent.png" id="1_va1sm"]
 [ext_resource type="Texture2D" uid="uid://cpfymi2eh7jlm" path="res://Textures/Images/Maddie-Credits.png" id="2_byf2q"]
 [ext_resource type="Texture2D" uid="uid://rm0f21d44lu" path="res://Textures/Images/Pucca.jpg" id="3_l3itq"]
 [ext_resource type="Texture2D" uid="uid://b82gexc4ktwj2" path="res://Textures/Images/21c75fa3963bc4381c69521e8abc66a97ac64a93_full.png" id="4_7xd1f"]
 [ext_resource type="Texture2D" uid="uid://8m2eyhkuvwaw" path="res://Textures/Images/7D71BB5D-9901-4C80-8AA1-FE0B4D8B2D26.jpg" id="5_2wcf1"]
 [ext_resource type="Texture2D" uid="uid://b45fdbsyh0tqt" path="res://Textures/Images/Screenshot_2024-10-25_224944.png" id="6_2il2t"]
-[ext_resource type="Script" path="res://Scenes/ControllerScroller.gd" id="1_tlnq7"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3

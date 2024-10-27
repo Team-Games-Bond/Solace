@@ -14,7 +14,7 @@ public partial class Cable : GeometryInstance3D, IPowerable
 	public double timer=0;
 	public bool endReached = false;
 	[Export] public bool start = false;
-	[Export] public Material CableAnimationShader = GD.Load<Material>("res://Materials/CableAnimation.tres");
+	[Export] public Material CableAnimationShader;
 	[Export] public float length = 6f;
 	[Export] public GdDictionary Recievers{
 		get
@@ -40,6 +40,7 @@ public partial class Cable : GeometryInstance3D, IPowerable
 	[Signal]
 	public delegate void CableEndReachedEventHandler();
 
+	bool hasLoaded = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
