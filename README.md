@@ -12,9 +12,6 @@
 - [Programming Languages](#programming-languages)
 - [Libraries (Already Included)](#libraries-already-included)
 - [Other Software used](#other-software-used)
-- [Getting Started](#getting-started)
-  - [What You'll Need](#what-youll-need)
-    - [Setup](#setup)
 - [Future Plans](#future-plans)
   - [Itch.IO Implementation](#itchio-implementation)
   - [Series Expansion](#series-expansion)
@@ -54,11 +51,15 @@ Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/
 
 ## Building
 This Guide Assumes you have already installed all the above 
-1. In godot import the project by navigating to the repo and selecting the 
-project.godot file contained inside
+
+1\. In Godot, import the project by navigating to the repository and selecting the `project.godot` file contained inside.  
+<img src="step1.png" alt="Step 1" width="500" height="auto"><br>
+<img src="step2.png" alt="Step 2" width="500" height="auto"><br>
 2. The Editor should automatically locate your blender install, hit confirm 
-path to continue.
-3. Launch Godot and press the play button in the upper right
+path to continue.  
+3. Launch Godot and press the play button in the upper right  
+<img src="step3.png" alt="Step 3" width="500" height="auto"><br>
+
 
 
 # Programming Languages
