@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ui72lska8rj8"]
+[gd_scene load_steps=10 format=3 uid="uid://45bvwwui7l2f"]
 
-[ext_resource type="Shader" uid="uid://cyr13vacu12k2" path="res://Shaders/UIBlur.tres" id="1_ikemm"]
+[ext_resource type="Shader" uid="uid://b87nkvrh0161d" path="res://Shaders/UIBlur.tres" id="1_ikemm"]
 [ext_resource type="Script" path="res://Scripts/pause_screen.gd" id="1_q1mp6"]
 [ext_resource type="PackedScene" uid="uid://cgum08onb0dgq" path="res://Scenes/CreditsUI.tscn" id="1_q8ya1"]
-[ext_resource type="PackedScene" uid="uid://chnpg6m7hkg1" path="res://Scenes/LicensesUI.tscn" id="2_p31x6"]
+[ext_resource type="PackedScene" uid="uid://ogqs55npum6h" path="res://Scenes/LicensesUI.tscn" id="2_p31x6"]
 [ext_resource type="Script" path="res://Scripts/MenuSwitcher.gd" id="3_qi6ql"]
+[ext_resource type="Script" path="res://Scripts/button_default_selection.gd" id="3_v3esm"]
 [ext_resource type="Script" path="res://Scripts/FullscreenButton.gd" id="3_wwpwm"]
 [ext_resource type="Script" path="res://Scripts/QuitButton.gd" id="4_thce6"]
 
@@ -12,7 +13,7 @@
 shader = ExtResource("1_ikemm")
 shader_parameter/blur_strength = 0.0
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="PauseScreen" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_q1mp6")
 
@@ -60,7 +61,13 @@ theme_override_constants/margin_bottom = 2
 [node name="Buttons" type="VBoxContainer" parent="Blur/Darken/HBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Credits" type="Button" parent="Blur/Darken/HBoxContainer/PanelContainer/MarginContainer/Buttons"]
+[node name="ToGame" type="Button" parent="Blur/Darken/HBoxContainer/PanelContainer/MarginContainer/Buttons"]
+layout_mode = 2
+text = "Back To Game"
+script = ExtResource("3_v3esm")
+ControllerDefault = true
+
+[node name="Credits2" type="Button" parent="Blur/Darken/HBoxContainer/PanelContainer/MarginContainer/Buttons"]
 layout_mode = 2
 text = "Credits"
 
@@ -95,5 +102,6 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="Blur/Darken/HBoxContainer/PanelContainer/MarginContainer/Buttons/Credits" to="Blur/Darken/HBoxContainer/Control" method="_switch" binds= ["Credits"]]
+[connection signal="pressed" from="Blur/Darken/HBoxContainer/PanelContainer/MarginContainer/Buttons/ToGame" to="." method="PauseToggle"]
+[connection signal="pressed" from="Blur/Darken/HBoxContainer/PanelContainer/MarginContainer/Buttons/Credits2" to="Blur/Darken/HBoxContainer/Control" method="_switch" binds= ["Credits"]]
 [connection signal="pressed" from="Blur/Darken/HBoxContainer/PanelContainer/MarginContainer/Buttons/Licenses" to="Blur/Darken/HBoxContainer/Control" method="_switch" binds= ["Licenses"]]

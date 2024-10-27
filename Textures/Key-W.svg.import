@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://p1t8ysjsv78f"
 path.s3tc="res://.godot/imported/Key-W.svg-f312376d04d638505d7683e19f52b6df.s3tc.ctex"
-path.etc2="res://.godot/imported/Key-W.svg-f312376d04d638505d7683e19f52b6df.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/Key-W.svg"
-dest_files=["res://.godot/imported/Key-W.svg-f312376d04d638505d7683e19f52b6df.s3tc.ctex", "res://.godot/imported/Key-W.svg-f312376d04d638505d7683e19f52b6df.etc2.ctex"]
+dest_files=["res://.godot/imported/Key-W.svg-f312376d04d638505d7683e19f52b6df.s3tc.ctex"]
 
 [params]
 

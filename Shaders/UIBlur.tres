@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=8 format=3 uid="uid://cyr13vacu12k2"]
+[gd_resource type="VisualShader" load_steps=8 format=3 uid="uid://b87nkvrh0161d"]
 
 [ext_resource type="Script" path="res://addons/shaderV/rgba/blur/blurCustom.gd" id="1_umgmv"]
 
