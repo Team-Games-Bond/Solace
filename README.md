@@ -14,15 +14,15 @@
 - [Other Software used](#other-software-used)
 - [Getting Started](#getting-started)
   - [What You'll Need](#what-youll-need)
-    - [Setup](#setup)
+	- [Setup](#setup)
 - [Future Plans](#future-plans)
   - [Itch.IO Implementation](#itchio-implementation)
   - [Series Expansion](#series-expansion)
   - [Expanding to Mobile Platforms](#expanding-to-mobile-platforms)
   - [Introduce Difficulty Levels](#introduce-difficulty-levels)
 - [Acknowledgements](#acknowledgements)
-    - [Sound Attributions](#sound-attributions)
-    - [Badges From](#badges-from)
+	- [Sound Attributions](#sound-attributions)
+	- [Badges From](#badges-from)
 
 
 # Our Team
@@ -69,7 +69,8 @@ path to continue.
 
 # Libraries (Already Included)
 [**ShaderV 1.3**](https://github.com/arkology/ShaderV)  
-[**Godot Virtual Joystick 1.6**](https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot)
+[**Godot Virtual Joystick 1.6**](https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot)  
+[**Godot Interactive Touchscreen Button**](https://github.com/Mustache-Games/Godot-Interactive-Touchscreen-Button)
 
 # Other Software used
 [![Adobe Illustrator](https://img.shields.io/badge/Adobe%20Illustrator-FF9A00?style=for-the-badge&logo=adobe%20illustrator&logoColor=white)](https://www.adobe.com/nz/products/illustrator.html) Version 2024  
