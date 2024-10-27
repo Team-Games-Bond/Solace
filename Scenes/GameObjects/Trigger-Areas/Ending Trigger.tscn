@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://j23qbgsivmh6"]
 
-[ext_resource type="Shader" uid="uid://cyr13vacu12k2" path="res://Shaders/UIBlur.tres" id="1_8lr4u"]
+[ext_resource type="Shader" uid="uid://b87nkvrh0161d" path="res://Shaders/UIBlur.tres" id="1_8lr4u"]
 [ext_resource type="Script" path="res://Scripts/Ending.cs" id="1_y6rcv"]
 [ext_resource type="Texture2D" uid="uid://dae5umgc4ss0o" path="res://Textures/Games Bond Logo.png" id="3_fnxgj"]
 [ext_resource type="PackedScene" uid="uid://cgum08onb0dgq" path="res://Scenes/CreditsUI.tscn" id="3_ua6ls"]
 [ext_resource type="Texture2D" uid="uid://dc8vvqoxnmjen" path="res://Textures/solacelogo.png" id="4_h3q73"]
-[ext_resource type="PackedScene" uid="uid://b6u0804fb6qld" path="res://Scenes/LicensesUI.tscn" id="4_v0f3s"]
+[ext_resource type="PackedScene" uid="uid://ogqs55npum6h" path="res://Scenes/LicensesUI.tscn" id="4_v0f3s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v576a"]
 size = Vector3(8, 1, 8)
@@ -144,7 +144,7 @@ grow_vertical = 0
 [node name="Licenses" parent="CanvasLayer/Blur/Darken/EndScreen/Credits" instance=ExtResource("4_v0f3s")]
 layout_mode = 1
 offset_top = 943.0
-offset_bottom = 2075.0
+offset_bottom = 3238.0
 
 [node name="Control" type="Control" parent="CanvasLayer/Blur/Darken/EndScreen/Credits/Licenses"]
 layout_mode = 1

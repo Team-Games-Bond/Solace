@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bjm3avsnckc6f"]
+[gd_scene load_steps=51 format=3 uid="uid://bjm3avsnckc6f"]
 
 [ext_resource type="Script" path="res://Scripts/ClutterRoomManager.cs" id="1_0j78k"]
 [ext_resource type="PackedScene" uid="uid://cm3vklomqgrgs" path="res://Models/Main level/Clutter Room/room layout.blend" id="1_w7dh4"]
@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://daup4tw0qws35" path="res://Models/Main level/Clutter Room/Keyboard.blend" id="6_p7m2v"]
 [ext_resource type="PackedScene" uid="uid://cb58biarx7057" path="res://Models/Main level/Clutter Room/mouse.blend" id="7_sxjma"]
 [ext_resource type="PackedScene" uid="uid://onn38v3lg6rn" path="res://Models/Main level/Clutter Room/PC case final.blend" id="8_440yg"]
-[ext_resource type="PackedScene" path="res://chair_modifiers_applied.tscn" id="9_0t85j"]
+[ext_resource type="PackedScene" uid="uid://cjq0b0hiafijm" path="res://chair_modifiers_applied.tscn" id="9_0t85j"]
 [ext_resource type="PackedScene" uid="uid://lyu2x115w6vo" path="res://Models/Main level/Clutter Room/mug.blend" id="9_odbiv"]
-[ext_resource type="PackedScene" path="res://gameboy_.tscn" id="10_sgr12"]
+[ext_resource type="PackedScene" uid="uid://dlwu5et4j1dwi" path="res://gameboy_.tscn" id="10_sgr12"]
 [ext_resource type="Script" path="res://Scripts/LockedItem.cs" id="11_5afxo"]
 [ext_resource type="PackedScene" uid="uid://blx188hqqcn7y" path="res://Models/Main level/Clutter Room/mousepad.blend" id="11_n4j80"]
 [ext_resource type="PackedScene" uid="uid://dh3yhu1p3mirs" path="res://Models/Main level/Clutter Room/chair modifiers applied.blend" id="12_j0275"]
@@ -21,9 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://b6uwbfwdhnun" path="res://Models/Main level/Clutter Room/lamp.blend" id="15_sjeq8"]
 [ext_resource type="PackedScene" uid="uid://de2fnhrx0jxmu" path="res://Models/Main level/Clutter Room/can final.blend" id="16_2437d"]
 [ext_resource type="PackedScene" uid="uid://cl46y58q6ss7e" path="res://Models/Main level/Clutter Room/headset.blend" id="16_ludrc"]
-[ext_resource type="PackedScene" path="res://room_layout.tscn" id="18_ui3ch"]
+[ext_resource type="PackedScene" uid="uid://cig4okdecn5g3" path="res://room_layout.tscn" id="18_ui3ch"]
 [ext_resource type="PackedScene" uid="uid://dnm6wcryjotpr" path="res://Models/Main level/Clutter Room/bin.blend" id="18_ytpgd"]
-[ext_resource type="PackedScene" path="res://desk.tscn" id="19_vkpkm"]
+[ext_resource type="PackedScene" uid="uid://b3ol7vk36l5b3" path="res://desk.tscn" id="19_vkpkm"]
 [ext_resource type="PackedScene" uid="uid://ck4epmivcyeo3" path="res://Models/Main level/Clutter Room/headphone stand.blend" id="20_0t6tp"]
 [ext_resource type="PackedScene" uid="uid://c1fut2iw4ktry" path="res://Models/Main level/Clutter Room/plushie smooth.blend" id="21_v5qrm"]
 [ext_resource type="PackedScene" uid="uid://cln3xqb54q6vg" path="res://bookshelf.tscn" id="23_abatq"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://cmiog0p8nut77" path="res://Models/Cables/Cable Straight 2m.blend" id="36_dnid6"]
 [ext_resource type="Script" path="res://Scripts/Cable.cs" id="37_debw0"]
 [ext_resource type="PackedScene" uid="uid://b811gfiwmtplp" path="res://Models/Cables/Cable 90 Left.blend" id="38_8ad4j"]
+[ext_resource type="Material" uid="uid://der6tedb2mesv" path="res://Materials/CableAnimation.tres" id="38_u5u81"]
 [ext_resource type="PackedScene" uid="uid://tvqtitkx2k1m" path="res://Models/Cables/Cable 90 Right.blend" id="39_1k4mk"]
 [ext_resource type="PackedScene" uid="uid://da3vxbubcv7yt" path="res://Models/ClutterRoom/rug.blend" id="40_g4ces"]
 [ext_resource type="PackedScene" uid="uid://cdhiegkyya36x" path="res://Models/ClutterRoom/Bear.blend" id="41_rmd67"]
@@ -1408,6 +1409,7 @@ transform = Transform3D(-3.27835e-08, 1, -3.0598e-08, 0, -4.37114e-08, -0.7, -0.
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("37_debw0")
 start = true
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.3
 Recievers = {
 0.3: NodePath("../../2/Cube")
@@ -1419,6 +1421,7 @@ transform = Transform3D(1.4, 0, 0, 0, -4.37114e-08, -0.7, 0, 1, -3.0598e-08, 2.1
 [node name="Cube" parent="CablesClutter/2" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 2.11758e-22, 1, -7.10543e-15, 8.74228e-08, -7.10543e-15, -1, 0.041748, 0.0116272, 0)
 script = ExtResource("37_debw0")
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.3
 Recievers = {
 0.3: NodePath("../../3/Cube")
@@ -1430,6 +1433,7 @@ transform = Transform3D(-1.44248e-07, 1, -3.0598e-08, 0, -4.37114e-08, -0.7, -3.
 [node name="Cube" parent="CablesClutter/3" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("37_debw0")
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.6
 Recievers = {
 0.6: NodePath("../../4/Cube")
@@ -1440,6 +1444,7 @@ transform = Transform3D(-3.0598e-08, -0.7, 3.0598e-08, 0, -3.0598e-08, -0.7, 0.7
 
 [node name="Cube" parent="CablesClutter/4" index="0"]
 script = ExtResource("37_debw0")
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.1
 Recievers = {
 0.1: NodePath("../../5/Cube")
@@ -1450,6 +1455,7 @@ transform = Transform3D(-3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0, 0, 0, 0.7, 0.
 
 [node name="Cube" parent="CablesClutter/5" index="0"]
 script = ExtResource("37_debw0")
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.1
 
 [node name="6" parent="CablesClutter" instance=ExtResource("36_dnid6")]
@@ -1459,6 +1465,7 @@ transform = Transform3D(-3.27835e-08, 1, -3.0598e-08, 0, -4.37114e-08, -0.7, -0.
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("37_debw0")
 start = true
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.3
 Recievers = {
 0.3: NodePath("../../7/Cube")
@@ -1470,6 +1477,7 @@ transform = Transform3D(1.4, 0, 0, 0, -4.37114e-08, -0.7, 0, 1, -3.0598e-08, 2.1
 [node name="Cube" parent="CablesClutter/7" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 2.11758e-22, 1, -7.10543e-15, 8.74228e-08, -7.10543e-15, -1, 0.041748, 0.0187683, 0)
 script = ExtResource("37_debw0")
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.3
 Recievers = {
 0.3: NodePath("../../8/Cube")
@@ -1481,6 +1489,7 @@ transform = Transform3D(-1.35505e-07, 1, -3.0598e-08, 0, -4.37114e-08, -0.7, -3.
 [node name="Cube" parent="CablesClutter/8" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("37_debw0")
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.6
 Recievers = {
 0.6: NodePath("../../9/Cube")
@@ -1492,6 +1501,7 @@ transform = Transform3D(-1.09278e-07, 1, -3.0598e-08, 0, -4.37114e-08, -0.7, -2.
 [node name="Cube" parent="CablesClutter/9" index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("37_debw0")
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.5
 Recievers = {
 0.5: NodePath("../../10/Cube")
@@ -1502,6 +1512,7 @@ transform = Transform3D(-3.0598e-08, -0.7, 3.0598e-08, 0, -3.0598e-08, -0.7, 0.7
 
 [node name="Cube" parent="CablesClutter/10" index="0"]
 script = ExtResource("37_debw0")
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.1
 Recievers = {
 0.1: NodePath("../../11/Cube")
@@ -1512,6 +1523,7 @@ transform = Transform3D(-3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0, 0, 0, 0.7, 0.
 
 [node name="Cube" parent="CablesClutter/11" index="0"]
 script = ExtResource("37_debw0")
+CableAnimationShader = ExtResource("38_u5u81")
 length = 0.1
 
 [node name="rug2" parent="." instance=ExtResource("40_g4ces")]
