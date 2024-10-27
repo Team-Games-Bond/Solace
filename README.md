@@ -12,17 +12,15 @@
 - [Programming Languages](#programming-languages)
 - [Libraries (Already Included)](#libraries-already-included)
 - [Other Software used](#other-software-used)
-- [Getting Started](#getting-started)
-  - [What You'll Need](#what-youll-need)
-	- [Setup](#setup)
 - [Future Plans](#future-plans)
   - [Itch.IO Implementation](#itchio-implementation)
   - [Series Expansion](#series-expansion)
   - [Expanding to Mobile Platforms](#expanding-to-mobile-platforms)
   - [Introduce Difficulty Levels](#introduce-difficulty-levels)
+  - [Different music options in different rooms](#different-music-options-in-different-rooms)
 - [Acknowledgements](#acknowledgements)
-	- [Sound Attributions](#sound-attributions)
-	- [Badges From](#badges-from)
+    - [Sound Attributions](#sound-attributions)
+    - [Badges From](#badges-from)
 
 
 # Our Team
@@ -30,9 +28,9 @@
 - Julia Sokhon (UX/UI Designer and Team Lead)
 - Sam Son Ho (UX/UI Designer)
 - Fred Zhang (Art Lead and Software Developer)
-- Selena Wu (Art Lead)
+- Selena Wu (Art Lead and 3D Modeller)
 - Madeline Whitmore (Software Developer)
-- Melody Elwood (Software Developer and Software Lead)
+- Melody Elwood (Software Developer and Game Designer)
 
 # Project Information
 Solace is a puzzle-based game where you play as a soul navigating through a brain. As you progress, you encounter different brain-related puzzles, each symbolising different aspects to achieve mental clarity. The game subtly promotes health awareness through tasks that reflect mental aspects such as resilience, organisation, and focus. Collect crystals representing various elements of mental well-being as you clear brain fog through completing puzzles and unlocking powercubes. Solace provides an engaging experience, encouraging players to reflect on their mental health and promote ways of achieving mental clarity.
@@ -94,6 +92,10 @@ During our presentation, Allan suggested expanding the game to mobile platforms,
 
 ## Introduce Difficulty Levels
 Through user testing, we found that the skill level between our testers varied. Whilst some found the game to be easy, others found it difficult. Based on this feedback we plan to introduce different difficulty modes, giving the players the option to choose between easy and hard settings. Our team felt that for the game to be best enjoyed and to invoke the thinking and reflecting element of the game, we would like minimal support text throughout the game, but found that this was not realistic given how long a user would spend playing the game. Through the suggestions of Asma and Allan, we were encouraged to think about different game modes, ensuring that it was accessible to all experiences, skill levels and ages.  
+
+## Different music options in different rooms
+Due to time constraints and the majority of the project work being allocated towards working functionality, we would have liked to implement additional music options for the different levels. This would have brought on a more immersive user experience as an indicator for the next level and task for users, rather than having a loop of a music track throughout the entire playthrough.
+
 
 # Acknowledgements
 
