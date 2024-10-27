@@ -41,7 +41,7 @@ Our team used [Jira](https://cs399-team-35.atlassian.net/jira/software/projects/
 ![Team 35 Gantt Chart](<Documentation/Team 35 Gantt Chart.jpg>)
 
 **We initially developed a desktop version of the game. For submission purposes, we're focusing on the desktop version; however, we are actively developing an Android version that we’ll showcase at the event.**
-[You can download the latest windows desktop version of the game here.](https://drive.google.com/file/d/1-EJzp5Atnq2zX_npFk2wgj_3lML1Onv2/view?usp=sharing)
+[You can download the latest version of the game here.](https://drive.google.com/drive/folders/1siGoy5oGaQyCYaER-HGjLzGYrGjpS_ut?usp=sharing)
 
 ## Build Dependencies
 [![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=GodotEngine&logoColor=white)](https://godotengine.org/download/) .NET Version 4.3   
