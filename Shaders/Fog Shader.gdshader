@@ -32,7 +32,7 @@ varying flat vec3 FLAT_NORMAL;
 
 void vertex() {
 	// Called for every vertex the material is visible on.
-	VERTEX = vec3(VERTEX.x, VERTEX.y+displacement(UV), VERTEX.z)*WAVE_HEIGHT;
+	VERTEX = vec3(VERTEX.x, VERTEX.y+(displacement(UV)*WAVE_HEIGHT), VERTEX.z);
 	const vec2 e = vec2(0.01, 0);
 	FLAT_NORMAL = normalize(vec3(displacement(UV-e)-displacement(UV+e), e.x*2.0/NORMAL_STRENGTH, displacement(UV-e.yx)-displacement(UV+e.yx)));
 }
