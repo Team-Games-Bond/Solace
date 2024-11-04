@@ -34,7 +34,8 @@ void vertex() {
 	// Called for every vertex the material is visible on.
 	VERTEX = vec3(VERTEX.x, VERTEX.y+(displacement(UV)*WAVE_HEIGHT), VERTEX.z);
 	const vec2 e = vec2(0.01, 0);
-	FLAT_NORMAL = normalize(vec3(displacement(UV-e)-displacement(UV+e), e.x*2.0/NORMAL_STRENGTH, displacement(UV-e.yx)-displacement(UV+e.yx)));
+	NORMAL = normalize(vec3(displacement(UV-e)-displacement(UV+e), e.x*2.0/NORMAL_STRENGTH, displacement(UV-e.yx)-displacement(UV+e.yx)));
+	FLAT_NORMAL = MODELVIEW_NORMAL_MATRIX*NORMAL;
 }
 
 float blur(sampler2D sampler, vec2 uv){
