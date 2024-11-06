@@ -23,6 +23,7 @@ public partial class Neuron : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		light.LightEnergy = lightEnergy;
 		if(startOn) SetMaterial(brightMaterial);
 		else SetMaterial(dimMaterial);
 
@@ -40,13 +41,16 @@ public partial class Neuron : Node
 	{
 		flagella.SetSurfaceOverrideMaterial(0, material);
 		sphere.SetSurfaceOverrideMaterial(0, material);
-
+		#if !(GODOT_MOBILE||GODOT_WEB)
 		if(material == dimMaterial)
 		{
-			light.LightEnergy = 0;
+			light.Visible = false;
 		} else if (material == brightMaterial)
 		{
-			light.LightEnergy = lightEnergy;
+			light.Visible = true;
 		}
+		#else
+		light.Visible = false;
+		#endif
 	}
 }
