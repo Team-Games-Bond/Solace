@@ -170,6 +170,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="monitor" parent="Stuff/Pickup (monitor)/Area3D/ItemMount" instance=ExtResource("5_41mbg")]
 transform = Transform3D(0.15, 0, 4.65661e-09, 0, 0.15, 0, -4.65661e-09, 0, 0.15, 0, 0, 0)
 metadata/ItemKey = "monitor"
+metadata/OtherTransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0.35)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup (monitor)/Area3D/ItemMount/monitor"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
@@ -221,6 +222,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="Keyboard" parent="Stuff/Pickup2 (keyboard)/Area3D/ItemMount" instance=ExtResource("6_p7m2v")]
 transform = Transform3D(0.11, 0, -6.21725e-15, 0, 0.11, 0, 6.21725e-15, 0, 0.11, 0, 0, 0)
 metadata/ItemKey = "keyboard"
+metadata/OtherTransform = Transform3D(0.75, 0, -4.23903e-14, 0, 0.75, 0, 4.23903e-14, 0, 0.75, 0, 0, 0.3)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup2 (keyboard)/Area3D/ItemMount/Keyboard"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.138888, 4.7598, 0)
@@ -273,6 +275,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="PC case final" parent="Stuff/Pickup3 (pc)/Area3D/ItemMount" instance=ExtResource("8_440yg")]
 transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, 0, 0, 0)
 metadata/ItemKey = "pc"
+metadata/OtherTransform = Transform3D(-0.0246236, -0.352134, -0.317837, 0.0221712, 0.317063, -0.352994, 0.473843, -0.0331343, -1.38931e-08, 0, -0.51, 0.095)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup3 (pc)/Area3D/ItemMount/PC case final"]
 transform = Transform3D(1, 0, -7.45174e-09, 0, 1, 0, 7.45174e-09, 0, 1, 0.0457895, 6.80812, -1.3081)
@@ -378,6 +381,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="gameboy 2" parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount" instance=ExtResource("10_sgr12")]
 transform = Transform3D(0.1, 0, -1.86265e-09, 0, 0.1, 0, 1.86265e-09, 0, 0.1, 0, 0, 0)
 metadata/ItemKey = "gameboy"
+metadata/OtherTransform = Transform3D(0.8, 0, 0, 0, 0.798508, -0.0488388, 0, 0.0488388, 0.798508, 0, 0.215, -0.375)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup5 (gameboy)/Area3D/ItemMount/gameboy 2"]
 transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.0373211, 7.54793, 0.322266)
@@ -430,6 +434,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="lamp" parent="Stuff/Pickup6 (lamp)/Area3D/ItemMount" instance=ExtResource("15_sjeq8")]
 transform = Transform3D(0.07, 0, -2.88658e-15, 0, 0.07, 0, 2.88658e-15, 0, 0.07, 0, 0, 0)
 metadata/ItemKey = "lamp"
+metadata/OtherTransform = Transform3D(-0.149843, 0, 0.370874, 0, 0.4, 0, -0.370874, 0, -0.149843, 1.135, -0.34, 0.76)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup6 (lamp)/Area3D/ItemMount/lamp"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.857893, 6.82366, -0.153091)
@@ -482,6 +487,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="headset" parent="Stuff/Pickup7 (headset)/Area3D/ItemMount" instance=ExtResource("16_ludrc")]
 transform = Transform3D(0.08, 0, -1.77636e-15, 0, 0.08, 0, 1.77636e-15, 0, 0.08, 0, 0, 0)
 metadata/ItemKey = "headset"
+metadata/OtherTransform = Transform3D(-0.406899, 0.148099, 0.25, 0.17101, 0.469846, 0, -0.234923, 0.085505, -0.433013, 0.75, 0.425, 0.57)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup7 (headset)/Area3D/ItemMount/headset"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.284388, 3.62418, 0)
@@ -534,6 +540,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="bin" parent="Stuff/Pickup8 (bin)/Area3D/ItemMount" instance=ExtResource("18_ytpgd")]
 transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 0, 0)
 metadata/ItemKey = "bin"
+metadata/OtherTransform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.825, 0.215)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup8 (bin)/Area3D/ItemMount/bin"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, -0.0283775, 4.04961, -0.0172424)
@@ -586,6 +593,7 @@ size = Vector3(1.32837, 0.647461, 1.38904)
 [node name="plushie smooth" parent="Stuff/Pickup9 (plushie)/Area3D/ItemMount" instance=ExtResource("21_v5qrm")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
 metadata/ItemKey = "plushie"
+metadata/OtherTransform = Transform3D(0.131193, 0.0248722, -0.0683358, 0, 0.140954, 0.051303, 0.0727214, -0.0448706, 0.123281, 0.5, -0.115, 0.705)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Stuff/Pickup9 (plushie)/Area3D/ItemMount/plushie smooth"]
 transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0.42543, 27.9839, 1.25256)
@@ -642,6 +650,7 @@ Sockets = [NodePath("HeadsetSocket")]
 ItemKeys = Array[String](["headset"])
 Buttons = []
 metadata/ItemKey = "stand"
+metadata/OtherTransform = Transform3D(-0.216312, 0, 0.66574, 0, 0.7, 0, -0.66574, 0, -0.216312, 1.125, -0.435, 0.855)
 
 [node name="HeadsetSocket" type="Node3D" parent="Stuff/Pickup10 (stand)/Area3D/ItemMount/stand" node_paths=PackedStringArray("socket")]
 transform = Transform3D(10, 0, -5.68434e-14, 0, 10, 0, 5.68434e-14, 0, 10, 0.0401001, 3.07584, 0.320101)
