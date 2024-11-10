@@ -36,11 +36,13 @@ public partial class SocketedInteraction : Interactable
 
 			(Item, player.Carrying) = (player.Carrying, Item);
 			if (Item!=null) {
+				SwapTransform(Item);
 				player.ItemMount.RemoveChild(Item);
 				MountPoint.AddChild(Item);
 				
 				if(isLocked) LockInItem();
 			} else {
+				SwapTransform(player.Carrying);
 				MountPoint.RemoveChild(player.Carrying);
 				player.ItemMount.AddChild(player.Carrying);
 			}
