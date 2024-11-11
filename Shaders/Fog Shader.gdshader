@@ -56,7 +56,7 @@ void fragment() {
     vec3 pixelPosition = upos.xyz/upos.w;
     NORMAL = FLAT_NORMAL;
     //ALPHA = clamp(DEPTH_FADE*(VERTEX.z-pixelPosition.z), 0.0, MAX_TRANSPARENCY);
-	
+
 	float textureTransparency = blur(PRIMARY_DEPTH, UV)*
 		mix(1.0, blur(SECONDARY_DEPTH, UV), SECONDARY_STRENGTH);
 	float depthTransparency = clamp(DEPTH_FADE*(VERTEX.z-pixelPosition.z), 0.0, MAX_TRANSPARENCY);
