@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cfkv6wtyhhta0"]
+[gd_scene load_steps=34 format=4 uid="uid://cfkv6wtyhhta0"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterController.cs" id="1_g771o"]
 [ext_resource type="Shader" uid="uid://cahw01ei5mqun" path="res://Scenes/Shader/FireShader.res" id="2_qlqug"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cwcst7y7umekt" path="res://Models/Particles/GAP_Fire_Textures/Flame02.png" id="5_gkaii"]
 [ext_resource type="Environment" uid="uid://cxm0dp40vn0qe" path="res://RenderingEnvironment.tres" id="7_6u0kc"]
 [ext_resource type="AudioStream" uid="uid://dgx0pmiwlclv5" path="res://Music/press.wav" id="7_n32jk"]
+[ext_resource type="Texture2D" uid="uid://bcljlymmlo76s" path="res://Textures/Character Shadow.webp" id="7_nmqi1"]
 [ext_resource type="PackedScene" uid="uid://bx78cbmcnb8ea" path="res://Scenes/Ui/TouchScreenControls.tscn" id="9_7eedt"]
 [ext_resource type="PackedScene" uid="uid://45bvwwui7l2f" path="res://Scenes/Pause Screen.tscn" id="9_v2200"]
 
@@ -242,20 +243,24 @@ transform = Transform3D(0.999848, 0, 0.0174524, 0, 1, 0, -0.0174524, 0, 0.999848
 transform = Transform3D(-0.35, 0, -5.28485e-08, 0, 0.35, 0, 5.28485e-08, 0, -0.35, 0, 0, 0)
 
 [node name="Sphere" type="MeshInstance3D" parent="PlayerPivot/sprite little flame"]
+layers = 2
 mesh = SubResource("ArrayMesh_mbqgd")
 skeleton = NodePath("")
 
 [node name="Sphere_001" type="MeshInstance3D" parent="PlayerPivot/sprite little flame"]
+layers = 2
 mesh = SubResource("ArrayMesh_ym68e")
 skeleton = NodePath("")
 
 [node name="Sphere_002" type="MeshInstance3D" parent="PlayerPivot/sprite little flame"]
 transform = Transform3D(0.303937, 0, 0, 0, 0.303937, 0, 0, 0, 0.303937, 0, -0.194808, 0)
+layers = 2
 mesh = SubResource("ArrayMesh_7mts3")
 skeleton = NodePath("")
 
 [node name="Cylinder" type="MeshInstance3D" parent="PlayerPivot/sprite little flame"]
 transform = Transform3D(1.24098, 0, 0, 0, 1.10128, -0.572028, 0, 0.572028, 1.10128, -0.0265829, -0.422643, 0.619909)
+layers = 2
 mesh = SubResource("ArrayMesh_lymrt")
 skeleton = NodePath("")
 
@@ -269,6 +274,13 @@ draw_pass_1 = SubResource("QuadMesh_6t1sx")
 
 [node name="ItemMount" type="Node3D" parent="PlayerPivot/sprite little flame"]
 transform = Transform3D(-0.833334, 0, 7.45058e-08, 0, 0.833334, 0, -7.45058e-08, 0, -0.833334, 0.000997679, -0.814175, 1.41784)
+
+[node name="Decal" type="Decal" parent="PlayerPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+size = Vector3(1, 2, 1)
+texture_albedo = ExtResource("7_nmqi1")
+albedo_mix = 0.7
+cull_mask = 1048573
 
 [node name="Player Camera" type="Camera3D" parent="." node_paths=PackedStringArray("CharacterController") groups=["Character Controllers"]]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 30, 54.5)
