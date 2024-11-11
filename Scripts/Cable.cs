@@ -82,10 +82,8 @@ public partial class Cable : GeometryInstance3D, IPowerable
 	}
 	public override void _Input(InputEvent @event)
 	{
-		if (@event is InputEventKey eventKey){
-			if (eventKey.Pressed && eventKey.Keycode==Key.G && start){
-				Power();
-			}
+		if (@event.IsActionPressed("CableCheat")&&start){
+			Power();
 		}
 	}
 }
