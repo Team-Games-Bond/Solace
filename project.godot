@@ -175,6 +175,10 @@ Reload={
 3d_physics/layer_1="Enviroment"
 3d_physics/layer_2="Player"
 
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
+
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
