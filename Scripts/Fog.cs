@@ -115,41 +115,29 @@ public partial class Fog : MeshInstance3D
 	public static async Task combine(byte[] target, Texture2D from, Sprite3D sprite)
 	{
 		//GD.Print("combine running");
-		var fromTask = new Task<ushort[]>(() =>
+		var fromTask = new Task<byte[]>(() =>
 		{
 			var image = from.GetImage();
 			image.Convert(Image.Format.R8);
 			var fromData = image.GetData();
-			return fromData.Select(r => (ushort)r).ToArray();
+			return fromData;
 		});
 		fromTask.Start();
-		var targetTask = new Task<ushort[]>(() => target.Select(r => (ushort)r).ToArray());
-		targetTask.Start();
 
 		int length = target.Length;
 		int remaining = length % Vector<ushort>.Count;
-
-		ushort[] maxValues = new ushort[Vector<ushort>.Count];
-		for (int j = 0; j < Vector<ushort>.Count; j++)
-		{
-			maxValues[j] = 255;
-		}
-		Vector<ushort> maxVector = new Vector<ushort>(maxValues, 0);
-		await targetTask;
+        Vector<ushort> maxVector = Vector<ushort>.One >> 8;
 		await fromTask;
-		for (int i = 0; i < length - remaining; i += Vector<ushort>.Count)
+		byte[] source = fromTask.Result;
+		for (int i = 0; i < length - remaining; i += Vector<ushort>.Count*2)
 		{
-			var targetVector = new Vector<ushort>(targetTask.Result, i);
-			var fromVector = new Vector<ushort>(fromTask.Result, i);
-			ushort[] s = new ushort[Vector<ushort>.Count];
-			((targetVector * fromVector) / maxVector).CopyTo(s, 0);
-			for (int j = 0; j < Vector<ushort>.Count; j++)
-			{
-				target[i + j] = (byte)s[j];
-			}
+			var targetVector = new Vector<ushort>(new Span<byte>(target, i, Vector<ushort>.Count*2));
+			var fromVector = new Vector<ushort>(new Span<byte>(source, i, Vector<ushort>.Count*2));
+			var pt1 = ((targetVector&maxVector)*(fromVector&maxVector))/255;
+			var pt2 = (((targetVector>>8)*(fromVector>>8))/255)<<8;
+			var result = pt1&pt2;
+			result.CopyTo(new Span<byte>(target, i, Vector<ushort>.Count*2));
 		}
-		//GD.Print("fromtask: ", fromTask.Result.Length);
-		//GD.Print("target: ", length);
 		for (int i = length - remaining; i < length; i++)
 		{
 			target[i] = (byte)((target[i] * fromTask.Result[i]) / 255);
