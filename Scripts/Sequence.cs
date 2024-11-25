@@ -11,6 +11,7 @@ public partial class Sequence : Node
     [Signal] public delegate void CompletedEventHandler();
     [Signal] public delegate void CorrectEventHandler();
     [Signal] public delegate void IncorrectEventHandler();
+    [Signal] public delegate void SequenceUpdatedEventHandler(int index);
     private int sequenceIndex = 0;
 	
     // Called when the node enters the scene tree for the first time.
@@ -34,6 +35,7 @@ public partial class Sequence : Node
             SequenceIncorrect();
             GD.Print("Incorrect");
         }
+        EmitSignal(SignalName.SequenceUpdated, sequenceIndex);
     }
 
     private void SequenceCorrect()

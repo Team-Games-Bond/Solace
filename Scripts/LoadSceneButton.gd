@@ -31,7 +31,8 @@ func _process(delta: float) -> void:
 		root.add_child(MainLevel)
 
 
-func _on_main_menu_trigger_link() -> void:
+func _restore_to_start() -> void:
+	print("signal recieved")
 	been_pressed = false
 	%MainMenu.visible = true
 	%LoadingScreen.visible = false

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.ComponentModel;
 using System.Linq;
 
 public partial class SocketedInteraction : Interactable
@@ -35,18 +36,30 @@ public partial class SocketedInteraction : Interactable
 
 			(Item, player.Carrying) = (player.Carrying, Item);
 			if (Item!=null) {
+				SwapTransform(Item);
 				player.ItemMount.RemoveChild(Item);
 				MountPoint.AddChild(Item);
 				
 				if(isLocked) LockInItem();
 			} else {
+				SwapTransform(player.Carrying);
 				MountPoint.RemoveChild(player.Carrying);
 				player.ItemMount.AddChild(player.Carrying);
 			}
 			base.Interact(player);
 		}
 	}
-
+	void SwapTransform(Node3D node){
+		if (node.HasMeta("OtherTransform")){
+			try {
+				Transform3D other = node.GetMeta("OtherTransform").AsTransform3D();
+				(node.Transform, other) = (other, node.Transform);
+				node.SetMeta("OtherTransform", other);
+			} catch (InvalidCastException){
+				;
+			}
+		}
+	}
 	public override void Enter(Node3D body)
 	{
 		CharacterController player = (CharacterController)body;

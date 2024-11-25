@@ -170,7 +170,8 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Button" type="Button" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("MainMenu")]
+[node name="LoadSceneButton" type="Button" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("MainMenu")]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Start"
@@ -256,6 +257,6 @@ layout_mode = 2
 max_value = 1.0
 script = ExtResource("4_f2m7m")
 
-[connection signal="TriggerLink" from="." to="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/Button" method="_on_main_menu_trigger_link"]
+[connection signal="TriggerLink" from="." to="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer/LoadSceneButton" method="_restore_to_start"]
 [connection signal="timeout" from="MainMenu/PanelContainer/MarginContainer/LoadingPreview/LoadingText/LoadingTimer" to="MainMenu/PanelContainer/MarginContainer/LoadingPreview/LoadingText" method="_on_loading_timer_timeout"]
 [connection signal="timeout" from="LoadingScreen/MarginContainer/VBoxContainer/LoadingText/LoadingTimer" to="LoadingScreen/MarginContainer/VBoxContainer/LoadingText" method="_on_loading_timer_timeout"]

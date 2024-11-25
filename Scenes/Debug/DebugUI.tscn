@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://nm51auu2klxt"]
+
+[ext_resource type="Script" path="res://Scenes/Debug/DrawType.cs" id="1_7xgx7"]
+
+[sub_resource type="GDScript" id="GDScript_u71qx"]
+resource_name = "ShowHide"
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"DebugMenuShow\"):
+		visible = !visible;
+"
+
+[node name="DebugUi" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_u71qx")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Debug View"
+fit_content = true
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+selected = 0
+allow_reselect = true
+item_count = 4
+popup/item_0/text = "Default"
+popup/item_1/text = "Overdraw"
+popup/item_1/id = 3
+popup/item_2/text = "Unshaded"
+popup/item_2/id = 1
+popup/item_3/text = "Lighting"
+popup/item_3/id = 2
+script = ExtResource("1_7xgx7")

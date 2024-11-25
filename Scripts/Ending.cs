@@ -24,7 +24,7 @@ public partial class Ending : Node
 	ShaderMaterial blurMat;
 	private CameraController controller;
 
-	private LinkTo loadScriptLink;
+	//private LinkTo loadScriptLink;
 	bool isScrolling = false;
 
 	// Called when the node enters the scene tree for the first time.
@@ -32,8 +32,6 @@ public partial class Ending : Node
 	{
 		// Makes the assumption that there is only one camera controller in a scene
 		controller = (CameraController)GetTree().GetFirstNodeInGroup("Character Controllers");
-
-		loadScriptLink = (LinkTo)GetTree().GetFirstNodeInGroup("MainMenu");
 
 		canvas.Visible = false;
 		fadeTimer.WaitTime = fadeTime;
@@ -60,11 +58,12 @@ public partial class Ending : Node
 
 		if(isScrolling)
 		{
-			endScreen.Position = new Vector2(endScreen.Position.X, endScreen.Position.Y-scrollSpeed);
+			endScreen.Position = new Vector2(endScreen.Position.X, endScreen.Position.Y-scrollSpeed*(float)delta*60.0f);
 			if(EndPoint.GlobalPosition.Y <= 0)
 			{
 				GD.Print("Return to main menu!");
-				loadScriptLink.sendSignal();
+				GD.Print(GetNode<LinkTo>("/root/MainMenu"));
+				GetNode<LinkTo>("/root/MainMenu").sendSignal();
 				/*var MainMenu = ((PackedScene)ResourceLoader.LoadThreadedGet(AfterScenePath)).Instantiate();
 				GetTree().Root.AddChild(MainMenu);
 				GetNode("/root/Game").QueueFree();*/

@@ -9,6 +9,7 @@ albedo_color = Color(0.787831, 0.332353, 0.121177, 1)
 albedo_color = Color(0.815686, 0.454902, 0.129412, 1)
 
 [node name="chair modifiers applied" instance=ExtResource("1_flli0")]
+metadata/OtherTransform = Transform3D(0.7, 0, 2.23821e-13, 0, 0.7, 0, -2.23821e-13, 0, 0.7, 0, 0.25, 0)
 
 [node name="Plane" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_p1ioh")
