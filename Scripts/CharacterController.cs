@@ -5,7 +5,7 @@ public partial class CharacterController : CharacterBody3D
 {
 	[ExportGroup("Controller Settings")]
 	[Export] public float Speed = 8.0f;
-	[Export] public float Drag = 3.0f;
+	[Export] public Vector3 Drag = new Vector3(3.0f, 0.5f, 3.0f);
 	[Export] public float JumpVelocity = 4.5f;
 	[Export] public float RotationSpeed = 0.1f;
 
@@ -67,7 +67,7 @@ public partial class CharacterController : CharacterBody3D
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed);
 		}*/
-		Velocity = velocity*(1-(float)delta*Drag);
+		Velocity = velocity*(Vector3.One-(float)delta*Drag);
 		MoveAndSlide();
 
 		wasOnFloorLastFrame = IsOnFloor();
