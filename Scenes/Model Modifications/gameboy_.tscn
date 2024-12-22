@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlwu5et4j1dwi"]
+
+[ext_resource type="PackedScene" uid="uid://k26q0am8pn6v" path="res://Models/Clutter Room/gameboy .blend" id="1_c7c1i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksmc8"]
+albedo_color = Color(0.815686, 0.454902, 0.129412, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkh3c"]
+albedo_color = Color(0.815686, 0.454902, 0.129412, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xfcon"]
+albedo_color = Color(0.815686, 0.454902, 0.129412, 1)
+
+[node name="gameboy " instance=ExtResource("1_c7c1i")]
+
+[node name="Cube screen" parent="." index="19"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ksmc8")
+
+[node name="Cube_ bottom (TOP PANE)" parent="." index="20"]
+surface_material_override/1 = SubResource("StandardMaterial3D_kkh3c")
+
+[node name="Cylinder_ side turning thing" parent="." index="21"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xfcon")
+
+[node name="Cube_ bottom (BOTTOM PANE)_002" parent="." index="22"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xfcon")
+
+[node name="screen attachment righjt" parent="." index="23"]
+visible = false

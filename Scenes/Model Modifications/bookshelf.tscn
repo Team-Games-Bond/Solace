@@ -1,0 +1,175 @@
+[gd_scene load_steps=7 format=3 uid="uid://cln3xqb54q6vg"]
+
+[ext_resource type="PackedScene" uid="uid://ddh06lut0u3vn" path="res://Models/Clutter Room/bookshelf.blend" id="1_2ku4x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brtk8"]
+albedo_color = Color(0.725873, 0.345374, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv3rk"]
+albedo_color = Color(0.905997, 0.44685, 0.223191, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nps4i"]
+albedo_color = Color(0.999701, 0.539517, 0.272374, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwhax"]
+albedo_color = Color(1, 0.631373, 0.34902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xofx"]
+albedo_color = Color(0.865695, 0.398522, 0.135271, 1)
+
+[node name="bookshelf" instance=ExtResource("1_2ku4x")]
+
+[node name="Cube_001" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_brtk8")
+
+[node name="Cube_002" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_brtk8")
+
+[node name="Cube_004" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gv3rk")
+
+[node name="Cube_007" parent="." index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_008" parent="." index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_009" parent="." index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_010" parent="." index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_011" parent="." index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_012" parent="." index="11"]
+transform = Transform3D(0.0848561, 0, 0, 0, 0.539994, 0, 0, 0, 0.386825, 4.54154, 7.15731, 1.39369)
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_013" parent="." index="12"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_014" parent="." index="13"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_015" parent="." index="14"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_016" parent="." index="15"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_017" parent="." index="16"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_018" parent="." index="17"]
+transform = Transform3D(0.0848561, 0, 0, 0, 0.539994, 0, 0, 0, 0.386825, 1.14315, 7.15731, 1.39369)
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_019" parent="." index="18"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_020" parent="." index="19"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_021" parent="." index="20"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_022" parent="." index="21"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_023" parent="." index="22"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_024" parent="." index="23"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_025" parent="." index="24"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_026" parent="." index="25"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_027" parent="." index="26"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_028" parent="." index="27"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_029" parent="." index="28"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_030" parent="." index="29"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_031" parent="." index="30"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_032" parent="." index="31"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_033" parent="." index="32"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_034" parent="." index="33"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_035" parent="." index="34"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_036" parent="." index="35"]
+transform = Transform3D(0.000208696, 0.539992, 0, -0.0848558, 0.00132806, 0, 0, 0, 0.386825, 3.13341, 6.81477, 1.39369)
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_037" parent="." index="36"]
+transform = Transform3D(0.0279961, 0.509758, 0, -0.0801048, 0.178157, 0, 0, 0, 0.386825, 2.46808, 6.95987, 1.39369)
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_038" parent="." index="37"]
+transform = Transform3D(0.0244341, 0.517123, 0, -0.0812621, 0.15549, 0, 0, 0, 0.386825, 1.7763, 6.95987, 1.39369)
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_039" parent="." index="38"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_040" parent="." index="39"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_041" parent="." index="40"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_042" parent="." index="41"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_043" parent="." index="42"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_044" parent="." index="43"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_045" parent="." index="44"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_046" parent="." index="45"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_047" parent="." index="46"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_048" parent="." index="47"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_049" parent="." index="48"]
+surface_material_override/0 = SubResource("StandardMaterial3D_brtk8")
+
+[node name="Cube_050" parent="." index="49"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fwhax")
+
+[node name="Cube_051" parent="." index="50"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube_052" parent="." index="51"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nps4i")
+
+[node name="Cube" parent="." index="52"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4xofx")

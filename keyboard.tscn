@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddjqufkl7in4j"]
-
-[ext_resource type="PackedScene" uid="uid://daup4tw0qws35" path="res://Models/Main level/Clutter Room/Keyboard.blend" id="1_78cjw"]
-
-[node name="Keyboard" instance=ExtResource("1_78cjw")]

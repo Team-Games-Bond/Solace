@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://3cr3npks3a4i"]
+
+[ext_resource type="PackedScene" uid="uid://d2urpyh5gbh2l" path="res://Models/Clutter Room/paper ball.blend" id="1_tfj0t"]
+
+[node name="paper ball" instance=ExtResource("1_tfj0t")]
