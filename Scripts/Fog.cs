@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Vector2 = Godot.Vector2;
 using Vector3 = Godot.Vector3;
 
+using PixelVector = System.Numerics.Vector<ushort>;
+
 [Tool]
 public partial class Fog : MeshInstance3D
 {
@@ -124,18 +126,24 @@ public partial class Fog : MeshInstance3D
 		fromTask.Start();
 
 		int length = target.Length;
-		int remaining = length % Vector<ushort>.Count;
-        Vector<ushort> maxVector = Vector<ushort>.One >> 8;
+		int remaining = length % PixelVector.Count;
+        PixelVector maxVector = PixelVector.One >> 8;
 		await fromTask;
 		byte[] source = fromTask.Result;
-		for (int i = 0; i < length - remaining; i += Vector<ushort>.Count*2)
+		for (int i = 0; i < length - remaining; i += PixelVector.Count*2)
 		{
-			var targetVector = new Vector<ushort>(new Span<byte>(target, i, Vector<ushort>.Count*2));
-			var fromVector = new Vector<ushort>(new Span<byte>(source, i, Vector<ushort>.Count*2));
-			var pt1 = ((targetVector&maxVector)*(fromVector&maxVector))/255;
-			var pt2 = (((targetVector>>8)*(fromVector>>8))/255)<<8;
-			var result = pt1&pt2;
-			result.CopyTo(new Span<byte>(target, i, Vector<ushort>.Count*2));
+			PixelVector targetVector = new PixelVector(new Span<byte>(target, i, PixelVector.Count*2));
+			PixelVector fromVector = new PixelVector(new Span<byte>(source, i, PixelVector.Count*2));
+			
+			PixelVector targetVectorR = targetVector&maxVector;
+			PixelVector fromVectorR = targetVector&maxVector;
+			PixelVector targetVectorL = targetVector>>8;
+			PixelVector fromVectorL = fromVector>>8;
+
+			PixelVector MultipliedR = (targetVectorR*fromVectorR)/255;
+			PixelVector MultipliedL = (targetVectorL*fromVectorL)/255<<8;
+			PixelVector result = MultipliedR|MultipliedL;
+			result.CopyTo(new Span<byte>(target, i, PixelVector.Count*2));
 		}
 		for (int i = length - remaining; i < length; i++)
 		{
