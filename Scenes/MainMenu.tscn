@@ -150,10 +150,19 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/PanelContainer/CenterContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(312, 0)
 layout_mode = 2
 texture = ExtResource("8_vlm5v")
 expand_mode = 5
+stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer"]
 visible = false
@@ -165,15 +174,15 @@ fit_content = true
 
 [node name="MarginContainer" type="MarginContainer" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 8
+theme_override_constants/margin_left = 48
 theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
+theme_override_constants/margin_right = 48
 theme_override_constants/margin_bottom = 8
 
 [node name="LoadSceneButton" type="Button" parent="MainMenu/PanelContainer/CenterContainer/VBoxContainer/MarginContainer" node_paths=PackedStringArray("MainMenu")]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 48
 text = "Start"
 script = ExtResource("9_3p18w")
 MainMenu = NodePath("../../../../../..")
